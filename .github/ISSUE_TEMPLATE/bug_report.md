@@ -2,7 +2,7 @@
 name: Bug report
 about: Found a bug? Raise a report
 title: '[BUG]'
-labels: ''type:bug
+labels: 'type:bug'
 assignees: ''
 
 ---
