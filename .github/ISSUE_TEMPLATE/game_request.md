@@ -14,13 +14,13 @@ assignees: ''
 Provide any useful documentation or resources that might help.
 
 ### Game platform
-- [] Steam
-- [] Epic
-- [] Other (provide info)
+- [ ] Steam
+- [ ] Epic
+- [ ] Other (provide info)
 
 ### Private server available for
-- [] PC
-- [] Console
+- [ ] PC
+- [ ] Console
 
 ### Provide information
 
