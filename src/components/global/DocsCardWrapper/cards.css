@@ -1,0 +1,31 @@
+docs-cards-wrapper {
+    display: grid;
+    font-size: 12px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-gap: 1.35rem;
+}
+
+docs-cards-wrapper > docs-card {
+    font-size: inherit;
+    max-width: none;
+}
+
+docs-cards-wrapper > docs-card.tall {
+    grid-row: span 2;
+}
+
+docs-cards-wrapper > docs-card.wide {
+    grid-column: span 2;
+}
+
+docs-cards-wrapper.prioritized > docs-card:nth-child(-n + 5) {
+    font-size: 1.25em;
+}
+
+docs-cards-wrapper.prioritized > docs-card:first-child {
+    grid-row: span 2;
+}
+
+docs-cards-wrapper.max-measure > docs-card {
+    max-width: 50%;
+}
