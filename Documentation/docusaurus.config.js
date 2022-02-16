@@ -1,6 +1,7 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
+const path = require('path');
 
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
@@ -13,31 +14,46 @@ const config = {
     baseUrl: '/',
     onBrokenLinks: 'throw',
     onBrokenMarkdownLinks: 'warn',
-    favicon: 'img/docs-logo-alt.ico',
+    favicon: '/img/docs-logo-alt.ico',
     organizationName: 'gameserverapp',
     projectName: 'Platform',
 
     plugins: [
         'docusaurus-plugin-sass',
+        // [
+        //     '@docusaurus/plugin-content-docs',
+        //     ({
+        //         id: 'admin_tools',
+        //         path: 'docs/admin_tools',
+        //         routeBasePath: '/admin_tools',
+        //         editUrl: ({locale, versionDocsDirPath, docPath}) => {
+        //             return `https://github.com/gameserverapp/Platform/edit/main/documentation/admin_tools/${docPath}`;
+        //         },
+        //         editCurrentVersion: true,
+        //         sidebarPath: require.resolve('./sidebars.js'),
+        //         showLastUpdateAuthor: false,
+        //         showLastUpdateTime: false,
+        //     }),
+        // ],
+
     ],
 
     presets: [
         [
-            'classic',
-            /** @type {import('@docusaurus/preset-classic').Options} */
-            ({
+            '@docusaurus/preset-classic',
+            {
                 docs: {
-                    sidebarPath: require.resolve('./sidebars.js'),
+                    sidebarPath: 'sidebars.js',
                     editUrl: 'https://github.com/gameserverapp/Platform/tree/main/', //todo update
+                    routeBasePath: '/',
                 },
                 blog: {
                     showReadingTime: true,
-                    editUrl: 'https://github.com/gameserverapp/Platform/tree/main/', //todo update
                 },
                 theme: {
                     customCss: require.resolve('./src/css/custom.scss'),
                 },
-            }),
+            },
 
         ],
     ],
@@ -45,7 +61,6 @@ const config = {
     themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
         ({
-
             autoCollapseSidebarCategories: false,
             // announcementBar: {
             //     id: 'announcementBar-2', // Increment on change
@@ -56,18 +71,57 @@ const config = {
                 title: 'GameServerApp',
                 logo: {
                     alt: 'GSA logo',
-                    src: 'img/docs-logo-alt.png',
+                    src: '/img/docs-logo-alt.png',
                     width: 32,
                     height: 32,
                 },
                 items: [
+
                     {
                         type: 'doc',
-                        docId: 'intro',
+                        docId: 'dashboard',
+                        label: 'Dashboard',
                         position: 'left',
-                        label: 'Docs',
+                        routeBasePath: '/',
                     },
-                    {to: '/blog', label: 'Blog', position: 'left'},
+
+                    {
+                        type: 'doc',
+                        docId: 'admin_tools',
+                        label: 'Admin tools',
+                    },
+
+                    {
+                        type: 'doc',
+                        docId: 'servers',
+                        label: 'Servers',
+                    },
+
+                    {
+                        type: 'doc',
+                        docId: 'tasks',
+                        label: 'Tasks',
+                    },
+
+                    {
+                        type: 'doc',
+                        docId: 'community',
+                        label: 'Community',
+                    },
+
+                    {
+                        type: 'doc',
+                        docId: 'monetization',
+                        label: 'Monetization',
+                    },
+
+                    {
+                        type: 'doc',
+                        docId: 'account',
+                        label: 'Account',
+                    },
+
+                    //right
                     {
                         type: 'search',
                         position: 'right',
