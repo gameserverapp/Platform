@@ -1,11 +1,12 @@
 ---
 name: Bug report
 about: Found a bug? Raise a report
-title: '[BUG]'
 labels: 'type:bug'
 assignees: ''
 
 ---
+
+__Please make sure to leave out any sensitive information__!
 
 **Describe the bug**
 A clear and concise description of what the bug is.
