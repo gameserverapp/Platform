@@ -11,7 +11,7 @@ jobs:
       issues: write
     steps:
       - name: activate needs more info label
-        uses: andymckay/labeler@5c59dabdfd4dd5bd9c6e6d255b01b9d764af4414
+        uses: andymckay/labeler@1.0.4
         with:
           add-labels: 'status: needs more info'
           remove-labels: "status:backlog, status: planned, status: in progress, status: ready for live, status: to be tested"
@@ -23,7 +23,7 @@ jobs:
       issues: write
     steps:
       - name: activate backlog label
-        uses: andymckay/labeler@5c59dabdfd4dd5bd9c6e6d255b01b9d764af4414
+        uses: andymckay/labeler@1.0.4
         with:
           add-labels: 'status: backlog'
           remove-labels: "status: needs more info, status: planned, status: in progress, status: ready for live, status: to be tested"
@@ -35,7 +35,7 @@ jobs:
       issues: write
     steps:
       - name: activate planned label
-        uses: andymckay/labeler@5c59dabdfd4dd5bd9c6e6d255b01b9d764af4414
+        uses: andymckay/labeler@1.0.4
         with:
           add-labels: 'status: planned'
           remove-labels: "status: needs more info, status:backlog, status: in progress, status: ready for live, status: to be tested"
@@ -47,7 +47,7 @@ jobs:
       issues: write
     steps:
       - name: activate in-progress label
-        uses: andymckay/labeler@5c59dabdfd4dd5bd9c6e6d255b01b9d764af4414
+        uses: andymckay/labeler@1.0.4
         with:
           add-labels: 'status: in progress'
           remove-labels: "status: needs more info, status:backlog, status: planned, status: ready for live, status: to be tested"
@@ -59,7 +59,7 @@ jobs:
       issues: write
     steps:
       - name: activate ready-for-live label
-        uses: andymckay/labeler@5c59dabdfd4dd5bd9c6e6d255b01b9d764af4414
+        uses: andymckay/labeler@1.0.4
         with:
           add-labels: 'status: ready for live'
           remove-labels: "status: needs more info, status:backlog, status: planned, status: in progress, status: to be tested"
@@ -71,7 +71,7 @@ jobs:
       issues: write
     steps:
       - name: activate to-be-tested label
-        uses: andymckay/labeler@5c59dabdfd4dd5bd9c6e6d255b01b9d764af4414
+        uses: andymckay/labeler@1.0.4
         with:
           add-labels: 'status: to be tested'
           remove-labels: "status: needs more info, status:backlog, status: planned, status: in progress, status: ready for live"
@@ -83,7 +83,7 @@ jobs:
       issues: write
     steps:
       - name: activate to-be-tested label
-        uses: andymckay/labeler@5c59dabdfd4dd5bd9c6e6d255b01b9d764af4414
+        uses: andymckay/labeler@1.0.4
         with:
           remove-labels: "status: needs more info, status:backlog, status: planned, status: in progress, status: ready for live, status: to be tested"
           repo-token: ${{ secrets.GITHUB_TOKEN }}
