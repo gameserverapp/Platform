@@ -91,3 +91,4 @@ jobs:
         uses: peter-evans/close-issue@v1
         with:
           comment: "Auto closing: this issue was marked as \"Done\""
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
