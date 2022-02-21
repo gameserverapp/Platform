@@ -82,8 +82,12 @@ jobs:
     permissions:
       issues: write
     steps:
-      - name: activate to-be-tested label
+      - name: remove all labels, because issue is done
         uses: andymckay/labeler@1.0.4
         with:
           remove-labels: "status: needs more info, status: backlog, status: planned, status: in progress, status: ready for live, status: to be tested"
           repo-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: close issue
+        uses: peter-evans/close-issue@v1
+        with:
+          comment: "Auto closing: this issue was marked as \"Done\""
