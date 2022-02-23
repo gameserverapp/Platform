@@ -87,8 +87,3 @@ jobs:
         with:
           remove-labels: "status: needs more info, status: backlog, status: planned, status: in progress, status: ready for live, status: to be tested"
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-      - name: close issue
-        uses: peter-evans/close-issue@v1
-        with:
-          comment: "Auto closing: this issue was marked as \"Done\""
-          token: ${{ secrets.GITHUB_TOKEN }}
