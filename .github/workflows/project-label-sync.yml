@@ -14,19 +14,7 @@ jobs:
         uses: andymckay/labeler@1.0.4
         with:
           add-labels: 'status: needs more info'
-          remove-labels: "status: backlog, status: planned, status: in progress, status: ready for live, status: to be tested, status: later"
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-  later:
-    if: github.event.project_card.column_id == '18314779'
-    runs-on: ubuntu-latest
-    permissions:
-      issues: write
-    steps:
-      - name: activate later label
-        uses: andymckay/labeler@1.0.4
-        with:
-          add-labels: 'status: later'
-          remove-labels: "status: needs more info, status:backlog, status: planned, status: in progress, status: ready for live, status: to be tested"
+          remove-labels: "status: backlog, status: planned, status: in progress, status: ready for live, status: to be tested"
           repo-token: ${{ secrets.GITHUB_TOKEN }}
   backlog:
     if: github.event.project_card.column_id == '17839093'
@@ -38,7 +26,7 @@ jobs:
         uses: andymckay/labeler@1.0.4
         with:
           add-labels: 'status: backlog'
-          remove-labels: "status: needs more info, status: planned, status: in progress, status: ready for live, status: to be tested, status: later"
+          remove-labels: "status: needs more info, status: planned, status: in progress, status: ready for live, status: to be tested"
           repo-token: ${{ secrets.GITHUB_TOKEN }}
   planned:
     if: github.event.project_card.column_id == '17839099'
@@ -50,7 +38,7 @@ jobs:
         uses: andymckay/labeler@1.0.4
         with:
           add-labels: 'status: planned'
-          remove-labels: "status: needs more info, status: backlog, status: in progress, status: ready for live, status: to be tested, status: later"
+          remove-labels: "status: needs more info, status: backlog, status: in progress, status: ready for live, status: to be tested"
           repo-token: ${{ secrets.GITHUB_TOKEN }}
   in-progress:
     if: github.event.project_card.column_id == '17839104'
@@ -62,7 +50,7 @@ jobs:
         uses: andymckay/labeler@1.0.4
         with:
           add-labels: 'status: in progress'
-          remove-labels: "status: needs more info, status: backlog, status: planned, status: ready for live, status: to be tested, status: later"
+          remove-labels: "status: needs more info, status: backlog, status: planned, status: ready for live, status: to be tested"
           repo-token: ${{ secrets.GITHUB_TOKEN }}
   ready-for-live:
     if: github.event.project_card.column_id == '17839105'
@@ -74,7 +62,7 @@ jobs:
         uses: andymckay/labeler@1.0.4
         with:
           add-labels: 'status: ready for live'
-          remove-labels: "status: needs more info, status: backlog, status: planned, status: in progress, status: to be tested, status: later"
+          remove-labels: "status: needs more info, status: backlog, status: planned, status: in progress, status: to be tested"
           repo-token: ${{ secrets.GITHUB_TOKEN }}
   to-be-tested:
     if: github.event.project_card.column_id == '17839106'
@@ -86,7 +74,7 @@ jobs:
         uses: andymckay/labeler@1.0.4
         with:
           add-labels: 'status: to be tested'
-          remove-labels: "status: needs more info, status: backlog, status: planned, status: in progress, status: ready for live, status: later"
+          remove-labels: "status: needs more info, status: backlog, status: planned, status: in progress, status: ready for live"
           repo-token: ${{ secrets.GITHUB_TOKEN }}
   done:
     if: github.event.project_card.column_id == '17839107'
@@ -97,5 +85,5 @@ jobs:
       - name: remove all labels, because issue is done
         uses: andymckay/labeler@1.0.4
         with:
-          remove-labels: "status: needs more info, status: backlog, status: planned, status: in progress, status: ready for live, status: to be tested, status: later"
+          remove-labels: "status: needs more info, status: backlog, status: planned, status: in progress, status: ready for live, status: to be tested"
           repo-token: ${{ secrets.GITHUB_TOKEN }}
