@@ -1,7 +1,8 @@
 name: Add issue to project board
 on:
   issues:
-    types: [opened]
+    types:
+      - opened
 jobs:
   add-card:
     runs-on: ubuntu-latest
