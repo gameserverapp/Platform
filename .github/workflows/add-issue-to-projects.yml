@@ -1,8 +1,7 @@
 name: Add issue to project board
 on:
   issues:
-    types:
-      - opened
+    types: [opened]
 jobs:
   add-card:
     runs-on: ubuntu-latest
@@ -10,5 +9,5 @@ jobs:
         - uses: alex-page/github-project-automation-plus@v0.8.1
           with:
             project: GSA Development
-            column: Open
+            column: Triage
             repo-token: ${{ secrets.GITHUB_TOKEN }}
