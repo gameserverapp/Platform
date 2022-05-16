@@ -7,7 +7,7 @@ Search our backlog and find what we're currently working on.
 Share your thoughts with the dev team on planned features.
 
 ## Documentation
-Documentation helping you understand GSA and how to get the most out of each feature can be found on [docs.gameserverapp.com](https://docs.gameserverapp.com).
+Documentation helping you understand GSA and how to get the most out of each feature can be found on help.gameserverapp.com](https://help.gameserverapp.com).
 
 ### Docs issue?
 Found a typo or outdated info? Submit your change and help keep the docs neat and up-to-date.
