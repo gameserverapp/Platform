@@ -1294,6 +1294,30 @@ return [
             'value' => '/Game/PrimalEarth/CoreBlueprints/Items/Consumables/Icons/Kibble_Icon.Kibble_Icon'
         ],
         [
+            'title' => 'Basic Kibble',
+            'value' => '/Game/PrimalEarth/CoreBlueprints/Items/Consumables/Icons/Kibble_Icon_ExSmall'
+        ],
+        [
+            'title' => 'Simple Kibble',
+            'value' => '/Game/PrimalEarth/CoreBlueprints/Items/Consumables/Icons/Kibble_Icon_Small'
+        ],
+        [
+            'title' => 'Regular Kibble',
+            'value' => '/Game/PrimalEarth/CoreBlueprints/Items/Consumables/Icons/Kibble_Icon_Medium'
+        ],
+        [
+            'title' => 'Superior Kibble',
+            'value' => '/Game/PrimalEarth/CoreBlueprints/Items/Consumables/Icons/Kibble_Icon_Large'
+        ],
+        [
+            'title' => 'Exceptional Kibble',
+            'value' => '/Game/PrimalEarth/CoreBlueprints/Items/Consumables/Icons/Kibble_Icon_ExLarge'
+        ],
+        [
+            'title' => 'Extraordiary Kibble',
+            'value' => '/Game/PrimalEarth/CoreBlueprints/Items/Consumables/Icons/Kibble_Icon_Special'
+        ],
+        [
             'title' => 'Lambchops',
             'value' => '/Game/PrimalEarth/CoreBlueprints/Items/Consumables/Icons/Lambchops_Icon.Lambchops_Icon'
         ],
@@ -3262,7 +3286,7 @@ return [
             'value' => '/Game/PrimalEarth/CoreBlueprints/Weapons/Icons/Spyglass_Icon.Spyglass_Icon'
         ],
         [
-            'title' => 'SSR',
+            'title' => 'Longneck Rifle',
             'value' => '/Game/PrimalEarth/CoreBlueprints/Weapons/Icons/SSR_Icon.SSR_Icon'
         ],
         [
