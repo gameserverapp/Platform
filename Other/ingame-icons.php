@@ -962,63 +962,63 @@ return [
             'value' => '/Game/PrimalEarth/CoreBlueprints/Items/Artifacts/Icons/Aberration_Implant_Icon_Gamma.Aberration_Implant_Icon_Gamma'
         ],
         [
-            'title' => 'Artifact18',
+            'title' => 'Artifact of the Depths',
             'value' => '/Game/PrimalEarth/CoreBlueprints/Items/Artifacts/Icons/Artifact18_Icon.Artifact18_Icon'
         ],
         [
-            'title' => 'Artifact19',
+            'title' => 'Artifact of the Shadows',
             'value' => '/Game/PrimalEarth/CoreBlueprints/Items/Artifacts/Icons/Artifact19_Icon.Artifact19_Icon'
         ],
         [
-            'title' => 'Artifact1',
+            'title' => 'Artifact of the Hunter',
             'value' => '/Game/PrimalEarth/CoreBlueprints/Items/Artifacts/Icons/Artifact1_Icon.Artifact1_Icon'
         ],
         [
-            'title' => 'Artifact21',
+            'title' => 'Artifact of the Stalker',
             'value' => '/Game/PrimalEarth/CoreBlueprints/Items/Artifacts/Icons/Artifact21_Icon.Artifact21_Icon'
         ],
         [
-            'title' => 'Artifact24',
+            'title' => 'Artifact of the Brute',
             'value' => '/Game/PrimalEarth/CoreBlueprints/Items/Artifacts/Icons/Artifact24_Icon.Artifact24_Icon'
         ],
         [
-            'title' => 'Artifact25',
+            'title' => 'Artifact of the Cunning',
             'value' => '/Game/PrimalEarth/CoreBlueprints/Items/Artifacts/Icons/Artifact25_Icon.Artifact25_Icon'
         ],
         [
-            'title' => 'Artifact29',
+            'title' => 'Artifact of the Lost',
             'value' => '/Game/PrimalEarth/CoreBlueprints/Items/Artifacts/Icons/Artifact29_Icon.Artifact29_Icon'
         ],
         [
-            'title' => 'Artifact2',
+            'title' => 'Artifact of the Pack',
             'value' => '/Game/PrimalEarth/CoreBlueprints/Items/Artifacts/Icons/Artifact2_Icon.Artifact2_Icon'
         ],
         [
-            'title' => 'Artifact3',
+            'title' => 'Artifact of the Massive',
             'value' => '/Game/PrimalEarth/CoreBlueprints/Items/Artifacts/Icons/Artifact3_Icon.Artifact3_Icon'
         ],
         [
-            'title' => 'Artifact4',
+            'title' => 'Artifact of the Devious',
             'value' => '/Game/PrimalEarth/CoreBlueprints/Items/Artifacts/Icons/Artifact4_Icon.Artifact4_Icon'
         ],
         [
-            'title' => 'Artifact5',
+            'title' => 'Artifact of the Clever',
             'value' => '/Game/PrimalEarth/CoreBlueprints/Items/Artifacts/Icons/Artifact5_Icon.Artifact5_Icon'
         ],
         [
-            'title' => 'Artifact6',
+            'title' => 'Artifact of the Skylord',
             'value' => '/Game/PrimalEarth/CoreBlueprints/Items/Artifacts/Icons/Artifact6_Icon.Artifact6_Icon'
         ],
         [
-            'title' => 'Artifact7',
+            'title' => 'Artifact of the Devourer',
             'value' => '/Game/PrimalEarth/CoreBlueprints/Items/Artifacts/Icons/Artifact7_Icon.Artifact7_Icon'
         ],
         [
-            'title' => 'Artifact8',
+            'title' => 'Artifact of the Immune',
             'value' => '/Game/PrimalEarth/CoreBlueprints/Items/Artifacts/Icons/Artifact8_Icon.Artifact8_Icon'
         ],
         [
-            'title' => 'Artifact9',
+            'title' => 'Artifact of the Strong',
             'value' => '/Game/PrimalEarth/CoreBlueprints/Items/Artifacts/Icons/Artifact9_Icon.Artifact9_Icon'
         ],
         [
