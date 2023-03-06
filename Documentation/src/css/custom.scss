@@ -69,3 +69,20 @@ html[data-theme='dark'] {
     height: 24px;
     width: 24px;
 }
+
+.footer {
+    &__links {
+        margin-bottom:0.1rem;
+
+        a.footer__link-item {
+
+            span {
+                font-size:12px;
+            }
+        }
+    }
+
+    &__copyright {
+        font-size:12px;
+    }
+}

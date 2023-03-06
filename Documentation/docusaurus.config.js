@@ -9,7 +9,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
     title: 'GameServerApp Docs',
-    tagline: 'The most innovative Game Community Manager',
+    tagline: 'Helping game communities get the best tools',
     url: 'https://docs.gameserverapp.com',
     baseUrl: '/',
     onBrokenLinks: 'throw',
@@ -44,7 +44,7 @@ const config = {
             {
                 docs: {
                     sidebarPath: 'sidebars.js',
-                    editUrl: 'https://github.com/gameserverapp/Platform/tree/main/', //todo update
+                    editUrl: 'https://github.com/gameserverapp/platform/tree/main/Documentation',
                     routeBasePath: '/',
                 },
                 blog: {
@@ -76,49 +76,23 @@ const config = {
                     height: 32,
                 },
                 items: [
+                    {
+                        type: 'doc',
+                        position: 'left',
+                        docId: 'introduction',
+                        label: 'Getting started',
+                    },
 
                     {
                         type: 'doc',
                         docId: 'dashboard',
                         label: 'Dashboard',
+                    },
+                    {
+                        type: 'doc',
                         position: 'left',
-                        routeBasePath: '/',
-                    },
-
-                    {
-                        type: 'doc',
-                        docId: 'admin_tools',
-                        label: 'Admin tools',
-                    },
-
-                    {
-                        type: 'doc',
-                        docId: 'servers',
-                        label: 'Servers',
-                    },
-
-                    {
-                        type: 'doc',
-                        docId: 'tasks',
-                        label: 'Tasks',
-                    },
-
-                    {
-                        type: 'doc',
-                        docId: 'community',
-                        label: 'Community',
-                    },
-
-                    {
-                        type: 'doc',
-                        docId: 'monetization',
-                        label: 'Monetization',
-                    },
-
-                    {
-                        type: 'doc',
-                        docId: 'account',
-                        label: 'Account',
+                        docId: 'developers',
+                        label: 'Developers',
                     },
 
                     //right
@@ -126,31 +100,12 @@ const config = {
                         type: 'search',
                         position: 'right',
                     },
-                    // {
-                    //     label: 'Support',
-                    //     position: 'right',
-                    //     items: [
-                    //         {
-                    //             href: 'https://ionicframework.com/support',
-                    //             label: 'Help Center',
-                    //             target: '_blank',
-                    //             rel: null,
-                    //         },
-                    //         {
-                    //             href: 'https://ionic.zendesk.com/',
-                    //             label: 'Customer Support',
-                    //             target: '_blank',
-                    //             rel: null,
-                    //         },
-                    //         {
-                    //             href: 'https://ionicframework.com/advisory',
-                    //             label: 'Enterprise Advisory',
-                    //             target: '_blank',
-                    //             rel: null,
-                    //         },
-                    //     ],
-                    //     className: 'navbar__link--support',
-                    // },
+                    {
+                        href: 'https://www.gameserverapp.com/support/get-in-touch',
+                        label: 'Contact',
+                        position: 'right',
+                        // className: 'gsa-login',
+                    },
                     {
                         href: 'https://dash.gameserverapp.com',
                         label: 'Dashboard',
@@ -164,7 +119,7 @@ const config = {
                         'aria-label': 'GitHub repository',
                     },
                     {
-                        href: 'https://gameserverapp.com/join-discord',
+                        href: 'https://www.gameserverapp.com/join-discord',
                         position: 'right',
                         className: 'header-discord-link',
                     },
@@ -182,11 +137,15 @@ const config = {
                         href: 'https://status.gameserverapp.com/',
                     },
                     {
-                        label: 'Privacy',
+                        label: 'Changelog',
+                        href: 'https://github.com/gameserverapp/Platform/discussions/categories/announcements',
+                    },
+                    {
+                        label: 'Privacy policy',
                         href: 'https://www.gameserverapp.com/company/privacy-policy/',
                     },
                     {
-                        label: 'Terms',
+                        label: 'Terms and Conditions',
                         href: 'https://www.gameserverapp.com/company/terms-and-conditions/',
                     },
 

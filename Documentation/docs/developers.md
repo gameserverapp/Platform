@@ -1,6 +1,6 @@
 ---
-title: Servers
-sidebar_label: Intro
+title: API
+sidebar_label: API info
 ---
 
 
