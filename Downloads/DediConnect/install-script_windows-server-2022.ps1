@@ -1,4 +1,5 @@
 Set-ExecutionPolicy Bypass -Scope Process -force
+Set-ExecutionPolicy Bypass -force
 
 Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0
 
