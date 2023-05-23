@@ -15,6 +15,10 @@ net start sshd
 C:\ProgramData\chocolatey\bin\choco.exe install -y python --version=3.9.2
 C:\ProgramData\chocolatey\bin\choco.exe install -y nssm
 
+Install-WindowsFeature -Name Web-Mgmt-Tools
+Install-WindowsFeature Web-FTP-Server -IncludeAllSubFeature
+Install-WindowsFeature WAS
+
 Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
 
 Install-Module PSWindowsUpdate -confirm:$false -force
