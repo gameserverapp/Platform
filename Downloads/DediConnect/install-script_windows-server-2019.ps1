@@ -10,6 +10,8 @@ New-NetFirewallRule -Name sshd -DisplayName 'OpenSSH Server (sshd)' -Enabled Tru
 
 net start sshd
 
+$env:chocolateyVersion = '1.4.0'
+
 [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 
 C:\ProgramData\chocolatey\bin\choco.exe install -y python --version=3.9.2
