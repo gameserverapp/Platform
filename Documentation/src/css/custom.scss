@@ -70,6 +70,14 @@ html[data-theme='dark'] {
     width: 24px;
 }
 
+.menu__list-item.theme-doc-sidebar-item-category-level-1:not(:first-child) {
+    margin-top: 0.5rem !important;
+}
+
+#__docusaurus .menu__list li:last-of-type {
+    padding-block-end: 0rem;
+}
+
 .footer {
     &__links {
         margin-bottom:0.1rem;

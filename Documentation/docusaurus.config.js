@@ -66,6 +66,35 @@ const config = {
             //     id: 'announcementBar-2', // Increment on change
             //     content: `⭐️ If you like Docusaurus, give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/facebook/docusaurus">GitHub</a> and follow us on <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/docusaurus" >Twitter</a>`,
             // },
+            algolia: {
+                // The application ID provided by Algolia
+                appId: 'YOUR_APP_ID',
+
+                // Public API key: it is safe to commit it
+                apiKey: 'YOUR_SEARCH_API_KEY',
+
+                indexName: 'YOUR_INDEX_NAME',
+
+                // Optional: see doc section below
+                contextualSearch: true,
+
+                // Optional: Specify domains where the navigation should occur through window.location instead on history.push. Useful when our Algolia config crawls multiple documentation sites and we want to navigate with window.location.href to them.
+                // externalUrlRegex: 'external\\.com|domain\\.com',
+
+                // Optional: Replace parts of the item URLs from Algolia. Useful when using the same search index for multiple deployments using a different baseUrl. You can use regexp or string in the `from` param. For example: localhost:3000 vs myCompany.com/docs
+                replaceSearchResultPathname: {
+                    from: '/docs/', // or as RegExp: /\/docs\//
+                    to: '/',
+                },
+
+                // Optional: Algolia search parameters
+                searchParameters: {},
+
+                // Optional: path for search page that enabled by default (`false` to disable it)
+                searchPagePath: 'search',
+
+                //... other Algolia params
+            },
             navbar: {
                 hideOnScroll: true,
                 title: 'GameServerApp',
@@ -76,13 +105,13 @@ const config = {
                     height: 32,
                 },
                 items: [
+                    //left
                     {
                         type: 'doc',
                         position: 'left',
                         docId: 'introduction',
                         label: 'Getting started',
                     },
-
                     {
                         type: 'doc',
                         docId: 'dashboard',
@@ -90,21 +119,25 @@ const config = {
                     },
                     {
                         type: 'doc',
-                        position: 'left',
-                        docId: 'developers',
-                        label: 'Developers',
+                        docId: 'troubleshooting',
+                        label: 'Troubleshooting',
                     },
+                    // {
+                    //     type: 'doc',
+                    //     docId: 'community_website',
+                    //     label: 'Community website',
+                    // },
+                    // {
+                    //     type: 'doc',
+                    //     position: 'left',
+                    //     docId: 'developers',
+                    //     label: 'Developers',
+                    // },
 
                     //right
                     {
                         type: 'search',
                         position: 'right',
-                    },
-                    {
-                        href: 'https://www.gameserverapp.com/support/get-in-touch',
-                        label: 'Contact',
-                        position: 'right',
-                        // className: 'gsa-login',
                     },
                     {
                         href: 'https://dash.gameserverapp.com',
@@ -113,16 +146,22 @@ const config = {
                         className: 'gsa-login',
                     },
                     {
-                        href: 'https://github.com/gameserverapp/platform',
+                        href: 'https://www.gameserverapp.com/support/get-in-touch',
+                        label: 'Get in touch',
                         position: 'right',
-                        className: 'header-github-link',
-                        'aria-label': 'GitHub repository',
+                        // className: 'gsa-login',
                     },
-                    {
-                        href: 'https://www.gameserverapp.com/join-discord',
-                        position: 'right',
-                        className: 'header-discord-link',
-                    },
+                    // {
+                    //     href: 'https://github.com/gameserverapp/platform',
+                    //     position: 'right',
+                    //     className: 'header-github-link',
+                    //     'aria-label': 'GitHub repository',
+                    // },
+                    // {
+                    //     href: 'https://www.gameserverapp.com/join-discord',
+                    //     position: 'right',
+                    //     className: 'header-discord-link',
+                    // },
                 ],
             },
             footer: {
