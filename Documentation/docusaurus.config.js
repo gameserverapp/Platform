@@ -117,11 +117,6 @@ const config = {
                         docId: 'dashboard',
                         label: 'Dashboard',
                     },
-                    {
-                        type: 'doc',
-                        docId: 'troubleshooting',
-                        label: 'Troubleshooting',
-                    },
                     // {
                     //     type: 'doc',
                     //     docId: 'community_website',

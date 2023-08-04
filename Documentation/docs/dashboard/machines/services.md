@@ -1,6 +1,6 @@
 ---
-title: Requirements
-sidebar_position: 2
+title: Services
+sidebar_position: 0
 ---
 
 # Easy Tutorial

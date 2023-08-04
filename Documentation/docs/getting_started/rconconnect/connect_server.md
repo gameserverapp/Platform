@@ -1,6 +1,6 @@
 ---
-title: Supported providers
-sidebar_position: 2
+title: Connect server
+sidebar_position: 1
 ---
 
 # Easy Tutorial

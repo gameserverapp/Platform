@@ -1,6 +1,6 @@
 ---
-title: About the dashboard
-sidebar_label: Intro
+title: Dashboard basics
+sidebar_label: The basics
 ---
 
 

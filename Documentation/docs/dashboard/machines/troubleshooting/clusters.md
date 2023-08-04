@@ -1,6 +1,6 @@
 ---
-title: Game servers
-sidebar_position: 0
+title: Clusters
+sidebar_position: 1
 ---
 
 # Easy Tutorial

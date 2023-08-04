@@ -1,6 +1,6 @@
 ---
-title: Machines
-sidebar_position: 3
+title: Setup FTP server
+sidebar_position: 2
 ---
 
 # Easy Tutorial

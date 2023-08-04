@@ -1,7 +1,6 @@
 ---
-title: Getting started
+title: Clusters
 sidebar_position: 1
-sidebar_label: Overview panels
 ---
 
 # Easy Tutorial

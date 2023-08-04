@@ -78,6 +78,10 @@ html[data-theme='dark'] {
     padding-block-end: 0rem;
 }
 
+.theme-doc-sidebar-item-category-level-2 .menu__list-item-collapsible {
+    padding-inline-start: calc(var(--dropdown-icon-width) + var(--dropdown-icon-gap) - 11px);
+}
+
 .footer {
     &__links {
         margin-bottom:0.1rem;
