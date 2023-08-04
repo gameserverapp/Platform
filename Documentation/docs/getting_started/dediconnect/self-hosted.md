@@ -3,18 +3,21 @@ title: Home server
 sidebar_position: 10
 ---
 
-When you're using a dedicated server hosted from your home, there are a couple more things you need to prepare before you can use DediConnect.
+When using a dedicated server hosted on a home or office network, there are a couple extra things you need to configure.
 
-Check out the [recommended hardware specs](getting_started.md#hardware-specifications).
 
 :::caution
-You can not run DediConnect inside a Hyper-V, LXC or Docker container. You also cannot put a VPN in front of your server.
+- You cannot run DediConnect inside a Hyper-V, LXC or Docker container. 
+- You cannot put a VPN in front of your server.
 :::
 
-### Dedicated IP
+## Requirements
+Make sure your hardware meets the [hardware requirements](getting_started.md#hardware-specifications) and your machine runs a [supported Operating Systems (OS)](/getting_started/dediconnect/getting_started#supported-operating-systems-os).
+
+## Dedicated IP
 In order for people and GSA to connect with your machine, you need to make sure that your internet connection has a dedicated IP (or a dynamic IP that never changes). Contact your Internet Service Provider for more information.
 
-### Port forwards
+## Port forwards
 
 The ports listed below should be forwarded to the internal IP of your machine. Forwarding is usually configured on your router. For instructions how to forward ports on your router, please use a search engine.
 
