@@ -10,7 +10,7 @@ It helps admins keep their community up and running, mostly automatically.
 
 You can access GSA via any modern browser (desktop, tablet, mobile etc).
 
-[About the Dashboard >](dashboard)
+[About the Dashboard >](/dashboard)
 
 ---
 
@@ -21,10 +21,10 @@ There currently are 2 ways you can use GSA:
 ### DediConnect
 The auto-pilot for dedicated root machines and game servers which is actually easy to set up and requires zero technical experience.
 
-[More about DediConnect >](getting_started/dediconnect/getting_started.md)
+[More about DediConnect >](/getting_started/dediconnect/getting_started.md)
 
 
 ### RconConnect
 Connect self-hosted / rented game servers to supervise and access most other tools.
 
-[More about RconConnect >](getting_started/rconconnect/getting_started.md)
+[More about RconConnect >](/getting_started/rconconnect/connect_server.md)
