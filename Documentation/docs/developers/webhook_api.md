@@ -9,10 +9,10 @@ Webhooks can be used to trigger certain actions on your dashboard.
 ## Authentication
 You can find your Webhook API keys here: https://dash.gameserverapp.com/configure/api
 
-:::caution
-Never share your API credentials with anyone. GSA will never ask for these credentials.
+:::caution DO NOT SHARE
+GSA staff will never ask for your password or API keys. Never share your API keys with anyone!
 
-Handle the API credentials like your password.
+Handle the API keys like your password.
 :::
 
 ### Replace examples

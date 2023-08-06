@@ -96,6 +96,20 @@ html[data-theme='dark'] {
     margin-top: 40px;
 }
 
+.markdown h2 {
+    margin-top:70px;
+    padding-bottom:5px;
+    border-bottom: 1px solid rgb(47,47,47)
+}
+
+.markdown .theme-admonition {
+    margin-top:1.5em;
+}
+
+.markdown p img {
+    border:2px solid rgb(47,47,47)
+}
+
 .footer {
     &__links {
         margin-bottom:0.1rem;

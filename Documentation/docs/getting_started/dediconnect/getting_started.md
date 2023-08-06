@@ -7,8 +7,8 @@ DediConnect is an auto-pilot software for dedicated root machines and game serve
 
 [See how it works after installation >](/dashboard/machines/introduction)
 
-## Dedicated root machine 
----
+## Where to install DediConnect
+
 Choose one of the two options below to continue:
 
 ### Rent a machine
@@ -21,8 +21,7 @@ If you are experienced and host a machine on your home / the office network, you
 
 [Instructions for self-hosted machine >](/getting_started/dediconnect/self-hosted_machine)
 
-## What machine specs do you need?
----
+## What machine is right for you?
 
 :::tip Need help?
 [Jump on our Discord](https://www.gameserverapp.com/join-discord) and talk to one of the many experts that are happy to help you.
@@ -61,42 +60,22 @@ In most cases you should reserve 30GB disk space per game server.
 If you want to host 8 game servers, you need at least 240 GB (8 x 30 = 240GB). Preferably reserve 100GB extra for the system, totalling to 340GB.
 :::
 
-### Practical tips
+### DDoS protection
+Professional DDoS protection is recommended for popular communities. Small (PvE) communities or friend-only servers can easily do without.
 
-#### Spread across multiple machines
+## Practical tips
+
+### Fresh install
+It's best to install DediConnect on a machine you recently installed, ideally without installing anything else. This avoids conflicts with software not managed by GSA.
+
+### Spread across multiple machines
 In certain cases it may be cheaper to spread your game servers over multiple machines. Small machines are usually cheaper, without sacrificing performance.
 
 This also allows you to use different hardware for popular and less popular game servers, hosting the less popular maps on low spec hardware.
 
 
-## Requirements & recommendations
----
+## Which tech do we use?
 
-
-### Hardware specifications
-
-- Processor: 3.5GHz or more (AMD or Intel)
-- RAM: 64GB or more
-- DISK: 500GB or more
-
-
-### Supported Operating Systems (OS)
-
-:::info Pick the right OS
-The games you want to host should primarily determine what OS works best for your machine.
-Not all games work on every OS and in certain cases plugins only work one OS, so we recommend you do your research. [Join our Discord](https://www.gameserverapp.com/join-discord) for personal advice.
-:::
-- Debian 10
-- Debian 11
-- Ubuntu 22.04
-- Windows Server 2019 (Standard)
-- Windows Server 2022 (Standard)
-
-### DDoS protection
-Professional DDoS protection is recommended for popular communities. Small (PvE) communities or friend-only servers can easily do without.
-
-## Technical info about DediConnect
----
 Below you can find some technical information about how DediConnect works and what kind of tools it uses under the hood.
 
 ### Docker
