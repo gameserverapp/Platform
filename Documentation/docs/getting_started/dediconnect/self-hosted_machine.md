@@ -25,7 +25,7 @@ In order for people and GSA to connect with your machine, you need to make sure 
 
 ## Port forwards
 
-Make sure you forward [all ports that GSA may use on your machine](/getting_started/dediconnect/requirements#network-access).
+Make sure you forward [all ports that GSA may use on your machine](/getting_started/dediconnect/requirements#network-ports).
 
 Those ports should be forwarded to the internal IP of your machine. Forwarding is usually done on your router. For instructions about how to forward ports on your router, please use a search engine.
 
@@ -43,7 +43,7 @@ We do not recommend following the steps below unless an expert [on our discord](
 :::
 
 #### How does it work?
-Each machine will install using a different port offset. It's basically raising [all the port numbers that GSA might use](/getting_started/dediconnect/requirements#network-access) with the configured offset. 
+Each machine will install using a different port offset. It's basically raising [all the port numbers that GSA might use](/getting_started/dediconnect/requirements#network-ports) with the configured offset. 
 
 :::info Example
 Here are some offset examples for different configurations:
