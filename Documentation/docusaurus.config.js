@@ -17,22 +17,6 @@ const config = {
 
     plugins: [
         'docusaurus-plugin-sass',
-        // [
-        //     '@docusaurus/plugin-content-docs',
-        //     ({
-        //         id: 'admin_tools',
-        //         path: 'docs/admin_tools',
-        //         routeBasePath: '/admin_tools',
-        //         editUrl: ({locale, versionDocsDirPath, docPath}) => {
-        //             return `https://github.com/gameserverapp/Platform/edit/main/documentation/admin_tools/${docPath}`;
-        //         },
-        //         editCurrentVersion: true,
-        //         sidebarPath: require.resolve('./sidebars.js'),
-        //         showLastUpdateAuthor: false,
-        //         showLastUpdateTime: false,
-        //     }),
-        // ],
-
     ],
 
     presets: [
@@ -115,17 +99,12 @@ const config = {
                         docId: 'dashboard',
                         label: 'Dashboard',
                     },
-                    // {
-                    //     type: 'doc',
-                    //     docId: 'community_website',
-                    //     label: 'Community website',
-                    // },
-                    // {
-                    //     type: 'doc',
-                    //     position: 'left',
-                    //     docId: 'developers',
-                    //     label: 'Developers',
-                    // },
+                    {
+                        type: 'doc',
+                        position: 'left',
+                        docId: 'developers',
+                        label: 'Developers',
+                    },
 
                     //right
                     // {
@@ -184,11 +163,6 @@ const config = {
                 ],
                 copyright: `Copyright © ${new Date().getFullYear()} GameServerApp.com.`,
             },
-
-            // prism: {
-            //     darkTheme: darkCodeTheme,
-            //     theme: lightCodeTheme,
-            // },
             colorMode: {
                 defaultMode: 'dark',
                 disableSwitch: false,

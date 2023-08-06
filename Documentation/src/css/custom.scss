@@ -70,7 +70,8 @@ html[data-theme='dark'] {
     width: 24px;
 }
 
-.menu__list-item.theme-doc-sidebar-item-category-level-1:not(:first-child) {
+.menu__list-item.theme-doc-sidebar-item-category-level-1:not(:first-child),
+.menu__list-item.theme-doc-sidebar-item-link-level-1:not(:first-child), {
     margin-top: 0.5rem !important;
 }
 

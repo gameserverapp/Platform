@@ -1,7 +1,6 @@
 ---
-title: API
-sidebar_label: API info
+title: Developers
+sidebar_label: Introduction
 ---
 
 
-sd fasdf asdf asdf sdf asdfsd 
