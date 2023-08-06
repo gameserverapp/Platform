@@ -46,10 +46,10 @@ If you want to host 8 game servers, you need at least 8 `threads`. Preferably re
 ### Memory / RAM
 Running game servers load the save files into memory, which causes increased memory usages. When memory runs out, the server crashes.
 
-For most games you should reserve between 6 - 12 GB RAM per game server (9GB on average).
+For most games you should reserve between 4 - 10 GB RAM per game server (7GB on average).
 
 :::info Example
-If you want to host 8 game servers, you need at least 72 GB (8 x 9 = 72GB). Preferably reserve 4GB extra for system tasks, totalling to 76GB.
+If you want to host 8 game servers, you need at least 56 GB (8 x 7 = 56GB). Preferably reserve 4GB extra for system tasks, totalling to 60GB.
 :::
 
 ### Disk space
@@ -63,7 +63,7 @@ If you want to host 8 game servers, you need at least 240 GB (8 x 30 = 240GB). P
 
 ### Practical tips
 
-#### Spread across machines
+#### Spread across multiple machines
 In certain cases it may be cheaper to spread your game servers over multiple machines. Small machines are usually cheaper, without sacrificing performance.
 
 This also allows you to use different hardware for popular and less popular game servers, hosting the less popular maps on low spec hardware.
@@ -93,7 +93,7 @@ Not all games work on every OS and in certain cases plugins only work one OS, so
 - Windows Server 2022 (Standard)
 
 ### DDoS protection
-Professional DDoS protection is recommended for popular communities. Small communities or friend servers can easily do without.
+Professional DDoS protection is recommended for popular communities. Small (PvE) communities or friend-only servers can easily do without.
 
 ## Technical info about DediConnect
 ---
