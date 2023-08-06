@@ -15,7 +15,7 @@ const config = {
     onBrokenLinks: 'throw',
     onBrokenMarkdownLinks: 'warn',
     favicon: '/img/docs-logo-alt.ico',
-    organizationName: 'gameserverapp',
+    organizationName: 'GameServerApp',
     projectName: 'Platform',
 
     plugins: [
@@ -136,16 +136,16 @@ const config = {
                     },
                     {
                         href: 'https://dash.gameserverapp.com',
-                        label: 'Dashboard',
+                        label: 'Login',
                         position: 'right',
                         className: 'gsa-login',
                     },
-                    {
-                        href: 'https://www.gameserverapp.com/support/get-in-touch',
-                        label: 'Get in touch',
-                        position: 'right',
-                        // className: 'gsa-login',
-                    },
+                    // {
+                    //     href: 'https://www.gameserverapp.com/support/get-in-touch',
+                    //     label: 'Get in touch',
+                    //     position: 'right',
+                    //     // className: 'gsa-login',
+                    // },
                     // {
                     //     href: 'https://github.com/gameserverapp/platform',
                     //     position: 'right',
@@ -186,9 +186,15 @@ const config = {
                 ],
                 copyright: `Copyright © ${new Date().getFullYear()} GameServerApp.com.`,
             },
-            prism: {
-                theme: lightCodeTheme,
-                darkTheme: darkCodeTheme,
+
+            // prism: {
+            //     darkTheme: darkCodeTheme,
+            //     theme: lightCodeTheme,
+            // },
+            colorMode: {
+                defaultMode: 'dark',
+                disableSwitch: false,
+                respectPrefersColorScheme: true,
             },
         }),
 };

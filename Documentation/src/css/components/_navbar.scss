@@ -103,7 +103,7 @@ html[data-theme='dark'] {
                 align-items: center;
 
                 padding: 0.375rem 0.625rem;
-                margin:10px 0;
+                margin:10px 15px;
 
                 background: linear-gradient(0deg, #495fff 0%, #5295ff 114.68%);
 
@@ -120,6 +120,10 @@ html[data-theme='dark'] {
                 transition: opacity 0.2s ease-out;
 
                 margin-inline-start: 0.5rem;
+
+                @media (max-width: 996px) {
+                    display: none !important;
+                }
 
                 &:hover,
                 &:active {
