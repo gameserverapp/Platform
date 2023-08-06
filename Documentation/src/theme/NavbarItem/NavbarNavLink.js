@@ -7,7 +7,6 @@
 import React from 'react';
 import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import IconExternalLink from '@theme/IconExternalLink';
 import isInternalUrl from '@docusaurus/isInternalUrl';
 import {isRegexpStringMatch} from '@docusaurus/theme-common';
 const dropdownLinkActiveClass = 'dropdown__link--active';
@@ -55,12 +54,6 @@ export default function NavbarNavLink({
       {isExternalLink ? (
         <span>
           {label}
-          <IconExternalLink
-            {...(isDropdownLink && {
-              width: 12,
-              height: 12,
-            })}
-          />
         </span>
       ) : (
         label

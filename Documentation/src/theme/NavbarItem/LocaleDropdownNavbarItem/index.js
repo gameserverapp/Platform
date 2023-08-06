@@ -6,7 +6,6 @@
  */
 import React from 'react';
 import DropdownNavbarItem from '@theme/NavbarItem/DropdownNavbarItem';
-import IconLanguage from '@theme/IconLanguage';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import {useAlternatePageUtils} from '@docusaurus/theme-common';
 import styles from './styles.module.css';
@@ -48,7 +47,6 @@ export default function LocaleDropdownNavbarItem({
       mobile={mobile}
       label={
         <span>
-          <IconLanguage className={styles.iconLanguage} />
           <span>{dropdownLabel}</span>
         </span>
       }
