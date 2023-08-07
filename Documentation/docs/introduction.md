@@ -56,7 +56,7 @@ Learn how to style the content on the [Docusaurus Markdown docs](https://docusau
 ![Contribute 3](/img/getting_started/contribute/contribute_3.jpg)
 
 ### 4. Explain what you changed
-Before your changes are published they are first reviewed. Help reviewers understand what you changed by writing a clear description. Hit `Propose changes` when you're done.
+Before your changes are published they need to be reviewed first. Help the reviewer understand what you changed by writing a clear description. Hit `Propose changes` when you're done.
 
 ![Contribute 4](/img/getting_started/contribute/contribute_4.jpg)
 
