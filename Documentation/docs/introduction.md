@@ -19,7 +19,7 @@ You can access GSA via any modern browser (desktop, tablet, mobile etc).
 There currently are 2 ways you can use GSA:
 
 ### DediConnect
-The auto-pilot for dedicated root machines and game servers which is actually easy to set up and requires zero technical experience.
+The auto-pilot for dedicated root machines and game servers that is actually easy to set up and requires zero technical experience.
 
 [More about DediConnect >](/getting_started/dediconnect/getting_started)
 
