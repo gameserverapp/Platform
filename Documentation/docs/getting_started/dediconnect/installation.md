@@ -6,7 +6,7 @@ sidebar_position: 2
 Learn how to connect your dedicated root machine with DediConnect.
 
 :::caution before you begin
-Ensure the machine has a [supported OS](/getting_started/dediconnect/requirements) installed and meets the [hardware requirements](/getting_started/dediconnect/requirements).
+Ensure the machine has a [supported OS](/getting_started/dediconnect/requirements) installed and meets the [requirements](/getting_started/dediconnect/requirements).
 :::
 
 ## Linux
