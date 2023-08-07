@@ -69,7 +69,7 @@ Hit `Create pull request` when you're all set!
 ![Contribute 6](/img/getting_started/contribute/contribute_6.jpg)
 
 ### 6. Done 🎉
-Thank you for creating a pull request with your changes! ❤️
+Thank you for creating a pull request with your changes! 💙
 
 Someone will review your changes and merge them into the main documentation.
 
