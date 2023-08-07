@@ -1,13 +1,15 @@
 # Community project management
-We use Github to better collaborate with our customers.
-Help improve the platform by posting, discussing and upvoting your favorite ideas.
+We use Github to collaborate and give people insight into our progress and roadmap.
 
-## In-progress & ready-for-development
-Search our backlog and find what we're currently working on.
-Share your thoughts with the dev team on planned features.
+## Contribute
+Contribute by posting suggestions, leaving comments and up voting suggestions.
+
+## Releases
+You can [find all our releases here >](https://github.com/gameserverapp/Platform/discussions/categories/announcements)
+
+---
 
 ## Documentation
-Documentation helping you understand GSA and how to get the most out of each feature can be found on help.gameserverapp.com](https://help.gameserverapp.com).
+You can find the GameServerApp documentation on [docs.gameserverapp.com](https://docs.gameserverapp.com).
 
-### Docs issue?
-Found a typo or outdated info? Submit your change and help keep the docs neat and up-to-date.
+To contribute check out: [How you can contribute](https://docs.gameserverapp.com/#help-improve-the-documentation)
