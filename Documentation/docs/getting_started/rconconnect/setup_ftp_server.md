@@ -3,6 +3,10 @@ title: Setup FTP Server (Windows)
 sidebar_position: 2
 ---
 
+:::warning RconConnect only
+These instructions are for RconConnect game servers only!
+:::
+
 ## 1. Download FileZilla server
 Download [FileZilla server](https://filezilla-project.org/download.php?type=server) on your dedicated machine.
 

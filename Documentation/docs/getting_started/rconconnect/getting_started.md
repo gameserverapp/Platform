@@ -6,7 +6,9 @@ sidebar_position: 1
 RconConnect helps you supervise self-hosted & rented game servers and get a helicopter view.
 
 :::info Limited features
-While we try to make most features available for RconConnect, it's not possible to manage your game server (start, stop, update) when using RconConnect. Use [DediConnect](/getting_started/dediconnect/getting_started) for that instead.
+While we try to make most features available for RconConnect, managing game servers (start, stop, update etc.) is not available for RconConnect.
+
+Use [DediConnect](/getting_started/dediconnect/getting_started) if you want an auto-pilot for game servers.
 :::
 
 
@@ -26,9 +28,9 @@ Follow instructions on the form and hit `Connect RconConnect server` at the bott
 ![RconConnect connect 1](/img/getting_started/rconconnect/getting_started/connect_1.png)
 
 :::info FTP access
-Some games need FTP access to gather information about your players, so the dashboard can present this to you. 
+For certain games RconConnect needs FTP access to support features like admin tools and the shop.
 
-[Learn how to install a FTP server on your machine](/getting_started/rconconnect/setup_ftp_server)
+[Learn how to install a FTP server on your machine >](/getting_started/rconconnect/setup_ftp_server)
 :::
 
 :::caution Find FTP path

@@ -10,7 +10,7 @@ const config = {
     url: 'https://docs.gameserverapp.com',
     baseUrl: '/',
     onBrokenLinks: 'throw',
-    onBrokenMarkdownLinks: 'warn',
+    onBrokenMarkdownLinks: 'throw',
     favicon: '/img/docs-logo-alt.ico',
     organizationName: 'GameServerApp',
     projectName: 'Platform',
