@@ -42,10 +42,10 @@ const config = {
     themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
         ({
-            // announcementBar: {
-            //     id: 'announcementBar-2', // Increment on change
-            //     content: `⭐️ If you like Docusaurus, give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/facebook/docusaurus">GitHub</a> and follow us on <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/docusaurus" >Twitter</a>`,
-            // },
+            announcementBar: {
+                id: 'announcementBar-3', // Increment on change
+                content: `We are migrating our documentation to this new site. It is work in progress`,
+            },
 
             // algolia: {
             //     // The application ID provided by Algolia

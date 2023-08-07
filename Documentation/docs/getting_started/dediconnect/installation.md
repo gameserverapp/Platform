@@ -17,6 +17,7 @@ Continue at the [DediConnect setup page >](https://dash.gameserverapp.com/order/
 
 
 ## Windows
+Follow the steps below after Windows finished installing.
 
 ### 1. Login with RDP
 Use [Microsoft Remote Desktop](https://www.microsoft.com/en-us/p/microsoft-remote-desktop/9wzdncrfj3ps?activetab=pivot:overviewtab) to login on your dedicated machine using the `Administrator` account and the password you received from your hosting provider.
@@ -89,12 +90,12 @@ Right-click the `Administrator` account and click `Set Password`.
 ![Windows user 6](/img/getting_started/dediconnect/installation/windows_user_6.png)
 
 
-#### 6. Enter new password for Administrator
+#### 7. Enter new password for Administrator
 Enter the password you received from the hosting provider.
 
 ![Windows user 6](/img/getting_started/dediconnect/installation/windows_user_7.png)
 
-#### 7. Test the new acount
+#### 8. Test the new acount
 Close the RDP connection and login again using the `Administrator` user to confirm everything is working.
 
 ---

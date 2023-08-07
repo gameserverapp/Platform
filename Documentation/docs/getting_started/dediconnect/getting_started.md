@@ -14,12 +14,12 @@ Choose one of the two options below to continue:
 ### Rent a machine
 When you are new to dedicated machines or prefer a professional solution, we recommend you rent a dedicated machine from a hosting provider. It's easy and robust.
 
-[Instructions for hosting provider machines >](/getting_started/dediconnect/hosting_providers)
+[Find a dedicated machine provider >](/getting_started/dediconnect/hosting_providers)
 
 ### Self-hosted machine
 If you are experienced and host a machine on your home / the office network, you can probably use that machine for DediConnect.
 
-[Instructions for self-hosted machine >](/getting_started/dediconnect/self-hosted_machine)
+[Using self-hosted machines >](/getting_started/dediconnect/self-hosted_machine)
 
 ## What machine is right for you?
 

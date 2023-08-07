@@ -24,7 +24,7 @@ Not all games work on every OS and in certain cases plugins only work one OS, so
 - DISK: 500GB or more
 
 :::caution Windows drive
-GSA can currently only installs DediConnect on the C:\ drive.
+GSA can currently only install DediConnect on the C:\ drive.
 :::
 
 ## Root / Administrator access
