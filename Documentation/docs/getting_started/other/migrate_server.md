@@ -52,3 +52,9 @@ Upload the configs from the old game server to a Config template.
 
 ### Plugin / mod configs
 Upload the plugin & mod configs to a Config template. This is only supported for DediConnect game servers.
+
+## 4. Import ban list
+You can import your existing ban list to GSA via the [Import page >](https://dash.gameserverapp.com/configure/import).
+
+
+![Translate menu](/img/getting_started/other/import_banlist.jpg)

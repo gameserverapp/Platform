@@ -1,6 +1,6 @@
 ---
-title: Additional admins
-sidebar_position: 3
+title: Admin teams
+sidebar_position: 1
 ---
 
 ## Invite admins

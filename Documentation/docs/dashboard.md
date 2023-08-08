@@ -2,21 +2,53 @@
 title: Getting started
 ---
 
-## Your personalized checklist
+The GameServerApp dashboard allows you to access and manage your community from anywhere on the planet, where there is an internet connection and a browser.
+
+:::info Good to know
+GSA staff will __never__ ask for your password or API keys. Do not share them with anyone.
+:::
+
+## Install web app
+Install the GameServerApp web app on your phone for easy access. 
+
+### iOS
+Open Safari on your iOS device and follow these steps:
+
+![Install iOS web app](/img/dashboard/getting_started/ios_web_app.jpg)
+
+### Android
+Open Chrome on your Android device and follow these steps:
+
+![Install Andriod web app](/img/dashboard/getting_started/andriod_web_app.jpg)
 
 ## The dashboard
 
-### Switching between dashboards
+### Your personalized checklist
+To help you get setup and familiar with the dashboard, you can use your personalized checklist.
+
+![Install iOS web app](/img/dashboard/getting_started/getting_started.jpg)
+
+### Switch between dashboards
+
+You can switch between dashboards / communities via the dropdown button in the __top-left corner__, on the dashboard.
+
+![Switch dashboard](/img/dashboard/getting_started/switch_dashboard.jpg)
 
 ### Shortcut menu
+Use the shortcut menu in the __top-right corner__, on the dashboard, to get quick access to:
+- Reports
+- Broadcast a message on game servers
+- Execute a RCON command on game servers
+- Links to your community website and other useful links
+- Dark / Light mode switch
+- Logout
+
+![Shortcut menu](/img/dashboard/getting_started/shortcut_menu.jpg)
+
 
 ### Multi-language
+The dashboard comes with an automatic translator that will translate the website to your preferred language (Arabic, Chinese, English, French, German and Spanish).
 
-### Mobile web app
+Powered by Google Translate.
 
-
-## API keys
-
-## Import
-
-### Banlist
+![Translate menu](/img/dashboard/getting_started/translate.jpg)

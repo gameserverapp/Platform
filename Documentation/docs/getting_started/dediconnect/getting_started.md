@@ -5,7 +5,7 @@ sidebar_position: 1
 
 DediConnect is an auto-pilot software for dedicated root machines and game servers. It does all the heavy lifting autonomously, like installing game servers, performing updates and crash recovery.
 
-[See how it works after installation >](/dashboard/machines/introduction)
+[See how it works after installation >](/dashboard/machines/getting_started)
 
 ## Where to install DediConnect
 

@@ -1,6 +1,6 @@
 ---
 title: Custom roles
-sidebar_position: 5
+sidebar_position: 1
 ---
 
 # Easy Tutorial

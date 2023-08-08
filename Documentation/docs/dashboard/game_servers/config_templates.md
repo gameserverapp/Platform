@@ -5,7 +5,17 @@ sidebar_position: 2
 
 [//]: # (todo What are config templates and why is this better than managing files manually)
 
-## Assigned game servers
+## The basics
+
+### Game server actions
+
+### Cloning
+
+### Notes
+
+### Groups
+
+### Archive
 
 
 ## Game configs
@@ -27,7 +37,6 @@ sidebar_position: 2
 ### SteamCMD branch
 
 ### Custom launch script
-## Notes
 
 ## Third party apps
 
