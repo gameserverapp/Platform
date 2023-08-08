@@ -24,7 +24,7 @@ Open Chrome on your Android device and follow these steps:
 ## The dashboard
 
 ### Your personalized checklist
-To help you get setup and familiar with the dashboard, you can use your personalized checklist.
+To help you familiar with the dashboard, you can use your personalized checklist.
 
 ![Install iOS web app](/img/dashboard/getting_started/getting_started.jpg)
 
@@ -37,11 +37,13 @@ You can switch between dashboards / communities via the dropdown button in the _
 ### Shortcut menu
 Use the shortcut menu in the __top-right corner__, on the dashboard, to get quick access to:
 - Reports
-- Broadcast a message on game servers
-- Execute a RCON command on game servers
+- Broadcast a message on game servers *
+- Execute a RCON command on game servers *
 - Links to your community website and other useful links
 - Dark / Light mode switch
 - Logout
+
+_\* = Check the [supported features per game](https://dash.gameserverapp.com/features-per-game) list to see which games support this feature._
 
 ![Shortcut menu](/img/dashboard/getting_started/shortcut_menu.jpg)
 
