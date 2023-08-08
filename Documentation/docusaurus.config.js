@@ -27,8 +27,8 @@ const config = {
                     sidebarPath: 'sidebars.js',
                     editUrl: 'https://github.com/gameserverapp/platform/tree/main/Documentation',
                     routeBasePath: '/',
-                    showLastUpdateTime: true,
-                    showLastUpdateAuthor: true
+                    // showLastUpdateTime: true, //not supported by CloudFlare
+                    // showLastUpdateAuthor: true //not supported by CloudFlare
                 },
                 blog: {
                     showReadingTime: true,
