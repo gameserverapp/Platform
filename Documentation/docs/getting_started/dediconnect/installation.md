@@ -36,12 +36,12 @@ Click the `Windows Start` button and type `Powershell` and hit `enter` to open i
 ### 3. Run command in PowerShell
 Copy the command for your OS and paste it into PowerShell. Then hit `enter` to execute it. When the script has finished it will restart the machine.
 
-#### Windows Server 2019 (Standard)
+#### Windows Server 2019
 ```powershell
 Invoke-WebRequest -Uri https://raw.githubusercontent.com/gameserverapp/Platform/main/Downloads/DediConnect/install-script_windows-server-2019.ps1 -OutFile .\install-script.ps1; .\install-script.ps1
 ```
 
-#### Windows Server 2022 (Standard)
+#### Windows Server 2022
 ```powershell
 Invoke-WebRequest -Uri https://raw.githubusercontent.com/gameserverapp/Platform/main/Downloads/DediConnect/install-script_windows-server-2022.ps1 -OutFile .\install-script.ps1; .\install-script.ps1
 ```
