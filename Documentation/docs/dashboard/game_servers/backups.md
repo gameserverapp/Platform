@@ -1,4 +1,4 @@
 ---
-title: Mods & plugins
+title: Backups
 sidebar_position: 1
 ---

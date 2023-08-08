@@ -1,8 +1,15 @@
 ---
 title: Clusters
-sidebar_position: 1
+sidebar_position: 3
 ---
 
-# Easy Tutorial
+[//]: # (todo Basic info about clusters + cluster id for games like ARK)
 
-This is the easy tutorial!
+## Manage clusters
+[//]: # (todo info about creating, updating, reordering & deleting clusters)
+
+## Cluster chat
+
+### Variables
+
+[//]: # (todo https://help.gameserverapp.com/article/233-cluster-chat)

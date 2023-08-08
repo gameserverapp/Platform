@@ -1,7 +1,22 @@
 ---
-title: Dashboard basics
-sidebar_label: The basics
+title: Getting started
 ---
 
+## Your personalized checklist
 
-sd fasdf asdf asdf sdf asdfsd 
+## The dashboard
+
+### Switching between dashboards
+
+### Shortcut menu
+
+### Multi-language
+
+### Mobile web app
+
+
+## API keys
+
+## Import
+
+### Banlist

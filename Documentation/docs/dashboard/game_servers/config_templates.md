@@ -3,6 +3,32 @@ title: Config templates
 sidebar_position: 2
 ---
 
-# Easy Tutorial
+[//]: # (todo What are config templates and why is this better than managing files manually)
 
-This is the easy tutorial!
+## Assigned game servers
+
+
+## Game configs
+
+### Default configs
+
+### Easy & Advanced mode
+
+### Variables
+
+## Plugin configs
+
+## Settings
+
+### Admin ID's
+
+### Game server automation settings
+
+### SteamCMD branch
+
+### Custom launch script
+## Notes
+
+## Third party apps
+
+### Beacon

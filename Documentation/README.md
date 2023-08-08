@@ -1,7 +1,7 @@
 # Help maintain the docs
 You can help maintain the docs. Please try to keep your writing in simple plain English, so everyone can understand.
 
-[//]: # (TODO add link to "how to")
+[Learn how you can contribute >](https://docs.gameserverapp.com/getting_started/other/contribute)
 
 
 # Website

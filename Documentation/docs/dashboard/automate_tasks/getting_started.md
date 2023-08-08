@@ -3,6 +3,24 @@ title: Getting started
 sidebar_position: 0
 ---
 
-# Easy Tutorial
 
-This is the easy tutorial!
+## Types
+
+### Achievement
+
+### Scheduled
+
+### Trigger / event
+
+## Settings
+
+### Activate for server or cluster
+
+### Ignore player status
+
+### Ignore server status
+
+### Unrelated to game server or cluster
+
+
+## Task groups

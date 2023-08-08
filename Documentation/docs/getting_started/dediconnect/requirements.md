@@ -14,8 +14,8 @@ Not all games work on every OS and in certain cases plugins only work one OS, so
 - Debian 10
 - Debian 11
 - Ubuntu 22.04
-- Windows Server 2019 (Standard)
-- Windows Server 2022 (Standard)
+- Windows Server 2019 (Standard & Datacenter edition)
+- Windows Server 2022 (Standard & Datacenter edition)
 
 ## Hardware specifications
 

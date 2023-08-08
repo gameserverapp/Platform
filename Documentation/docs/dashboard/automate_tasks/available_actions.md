@@ -1,5 +1,5 @@
 ---
-title: Getting started
+title: Available actions
 sidebar_position: 1
 ---
 
