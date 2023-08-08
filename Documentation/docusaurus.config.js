@@ -27,6 +27,8 @@ const config = {
                     sidebarPath: 'sidebars.js',
                     editUrl: 'https://github.com/gameserverapp/platform/tree/main/Documentation',
                     routeBasePath: '/',
+                    showLastUpdateTime: true,
+                    showLastUpdateAuthor: true
                 },
                 blog: {
                     showReadingTime: true,

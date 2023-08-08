@@ -12,7 +12,7 @@ After clicking `Edit this page` you are taken to the Github source page. Click t
 
 
 ### 2. Fork the repository
-Hit the `For this repository` button.
+Hit the `For this repository` button. This only shows the first time you edit a page.
 
 ![Contribute 2](/img/getting_started/contribute/contribute_2.jpg)
 
