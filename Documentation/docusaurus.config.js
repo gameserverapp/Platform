@@ -114,6 +114,12 @@ const config = {
                     //     position: 'right',
                     // },
                     {
+                        href: 'https://www.gameserverapp.com/',
+                        label: 'Visit website',
+                        position: 'right',
+                        // className: 'gsa-login',
+                    },
+                    {
                         href: 'https://dash.gameserverapp.com',
                         label: 'Login',
                         position: 'right',
@@ -142,7 +148,11 @@ const config = {
                 style: 'dark',
                 links: [
                     {
-                        label: 'Dashboard',
+                        label: 'GameServerApp.com',
+                        href: 'https://www.gameserverapp.com/',
+                    },
+                    {
+                        label: 'Sign in / register',
                         href: 'https://dash.gameserverapp.com/',
                     },
                     {
@@ -150,7 +160,7 @@ const config = {
                         href: 'https://status.gameserverapp.com/',
                     },
                     {
-                        label: 'Changelog',
+                        label: 'Release notes',
                         href: 'https://github.com/gameserverapp/Platform/discussions/categories/announcements',
                     },
                     {

@@ -9,6 +9,10 @@ sidebar_position: 2
 
 ### Game server actions
 
+#### Attach to game servers
+
+#### Restart game servers
+
 ### Cloning
 
 ### Notes
