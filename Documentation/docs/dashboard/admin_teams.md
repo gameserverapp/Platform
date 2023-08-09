@@ -3,14 +3,48 @@ title: Admin teams
 sidebar_position: 1
 ---
 
-## Invite admin team members
+Work together with the entire team, without the usual security risks like sharing RDP passwords.
 
-### Assign team
+[Go to Admin teams >](https://dash.gameserverapp.com/configure/admins)
 
-### Attach player account
+## Team members
 
-## Permissions
+### Invite an admin
+Click `+Invite admin` or `Invite team member` to open the invitation window.
+
+:::info
+Team members need to create a GSA account before they can be invited to a dashboard.
+:::
+
+![Invite admin team member](/img/dashboard/admin_teams/invite_admin.jpg)
+
+### Manage admins
+After inviting admins to the dashboard, you can assign them to an `Admin team`. Additionally can you link their in-game player to their account.
+
+![Manage admin team member](/img/dashboard/admin_teams/manage_admins.jpg)
+
+## Team permissions
+Precisely control per team what dashboard sections they have access too and what they can do. Grant read-only or full access.
+
+![Manage admin team permissions](/img/dashboard/admin_teams/permissions.jpg)
 
 ### Test-drive
+Quickly test what teams can do on the dashboard using the Test-drive feature.
+
+![Test admin team permissions](/img/dashboard/admin_teams/permission-test-drive.png)
+
+
 
 ## Activity logs
+See what team members did. Use the filters on the right to narrow down to specific actions.
+
+[Go to Logs >](https://dash.gameserverapp.com/configure/logs)
+
+![Test admin team permissions](/img/dashboard/admin_teams/admin_logs.jpg)
+
+### Report activity to discord
+Report specific admin activity to your Discord server. You can set this up on the `Settings` page.
+
+[Go to Log settings >](https://dash.gameserverapp.com/configure/logs/settings)
+
+![Report admin team activity to discord](/img/dashboard/admin_teams/report_activity_to_discord.jpg)
