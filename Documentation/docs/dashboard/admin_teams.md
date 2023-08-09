@@ -3,11 +3,13 @@ title: Admin teams
 sidebar_position: 1
 ---
 
-## Invite admins
+## Invite admin team members
 
-### Select player
+### Assign team
 
-## Teams & permissions
+### Attach player account
+
+## Permissions
 
 ### Test-drive
 
