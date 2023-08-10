@@ -17,6 +17,11 @@ Quickly test what teams can do on the dashboard using the Test-drive feature.
 
 ![Test admin team permissions](/img/dashboard/admin_teams/permission-test-drive.png)
 
+### Grant forum permissions
+Grant `Manage forum` permissions to let admins manage the forum on the Community website.
+
+![Manage forum](/img/dashboard/admin_teams/manage_forum.jpg)
+
 ## Team members
 
 ### Invite an admin
