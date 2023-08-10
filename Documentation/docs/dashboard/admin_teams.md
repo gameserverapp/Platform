@@ -7,6 +7,16 @@ Work together with the entire team, without the usual security risks like sharin
 
 [Go to Admin teams >](https://dash.gameserverapp.com/configure/admins)
 
+## Team permissions
+Configure what dashboard sections each team can access and what they can do. Grant read-only or full access.
+
+![Manage admin team permissions](/img/dashboard/admin_teams/permissions.jpg)
+
+### Test-drive
+Quickly test what teams can do on the dashboard using the Test-drive feature.
+
+![Test admin team permissions](/img/dashboard/admin_teams/permission-test-drive.png)
+
 ## Team members
 
 ### Invite an admin
@@ -22,17 +32,6 @@ Team members need to create a GSA account before they can be invited to a dashbo
 After inviting admins to the dashboard, you can assign them to an `Admin team`. Additionally can you link their in-game player to their account.
 
 ![Manage admin team member](/img/dashboard/admin_teams/manage_admins.jpg)
-
-## Team permissions
-Precisely control per team what dashboard sections they have access too and what they can do. Grant read-only or full access.
-
-![Manage admin team permissions](/img/dashboard/admin_teams/permissions.jpg)
-
-### Test-drive
-Quickly test what teams can do on the dashboard using the Test-drive feature.
-
-![Test admin team permissions](/img/dashboard/admin_teams/permission-test-drive.png)
-
 
 
 ## Activity logs
