@@ -11,7 +11,7 @@ const config = {
     baseUrl: '/',
     onBrokenLinks: 'throw',
     onBrokenMarkdownLinks: 'throw',
-    favicon: '/img/docs-logo-alt.ico',
+    favicon: '/img/docs-logo-alt.ico', //todo replace with slightly offset color, so people can easily recognise difference between platform & docs tabs in the browser
     organizationName: 'GameServerApp',
     projectName: 'Platform',
 
