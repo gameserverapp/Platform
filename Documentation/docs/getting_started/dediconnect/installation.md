@@ -9,17 +9,19 @@ Learn how to connect your dedicated root machine with DediConnect.
 Ensure the machine has a [supported OS](/getting_started/dediconnect/requirements) installed and meets the [requirements](/getting_started/dediconnect/requirements).
 :::
 
-## Linux
+## Prepare the machine
 
-After installing Linux you can connect the dedicated machine with DediConnect straight away. DediConnect will prepare your machine and install everything you need.
+### Linux
 
-Continue at the [DediConnect setup page >](https://dash.gameserverapp.com/order/machine) 
+After installing Linux you can connect the dedicated machine with DediConnect straight away. DediConnect will install everything the machines needs to host game servers.
+
+Continue with [connecting to DediConnect >](/getting_started/dediconnect/installation#connect-dediconnect)
 
 
-## Windows
+### Windows
 Follow the steps below after Windows finished installing.
 
-### 1. Login with RDP
+#### 1. Login with RDP
 Use [Microsoft Remote Desktop](https://www.microsoft.com/en-us/p/microsoft-remote-desktop/9wzdncrfj3ps?activetab=pivot:overviewtab) to login on your dedicated machine using the `Administrator` account and the password you received from your hosting provider.
 
 :::info `Administrator` user required
@@ -28,20 +30,20 @@ Did your machine come without a `Administrator` user account?
 [Learn how to activate it >](/getting_started/dediconnect/installation#activate-administrator-user-on-windows)
 :::
 
-### 2. Open "PowerShell"
+#### 2. Open "PowerShell"
 Click the `Windows Start` button and type `Powershell` and hit `enter` to open it.
 
 ![Windows install 1](/img/getting_started/dediconnect/installation/windows_install_1.jpeg)
 
-### 3. Run command in PowerShell
+#### 3. Run command in PowerShell
 Copy the command for your OS and paste it into PowerShell. Then hit `enter` to execute it. When the script has finished it will restart the machine.
 
-#### Windows Server 2019
+##### Windows Server 2019
 ```powershell
 Invoke-WebRequest -Uri https://raw.githubusercontent.com/gameserverapp/Platform/main/Downloads/DediConnect/install-script_windows-server-2019.ps1 -OutFile .\install-script.ps1; .\install-script.ps1
 ```
 
-#### Windows Server 2022
+##### Windows Server 2022
 ```powershell
 Invoke-WebRequest -Uri https://raw.githubusercontent.com/gameserverapp/Platform/main/Downloads/DediConnect/install-script_windows-server-2022.ps1 -OutFile .\install-script.ps1; .\install-script.ps1
 ```
@@ -51,8 +53,48 @@ After hitting `enter` it may take a while for the script to finish. Do __not__ c
 :::
 
 
-### 4. Machine came back online
-After your machine rebooted and came back online it is ready to [connect with Dediconnect >](https://dash.gameserverapp.com/order/machine?port_offset=1000)
+#### 4. Wait for machine to come back online
+After the machine rebooted and it is operational it is ready to [connect with Dediconnect](/getting_started/dediconnect/installation#connect-dediconnect).
+
+## Connect DediConnect
+
+### 1. Go to "Connect machine" page
+Go to the machines overview page by clicking `Machines` in the sidebar. Take a shortcut by clicking the <icon icon="fa-solid fa-plus-square" size="lg" /> next to `Machines`.
+
+![Connect machine 1](/img/getting_started/dediconnect/installation/connect_machine_1.jpg)
+
+### 2. Enter machine IP
+GSA will perform a quick scan to check if your machine is compatible with DediConnect.
+
+![Connect machine 2](/img/getting_started/dediconnect/installation/connect_machine_2.jpg)
+
+### 3. Enter credentials
+Enter the username and password that came with your dedicated root machine. GSA needs this information to manage game servers and services on the machine.
+
+We securely store this information using `AES-256` encryption (Military grade).
+
+
+:::tip SSH Key Auth
+If you have experience with machines and you prefer using key-based authentication, check out the [information about SSH](/getting_started/dediconnect/getting_started#ssh). If you have no idea what this means, just ignore.
+:::
+
+Hit `Start installation` when you're ready.
+
+![Connect machine 3](/img/getting_started/dediconnect/installation/connect_machine_3.jpg)
+
+### 4. Installation
+After clicking `Start installation` DediConnect will install all the required software on the machine to host game servers.
+
+You get an email when the installation is finished.
+
+![Connect machine 4](/img/getting_started/dediconnect/installation/connect_machine_4.jpg)
+
+### 5. Ready!
+When the installation finished you can start using the machine.
+
+[Learn how to install game servers and services >](/dashboard/machines/getting_started)
+
+![Connect machine 5](/img/getting_started/dediconnect/installation/connect_machine_5.jpg)
 
 
 ## Troubleshooting
