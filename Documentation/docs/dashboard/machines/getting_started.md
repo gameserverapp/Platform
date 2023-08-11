@@ -50,6 +50,10 @@ After clicking a service, DediConnect will begin installing the service.
 
 [Learn more about the available services >](/dashboard/machines/services)
 
+## Game server controls
+
+[//]: # (todo show how to use action sidebar to mass-update etc)
+
 ## Activity
 All activity for a machine, either initiated by an admin or the DediConnect system is reported to the activity page. Issues are also reported here.
 
@@ -91,7 +95,6 @@ In rare occasions the required game server files can only be downloaded from Ste
 While we agree that having to enter Steam credentials and disabling Steam Guard is far from ideal, it's currently the only option.
 
 ![Machine settings - steam download credentials](/img/dashboard/machines/getting_started/machine_steam_download_credentials.jpg)
-
 
 ## Danger zone
 
