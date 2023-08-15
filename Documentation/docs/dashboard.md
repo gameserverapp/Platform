@@ -2,7 +2,7 @@
 title: Getting started
 ---
 
-The GameServerApp dashboard allows you to access and manage your community from anywhere on the planet, where there is an internet connection and a browser.
+The GameServerApp dashboard gives you access to your community from anywhere on the planet, where there is an internet connection and a browser.
 
 :::info Good to know
 GSA staff will __never__ ask for your password or API keys. Do not share them with anyone.
