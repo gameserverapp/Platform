@@ -15,3 +15,10 @@ title: "ARK: Survival Evolved"
 
 ## Integrate page info
 [//]: # (TODO add reference to `integrate` page @ game server settings)
+
+
+## Settings
+
+### Wipe dinos on start
+Wipe all the dinos on each start by adding `-ForceRespawnDinos` to the "end" section, in your active config template.
+This does not affect tamed / sleeping dinos.
