@@ -3,7 +3,7 @@ title: 💥 Troubleshooting 💥
 sidebar_position: 999
 ---
 
-## Game server not starting
+## Game server not starting / crashing
 
 :::caution
 Before contacting support you should follow all steps below.
@@ -39,7 +39,7 @@ Create a new config template and slowly copy/paste sections from your old config
 :::
 
 ### 7. Default map
-Launch the game server with the default map.
+Launch the game server with the default [map](/dashboard/game_servers/getting_started#settings).
 
 :::tip Working now?
 The map you selected is either broken or you entered an incorrect custom map path.
