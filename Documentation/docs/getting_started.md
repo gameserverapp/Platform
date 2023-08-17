@@ -9,7 +9,7 @@ It helps admins keep their community up and running, mostly automatically.
 
 You can access GSA via any modern browser (desktop, tablet, mobile etc).
 
-[About the Dashboard >](/dashboard)
+[About the Dashboard >](/)
 
 
 ## Ways to connect with GSA
