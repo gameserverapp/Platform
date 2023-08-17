@@ -6,7 +6,7 @@ Fully automated mod / plugin installation and updating support for:
 - Steam Workshop mods
 - ARK Server API plugins
 - uMod plugins
-- SpigotMC plugins
+- PaperMC plugins
 
 ![Mods & plugins - ](/img/dashboard/gameserver/mods_plugins/mod_overview.jpg)
 
