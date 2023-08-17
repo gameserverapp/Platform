@@ -55,10 +55,6 @@ A mod or plugin was causing the problem. Slowly enable mods / plugins one by one
 ### 9. Reinstall game server
 Occasionally something goes wrong with game servers. When none of the above suggestions solved the problems, please try [re-installing the game server](/dashboard/game_servers/getting_started/#re-install)
 
-:::tip Working now?
-A mod or plugin was causing the problem. Slowly enable mods / plugins one by one and restart the server every time you add a new one. When the server stops working again you know which mod / plugin caused it.
-:::
-
 
 ## Increased memory usage
 
