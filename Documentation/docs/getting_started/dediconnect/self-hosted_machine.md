@@ -16,8 +16,8 @@ Make sure your hardware meets the [hardware requirements](/getting_started/dedic
 :::
 
 
-:::info Update your drivers
-Make sure you updated your drivers after you installed the OS. This may cause degraded performance.
+:::info Update the drivers
+Make sure the drivers on the machine are up-to-date after installing the OS. Outdated drivers can cause degraded performance.
 :::
 
 ## Dedicated IP
