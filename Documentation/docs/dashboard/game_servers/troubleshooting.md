@@ -13,7 +13,7 @@ Before contacting support you should follow all steps below.
 - Check the [logs](/dashboard/game_servers/getting_started#logs). Look for crashes or errors that mention what is causing your server to crash / stop working.
 - Check [Activities](/dashboard/game_servers/getting_started#activity) for any recent changes and/or Docker startup errors.
 - Use Google to loop up a solution for any errors / crash logs you find.
-- Reach out to the game / mod / plugin developers for any errors you find. If there is an error, GSA probably can't do anything about it.
+- Reach out to the game / mod / plugin developers for any errors you find. If there is an error with any of those GSA probably can't do anything about it.
 
 
 ### 2. Check the system
