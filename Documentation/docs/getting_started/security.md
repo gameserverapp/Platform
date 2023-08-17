@@ -33,4 +33,4 @@ ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIC9BY5UGWpFTOHDRskIeide5oWYPSh97eJkTlQCzNi0S
 
 ## Report security issue
 
-Found a security issues? Please always report to `support@gameserversapp.com`.
+Found a security issues? Please always report to `support@gameserverapp.com`.
