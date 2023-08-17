@@ -2,6 +2,10 @@
 title: "Atlas"
 ---
 
+:::info
+Since Atlas is basically an ARK: Survival Evolved clone, we recommend you also check the [Game specific info for ARK: Survival Evolved](/dashboard/game_servers/game_specific/ark_survival_evolved).
+:::
+
 ## Setup Atlas cluster
 Atlas can be somewhat cumbersome to set up. But using DediConnect you can offload most of the heavy lifting to the dashboard.
 

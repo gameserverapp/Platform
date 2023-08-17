@@ -6,7 +6,7 @@ sidebar_position: 999
 ## Game server not starting / crashing
 
 :::caution
-Before contacting support you should follow all steps below.
+Please make sure you tested __all steps__ (1 - 9) before contacting support.
 :::
 
 ### 1. Check the logs

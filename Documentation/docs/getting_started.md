@@ -3,11 +3,7 @@ title: A quick introduction
 sidebar_label: Quick start
 ---
 
-
-GameServerApp (GSA) is a game server manager with automation, monetization, collaboration & admin tools baked in.
-It helps admins keep their community up and running, mostly automatically.
-
-You can access GSA via any modern browser (desktop, tablet, mobile etc).
+Connect GameServerApp (GSA) with your existing machine or game server. Have neither? We help [find the right machine](/getting_started/dediconnect/getting_started#what-machine-is-right-for-you). 👍
 
 [About the Dashboard >](/)
 
