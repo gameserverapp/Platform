@@ -112,7 +112,7 @@ When the IP for the machine changed you can update it here.
 ### Reinstall machine
 
 :::caution
-Reinstalling the machine will remove all game servers and cause data loss. Make sure you created backups and [downloaded those backups](/getting_started/dediconnect/practical_info#directories--folders)!
+Reinstalling the machine will remove all game servers and cause data loss. Make sure you created backups and [downloaded those backups](/dashboard/machines/practical_info#directories--folders)!
 
 After you reinstalled the OS, make sure to [update the machine credentials](/dashboard/machines/getting_started#update-machine-credentials).
 :::

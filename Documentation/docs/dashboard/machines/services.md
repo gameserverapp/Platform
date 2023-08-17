@@ -16,7 +16,7 @@ Beside the general connection information for the main database can you also fin
 ![MySQL service settings](/img/dashboard/machines/services/mysql_service_settings.jpg)
 
 ### Syncthing
-With Syncthing you can synchronize [`cluster` data](/getting_started/dediconnect/practical_info#directories--folders), which is required for games like [ARK: Survival Evolved to support Cross ARK travel](https://docs.gameserverapp.com/dashboard/game_servers/game_specific/ark_survival_evolved).
+With Syncthing you can synchronize [`cluster` data](/dashboard/machines/practical_info#directories--folders), which is required for games like [ARK: Survival Evolved to support Cross ARK travel](/dashboard/game_servers/game_specific/ark_survival_evolved).
 
 For optimal performance we recommend each machine is connected with every other machine. In the example below we sync 2 machines. Repeat the steps if you have more machines.
 

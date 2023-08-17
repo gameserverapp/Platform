@@ -51,5 +51,5 @@ These are the ports GSA may use to run communicate with your machine and host ga
 - 8384 `Required for Syncthing`
 
 :::tip Firewall suggestion
-Optionally you can allow access to specific ports (21, 22, 8384, 11000 - 12000) for [Platform IP's](/getting_started/other/platform_ips) only, for extra security.
+Optionally you can allow access to specific ports (21, 22, 8384, 11000 - 12000) for [Platform IP's](/getting_started/security#platform-ips) only, for extra security.
 :::

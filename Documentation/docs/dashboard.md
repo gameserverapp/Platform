@@ -1,5 +1,6 @@
 ---
 title: Getting started
+slug: /
 ---
 
 The GameServerApp dashboard gives you access to your community from anywhere on the planet, where there is an internet connection and a browser.

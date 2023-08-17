@@ -85,12 +85,8 @@ DediConnect uses [Docker](https://www.docker.com/) to containerize game servers 
 ### SSH
 GSA primarily uses SSH to securely connect with your machine.
 
-During the installation process GSA will switch from `password auth` to `key auth`, for optimal security. Optionally can you use `key auth` from the start, by adding GSA's public key to your machine.
+During the installation process GSA will switch from `password auth` to `key auth`, for optimal security. 
 
+Optionally can you use `key auth` from the start, by adding [GSA's public key](/getting_started/security#public-ssh-key) to the `authorized_keys` file on the machine.
 If you don't know how to do this, please use the normal password auth.
-
-#### GSA Public SSH key
-```composer log
-ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIC9BY5UGWpFTOHDRskIeide5oWYPSh97eJkTlQCzNi0S support@gameserverapp.com
-```
 

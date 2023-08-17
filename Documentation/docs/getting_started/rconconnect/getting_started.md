@@ -30,25 +30,20 @@ Follow instructions on the form and hit `Connect RconConnect server` at the bott
 :::info FTP access
 For certain games RconConnect needs FTP access to support features like admin tools and the shop.
 
-[Learn how to install a FTP server on your machine >](/getting_started/rconconnect/setup_ftp_server)
+[Learn how to install a FTP server on your machine >](/getting_started/other/setup_ftp_server)
 :::
 
 :::caution Find FTP path
 If you're unable to find the right path or the form keeps reporting an error about the FTP path you provided: [Learn how to find the right FTP path >](/getting_started/rconconnect/getting_started#find-the-right-ftp-path)
 :::
 
-### 3. Configure game server
-After successfully connecting your game server with RconConnect you may need to do a couple more things. Each game requires different things to complete integration.
+### 3. Integrate game server
+After successfully connecting your game server with RconConnect you may need to configure a couple more things.
 
-Head over to the `Integrate` tab on your game server settings page, on your GSA dashboard, and follow the instructions from the `Integrate` tab to finish integration.
-
-:::info No Integrate page?
-If your game server did not come with an `Integrate` tab it means that you don't need to take any further steps and your game server is already fully integrated!
-:::
+[Finish integrating the game server >](/getting_started/rconconnect/integrate)
 
 
-
-## Troubleshooting
+## 💥 Troubleshooting 💥
 
 ### Find the "SavedArks" FTP path
 

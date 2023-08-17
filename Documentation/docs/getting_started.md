@@ -1,7 +1,6 @@
 ---
 title: A quick introduction
-sidebar_label: Introduction
-slug: /
+sidebar_label: Quick start
 ---
 
 
@@ -12,11 +11,10 @@ You can access GSA via any modern browser (desktop, tablet, mobile etc).
 
 [About the Dashboard >](/dashboard)
 
----
 
 ## Ways to connect with GSA
 
-There currently are 2 ways you can use GSA:
+There currently are two ways you can connect with GSA:
 
 ### DediConnect
 The auto-pilot for dedicated root machines and game servers that is actually easy to set up and requires zero technical experience.

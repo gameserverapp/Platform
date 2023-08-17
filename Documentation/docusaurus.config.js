@@ -97,8 +97,8 @@ const config = {
                     {
                         type: 'doc',
                         position: 'left',
-                        docId: 'introduction',
-                        label: 'Getting started',
+                        docId: 'getting_started',
+                        label: 'Install & connect',
                     },
                     {
                         type: 'doc',

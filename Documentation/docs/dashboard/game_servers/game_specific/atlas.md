@@ -17,7 +17,7 @@ DediConnect will use the node / game server with `0 x 0` (X & Y) grid settings a
 ### 1. Install all game servers on machine
 You can spread the game servers over multiple machines or install all game servers on one machine.
 
-[Learn how to install game servers >](/dashboard/machines/getting_started#install-game-servers--services)
+[Learn how to install game servers >](/dashboard/machines/install_game-server_service#how-to-install-game-server)
 
 ### 2. Set up X & Y for all game servers
 Navigate to [Game server settings](/dashboard/game_servers/getting_started#settings) and configure the corresponding [X & Y numbers](/dashboard/game_servers/game_specific/atlas#cluster-x--y-examples) while (or after) the game servers are installing.

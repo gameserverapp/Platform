@@ -131,14 +131,6 @@ This feature requires having the GameServerApp.com Integration mod installed on 
 
 ![Game server - statistics](/img/dashboard/gameserver/getting_started/gameserver_access_twitch.jpg)
 
-## Integrate
-
-:::caution RconConnect only
-The `Integrate` section is only applicable to RconConnect game servers.
-:::
-
-[//]: # (TODO add reference to game specific pages)
-
 ## Logs
 Game server logs are directly accessible via the game server settings page, under the `Logs` tab.
 You can also access all logs via [FTP](#connect--ftp-info).
@@ -220,7 +212,7 @@ Set up custom [Docker parameters](https://docs.docker.com/engine/reference/run/#
 This is great for things like isolation, dedicated resources and other settings you may want to use.
 
 :::caution Delete Docker container
-After changing the docker launch params, make sure to follow the instructions to [delete the docker container](/getting_started/dediconnect/practical_info#delete-container).
+After changing the docker launch params, make sure to follow the instructions to [delete the docker container](/dashboard/machines/practical_info#delete-container).
 :::
 
 ![Game server - danger zone - docker launch params](/img/dashboard/gameserver/getting_started/gameserver_dangerzone_docker_params.jpg)

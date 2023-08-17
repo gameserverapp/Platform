@@ -92,12 +92,12 @@ You get an email when the installation is finished.
 ### 5. Ready!
 When the installation finished you can start using the machine.
 
-[Learn how to install game servers and services >](/dashboard/machines/getting_started)
+[Learn how to install game servers and services >](/dashboard/machines/install_game-server_service#how-to-install-game-server)
 
 ![Connect machine 5](/img/getting_started/dediconnect/installation/connect_machine_5.jpg)
 
 
-## Troubleshooting
+## 💥 Troubleshooting 💥
 
 
 ### Activate "Administrator" user on Windows
