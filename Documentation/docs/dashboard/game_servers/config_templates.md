@@ -204,6 +204,8 @@ Add existing templates to a group or change the group for a template by selectin
 
 ### Manage template groups
 
+Reorder, rename or delete template groups by clicking <icon icon="fa-solid fa-pen-square" size="lg" />.
+
 ![Config template group - manage groups 1](/img/dashboard/gameserver/config_template/config_template_group_manage_1.jpg)
 
 ![Config template group - manage groups 2](/img/dashboard/gameserver/config_template/config_template_group_manage_2.jpg)
