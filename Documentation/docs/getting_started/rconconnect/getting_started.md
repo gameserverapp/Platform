@@ -20,7 +20,7 @@ RconConnect cannot be used with these providers, due to technical reasons: __Gpo
 :::
 
 ### 1. Select the game
-Head over to the [connect RconConnect game server form](https://dash.gameserverapp.com/order/gameserver/rconconnect) and select the game your server is hosting.
+Open to the [connect RconConnect game server form](https://dash.gameserverapp.com/order/gameserver/rconconnect) and select the game your server is hosting.
 
 ### 2. Enter details
 Follow instructions on the form and hit `Connect RconConnect server` at the bottom of the form to continue. The required info varies per game.
