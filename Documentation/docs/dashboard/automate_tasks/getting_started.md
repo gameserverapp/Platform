@@ -140,6 +140,8 @@ This can be useful in cases where, for example, the game server is offline and s
 ## Manage tasks
 Change the Task group via the [Task overview](https://dash.gameserverapp.com/task). Use the quick action button to perform Test runs, See history runs and more.
 
+Deactivate a task to delete it.
+
 ![Automations / Tasks - manage task 1](/img/dashboard/automate_tasks/manage_task_1.jpg)
 
 ## Task groups

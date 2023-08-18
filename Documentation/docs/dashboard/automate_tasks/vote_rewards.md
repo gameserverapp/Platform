@@ -1,5 +1,5 @@
 ---
-title: Vote rewards
+title: 🖊️  Vote rewards
 sidebar_position: 6
 ---
 
