@@ -5,6 +5,8 @@ sidebar_position: 6
 
 Automated vote & reward processing for players that vote for the community game servers. Compatible with most popular vote sites.
 
+[Go to Vote rewards >](https://dash.gameserverapp.com/task/vote-rewards/reward)
+
 ![Automations / Tasks - Vote rewards](/img/dashboard/automate_tasks/vote_reward/vote_reward_sites.jpg)
 
 ## Setup vote site

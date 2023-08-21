@@ -1,8 +1,9 @@
 ---
 title: Deliveries
-sidebar_position: 7
+sidebar_position: 5
 ---
 
-# Easy Tutorial
 
-This is the easy tutorial!
+### Manual deliveries
+
+### Report to Discord

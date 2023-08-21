@@ -1,6 +1,6 @@
 ---
-title: Supporter tiers
-sidebar_position: 1
+title: Supporter Tiers
+sidebar_position: 2
 ---
 
 # Easy Tutorial
