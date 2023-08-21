@@ -1,5 +1,5 @@
 ---
-title: Payment options
+title: 🖊️ Payment options
 sidebar_position: 8
 ---
 

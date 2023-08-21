@@ -1,5 +1,5 @@
 ---
-title: Deliveries
+title: 🖊️ Deliveries
 sidebar_position: 5
 ---
 

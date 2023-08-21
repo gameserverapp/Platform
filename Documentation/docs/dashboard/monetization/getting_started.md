@@ -83,7 +83,7 @@ See all token transactions for the community, including a description.
 ![Monetization - token transactions](/img/dashboard/monetization/token_transactions.jpg)
 
 ### Reset token transactions
-Use `Reset all tokens` on the Token Transactions page to reset purchase limits for all players or remove all tokens from players.
+Use `Reset all tokens` on the Token Transactions page to reset / remove all tokens for players.
 
 
 ![Monetization - Reset token transactions](/img/dashboard/monetization/reset_token_transactions.jpg)

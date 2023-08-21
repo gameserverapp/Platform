@@ -1,5 +1,5 @@
 ---
-title: Discounts
+title: 🖊️ Discounts
 sidebar_position: 4
 ---
 

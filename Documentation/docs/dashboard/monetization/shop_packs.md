@@ -1,5 +1,5 @@
 ---
-title: Shop packs
+title: 🖊️ Shop packs
 sidebar_position: 3
 ---
 
