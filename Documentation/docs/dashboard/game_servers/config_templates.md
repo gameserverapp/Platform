@@ -11,7 +11,7 @@ Config templates are a set of configurations, that can attach to one or more gam
 ## Create template
 
 ### Blank template
-To create a new config template that is empty click `+ New Config template` on the Config template page.
+To create a new config template that is empty click `+ Add Config template` on the Config template page.
 
 ![Config template - create new 1](/img/dashboard/gameserver/config_template/config_template_create_new_1.jpg)
 
