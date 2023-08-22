@@ -128,6 +128,8 @@ Available options:
 Select `Disable package when bought by someone (single purchase limit)` to disable the Shop pack / sub package for all players immediately after someone buys the Shop pack. 
 :::
 
+[Learn how to reset purchase limits >](/dashboard/monetization/deliveries#reset-purchase-limits)
+
 ![Monetization - Settings - Purchase limits](/img/dashboard/monetization/shop_packs/settings_purchase_limits.jpg)
 
 ### Visibility
@@ -199,5 +201,5 @@ When players buy Shop packs the deliveries end up on the [Deliveries page](https
 ### Manual delivery
 Test or manually send Shop packs to players by clicking `+ Create delivery ` on the [Deliveries page](https://dash.gameserverapp.com/monetization/deliveries/v2).
 
-![Monetization - Manual delivery 1](/img/dashboard/monetization/deliveries_manual_delivery_1.jpg)
-![Monetization - Manual delivery 2](/img/dashboard/monetization/deliveries_manual_delivery_2.jpg)
+![Monetization - Manual delivery 1](/img/dashboard/monetization/deliveries/deliveries_manual_delivery_1.jpg)
+![Monetization - Manual delivery 2](/img/dashboard/monetization/deliveries/deliveries_manual_delivery_2.jpg)
