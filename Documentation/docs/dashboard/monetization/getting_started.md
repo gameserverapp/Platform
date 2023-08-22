@@ -74,6 +74,8 @@ Tokens give communities various options, like:
 - Integrate tokens in in-game drops, with Token gems.
 - Give tokens to event winners so winners can choose their price.
 - Use tokens as a non-money shop only
+- Set up tokens for Vote rewards
+- Sell tokens for money
 
 ### Token transactions
 See all token transactions for the community, including a description.
