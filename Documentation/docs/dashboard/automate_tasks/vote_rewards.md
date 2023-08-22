@@ -105,3 +105,12 @@ Create a [Trigger task](/dashboard/automate_tasks/getting_started#trigger--event
 Only votes there are successfully claimed get listed on the Voting log page.
 
 ![Automations / Tasks - Vote for server 6](/img/dashboard/automate_tasks/vote_reward/vote_for_server_6.jpg)
+
+## Deliveries
+All Vote rewards sent to players end up on the [Deliveries page](https://dash.gameserverapp.com/monetization/deliveries/v2).
+
+### Manual delivery
+Test or manually send Vote rewards to players by clicking `+ Create delivery ` on the [Deliveries page](https://dash.gameserverapp.com/monetization/deliveries/v2).
+
+![Monetization - Manual delivery 1](/img/dashboard/monetization/deliveries_manual_delivery_1.jpg)
+![Monetization - Manual delivery 2](/img/dashboard/monetization/deliveries_manual_delivery_2.jpg)
