@@ -82,6 +82,9 @@ Configure the community name which is used on the dashboard and the Community we
 
 ![Community - Settings - Community name](/img/dashboard/community/getting_started/community_settings_1.jpg)
 
+![Community - Settings - Community name example](/img/dashboard/community/getting_started/community_settings_name_example.jpg)
+
+
 ### Enabled features
 Enable / Disable features for the dashboard. This affects the Community website and Discord bot too.
 
