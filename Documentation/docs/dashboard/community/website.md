@@ -1,5 +1,5 @@
 ---
-title: Community website
+title: 🖊️ Website
 sidebar_position: 1
 ---
 

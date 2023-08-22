@@ -50,7 +50,7 @@ _\* = Check the [supported features per game](https://dash.gameserverapp.com/fea
 ![Shortcut menu](/img/dashboard/getting_started/shortcut_menu.jpg)
 
 ### Multi-language
-The dashboard comes with an automatic translator that will translate the website to your preferred language (Arabic, Chinese, English, French, German and Spanish).
+The dashboard comes with an automatic translator that will translate the website to your preferred language (Arabic, Chinese, Dutch, English, French, German, Hindi, Indonesian, Italian, Japanese, Polish, Portuguese, Spanish, Thai and Turkish).
 
 Powered by Google Translate.
 

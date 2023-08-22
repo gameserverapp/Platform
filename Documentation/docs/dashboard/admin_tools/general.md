@@ -20,3 +20,5 @@ sidebar_position: 0
 ### Player greetings
 
 ### Rule gate
+
+## In-game uploads
