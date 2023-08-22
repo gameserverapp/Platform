@@ -36,6 +36,10 @@ Every action on a delivery is logged to help you understand what happened. This 
 Click the <icon icon="fa-solid fa-chevron-down" size="lg" /> icon in the logs section to show more details.
 :::
 
+:::caution Solve command issues
+Learn how to [solve in-game command issues >](#in-game-command-not-working)
+:::
+
 ![Monetization - Delivery detail](/img/dashboard/monetization/deliveries/delivery_details.jpg)
 
 ## Scheduled / Pending
@@ -62,3 +66,36 @@ Configure Discord reporting and change the in-game confirmation message, when a 
 
 
 ## 💥 Troubleshooting 💥
+
+### In-game command not working
+
+#### 1. Run in-game
+Run the command in-game using the right player / character id, if applicable.
+
+:::info Does it work in-game?
+__Yes__: Go to the next step!
+
+__No__: The command you are using may not work. Use Google for the right command info or contact the game developers.
+:::
+
+
+#### 2. Run via dashboard
+Open the `RCON` popup via the [shortcut menu](/#shortcut-menu) and run the command via there.
+Make sure you use a valid ID. You cannot use variables here.
+
+:::info Does it work?
+__Yes__: Go to the next step!
+
+__No__: The command you are using may not work via RCON. Make sure this command is supported for RCON use for your game.
+:::
+
+![Monetization - Solve rcon issue](/img/dashboard/monetization/deliveries/solve_rcon_issue_command.jpg)
+
+
+#### 3. Check the ID / Variable
+Most games require either a player / steam ID or a character id for a command.
+
+Make sure the right ID / variables are used for the command. Check the variable list and try different ID's.
+
+![Monetization - Rcon variable list](/img/dashboard/monetization/deliveries/rcon_variable_list.jpg)
+
