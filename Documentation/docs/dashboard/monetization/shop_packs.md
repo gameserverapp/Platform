@@ -4,6 +4,8 @@ sidebar_position: 3
 ---
 Sell perks for tokens using Single or Collection packs. Shop packs come with various customisable purchase limits.
 
+[Go to Shop packs >](https://dash.gameserverapp.com/monetization/shop)
+
 ## Shop pack types
 There are 2 kind of Shop pack types:
 
