@@ -104,6 +104,11 @@ Publish the page to make the form visible on the Community website.
 
 ![Community - Forms - Create form 7](/img/dashboard/community/form/create_form_7.jpg)
 
+## Manage forms
+Edit and delete forms from the [Forms overview page](https://dash.gameserverapp.com/community/form).
+
+![Community - Forms - Manage forms](/img/dashboard/community/form/manage_forms.jpg)
+
 ## Form builder
 Using the Form builder makes it very easy to add fields to a form is super simple.
 
