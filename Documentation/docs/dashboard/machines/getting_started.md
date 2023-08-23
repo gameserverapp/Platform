@@ -5,7 +5,11 @@ sidebar_position: 0
 
 Learn what settings DediConnect comes with and how to install game servers and services.
 
-[How to connect a machine >](/getting_started/dediconnect/getting_started)
+[Go to Machines >](https://dash.gameserverapp.com/machine)
+
+:::caution How to connect a machine
+Check out the "Install & Connect" section to [learn how to connect a machine](/getting_started/dediconnect/getting_started).
+:::
 
 :::info Locating the `Machine ID`
 Please include the `machine ID` when you need to contact support about the machine. It's located in the __top-right corner__ on the machine settings page.

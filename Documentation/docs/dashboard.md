@@ -5,6 +5,8 @@ slug: /
 
 The GameServerApp dashboard gives you access to your community from anywhere on the planet, where there is an internet connection and a browser.
 
+[Go to Dashboard >](https://dash.gameserverapp.com/)
+
 ![GSA Dashboard overview](/img/dashboard/getting_started/dashboard-overview.png)
 
 :::info Good to know

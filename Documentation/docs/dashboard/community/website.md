@@ -4,9 +4,13 @@ sidebar_position: 1
 ---
 Set up a website for online whitelist application forms and more. No coding experience required: it's all easy drag-and-drop.
 
+[Go to Website >](https://dash.gameserverapp.com/community/page)
+
 ![Community website example](/img/dashboard/community/website/community_website_example.jpg)
 
 ## Pages
+
+[Go to Pages >](https://dash.gameserverapp.com/community/page)
 
 ### Create new page
 
@@ -22,6 +26,7 @@ Use the Page builder to add various components to the page.
 
 :::tip page template
 Use a page template to help speed up creating new pages.
+
 ![Community - Website - Create page 2](/img/dashboard/community/website/create_page_2_1.jpg)
 :::
 
@@ -81,6 +86,8 @@ Each content block can have specific extra settings, like text alignment. Delete
 ## Menu
 Use the sidebars on the menu page to add items to the menu. Drag menu items up and down to change position.
 
+[Go to Menu >](https://dash.gameserverapp.com/community/menu)
+
 :::tip sub menu
 Create a sub menu by dragging menu items to the right.
 
@@ -90,6 +97,8 @@ Create a sub menu by dragging menu items to the right.
 ![Community - Website - Menu 1](/img/dashboard/community/website/menu_1.jpg)
 
 ## Theme options
+
+[Go to Theme options >](https://dash.gameserverapp.com/community/website/theme-options)
 
 ### Logos
 Upload custom logos and favicon to be used on the Community website.
@@ -114,19 +123,26 @@ Customize the Community website by uploading custom CSS.
 ## Colors
 Change the colors on the Community website.
 
+[Go to Colors >](https://dash.gameserverapp.com/community/website/theme-colors)
+
 ![Community - Website - Colors](/img/dashboard/community/website/colors.jpg)
 
 ## Custom images
 Upload custom images for characters on the Community website.
+
+[Go to Custom images >](https://dash.gameserverapp.com/community/website/custom-images)
 
 ![Community - Website - Custom images](/img/dashboard/community/website/custom_images.jpg)
 
 ## Website domain
 Change the subdomain url for the Community website or set a custom domain.
 
+[Go to Domain >](https://dash.gameserverapp.com/community/website/domain)
+
 ![Community - Website - Custom domain](/img/dashboard/community/website/custom_domain.jpg)
 
 ## Settings
+[Go to Settings >](https://dash.gameserverapp.com/community/website/settings)
 
 ### General settings
 Set up a custom home page or set the forum as a homepage. Configure a Google Analytics ID and change various pages to a custom page.

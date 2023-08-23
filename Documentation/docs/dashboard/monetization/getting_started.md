@@ -29,7 +29,7 @@ See all sales related to one-time payments or recurring subscriptions.
 Sales coming from subscriptions indicate whether it was the first transaction of the subscription or a renewal.
 :::
 
-[Sales overview >](https://dash.gameserverapp.com/monetization/sales)
+[Go to Sales >](https://dash.gameserverapp.com/monetization/sales)
 
 ![Monetization - sales](/img/dashboard/monetization/getting_started/monetization_sales.jpg)
 
@@ -47,7 +47,7 @@ Set a monthly target for sales. This target can optionally be presented on the C
 ## Subscriptions
 See and manage player subscriptions.
 
-[Subscription overview >](https://dash.gameserverapp.com/monetization/subscriptions)
+[Go to Subscriptions >](https://dash.gameserverapp.com/monetization/subscriptions)
 
 
 ![Monetization - Subscription overview](/img/dashboard/monetization/getting_started/subscription_overview.jpg)
@@ -65,8 +65,6 @@ When players purchase a new subscription they are required to select a character
 Players can change this character via the Community website, but it can also be changed from the subscription details.
 
 ![Monetization - Subscription change character](/img/dashboard/monetization/getting_started/subscription_change_character.jpg)
-
-
 
 ## Tokens
 Tokens give communities various options, like:

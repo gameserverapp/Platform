@@ -5,7 +5,7 @@ sidebar_position: 0
 
 Navigate to the machine settings and click the `Actions` button in the __top-right corner__.
 
-[Machine overview page >](https://dash.gameserverapp.com/machine)
+[Go to Machines >](https://dash.gameserverapp.com/machine)
 
 ![Install game server & services on machine](/img/dashboard/machines/getting_started/install_gameserver_service.jpg)
 
