@@ -23,7 +23,7 @@ Enter a name in the popup and click `Create`.
 ![Monetization - Create Supporter Tier 2](/img/dashboard/monetization/supporter_tiers/create_tier_2.jpg)
 
 ### 2. Configure settings
-In the description you can summarize what is in the Supporter Tier. The description is shown on the community website.
+In the description you can summarize what is in the Supporter Tier. The description is shown on the Community website.
 
 Enter a currency, price and payment type (one-time or recurring). Click `Save settings` to save your changes.
 

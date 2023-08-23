@@ -41,7 +41,7 @@ Use the shortcut menu in the __top-right corner__, on the dashboard, for quick a
 - Reports
 - Broadcast a message on game servers *
 - Execute a RCON command on game servers *
-- Links to your community website and other useful links
+- Links to your Community website and other useful links
 - Dark / Light mode switch
 - Logout
 

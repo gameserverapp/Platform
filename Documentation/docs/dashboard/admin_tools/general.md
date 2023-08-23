@@ -1,5 +1,5 @@
 ---
-title: General
+title: 🖊️ General
 sidebar_position: 0
 ---
 

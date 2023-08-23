@@ -52,7 +52,7 @@ This is the name that will show up on the in-game server list.
 
 #### Website name
 Setting the `website name` will make the game server appear on the [Community website](/dashboard/community/website).
-You can also upload an image to use as the game server block background, on the community website.
+You can also upload an image to use as the game server block background, on the Community website.
 
 
 :::info Hide on Community website

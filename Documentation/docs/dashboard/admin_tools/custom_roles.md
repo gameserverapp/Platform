@@ -1,5 +1,5 @@
 ---
-title: Custom roles
+title: 🖊️ Custom roles
 sidebar_position: 1
 ---
 

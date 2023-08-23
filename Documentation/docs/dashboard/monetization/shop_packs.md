@@ -36,7 +36,7 @@ Enter a name in the popup, select what `Type` of Shop pack and which game. Click
 ![Monetization - Create Shop pack 2](/img/dashboard/monetization/shop_packs/create_shop_pack_2.jpg)
 
 ### 2. Configure settings
-In the description you can summarize what is in the Shop pack. The description is shown on the community website.
+In the description you can summarize what is in the Shop pack. The description is shown on the Community website.
 
 If the selected game supports the in-game shop, you can also select an in-game image. Learn more about all [Shop pack settings >](/dashboard/monetization/shop_packs#shop-pack-settings)
 

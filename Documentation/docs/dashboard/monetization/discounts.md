@@ -58,7 +58,7 @@ Determine how much Discount the buyer should receive.
 ![Monetization - Discount settings - Discount percentage](/img/dashboard/monetization/discount/settings_discount_percentage.jpg)
 
 ### Code
-This is the code that players need to enter on the community website to apply the discount.
+This is the code that players need to enter on the Community website to apply the discount.
 
 ![Monetization - Discount settings - Code](/img/dashboard/monetization/discount/settings_code.jpg)
 
@@ -88,12 +88,12 @@ Limits are deactivated (unlimited) when set to "0".
 ![Monetization - Discount settings - Usage limits](/img/dashboard/monetization/discount/settings_usage_limits.jpg)
 
 ### Sale banner text
-Set up a special banner pop-up on the community website. The message entered in "Sale banner text" will display on the community website.
+Set up a special banner pop-up on the Community website. The message entered in "Sale banner text" will display on the community website.
 
 
 ![Monetization - Discount settings - Sale banner text](/img/dashboard/monetization/discount/settings_sale_banner_text.jpg)
 
-![Monetization - Discount sale banner text - community website](/img/dashboard/monetization/discount/sale_banner_text_community_website.jpg)
+![Monetization - Discount sale banner text - Community website](/img/dashboard/monetization/discount/sale_banner_text_community_website.jpg)
 
 ### Activate discount
 A discount is only available for Shop packs and/or Supporter Tiers when they are selected on the `Activate discount for` section.

@@ -53,8 +53,8 @@ How frequently GSA is checking for new chats on a game server.
 
 ### Community website+
 Gives you access to:
-- All paid community website themes
-- Use custom domain on community website
+- All paid Community website themes
+- Use custom domain on Community website
 
 ### Monetization+
 Enables monetization features:
