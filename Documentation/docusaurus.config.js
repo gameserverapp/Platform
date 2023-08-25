@@ -48,10 +48,10 @@ const config = {
     themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
         ({
-            announcementBar: {
-                id: 'announcementBar-3', // Increment on change
-                content: `We are migrating our documentation to this new site. It is work in progress`,
-            },
+            // announcementBar: {
+            //     id: 'announcementBar-3', // Increment on change
+            //     content: `We are migrating our documentation to this new site. It is work in progress`,
+            // },
 
             algolia: {
                 // The application ID provided by Algolia
