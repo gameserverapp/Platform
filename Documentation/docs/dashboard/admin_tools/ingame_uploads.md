@@ -9,10 +9,6 @@ In-game uploads allow you to upload in-game items and dino's and send them to a 
 This feature is only supported by ARK: Survival Evolved.
 :::
 
-:::danger Empty tribute first!
-Before uploading anything make sure you __empty__ the tribute as described below.
-:::
-
 ## Empty tribute inventory
 
 :::caution
@@ -47,6 +43,10 @@ Travel to the nearest obelisk / supply crate and access its inventory.
 
 ### 2. Upload item / dino
 You can upload a single item or dino, or multiple, for a shop package.
+
+:::danger Empty tribute first!
+Before uploading anything make sure you __empty__ the tribute as described below.
+:::
 
 #### Uploading dinos
 Select the `Creatures` tab and upload the dino's you want in the shop package you are creating.
