@@ -21,23 +21,32 @@ Everything is automatically configured for DediConnect. You only have to install
 :::
 
 
-
-## Vote screen
-![Integration mod - ](/img/dashboard/integration_mod/vote_screen.jpg)
-
-Provides a multi-purpose in-game popup with short link for players to vote on game servers (optional).
-
-### Settings
-You can customize buttons, text and titles for the panel.
-
-[Go to Vote screen settings >](https://dash.gameserverapp.com/integration-mod/vote-screen)
-
-![Integration mod - ](/img/dashboard/integration_mod/vote_screen_settings.jpg)
-
 ## Cluster chat
 ![Integration mod - ](/img/dashboard/integration_mod/chat.jpg)
 
 The integration mod adds support for a cleaner looking cluster chat, which blends in with the normal chat but is still distinguishable. 
+
+[Learn how to activate Cluster chat >](/dashboard/game_servers/clusters#cluster-chat)
+
+## In-game shop
+![Integration mod - ](/img/dashboard/integration_mod/shop_overview.jpg)
+
+Let players browse the shop without leaving the game.
+
+[Learn how to create Shop packs >](/dashboard/monetization/shop_packs)
+
+:::tip Sell token gems
+Selling [Token Gems](#token-gems) in the shop allows players to deposit and withdraw their tokens and trade them with other players.
+:::
+
+![Integration mod - ](/img/dashboard/integration_mod/shop_detail.jpg)
+
+### Settings
+Change the button binding and title for the shop.
+
+[Go to Shop settings >](https://dash.gameserverapp.com/integration-mod/game-shop)
+
+![Integration mod - ](/img/dashboard/integration_mod/shop_settings.jpg)
 
 ## Dino paint brush
 ![Integration mod - ](/img/dashboard/integration_mod/dino_color.jpg)
@@ -85,31 +94,6 @@ Change the button binding and title for the report screen.
 [Go to Report form settings >](https://dash.gameserverapp.com/integration-mod/report)
 
 ![Integration mod - ](/img/dashboard/integration_mod/report_settings.jpg)
-
-## Review
-![Integration mod - ](/img/dashboard/integration_mod/review.jpg)
-
-Let players rate the community and track long-term player satisfaction. 
-
-### Settings
-Change the button binding and title for the review screen.
-
-[Go to Review settings >](https://dash.gameserverapp.com/integration-mod/review)
-
-![Integration mod - ](/img/dashboard/integration_mod/review_settings.jpg)
-
-## In-game shop
-
-![Integration mod - ](/img/dashboard/integration_mod/shop_overview.jpg)
-
-![Integration mod - ](/img/dashboard/integration_mod/shop_detail.jpg)
-
-### Settings
-Change the button binding and title for the shop.
-
-[Go to Shop settings >](https://dash.gameserverapp.com/integration-mod/game-shop)
-
-![Integration mod - ](/img/dashboard/integration_mod/shop_settings.jpg)
 
 
 ## Token gems
@@ -206,3 +190,31 @@ GiveItemToPlayer {gameid} "Blueprint'/Game/Mods/gsa-mod/Tokens/Consumables/1000/
 ```
 Blueprint class: `PrimalItemConsumable_Token_gsa_1000_C`
 
+
+
+
+
+## Vote screen
+![Integration mod - ](/img/dashboard/integration_mod/vote_screen.jpg)
+
+Provides a multi-purpose in-game popup with short link for players to vote on game servers (optional).
+
+### Settings
+You can customize buttons, text and titles for the panel.
+
+[Go to Vote screen settings >](https://dash.gameserverapp.com/integration-mod/vote-screen)
+
+![Integration mod - ](/img/dashboard/integration_mod/vote_screen_settings.jpg)
+
+
+## Review
+![Integration mod - ](/img/dashboard/integration_mod/review.jpg)
+
+Let players rate the community and track long-term player satisfaction.
+
+### Settings
+Change the button binding and title for the review screen.
+
+[Go to Review settings >](https://dash.gameserverapp.com/integration-mod/review)
+
+![Integration mod - ](/img/dashboard/integration_mod/review_settings.jpg)
