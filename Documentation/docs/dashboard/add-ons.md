@@ -6,6 +6,8 @@ sidebar_class_name: 'add-on'
 
 Adjust the dashboard features and resources based on the community. Pick a pre-made plan or create a custom plan.
 
+[Go to Add-ons >](https://dash.gameserverapp.com/configure/add-on)
+
 ![Add-ons](/img/dashboard/addon/addon_overview.jpg)
 
 ## Order / change add-on
