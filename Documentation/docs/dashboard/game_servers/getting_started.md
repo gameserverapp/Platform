@@ -11,7 +11,13 @@ You can control (start, stop, update etc) your game servers from multiple sectio
 ![Game server - update modal example](/img/dashboard/gameserver/getting_started/gameserver_control_modal.jpg)
 
 ### Game server settings
-Control the individual game server via the game server settings pages.
+Control (start, shutdown, restart & update) the individual game server via the game server settings pages.
+
+#### Perform manual index
+Manually index all players and groups on this game server. This can be useful when you added a new game server.
+
+#### Clone game server
+Copies most of the settings to a new game server. After cloning the game server isn't installed on the machine yet. To do so, scroll down to the "Your old game servers" section on the [Cluster overview](/dashboard/game_servers/clusters) and hit `Install` for the cloned game server.
 
 ![Game server - settings controls](/img/dashboard/gameserver/getting_started/gameserver_settings_controls.jpg)
 
