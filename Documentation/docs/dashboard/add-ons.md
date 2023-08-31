@@ -28,6 +28,10 @@ You can make adjustments to your add-on at any moment. Up- and downgrades happen
 ### 3. Choose payment method
 Choose your preferred payment method and hit `Update subscription`.
 
+:::info
+The "Choose payment method" section only appears the first time you order an add-on. You can change the billing method via [the billing information page](/dashboard/account#billing-information).
+:::
+
 ![Add-ons - choose payment method](/img/dashboard/addon/addon_order_payment_method.jpg)
 
 ## Renewal date / cancel add-on
