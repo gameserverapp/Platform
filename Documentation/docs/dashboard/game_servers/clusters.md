@@ -5,7 +5,7 @@ sidebar_position: 3
 
 Clusters help organise game servers and have a functional reason for games that support clusters.
 
-[Go to clusters >](https://dash.gameserverapp.com/cluster)
+[Go to Clusters >](https://dash.gameserverapp.com/cluster)
 
 ![Clusters - overview](/img/dashboard/gameserver/clusters/cluster_overview.jpg)
 
