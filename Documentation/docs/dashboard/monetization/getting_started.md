@@ -37,9 +37,15 @@ Sales coming from subscriptions indicate whether it was the first transaction of
 Dashboards with a paid add-on subscription can also download invoices from the dashboard and the Community website.
 Before downloading is enabled you must first enter the seller details, which is printed on each invoice.
 
+[Go to Invoice settings >](https://dash.gameserverapp.com/monetization/settings)
+
 ![Monetization - invoice settings](/img/dashboard/monetization/getting_started/invoice_settings.jpg)
 
-This is an example of the invoice generated:
+This is an example of the invoice generated.
+
+:::tip
+Self-hosted Community websites allow you to customize the invoice template. This can be done by editing [this file](https://github.com/gameserverapp/Community-Website/blob/master/resources/views/pages/v3/user/_invoice_pdf.blade.php) in your forked repo.
+:::
 
 ![Monetization - invoice example](/img/dashboard/monetization/getting_started/invoice_example.jpg)
 
