@@ -12,4 +12,4 @@ This website is built using [Docusaurus 2](https://docusaurus.io/), a modern sta
 
 [//]: # (TODO add instructions how to install NVM etc)
 
-`nvm install 16 && nvm use 16 && npm run start`
+`nvm install 20 && nvm use 20 && npm run start`

@@ -33,6 +33,26 @@ Sales coming from subscriptions indicate whether it was the first transaction of
 
 ![Monetization - sales](/img/dashboard/monetization/getting_started/monetization_sales.jpg)
 
+### Invoice settings
+Dashboards with a paid add-on subscription can also download invoices from the dashboard and the Community website.
+Before downloading is enabled you must first enter the seller details, which is printed on each invoice.
+
+![Monetization - invoice settings](/img/dashboard/monetization/getting_started/invoice_settings.jpg)
+
+This is an example of the invoice generated:
+
+![Monetization - invoice example](/img/dashboard/monetization/getting_started/invoice_example.jpg)
+
+### Download invoices
+
+#### Dashboard
+
+![Monetization - invoice download dashboard](/img/dashboard/monetization/getting_started/download_invoice_dashboard.jpg)
+
+#### Community website
+
+![Monetization - invoice download dashboard](/img/dashboard/monetization/getting_started/invoice_community_website_example.jpg)
+
 ### Monthly target
 Set a monthly target for sales. This target can optionally be presented on the Community website to encourage players to contribute to the community.
 
