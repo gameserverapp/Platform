@@ -28,14 +28,18 @@ For example, you can find the [GameServerApp.com integration mod on Steam >](htt
 ### Change load order
 Certain mods need to load in using a specific load order. The load order can be changed by grabbing the <icon icon="fa-solid fa-sort" size="md" /> and drag the mod to the desired position.
 
-Make sure to hit `Save order` to save the new load order.
-
 ![Mods & plugins - mod load order](/img/dashboard/gameserver/mods_plugins/change_mod_load_order.jpg)
 
 ### Update & delete
-Manually updating or deleting mods is only possible when the game server is turned off. 
+Manually updating & deleting mods is only possible when the game server is turned off.
+
+It is possible to schedule a mod for removal when the game server is running. This will remove the mod on the next shutdown.
 
 ![Mods & plugins - update & delete mod](/img/dashboard/gameserver/mods_plugins/update_delete_mod.jpg)
+
+Scheduled mod removals can be cancelled too.
+
+![Mods & plugins - update & delete mod](/img/dashboard/gameserver/mods_plugins/mod_cancel_scheduled_delete.jpg)
 
 :::tip mod manifest ID
 When you want to double check whether the mod was updated, hover over the `Latest version` badge to see the manifest ID. This ID corresponds with the releases on the Steam workshop page.
