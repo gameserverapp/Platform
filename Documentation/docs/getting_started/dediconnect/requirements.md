@@ -53,7 +53,6 @@ These are the ports GSA may use to run communicate with your machine and host ga
 - 21 `FTP`
 - 22 `SSH`
 - 2456 - 2600
-- 5555 - 5700
 - 7777 - 7900
 - 11000 - 12000 `Passive FTP`
 - 23000 - 23300
@@ -62,6 +61,7 @@ These are the ports GSA may use to run communicate with your machine and host ga
 - 37015 - 37215
 
 ### Optional
+- 5555 - 5700 `Atlas only`
 - 8080 - 8200 `Atlas only`
 - 8384 `Required for Syncthing`
 
