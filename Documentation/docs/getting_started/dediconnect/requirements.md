@@ -21,10 +21,25 @@ Not all games work on every OS and in certain cases plugins only work one OS, so
 
 - Processor: 3.5GHz or more (AMD or Intel)
 - RAM: 64GB or more
-- DISK: 500GB or more
+- DISK: 500GB or more (SSD or NVMe only!)
 
 :::caution Windows drive
 GSA can currently only install DediConnect on the C:\ drive.
+:::
+
+### Popular hardware
+Below is a list of frequently used hardware, for DediConnect:
+- AMD Ryzen 5 3600
+- AMD Ryzen 7 7700
+- AMD Ryzen 9 7900
+- AMD Ryzen 9 7950X3D
+- AMD Ryzen Threadripper 2950X
+- Intel Core i7-6700
+- Intel Core i7-7700
+- Intel Core i9-9900K
+
+:::caution E-core CPU's
+While it's technically fine to use CPU's that have both E-cores & P-cores, for game server hosting we recommend using CPU's that only have P-cores (normal CPU's).
 :::
 
 ## Root / Administrator access

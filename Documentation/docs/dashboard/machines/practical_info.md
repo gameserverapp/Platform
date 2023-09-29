@@ -32,7 +32,7 @@ Login with SSH and run `docker exec -it {container name} bash`
 ### Windows
 Login with RDP and open Powershell. Then run `docker exec -it {container name} cmd`
 
-## Delete container
+## Delete Docker container
 Learn how to delete a Docker container. Deleting a container __does not remove the save files__ for a server, as long as you follow the instructions below. Shutdown the game server before doing this.
 
 :::caution HWID change
