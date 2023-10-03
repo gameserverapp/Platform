@@ -188,11 +188,20 @@ Make sure to also [delete the dashboard data / stats](#delete-dashboard-data--st
 
 ![Game server - danger zone - wipe](/img/dashboard/gameserver/getting_started/gameserver_dangerzone_wipe.jpg)
 
+### Relocate
+Re-install the game server at a different location on the current machine.
+
+![Game server - danger zone - relocate](/img/dashboard/gameserver/getting_started/gameserver_dangerzone_relocate.jpg)
+
+![Game server - danger zone - relocate modal](/img/dashboard/gameserver/getting_started/gameserver_dangerzone_relocate_modal.jpg)
+
 ### Migrate / Move to another machine
 Move a game server to another DediConnect machine, fully automated.
 This requires [Syncthing being installed](/dashboard/machines/services#syncthing) on both machines.
 
 ![Game server - danger zone - migrate](/img/dashboard/gameserver/getting_started/gameserver_dangerzone_migrate.jpg)
+
+![Game server - danger zone - migrate modal](/img/dashboard/gameserver/getting_started/gameserver_dangerzone_migrate_modal.jpg)
 
 ### Custom ports
 While the warnings on the `Custom ports` block are pretty clear are there occasions where game servers may need to use custom ports.
