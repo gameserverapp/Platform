@@ -40,9 +40,7 @@ Simply activate the existing Config template on the new game server to migrate t
 
 GSA uses `Config templates` to manage config files. `Config templates` let you manage the config files via the dashboard and automatically deploy them to the game servers.
 
-[Learn more about Config templates >](#)
-
-[//]: # (TODO add link to new config template)
+[Learn more about Config templates >](/dashboard/game_servers/config_templates)
 
 
 ### Game configs

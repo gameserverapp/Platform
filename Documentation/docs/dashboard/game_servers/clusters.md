@@ -89,5 +89,3 @@ Click `+ Add cluster` in the __top-right__ corner of your screen to create a clu
 Some games need a `cluster ID` in order to cluster together game servers. GameServerApp automatically configures the `cluster ID` in those cases. You don't have to do anything.
 
 ![Clusters - ID](/img/dashboard/gameserver/clusters/cluster_id.jpg)
-
-[//]: # (todo https://help.gameserverapp.com/article/233-cluster-chat)
