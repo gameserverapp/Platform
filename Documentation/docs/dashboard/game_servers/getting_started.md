@@ -188,14 +188,11 @@ Make sure to also [delete the dashboard data / stats](#delete-dashboard-data--st
 
 ![Game server - danger zone - wipe](/img/dashboard/gameserver/getting_started/gameserver_dangerzone_wipe.jpg)
 
-### Delete dashboard data / stats
-This process will remove all in-game data from the dashboard database, like characters, groups, chat etc. This action is irreversible.
+### Migrate / Move to another machine
+Move a game server to another DediConnect machine, fully automated.
+This requires [Syncthing being installed](/dashboard/machines/services#syncthing) on both machines.
 
-:::tip remove all
-Select a date in the future to remove all data for the game server.
-:::
-
-![Game server - danger zone - wipe data](/img/dashboard/gameserver/getting_started/gameserver_dangerzone_wipe_data.jpg)
+![Game server - danger zone - migrate](/img/dashboard/gameserver/getting_started/gameserver_dangerzone_migrate.jpg)
 
 ### Custom ports
 While the warnings on the `Custom ports` block are pretty clear are there occasions where game servers may need to use custom ports.
@@ -206,22 +203,26 @@ When using Custom ports you may cause issues with conflicting ports. GSA does no
 
 ![Game server - danger zone - custom ports](/img/dashboard/gameserver/getting_started/gameserver_dangerzone_custom_ports.jpg)
 
-### Migrate / Move to another machine
-Move a game server to another DediConnect machine, fully automated.
-This requires [Syncthing being installed](/dashboard/machines/services#syncthing) on both machines.
-
-![Game server - danger zone - migrate](/img/dashboard/gameserver/getting_started/gameserver_dangerzone_migrate.jpg)
-
 ### Docker launch params
 Set up custom [Docker parameters](https://docs.docker.com/engine/reference/run/#runtime-constraints-on-resources) to change how the Docker container runs for each game server.
 
 This is great for things like isolation, dedicated resources and other settings you may want to use.
 
-:::caution Delete Docker container
+:::caution Delete Docker container (Windows only)
 After changing the docker launch params, make sure to follow the instructions to [delete the docker container](/dashboard/machines/practical_info#delete-container).
 :::
 
 ![Game server - danger zone - docker launch params](/img/dashboard/gameserver/getting_started/gameserver_dangerzone_docker_params.jpg)
+
+
+### Delete dashboard data / stats
+This process will remove all in-game data from the dashboard database, like characters, groups, chat etc. This action is irreversible.
+
+:::tip remove all
+Select a date in the future to remove all data for the game server.
+:::
+
+![Game server - danger zone - wipe data](/img/dashboard/gameserver/getting_started/gameserver_dangerzone_wipe_data.jpg)
 
 ### Delete container
 This will remove all files from the machine and release the ports for other game servers. While it will create a backup, it might not back up manual changes. Make sure you create a manual backup if you made manual changes.
