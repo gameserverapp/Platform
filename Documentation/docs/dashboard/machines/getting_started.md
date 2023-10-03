@@ -20,7 +20,7 @@ Choose between a `Block` and `Table` view for the Machine overview page.
 ![Machine overview - table-mode](/img/dashboard/machines/getting_started/machine_overview_table.jpg)
 
 ### Resource monitoring
-Monitor resources like CPU load and RAM & Disk usage from the machine overview page as well as the Game servers & services page.
+Monitor resources such as CPU, RAM and Disk usage from the machine overview page as well as the Game servers & services page.
 
 ![Machine overview 1](/img/dashboard/machines/getting_started/machine_details_1.jpg)
 ![Machine overview 2](/img/dashboard/machines/getting_started/machine_details_2.jpg)
@@ -58,6 +58,13 @@ Machine names can be changed for easy navigation & identification.
 
 ![Machine settings - rename machine](/img/dashboard/machines/getting_started/rename_machine.jpg)
 
+### Steam download credentials
+In rare occasions the required game server files can only be downloaded from Steam when the machine is logged in with a Steam account that bought the game. When you're trying to install a game that requires this you need to enter the Steam account credentials here and disabled Steam Guard.
+
+While we agree that having to enter Steam credentials and disabling Steam Guard is far from ideal, it's currently the only option.
+
+![Machine settings - steam download credentials](/img/dashboard/machines/getting_started/machine_steam_download_credentials.jpg)
+
 ### Throttle / stagger actions
 In certain cases you may want to reduce the number of things that happen simultaneously on your machine. When too many things, like updating all game servers, happen simultaneously it might cause severe performance issues with a machine.
 
@@ -69,17 +76,10 @@ If you experience issues with your machine it can be useful to test various sett
 
 ![Machine settings - rename machine](/img/dashboard/machines/getting_started/throtte_stagger_machine_actions.jpg)
 
-### Update machine credentials
-This is usually only useful after you re-installed the machine. 
+### Storage management
+Configure which disks/volumes can be used for DediConnect.
 
-![Machine settings - update credentials](/img/dashboard/machines/getting_started/update_machine_credentials.jpg)
-
-### Steam download credentials
-In rare occasions the required game server files can only be downloaded from Steam when the machine is logged in with a Steam account that bought the game. When you're trying to install a game that requires this you need to enter the Steam account credentials here and disabled Steam Guard.
-
-While we agree that having to enter Steam credentials and disabling Steam Guard is far from ideal, it's currently the only option.
-
-![Machine settings - steam download credentials](/img/dashboard/machines/getting_started/machine_steam_download_credentials.jpg)
+![Machine settings - Storage management](/img/dashboard/machines/getting_started/machine_storage_management.jpg)
 
 ## Danger zone
 
@@ -90,9 +90,15 @@ As the name implies: things you can do here are dangerous and can cause data los
 ![Machine Danger zone](/img/dashboard/machines/getting_started/machine_danger_zone.jpg)
 
 ### Change IP
-When the IP for the machine changed you can update it here.
+When the IP for the machine changed you can update the IP for the machine here.
 
 ![Machine Danger zone - change IP](/img/dashboard/machines/getting_started/change_machine_ip.jpg)
+
+
+### Update machine credentials
+Updating the machine login credentials is usually only necessary when re-installing the machine.
+
+![Machine settings - update credentials](/img/dashboard/machines/getting_started/update_machine_credentials.jpg)
 
 ### Reinstall machine
 
@@ -103,6 +109,16 @@ After you reinstalled the OS, make sure to [update the machine credentials](/das
 :::
 
 ![Machine Danger zone - reinstall machine](/img/dashboard/machines/getting_started/reinstall_machine.jpg)
+
+### Docker images
+Manage the installed Docker images on the machine and purge unused images.
+
+![Machine settings - update credentials](/img/dashboard/machines/getting_started/machine_docker_images.jpg)
+
+### Game file cache
+Manage game file cache for installed games and purge unused game files.
+
+![Machine settings - update credentials](/img/dashboard/machines/getting_started/machine_game_file_cache.jpg)
 
 ### Delete machine
 Removing a machine is permanent. __It can not be undone__.
