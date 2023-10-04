@@ -3,78 +3,28 @@ title: Getting started
 sidebar_position: 1
 ---
 
-DediConnect is an auto-pilot software for dedicated root machines and game servers. It does all the heavy lifting autonomously, like installing game servers, performing updates and crash recovery.
+DediConnect helps you host stable and high performance game servers, without the technical hassle, on rented or self-hosted hardware.
 
-[See how it works after installation >](/dashboard/machines/getting_started)
+The hosted game server manager does all the heavy lifting, like installing game servers, running updates and crash recovery.
 
-## Where to install DediConnect
 
-Choose one of the two options below to continue:
+[See how it works after connecting a machine >](/dashboard/machines/getting_started)
+
+## Where to begin?
 
 ### Rent a machine
-When you are new to dedicated machines or prefer a professional solution, we recommend you rent a dedicated machine from a hosting provider. It's easy and robust.
+Keep it simple by renting a machine from a data center. This is the easiest and (in our opinion) best solution for hosting game servers.
+
+Rented machines are usually more reliable vs. self-hosted machines, due to redundancies in data centers. It's easy and robust.
 
 [Find a dedicated machine provider >](/getting_started/dediconnect/hosting_providers)
 
 ### Self-hosted machine
-If you are experienced and host a machine on your home / the office network, you can probably use that machine for DediConnect.
+Use a self-hosted dedicated root machine running on a home / office network with DediConnect.
 
 [Using self-hosted machines >](/getting_started/dediconnect/self-hosted_machine)
 
-## What machine is right for you?
-
-:::tip Need help?
-[Jump on our Discord](https://www.gameserverapp.com/join-discord) and talk to one of the many experts that are happy to help you.
-
-Include answers to the following questions in your Discord request:
-- What is your experience level?
-- Which game(s) do you host?
-- How many game servers?
-- How many players?
-:::
-
-### Processor / CPU
-Almost every game performs better when hosted on high GHz CPU's. Only a few games benefit from more cores / threads. Processors below 3.5GHz may experience rubberbanding and lag. Reserve at least 1 `thread` per game server.
-
-You can find the core / thread count for any processor on the internet.
-
-:::info Example
-If you want to host 8 game servers, you need at least 8 `threads`. Preferably reserve 2 extra `threads` for system tasks.
-:::
-
-### Memory / RAM
-Running game servers load the save files into memory, which causes increased memory usages. When memory runs out, the server crashes.
-
-For most games you should reserve between 4 - 10 GB RAM per game server (7GB on average).
-
-:::info Example
-If you want to host 8 game servers, you need at least 56 GB (8 x 7 = 56GB). Preferably reserve 4GB extra for system tasks, totalling to 60GB.
-:::
-
-### Disk space
-Game servers benefit from high speed disks, like SSD and NVMe. Avoid HDDs!
-
-In most cases you should reserve 30GB disk space per game server. 
-
-:::info Example
-If you want to host 8 game servers, you need at least 240 GB (8 x 30 = 240GB). Preferably reserve 100GB extra for the system, totalling to 340GB.
-:::
-
-### DDoS protection
-Professional DDoS protection is recommended for popular communities. Small (PvE) communities or friend-only servers can easily do without.
-
-## Practical tips
-
-### Fresh install
-It's best to install DediConnect on a machine you recently installed, ideally without installing anything else. This avoids conflicts with software not managed by GSA.
-
-### Spread across multiple machines
-In certain cases it may be cheaper to spread your game servers over multiple machines. Small machines are usually cheaper, without sacrificing performance.
-
-This also allows you to use different hardware for popular and less popular game servers, hosting the less popular maps on low spec hardware.
-
-
-## Which tech do we use?
+## What tech do we use?
 
 Below you can find some technical information about how DediConnect works and what kind of tools it uses under the hood.
 

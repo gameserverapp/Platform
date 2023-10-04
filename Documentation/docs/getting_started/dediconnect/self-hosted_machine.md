@@ -6,19 +6,20 @@ sidebar_position: 9999
 When using a dedicated server connected to a home / office network, there are a couple extra things you may need to configure.
 
 
-:::danger Not supported
-Do not run DediConnect inside a Hyper-V, LXC or Docker container.
-:::
-
-
 :::caution Check requirements
-Make sure your hardware meets the [hardware requirements](/getting_started/dediconnect/requirements#hardware-specifications) and your machine runs a [supported Operating Systems (OS)](/getting_started/dediconnect/requirements#supported-operating-systems-os).
+Make sure your setup meets the [hardware requirements](/getting_started/dediconnect/requirements#hardware-specifications) and your machine runs a [supported Operating Systems (OS)](/getting_started/dediconnect/requirements#supported-operating-systems-os).
 :::
 
-
-:::info Update the drivers
-Make sure the drivers on the machine are up-to-date after installing the OS. Outdated drivers can cause degraded performance.
+:::tip Update machine & drivers
+Make sure the machine is up-to-date after installing the OS. Outdated drivers can cause degraded performance and breaking issues.
 :::
+
+## Virtualization
+DediConnect uses containerization software (Docker) to isolate containers, thereby reducing the potential impact of viruses and hacking threats.
+
+In order to avoid performance penalties as much as possible is it recommended that you install DediConnect on a bare-metal machine directly. You can use software like KVM and Proxmox, but do note that this will have a slight performance impact on the hosted game servers.
+
+Installing DediConnect inside a Hyper-V or Docker container may cause breaking issues. We do not recommend this setup as it's causing nested containerization.
 
 ## Dedicated IP
 In order for people and GSA to connect with your machine, you need to make sure that your internet connection has a dedicated IP (or a dynamic IP that never changes). Contact your Internet Service Provider for more information.

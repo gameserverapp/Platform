@@ -6,7 +6,7 @@ sidebar_position: 999
 DediConnect can be used with almost any hosting provider that offers root / administrator access to a dedicated machine.
 
 :::info Need some help?
-Learn [how to find the right machine for your community](/getting_started/dediconnect/getting_started#what-machine-specs-do-you-need) or [jump on Discord](https://www.gameserverapp.com/join-discord) and ask an expert for advice before ordering a machine!
+Learn [how to find the right machine for your community](/getting_started/dediconnect/requirements#finding-the-right-hardware) or [jump on Discord](https://www.gameserverapp.com/join-discord) and ask an expert for advice before ordering a machine!
 :::
 
 ## Dedicated machines
