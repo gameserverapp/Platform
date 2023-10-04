@@ -3,7 +3,7 @@ title: A quick introduction
 sidebar_label: Quick start
 ---
 
-Connect GameServerApp (GSA) with your existing machine or game server. Have neither? We help [find the right machine](/getting_started/dediconnect/getting_started#what-machine-is-right-for-you). 👍
+Connect GameServerApp (GSA) with your existing machine or game server. Have neither? We help [find the right machine](/getting_started/dediconnect/requirements#finding-the-right-hardware). 👍
 
 [About the Dashboard >](/)
 
