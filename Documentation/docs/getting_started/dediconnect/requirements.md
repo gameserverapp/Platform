@@ -37,7 +37,7 @@ Game file cache, Docker images and other software for hosting game servers curre
 
 
 ## Root / Administrator access
-In order to optimise your machine for DediConnect, it needs `Root` (Linux) or `Administrator` (Windows) access. There currently is no work around for this.
+DediConnect requires `Root` (Linux) or `Administrator` (Windows) access in order to optimise machines for hosting game servers. There currently is no work around for this.
 
 ## Network ports
 
