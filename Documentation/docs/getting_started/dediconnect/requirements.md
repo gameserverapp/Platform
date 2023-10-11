@@ -9,6 +9,7 @@ Requirements and tips for hosting reliable high performance game servers using D
 
 - Debian 10
 - Debian 11
+- Debian 12
 - Ubuntu 22.04
 - Windows Server 2019 (Standard & Datacenter edition)
 - Windows Server 2022 (Standard & Datacenter edition)
