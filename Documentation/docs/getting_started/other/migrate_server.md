@@ -13,6 +13,12 @@ Before starting it is important that both game servers are turned off, to avoid 
 You can find the FTP credentials for your DediConnect game servers on the `Connect` tab (Go to `Game server settings` -> `Connect`).
 :::
 
+:::tip Migrating between DediConnect machines?
+[Learn how to migrate game servers between DediConnect machines >](/dashboard/game_servers/getting_started#migrate--move-to-another-machine)
+
+![Game server - danger zone - migrate](/img/dashboard/gameserver/getting_started/gameserver_dangerzone_migrate.jpg)
+:::
+
 ## 1. Download files from old game server
 Log in on the old game server using [FTP](https://filezilla-project.org/download.php?type=client) or [RDP](https://www.microsoft.com/en-us/p/microsoft-remote-desktop/9wzdncrfj3ps?activetab=pivot:overviewtab) and download all:
 - Save files
