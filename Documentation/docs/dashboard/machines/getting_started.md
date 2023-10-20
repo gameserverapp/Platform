@@ -13,6 +13,11 @@ Learn what settings DediConnect comes with and how to install game servers and s
 Check out the "Install & Connect" section to [learn how to connect a machine](/getting_started/dediconnect/getting_started).
 :::
 
+:::info Locating the `Machine ID`
+Please include the `machine ID` when contact support about a machine. It's located in the __top-right corner__ on the machine settings page.
+
+![Machine ID](/img/dashboard/machines/getting_started/machine_id.jpg)
+:::
 
 ## Machine basics
 Choose between a `Block` and `Table` view for the Machine overview page. 
@@ -25,11 +30,7 @@ Monitor resources such as CPU, RAM and Disk usage from the machine overview page
 ![Machine overview 1](/img/dashboard/machines/getting_started/machine_details_1.jpg)
 ![Machine overview 2](/img/dashboard/machines/getting_started/machine_details_2.jpg)
 
-:::info Locating the `Machine ID`
-Please include the `machine ID` when you need to contact support about the machine. It's located in the __top-right corner__ on the machine settings page.
 
-![Machine ID](/img/dashboard/machines/getting_started/machine_id.jpg)
-:::
 
 ## Game server controls
 Use the controls on the sidebar to the right to manage one or more game servers hosted on the machine.

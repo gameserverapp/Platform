@@ -5,6 +5,17 @@ sidebar_position: 0
 
 Learn how to control and set up your game servers.
 
+[Go to Game server overview >](https://dash.gameserverapp.com/cluster)
+
+![Game server - overview](/img/dashboard/gameserver/getting_started/gameserver_overview.jpg)
+
+:::info Locating the `Game server ID`
+Please include the `game server ID` when you contact support about a game server or service. It's located in the __top-right corner__ on the game server settings page.
+
+![Game server ID](/img/dashboard/gameserver/getting_started/gameserver_id.jpg)
+
+:::
+
 ## Controls
 You can control (start, stop, update etc) your game servers from multiple sections. This makes it really easy to update all game servers on a particular machine, for example.
 
