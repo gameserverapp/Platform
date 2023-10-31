@@ -4,9 +4,10 @@ sidebar_position: 1
 ---
 Fully automated mod / plugin installation and updating support for:
 - Steam Workshop mods
-- ARK Server API plugins
+- CurseForge mods
 - uMod plugins
 - PaperMC plugins
+- ARK Server API plugins
 
 ![Mods & plugins - ](/img/dashboard/gameserver/mods_plugins/mod_overview.jpg)
 
