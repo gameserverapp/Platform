@@ -101,6 +101,7 @@ Group commands are available on Discord servers that were connected via a Commun
 
 ### Admin commands
 Bot commands use the [Admin Team permissions](/dashboard/admin_teams) to determine what an admin can do.
+Commands that control game servers are only working for DediConnect game servers.
 
 <table>
     <thead>
@@ -114,7 +115,7 @@ Bot commands use the [Admin Team permissions](/dashboard/admin_teams) to determi
             <strong>!start</strong> [server ID or 'all']
         </td>
         <td>
-            Returns all available commands.
+            Perform "start" action for game server(s).
         </td>
     </tr>
     <tr>
@@ -122,7 +123,7 @@ Bot commands use the [Admin Team permissions](/dashboard/admin_teams) to determi
             <strong>!stop</strong> [server ID or 'all'] [countdown: now,5,15,30 or 60]
         </td>
         <td>
-            Provides a list of available game server for the community
+            Perform "stop" action for game server(s), with countdown (optional).
         </td>
     </tr>
     <tr>
@@ -130,7 +131,7 @@ Bot commands use the [Admin Team permissions](/dashboard/admin_teams) to determi
             <strong>!restart</strong> [server ID or 'all'] [countdown: now,5,15,30 or 60]
         </td>
         <td>
-            Provides a list of available voting site URLs.
+            Perform "restart" action for game server(s), with countdown (optional).
         </td>
     </tr>
     <tr>
@@ -138,7 +139,7 @@ Bot commands use the [Admin Team permissions](/dashboard/admin_teams) to determi
             <strong>!update</strong> [server ID or 'all'] [countdown: now,5,15,30 or 60]
         </td>
         <td>
-            Claim reward after player casted votes.
+            Perform "update" action for game server(s), with countdown (optional).
         </td>
     </tr>
     <tr>
@@ -146,7 +147,7 @@ Bot commands use the [Admin Team permissions](/dashboard/admin_teams) to determi
             <strong>!cancel</strong> [server ID or 'all']
         </td>
         <td>
-            Kicks player from the game server they are on.
+            Cancels current shutdown/stop, restart & update scheduled action for game server(s).
         </td>
     </tr>
     <tr>
@@ -154,7 +155,7 @@ Bot commands use the [Admin Team permissions](/dashboard/admin_teams) to determi
             <strong>!snapshot</strong> [server ID or 'all']  [snapshot name]
         </td>
         <td>
-            Kicks player from the game server they are on.
+            Perform "create back up" action for game server(s).
         </td>
     </tr>
 </table>
