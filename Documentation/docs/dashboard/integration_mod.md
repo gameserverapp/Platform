@@ -111,7 +111,12 @@ To use the commands outside the Shop packs, make sure to replace `{gameid}` with
 ### 1 Token Gem
 ![Integration mod - Token Gem 1](/img/dashboard/integration_mod/token_1.png)
 
-Command:
+ARK:SA Command:
+```
+GiveItemToPlayer {gameid} "/gsa-mod/Tokens/Consumables/1/PrimalItemConsumable_Token_GSA_1.PrimalItemConsumable_Token_GSA_1" 1 0 0
+```
+
+ARK:SE Command:
 ```
 GiveItemToPlayer {gameid} "Blueprint'/Game/Mods/gsa-mod/Tokens/Consumables/1/PrimalItemConsumable_Token_gsa_1.PrimalItemConsumable_Token_GSA_1'" 1 0 0
 ```
@@ -121,7 +126,12 @@ Blueprint class: `PrimalItemConsumable_Token_gsa_1_C`
 ### 5 Token Gem
 ![Integration mod - Token Gem 5](/img/dashboard/integration_mod/token_5.png)
 
-Command:
+ARK:SA Command:
+```
+GiveItemToPlayer {gameid} "/gsa-mod/Tokens/Consumables/5/PrimalItemConsumable_Token_GSA_5.PrimalItemConsumable_Token_GSA_5" 1 0 0
+```
+
+ARK:SE Command:
 ```
 GiveItemToPlayer {gameid} "Blueprint'/Game/Mods/gsa-mod/Tokens/Consumables/5/PrimalItemConsumable_Token_gsa_5.PrimalItemConsumable_Token_GSA_5'" 1 0 0
 ```
@@ -130,7 +140,12 @@ Blueprint class: `PrimalItemConsumable_Token_gsa_5_C`
 ### 10 Token Gem
 ![Integration mod - Token Gem 10](/img/dashboard/integration_mod/token_10.png)
 
-Command:
+ARK:SA Command:
+```
+GiveItemToPlayer {gameid} "/gsa-mod/Tokens/Consumables/10/PrimalItemConsumable_Token_GSA_10.PrimalItemConsumable_Token_GSA_10" 1 0 0
+```
+
+ARK:SE Command:
 ```
 GiveItemToPlayer {gameid} "Blueprint'/Game/Mods/gsa-mod/Tokens/Consumables/10/PrimalItemConsumable_Token_gsa_10.PrimalItemConsumable_Token_GSA_10'" 1 0 0
 ```
@@ -139,7 +154,12 @@ Blueprint class: `PrimalItemConsumable_Token_gsa_10_C`
 ### 25 Token Gem
 ![Integration mod - Token Gem 25](/img/dashboard/integration_mod/token_25.png)
 
-Command:
+ARK:SA Command:
+```
+GiveItemToPlayer {gameid} "/gsa-mod/Tokens/Consumables/25/PrimalItemConsumable_Token_GSA_25.PrimalItemConsumable_Token_GSA_25" 1 0 0
+```
+
+ARK:SE Command:
 ```
 GiveItemToPlayer {gameid} "Blueprint'/Game/Mods/gsa-mod/Tokens/Consumables/25/PrimalItemConsumable_Token_gsa_25.PrimalItemConsumable_Token_GSA_25'" 1 0 0
 ```
@@ -148,7 +168,12 @@ Blueprint class: `PrimalItemConsumable_Token_gsa_25_C`
 ### 50 Token Gem
 ![Integration mod - Token Gem 50](/img/dashboard/integration_mod/token_50.png)
 
-Command:
+ARK:SA Command:
+```
+GiveItemToPlayer {gameid} "/gsa-mod/Tokens/Consumables/50/PrimalItemConsumable_Token_GSA_50.PrimalItemConsumable_Token_GSA_50" 1 0 0
+```
+
+ARK:SE Command:
 ```
 GiveItemToPlayer {gameid} "Blueprint'/Game/Mods/gsa-mod/Tokens/Consumables/50/PrimalItemConsumable_Token_gsa_50.PrimalItemConsumable_Token_GSA_50'" 1 0 0
 ```
@@ -157,7 +182,12 @@ Blueprint class: `PrimalItemConsumable_Token_gsa_50_C`
 ### 100 Token Gem
 ![Integration mod - Token Gem 100](/img/dashboard/integration_mod/token_100.png)
 
-Command:
+ARK:SA Command:
+```
+GiveItemToPlayer {gameid} "/gsa-mod/Tokens/Consumables/100/PrimalItemConsumable_Token_GSA_100.PrimalItemConsumable_Token_GSA_100" 1 0 0
+```
+
+ARK:SE Command:
 ```
 GiveItemToPlayer {gameid} "Blueprint'/Game/Mods/gsa-mod/Tokens/Consumables/100/PrimalItemConsumable_Token_gsa_100.PrimalItemConsumable_Token_GSA_100'" 1 0 0
 ```
@@ -166,7 +196,12 @@ Blueprint class: `PrimalItemConsumable_Token_gsa_100_C`
 ### 250 Token Gem
 ![Integration mod - Token Gem 250](/img/dashboard/integration_mod/token_250.png)
 
-Command:
+ARK:SA Command:
+```
+GiveItemToPlayer {gameid} "/gsa-mod/Tokens/Consumables/250/PrimalItemConsumable_Token_GSA_250.PrimalItemConsumable_Token_GSA_250" 1 0 0
+```
+
+ARK:SE Command:
 ```
 GiveItemToPlayer {gameid} "Blueprint'/Game/Mods/gsa-mod/Tokens/Consumables/250/PrimalItemConsumable_Token_gsa_250.PrimalItemConsumable_Token_GSA_250'" 1 0 0
 ```
@@ -175,7 +210,12 @@ Blueprint class: `PrimalItemConsumable_Token_gsa_250_C`
 ### 500 Token Gem
 ![Integration mod - Token Gem 500](/img/dashboard/integration_mod/token_500.png)
 
-Command:
+ARK:SA Command:
+```
+GiveItemToPlayer {gameid} "/gsa-mod/Tokens/Consumables/500/PrimalItemConsumable_Token_GSA_500.PrimalItemConsumable_Token_GSA_500" 1 0 0
+```
+
+ARK:SE Command:
 ```
 GiveItemToPlayer {gameid} "Blueprint'/Game/Mods/gsa-mod/Tokens/Consumables/500/PrimalItemConsumable_Token_gsa_500.PrimalItemConsumable_Token_GSA_500'" 1 0 0
 ```
@@ -184,7 +224,12 @@ Blueprint class: `PrimalItemConsumable_Token_gsa_500_C`
 ### 1000 Token Gem
 ![Integration mod - Token Gem 1000](/img/dashboard/integration_mod/token_1000.png)
 
-Command:
+ARK:SA Command:
+```
+GiveItemToPlayer {gameid} "/gsa-mod/Tokens/Consumables/1000/PrimalItemConsumable_Token_GSA_1000.PrimalItemConsumable_Token_GSA_1000" 1 0 0
+```
+
+ARK:SE Command:
 ```
 GiveItemToPlayer {gameid} "Blueprint'/Game/Mods/gsa-mod/Tokens/Consumables/1000/PrimalItemConsumable_Token_gsa_1000.PrimalItemConsumable_Token_GSA_1000'" 1 0 0
 ```

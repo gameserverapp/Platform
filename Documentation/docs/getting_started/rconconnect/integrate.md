@@ -20,8 +20,9 @@ Find the `Integrate` tab under [game server settings](/dashboard/game_servers/ge
 Add an in-game shop, cluster chat, advanced whitelisting, player muting, notifications, token gems & issue reporting to your ARK server.
 
 Install mod:
-- [Atlas version](https://steamcommunity.com/sharedfiles/filedetails/?id=2108685945)
+- [ARK:Survival Ascended version](https://legacy.curseforge.com/ark-survival-ascended/mods/gameserverapp-integration)
 - [ARK:Survival Evolved version](https://steamcommunity.com/sharedfiles/filedetails/?id=2107956699)
+- [Atlas version](https://steamcommunity.com/sharedfiles/filedetails/?id=2108685945)
 
 Navigate to the `Integrate` tab and follow the instructions in the __"GSA Integration mod"__ block.
 
