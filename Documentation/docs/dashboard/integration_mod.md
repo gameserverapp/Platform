@@ -9,8 +9,14 @@ The integration mod enhances the in-game experience and integrates the dashboard
 
 ## Install the mod
 ![Integration mod - ](/img/dashboard/integration_mod/mod_install.jpg)
+![Integration mod - ](/img/dashboard/integration_mod/mod_install_2.jpg)
 
 ### RconConnect
+
+:::caution
+Are you using DediConnect? Then you won't have to set up RconConnect, this is already set up for you automatically.
+:::
+
 RconConnect game servers should follow [the integration instructions](/getting_started/rconconnect/integrate#gsa-integration-mod).
 
 ### DediConnect
@@ -29,7 +35,8 @@ The integration mod adds support for a cleaner looking cluster chat, which blend
 [Learn how to activate Cluster chat >](/dashboard/game_servers/clusters#cluster-chat)
 
 ## In-game shop
-![Integration mod - ](/img/dashboard/integration_mod/shop_overview.jpg)
+![Integration mod - ARK:SA](/img/dashboard/integration_mod/shop_overview_2.jpg)
+![Integration mod - ARK:SE](/img/dashboard/integration_mod/shop_overview.jpg)
 
 Let players browse the shop without leaving the game.
 
@@ -39,7 +46,8 @@ Let players browse the shop without leaving the game.
 Selling [Token Gems](#token-gems) in the shop allows players to deposit and withdraw their tokens and trade them with other players.
 :::
 
-![Integration mod - ](/img/dashboard/integration_mod/shop_detail.jpg)
+![Integration mod - ARK:SA](/img/dashboard/integration_mod/shop_detail_2.jpg)
+![Integration mod - ARK:SE](/img/dashboard/integration_mod/shop_detail.jpg)
 
 ### Settings
 Change the button binding and title for the shop.
@@ -49,7 +57,8 @@ Change the button binding and title for the shop.
 ![Integration mod - ](/img/dashboard/integration_mod/shop_settings.jpg)
 
 ## Dino paint brush
-![Integration mod - ](/img/dashboard/integration_mod/dino_color.jpg)
+![Integration mod - ARK:SA](/img/dashboard/integration_mod/dino_color_2.jpg)
+![Integration mod - ARK:SE](/img/dashboard/integration_mod/dino_color.jpg)
 
 This brush is single use and can only be used to color one dino. Optionally you can use the RCON command to give multiple brushes to a user with a single command. This is a great option to make dino color services fully automated without you having to do anything.
 
@@ -71,6 +80,7 @@ The command: `scriptcommand gsadinocoloring {quantity} {steamid}`
 
 
 ## Enhanced notifications
+![Integration mod - ](/img/dashboard/integration_mod/notifications_2.jpg)
 ![Integration mod - ](/img/dashboard/integration_mod/notifications.jpg)
 
 Replace the in-game yellow admin alerts with stylish notifications. They automatically fade out after the configured amount of time.
