@@ -76,7 +76,7 @@ When activating the brush by hitting your dino, you:
 For both there are clear alerts and a countdown, to indicate what is going on.
 
 ### In-game command
-The command: `scriptcommand gsadinocoloring {quantity} {steamid}`
+The command: `scriptcommand gsadinocoloring {quantity} {serviceid}`
 
 
 ## Enhanced notifications
