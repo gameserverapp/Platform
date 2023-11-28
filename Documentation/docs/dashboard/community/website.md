@@ -153,3 +153,25 @@ Set up a custom home page or set the forum as a homepage. Configure a Google Ana
 Change the `Footer` content for all pages.
 
 ![Community - Website - Footer settings](/img/dashboard/community/website/website_footer_settings.jpg)
+
+
+## Other
+
+### Connect sub-accounts on Community website
+If there is no way for players to log in using, for example, Steam or Epic, they can link their in-game account to another account with which they can log in. This allows players to still use the shop etc.
+
+#### 1. Request connect code in-game
+Type `!getconnectcode` in-game with the account you want to connect to another Steam, Epic etc account.
+As a security measure you need to type `!getconnectcode` twice.
+
+![Community - Connect code - step 1](/img/dashboard/community/website/connectcode_1.jpg)
+
+#### 2. Go to Settings page on Community website
+Navigate to the Community website and enter the code in the `Connect accounts` sections.
+
+![Community - Connect code - step 2](/img/dashboard/community/website/connectcode_2.jpg)
+
+#### Done!
+The in-game player account is now connected to the account logged in on the Community website.
+
+![Community - Connect code - done](/img/dashboard/community/website/connectcode_3.jpg)
