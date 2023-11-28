@@ -139,7 +139,40 @@ Change the subdomain url for the Community website or set a custom domain.
 
 [Go to Domain >](https://dash.gameserverapp.com/community/website/domain)
 
-![Community - Website - Custom domain](/img/dashboard/community/website/custom_domain.jpg)
+### 1. Set up CloudFlare
+It is currently only possible to set up a custom domain if this domain runs via CloudFlare. CloudFlare helps protect against DDoS attacks and is free.
+
+[Buy a domain from CloudFlare](https://www.cloudflare.com/en-gb/products/registrar/) or [set up CloudFlare for an existing domain](https://developers.cloudflare.com/dns/zone-setups/full-setup/setup/).
+
+When you can't use CloudFlare we recommend [self-hosting the community website](https://github.com/gameserverapp/Community-Website/wiki/Self%E2%80%90hosted-Cloud-VPS-Community-website). 
+
+### 2. Configure SSL
+Navigate to `SSL/TLS` -> `Overview` and make sure `Full` is selected.
+
+![Community - Custom domain - CloudFlare SSL setup](/img/dashboard/community/website/cloudflare_ssl_setup.jpg)
+
+### 3. Set up DNS
+Now it is important to determine what the final domain will be, which visitors will type in to reach the website. You can choose between `www.yourdomain.com` or `yourdomain.com`. As you can see, one domain starts with 'www' and the other does not.
+
+#### WWW
+If your domain should start with `www`, you must set this on CloudFlare as follows. Make sure the settings match the screenshot below exactly.
+
+Enter IP: `159.69.89.22`.
+
+![Community - Custom domain - CloudFlare DNS www](/img/dashboard/community/website/cloudflare_dns_www.jpg)
+
+#### Non-www
+If your domain should __not__ start with `www`, then you need to set this on CloudFlare as follows. Make sure the settings match the screenshot below exactly.
+
+Enter IP: `159.69.89.22`.
+
+![Community - Custom domain - CloudFlare DNS non-www](/img/dashboard/community/website/cloudflare_dns_www.jpg)
+
+### 4. Enter Custom Domain on GSA
+Depending on your choice in the step above, you now need to enter the domain with or without `www`. If you have set __with__ `www` above, you should do that here too.
+
+
+![Community - Custom domain - setup at GSA](/img/dashboard/community/website/custom_domain-2.jpg)
 
 ## Settings
 [Go to Settings >](https://dash.gameserverapp.com/community/website/settings)
