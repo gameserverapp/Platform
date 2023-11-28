@@ -15,11 +15,11 @@ Use filters and search to help find what you're looking for.
 ![Admin tools - Chat log](/img/dashboard/admin_tools/general/chatlog_search_filter.jpg)
 
 ## Controls
-The [Player](#players), [Character](#characters) and [Group](#groups) sections come with an action menu on the right. This allows you to quickly ban, kick or manage players.
+The [Player](#players) and [Character](#characters) section have a special `Admin actions` dropdown menu. The [Group](#groups) section comes with an action menu on the right.
 
 While not all options displayed on the image below will be available on all sections, in general they are the same controls.
 
-![Admin tools - Controls sidebar](/img/dashboard/admin_tools/general/controls_sidebar.jpg)
+![Admin tools - Controls button](/img/dashboard/admin_tools/general/control_button.jpg)
 
 ### Ban, Kick & Mute
 Use the controls in the sidebar (right) on every Player page to ban, kick or mute a player.
@@ -50,14 +50,21 @@ Keep notes per player. Useful to keep the entire admin team updated on warnings 
 ![Admin tools - Notes](/img/dashboard/admin_tools/general/controls_notes.jpg)
 
 ## Players
-Find players across all game servers. Use search and filters to help find what you're looking for.
+Find players across all game servers. Use search and filters to filter accounts that are banned, have a note, specific account types like Steam, Epic, Mojang or EOS accounts.
 
 [Go to Players >](https://dash.gameserverapp.com/admintools/accounts)
 
 ![Admin tools - Players - overview](/img/dashboard/admin_tools/general/players_overview.jpg)
 
+### Multi account
+Players can "merge" their Epic, EOS, Steam, Mojang etc. accounts into 1 `Multi` account. The `Multi` label makes it easy to recognize which players on the dashboard represent multiple social accounts.
+
+Players can log in on your Community website -> navigate to `Settings` -> scroll down to "Connected accounts" to manage their connected accounts. [Learn how to connect accounts that don't have a login method >](/dashboard/community/website#connect-sub-accounts-on-community-website)
+
+![Admin tools - Players - multi account](/img/dashboard/admin_tools/general/players_overview_multi_account.jpg)
+
 ### Player details
-See all information per player like their characters, sales, deliveries, Custom Roles and more.
+See all information about the player and all connected accounts like their characters, sales, deliveries, Custom Roles and more.
 
 ![Admin tools - Player detail - info](/img/dashboard/admin_tools/general/player_detail_info.jpg)
 
