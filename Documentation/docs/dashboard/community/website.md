@@ -166,7 +166,7 @@ If your domain should __not__ start with `www`, then you need to set this on Clo
 
 Enter IP: `159.69.89.22`.
 
-![Community - Custom domain - CloudFlare DNS non-www](/img/dashboard/community/website/cloudflare_dns_www.jpg)
+![Community - Custom domain - CloudFlare DNS non-www](/img/dashboard/community/website/cloudflare_dns_root.jpg)
 
 ### 4. Enter Custom Domain on GSA
 Depending on your choice in the step above, you now need to enter the domain with or without `www`. If you have set __with__ `www` above, you should do that here too.
