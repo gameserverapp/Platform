@@ -94,4 +94,7 @@ Finally click on `Protocols and Ports` and change `Local port` to the offset num
 ![Change port number](/img/getting_started/dediconnect/self-hosted_machine/update_firewall.png)
 
 Hit `OK` to save the port.
-You are now ready to [connect Dediconnect with special offset number >](https://dash.gameserverapp.com/order/machine?port_offset=1000)
+
+:::info
+Make sure to use this link to enable the hidden `offset` field: [connect Dediconnect with special offset number >](https://dash.gameserverapp.com/order/machine?port_offset=1000)
+:::

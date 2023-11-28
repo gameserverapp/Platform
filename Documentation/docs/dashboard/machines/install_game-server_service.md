@@ -30,6 +30,9 @@ Click `Install game server now` to install the new game server on the selected m
 ### How to install service
 Depending on the Operating System (OS) of the machine, you can install a variety of services.
 
+
+![Install game server & services on machine](/img/dashboard/machines/getting_started/install_gameserver_service.jpg)
+
 ![Install service on machine 1](/img/dashboard/machines/getting_started/install_service_1.jpg)
 
 After clicking a service, DediConnect will begin installing the service.
