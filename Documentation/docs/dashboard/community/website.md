@@ -152,7 +152,7 @@ Navigate to `SSL/TLS` -> `Overview` and make sure `Full` is selected.
 ![Community - Custom domain - CloudFlare SSL setup](/img/dashboard/community/website/cloudflare_ssl_setup.jpg)
 
 ### 3. Set up DNS
-Now it is important to determine what the final domain will be, which visitors will type in to reach the website. You can choose between `www.yourdomain.com` or `yourdomain.com`. As you can see, one domain starts with 'www' and the other does not.
+Now it is important to determine what the final domain will be, which visitors will type in to reach the website. You can choose between `www.yourdomain.com` or `yourdomain.com`. As you can see, one domain starts with `www` and the other does not.
 
 #### WWW
 If your domain should start with `www`, you must set this on CloudFlare as follows. Make sure the settings match the screenshot below exactly.
