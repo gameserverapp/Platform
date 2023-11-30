@@ -16,7 +16,7 @@ Use [DediConnect](/getting_started/dediconnect/getting_started) if you want an a
 ## 1. Connect with RconConnect
 
 :::warning Incompatible providers
-RconConnect cannot be used with these providers, due to technical reasons: __Gportal, GTX Gaming, Host Havoc & Nitrado__
+RconConnect cannot be used with these providers, due to technical reasons: __Gportal, GTX Gaming & Host Havoc__
 :::
 
 ### 1. Select the game
