@@ -193,6 +193,13 @@ Change the `Footer` content for all pages.
 ### Connect sub-accounts on Community website
 If there is no way for players to log in using, for example, Steam or Epic, they can link their in-game account to another account with which they can log in. This allows players to still use the shop etc.
 
+:::caution Known issues & solutions
+- `ARK:SA` Does not work when player (Steam, Epic etc) or character name includes special characters, like `éøö$` and other non-utf8 characters.
+- `ARK:SA` Stops working after change your steam username.
+
+Revert any changes and do not use special characters to resolve the problem.
+:::
+
 #### 1. Request connect code in-game
 Type `!getconnectcode` in-game with the account you want to connect to another Steam, Epic etc account.
 As a security measure you need to type `!getconnectcode` twice.
