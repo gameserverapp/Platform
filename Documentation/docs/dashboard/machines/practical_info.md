@@ -37,7 +37,7 @@ Game files: `C:\serverfiles`
 Configure custom Docker parameters using [Docker launch params](/dashboard/game_servers/getting_started/#docker-launch-params).
 
 ### Mount a folder (symlink equivalent)
-GSA automatically mounts the container server files directory inside the game server (see paths above). In cases where you need one or more folders mounted, you can do so by adding the following line to the Docker launch params per folder you want to mount:
+GSA automatically mounts the game server files directory inside the container (see paths above). In cases where you need one or more custom folders mounted, you can do so by adding the following line to the Docker launch params, per folder you want to mount:
 
 `-v C:\path\on\machine:C:\path\inside\container`
 
