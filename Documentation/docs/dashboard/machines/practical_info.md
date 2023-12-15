@@ -4,9 +4,11 @@ sidebar_position: 3
 ---
 
 ## Directories / folders
-These are the locations where you can find DediConnect related files & directories.
 
-### Linux
+### Machine
+Below is a list of paths that are available on DediConnect machines. These are different from the paths made available inside the docker container.
+
+#### Linux
 
 Containers: `/home/GameServerApp`<br />
 Games: `/home/GameServerApp/games`<br />
@@ -14,12 +16,34 @@ Docker: `/home/GameServerApp/docker`<br />
 Backups: `/home/GameServerApp/nas/backup`<br />
 Cluster files: `/home/GameServerApp/nas/cluster`
 
-### Windows
+#### Windows
 Containers: `C:\GameServerApp`<br />
 Games: `C:\GameServerApp\games`<br />
 Docker: `C:\GameServerApp\docker`<br />
 Backups: `C:\GameServerApp\nas\backup`<br />
 Cluster files: `C:\GameServerApp\nas\cluster`
+
+### Container
+These are the relative paths __inside a docker container__.
+
+#### Linux
+
+Game files: `/serverfiles`
+
+#### Windows
+Game files: `C:\serverfiles`
+
+## Useful Docker parameters
+Configure custom Docker parameters using [Docker launch params](/dashboard/game_servers/getting_started/#docker-launch-params).
+
+### Mount a folder (symlink equivalent)
+GSA automatically mounts the container server files directory inside the game server (see paths above). In cases where you need one or more folders mounted, you can do so by adding the following line to the Docker launch params per folder you want to mount:
+
+`-v C:\path\on\machine:C:\path\inside\container`
+
+The example above will mount the folder `C:\path\on\machine` (on the machine) inside the container at the path `C:\path\inside\container`.
+
+For Linux the same principle applies, but with different paths.
 
 ## Access container console
 In some occasions you may want to login on the container and fire command manually.
