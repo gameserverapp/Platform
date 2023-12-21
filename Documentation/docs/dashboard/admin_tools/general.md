@@ -68,6 +68,21 @@ See all information about the player and all connected accounts like their chara
 
 ![Admin tools - Player detail - info](/img/dashboard/admin_tools/general/player_detail_info.jpg)
 
+### Rename player
+In specific cases is it possible to rename the player. This is mainly for fixing issues where chat is not being picked up for the player, due to the use of special characters in the name or some other reason.
+
+Keep in mind that changing the name can cause problems for the player, like cluster chat no longer working. Only use this to fix mentioned issues above.
+
+#### 1. Click the <icon icon="fa-solid fa-pencil-alt" size="md" /> icon
+Only specific players can have their name changed. The <icon icon="fa-solid fa-pencil-alt" size="md" /> icon is visible when this is supported.
+
+![Admin tools - Player detail - Rename player 1](/img/dashboard/admin_tools/general/rename_player_1.jpg)
+
+#### 2. Enter alternative name
+Enter the new name in the popup. Make sure this name corresponds with the name you see in the chat log, if you're trying to fix chat issues.
+
+![Admin tools - Player detail - Rename player 2](/img/dashboard/admin_tools/general/rename_player_2.jpg)
+
 ## Characters
 Find characters across all game servers. Use search and filters to help find what you're looking for.
 

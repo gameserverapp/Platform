@@ -197,7 +197,7 @@ If there is no way for players to log in using, for example, Steam or Epic, they
 - `ARK:SA` Does not work when player (Steam, Epic etc) or character name includes special characters, like `éøö$` and other non-utf8 characters.
 - `ARK:SA` Stops working after change your steam username.
 
-Revert any changes and do not use special characters to resolve the problem.
+Try [renaming the player](/dashboard/admin_tools/general#rename-player) to solve the issue.
 :::
 
 #### 1. Request connect code in-game
