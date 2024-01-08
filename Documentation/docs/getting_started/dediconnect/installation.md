@@ -30,6 +30,9 @@ Enter the username and password for the dedicated root machine. GSA needs this i
 
 We use `AES-256` encryption (Military grade) to securely store the credentials.
 
+:::caution Windows machine
+Windows machine must [run the GSA install script first](/getting_started/dediconnect/installation#prepare-a-windows-machine) before they can connect.
+:::
 
 :::tip SSH Key Auth (advanced users only)
 Prefer using key-based SSH authentication? Check out our [information for SSH](/getting_started/dediconnect/getting_started#ssh). Otherwise, no worries! Your machine will automatically move to an extra secure key-based authentication during installation.
