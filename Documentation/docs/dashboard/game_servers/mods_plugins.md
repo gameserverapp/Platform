@@ -11,8 +11,80 @@ Fully automated mod / plugin installation and updating support for:
 
 ![Mods & plugins - ](/img/dashboard/gameserver/mods_plugins/mod_overview.jpg)
 
-## Mods
-When the game supports mods there will be a `Mods` tab under Game server settings.
+
+## Mod / Plugin Framework
+Before you can go ahead and install mods / plugins, the framework should to be installed first in most cases. Certain games allow you to select a specific mod / plugin framework version, others will the latest version.
+
+### Install framework
+Hit the `Actions` button and select the version you want to install.
+
+![Mods & plugins - install plugin framework 1](/img/dashboard/gameserver/mods_plugins/install_plugin_framework_1.jpg)
+
+Select one or multiple game servers that should have the framework installed.
+
+![Mods & plugins - install plugin framework 2](/img/dashboard/gameserver/mods_plugins/install_plugin_framework_2.jpg)
+
+Installation usually takes only a few minutes. The installed version is displayed when it finished installing.
+
+![Mods & plugins - install plugin framework 3](/img/dashboard/gameserver/mods_plugins/install_plugin_framework_3.jpg)
+
+### Manage framework
+![Mods & plugins - manage plugin framework](/img/dashboard/gameserver/mods_plugins/plugin_framework_manage.jpg)
+
+#### Manually updating framework
+When an update is available for the framework you can manually update by click `Actions` and then `Update now`. 
+
+#### Uninstalling plugin framework
+To uninstall the framework go to `Actions` and click `Uninstall framework`.
+
+
+## Mods / Plugins
+Installing mods / plugins works identical for every mod / plugin framework on GSA (except for [STEAM mods](#steam-mods)). So when you know how to install mods / plugins on uMod, you can work with any other framework.
+
+
+### Install
+Hit `Browse mods / plugins` to install a new mod / plugin on the game server.
+
+![Mods & plugins - install plugin 1](/img/dashboard/gameserver/mods_plugins/install_plugin_1.jpg)
+
+In the `Available mods / plugins` window you can use search to find mods / plugins. Hit the `Install` button at the mod / plugin.
+
+![Mods & plugins - install plugin 2](/img/dashboard/gameserver/mods_plugins/install_plugin_2.jpg)
+
+Select one or multiple game servers that should have the mod / plugin installed. Make sure the [framework is installed](#plugin-framework) on all selected servers.
+
+![Mods & plugins - install plugin 3](/img/dashboard/gameserver/mods_plugins/install_plugin_3.jpg)
+
+Installation usually takes only a few minutes. The installed version is displayed when it finished installing.
+
+![Mods & plugins - install plugin 4](/img/dashboard/gameserver/mods_plugins/install_plugin_4.jpg)
+
+
+### Change load order
+Certain mods / plugins need to load in using a specific load order. The load order can be changed by grabbing the <icon icon="fa-solid fa-sort" size="md" /> and drag the mod / plugin to the desired position.
+
+![Mods & plugins - mod / plugin load order](/img/dashboard/gameserver/mods_plugins/change_mod-plugin_load_order.jpg)
+
+### Update & delete
+![Mods & plugins - manage plugins](/img/dashboard/gameserver/mods_plugins/manage_plugin.jpg)
+
+#### Manually update mod /  plugin
+When an update is available for the mod / plugin you can manually update by click `Actions` and then `Update mod / plugin`.
+
+#### Delete mod / plugin
+To uninstall the mod / plugin go to `Actions` and click `Delete mod / plugin`.
+
+
+### Configs
+When supported, mod / plugin configuration files can be managed via the [Config templates `Plugin` section](/dashboard/game_servers/config_templates#plugin-configs).
+
+Click `Add to config templ.` to add the mod / plugin to the Config template for the selected game server.
+
+![Mods & plugins - plugin config](/img/dashboard/gameserver/mods_plugins/plugin_config.jpg)
+
+
+## Steam Mods
+When the game supports steam mods there will be a `Mods` tab under Game server settings.
 
 ### Install mods
 For most Steam games there is a special `Workshop` section where you can find mods. There are multiple ways you can install these mods on the game server:
@@ -47,72 +119,6 @@ When you want to double check whether the mod was updated, hover over the `Lates
 
 ![Mods & plugins - mod manifest id](/img/dashboard/gameserver/mods_plugins/mod_manifest_id.jpg)
 :::
-
-## Plugin framework
-Before you can go ahead and install plugins, the plugin framework needs to be installed first. Certain games allow you to select a specific plugin framework version. Others will default to the latest version.
-
-### Install plugin framework
-Hit the `Actions` button and select the version you want to install.
-
-![Mods & plugins - install plugin framework 1](/img/dashboard/gameserver/mods_plugins/install_plugin_framework_1.jpg)
-
-Select one or multiple game servers that should have the framework plugin installed.
-
-![Mods & plugins - install plugin framework 2](/img/dashboard/gameserver/mods_plugins/install_plugin_framework_2.jpg)
-
-Installation usually takes only a few minutes. The installed version is displayed when it finished installing.
-
-![Mods & plugins - install plugin framework 3](/img/dashboard/gameserver/mods_plugins/install_plugin_framework_3.jpg)
-
-### Manage framework
-![Mods & plugins - manage plugin framework](/img/dashboard/gameserver/mods_plugins/plugin_framework_manage.jpg)
-
-#### Manually updating framework
-When an update is available for the framework you can manually update by click `Actions` and then `Update now`. 
-
-#### Uninstalling plugin framework
-To uninstall the framework go to `Actions` and click `Uninstall framework`.
-
-
-## Plugins
-Installing plugins works identical for every plugin framework on GSA. So when you know how to install plugins on uMod, you can work with any other plugin framework.
-
-
-### Install plugin
-Hit `Install new plugin` to install a new plugin on the game server.
-
-![Mods & plugins - install plugin 1](/img/dashboard/gameserver/mods_plugins/install_plugin_1.jpg)
-
-In the `Available plugins` popup you can use search to find the right plugin. Hit the `Install` button at the plugin you want to install.
-
-![Mods & plugins - install plugin 2](/img/dashboard/gameserver/mods_plugins/install_plugin_2.jpg)
-
-Select one or multiple game servers that should have the plugin installed. Make sure the [plugin framework is installed](#plugin-framework) on all selected servers.
-
-![Mods & plugins - install plugin 3](/img/dashboard/gameserver/mods_plugins/install_plugin_3.jpg)
-
-Installation usually takes only a few minutes. The installed version is displayed when it finished installing.
-
-![Mods & plugins - install plugin 4](/img/dashboard/gameserver/mods_plugins/install_plugin_4.jpg)
-
-### Manage plugins
-![Mods & plugins - manage plugins](/img/dashboard/gameserver/mods_plugins/manage_plugin.jpg)
-
-#### Manually update plugin
-When an update is available for the plugin you can manually update by click `Actions` and then `Update plugin`.
-
-#### Delete plugin
-To uninstall the framework go to `Actions` and click `Delete plugin`.
-
-
-### Plugin configs
-Plugin configuration files can be managed via the [Config templates `Plugin` section](/dashboard/game_servers/config_templates#plugin-configs) for most games.
-
-Click `Add to config templ.` to add the plugin to the Config template for the selected game server.
-
-![Mods & plugins - plugin config](/img/dashboard/gameserver/mods_plugins/plugin_config.jpg)
-
-
 
 ## Update countdown
 Configure how long the in-game countdown should run before automatically updating mods, plugins & plugin frameworks. Countdown options range from `immediately` to 75 minutes.
