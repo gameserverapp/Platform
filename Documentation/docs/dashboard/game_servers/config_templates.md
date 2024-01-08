@@ -59,31 +59,31 @@ Advanced-mode shows all relevant files and settings that you may want to change 
 ![Config template - advanced mode](/img/dashboard/gameserver/config_template/config_advanced_mode.jpg)
 
 
-### Plugin configs
+### Mod / Plugin configs
 
 #### General / Framework configs
 Some frameworks have general settings that determine how the framework functions, like PaperMC. 
 
-For frameworks with general settings you can, in most cases, manage the framework settings from the `Plugin` tab too.
+For frameworks with general settings you can, in most cases, manage the framework settings from the `Mod / Plugin` tab too.
 
 ![Config template - framework settings](/img/dashboard/gameserver/config_template/framework_settings_papermc.jpg)
 
-#### Configs for specific plugins
-Manage configs for individual plugins from the Config template.
+#### Configs for specific mods / plugins
+Manage configs for individual mods / plugins from the Config template.
 
-:::info Installed plugins only
-You can only manage configs for plugins that were installed via the dashboard. Manually installed plugins won't have their configs updated by Config templates.
+:::info Installed mods / plugins only
+You can only manage configs for mods / plugins that were installed via the dashboard. Manually installed mods / plugins won't have their configs updated by Config templates.
 :::
 
 Use [Config variables](#game-config-variables) for added flexibility.
 
 ![Config template - plugin specific configs](/img/dashboard/gameserver/config_template/plugin_specific_configs.jpg)
 
-Click `+ Add plugin` in the sidebar (right) to add more plugins to your Config template. 
+Click `+ Add mod / plugin` in the sidebar (right) to add more mods / plugins to your Config template. 
 
 ![Config template - add plugin to configs](/img/dashboard/gameserver/config_template/add_plugin_to_configs.jpg)
 
-Besides adding the config to your config template is it also possible to install plugins on game servers from here.
+Besides adding the config to your config template is it also possible to install mods / plugins on game servers from here.
 
 ![Config template - add plugin config and install on game server](/img/dashboard/gameserver/config_template/add_config_or_add_and_install.jpg)
 
