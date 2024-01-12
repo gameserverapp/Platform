@@ -213,7 +213,7 @@ Reorder, rename or delete template groups by clicking <icon icon="fa-solid fa-pe
 ## Third party apps
 
 ### Beacon
-For ARK: Survival Evolved you can use Beacon to manage your config template. Check out the video below to learn how to set it up.
+For ARK: Survival Evolved & ARK: Survival Ascended you can use Beacon to manage your config template. Check out the video below to learn how to set it up.
 
 [How to import configs on Beacon >](https://usebeacon.app/help/importing_existing_config)
 

@@ -47,7 +47,7 @@ Not every action will be available for each task `type`.
 ![Automations / Tasks - create task 5](/img/dashboard/automate_tasks/create_task_5.jpg)
 
 ### 4. Finish task settings
-Finally head over to the `Settings` tab to activate the task and select where (global, cluster, game server) the task should run. Click `Save settings` to save your changes.
+Finally activate the task and select where (cluster, game server) the task should run. Click `Save settings` to save your changes.
 
 [Learn more about the settings tab >](#settings)
 
@@ -117,25 +117,28 @@ Trigger / Events tasks can be run based on the following criteria:
 
 ## Settings
 
-![Automations / Tasks - Task settings](/img/dashboard/automate_tasks/task_settings_overview.jpg)
+![Automations / Tasks - Task settings](/img/dashboard/automate_tasks/task_settings.jpg)
+
+### Activate automation
+Activate the `Automation is active` switch to enable the automation.
+
+### Run for each game server(s)
+Scheduled tasks can run per server or independent of any game servers. For example when you only need to send a message to Discord, you can turn this option off.
 
 
+#### Select clusters / game servers
+When `Run for each game server(s)` is active you must select one or more cluster(s) and/or game server(s).
 
-### Unrelated to game server or cluster
-Avoid running the same task multiple times by checking `Unrelated to game server or cluster`. This is useful for sending Discord message at specific times.
+#### Only run when game server is online
+By default tasks will only run for game servers that are online. If available you can disable the switch to let tasks also run for offline game servers.
 
-### Activate for server or cluster
-Activate the task for specific game servers or all game servers in a cluster.
-
-### Ignore player status
-This can be useful in cases where, for example, the player is not online but orders whitelist access from the shop. 
+### Run actions when player is online
+When enabled this setting will ensure the actions wait for the player to come online before running. This avoids issues with actions (commands for example) that do not support offline delivery. Can be turned off for actions that don't depend on the player being online.
 
 :::caution
-Do not use this in combination with in-game deliveries! Most games do not support this and the delivery will get lost.
+Most games do not support running commands for players that are not online.
 :::
 
-### Ignore server status
-This can be useful in cases where, for example, the game server is offline and should automatically start at a specific time.
 
 ## Manage tasks
 Change the Task group via the [Task overview](https://dash.gameserverapp.com/task). Use the quick action button to perform Test runs, See history runs and more.
