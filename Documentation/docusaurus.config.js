@@ -95,6 +95,10 @@ const config = {
                 items: [
                     //left
                     {
+                        type: 'search',
+                        position: 'left',
+                    },
+                    {
                         type: 'doc',
                         position: 'left',
                         docId: 'getting_started',
@@ -113,10 +117,6 @@ const config = {
                     },
 
                     //right
-                    // {
-                    //     type: 'search',
-                    //     position: 'right',
-                    // },
                     {
                         href: 'https://www.gameserverapp.com/',
                         label: 'Visit website',
