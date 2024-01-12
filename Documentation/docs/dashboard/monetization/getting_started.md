@@ -81,7 +81,7 @@ See and manage player subscriptions.
 ### Cancel subscription
 Players can cancel subscription via the Community website. You can also cancel any player subscriptions via the dashboard.
 
-After clicking the Subscription ID you can cancel a subscription. Once cancelled it cannot be activated.
+After clicking the Subscription ID you can cancel a subscription. Once cancelled the subscription cannot be re-activated. The player can purchase a new subscription instead.
 
 ![Monetization - Subscription cancel](/img/dashboard/monetization/getting_started/subscription_cancel.jpg)
 
