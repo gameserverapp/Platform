@@ -105,6 +105,11 @@ Post a custom message in your selected Discord channel.
 
 ![Automations / Tasks - Action - discord message](/img/dashboard/automate_tasks/actions/action_discord_message.png)
 
+### Discord embed
+Post a custom Discord embed in your selected Discord channel. Accepts raw json embed format.
+
+![Automations / Tasks - Action - discord embed](/img/dashboard/automate_tasks/actions/action_discord_embed.jpg)
+
 ## Logic
 
 ### Conditional
