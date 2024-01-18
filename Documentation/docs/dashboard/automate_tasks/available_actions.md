@@ -135,6 +135,16 @@ Enable or Disable a Task. Can be useful for events etc.
 
 ![Automations / Tasks - Action - Task control](/img/dashboard/automate_tasks/actions/action_task_control.png)
 
+### Shop pack control
+Show or hide a Shop pack.
+
+![Automations / Tasks - Action - Shop pack control](/img/dashboard/automate_tasks/actions/action_shop_pack_control.jpg)
+
+### Supporter Tier control
+Show or hide a Supporter Tier.
+
+![Automations / Tasks - Action - Supporter Tier control](/img/dashboard/automate_tasks/actions/action_supporter_tier_control.jpg)
+
 ## Game server management
 
 ### Change Config template
