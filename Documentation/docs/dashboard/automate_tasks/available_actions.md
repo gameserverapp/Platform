@@ -116,7 +116,33 @@ Post a custom Discord embed in your selected Discord channel. Accepts raw json e
 Add if/else logic to your delivery with Conditional blocks.
 This Action block supports adding sub-Action blocks, which run when the conditions are met.
 
-![Automations / Tasks - Action - Conditional](/img/dashboard/automate_tasks/actions/action_conditional.png)
+![Automations / Tasks - Action - Conditional 1](/img/dashboard/automate_tasks/actions/action_conditional_1.jpg)
+
+#### Available conditions:
+- Player
+  - Player name
+  - Player token amount
+  - Player Custom role
+  - Player Status
+  - Player is admin
+- Character
+  - Character name
+  - Character level
+  - Character gender
+  - Character minutes online
+  - Character was online past 30 days
+  - Character was created today
+  - Character has group
+- Game server
+  - Game server name
+  - Game server online player count
+  - Game server is scheduled
+  - Game server has update available
+- Date
+  - Date & time
+  - Day of the week
+  
+![Automations / Tasks - Action - Conditional 2](/img/dashboard/automate_tasks/actions/action_conditional_2.jpg)
 
 ### Randomizer
 Randomly execute one of the sub options based on chance settings.
