@@ -12,6 +12,8 @@ Please note that these can change. Changes will be announced on Discord.
 - 49.12.0.167
 - 49.12.13.25
 - 49.12.33.53
+- 49.12.243.67
+- 49.13.48.159
 - 88.99.83.142
 - 88.99.125.108
 - 128.140.81.89
