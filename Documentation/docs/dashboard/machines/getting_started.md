@@ -66,6 +66,15 @@ While we agree that having to enter Steam credentials and disabling Steam Guard 
 
 ![Machine settings - steam download credentials](/img/dashboard/machines/getting_started/machine_steam_download_credentials.jpg)
 
+### Restrict access
+This feature will automatically setup the firewall for the machine and block any outside connections to sensitive ports.
+You can add IP addresses to the list, which will have access to all ports.
+
+It's also possible to ignore this option, which will remove the security warning from the machine pages. This is not recommended for beginners.
+
+![Machine settings - Restrict access 1](/img/dashboard/machines/getting_started/restrict_access_machine_actions_1.jpg)
+![Machine settings - Restrict access 2](/img/dashboard/machines/getting_started/restrict_access_machine_actions_2.jpg)
+
 ### Throttle / stagger actions
 In certain cases you may want to reduce the number of things that happen simultaneously on your machine. When too many things, like updating all game servers, happen simultaneously it might cause severe performance issues with a machine.
 
@@ -75,7 +84,7 @@ Mitigate this problem by settings a limit to how many things DediConnect will ma
 If you experience issues with your machine it can be useful to test various settings. Start with a low number and slowly work your way up. Test the new settings, by updating all game server simultaneously, before making new changes.
 :::
 
-![Machine settings - rename machine](/img/dashboard/machines/getting_started/throtte_stagger_machine_actions.jpg)
+![Machine settings - Throttle / stagger actions](/img/dashboard/machines/getting_started/throtte_stagger_machine_actions.jpg)
 
 ### Storage management
 Configure which disks/volumes can be used for DediConnect.

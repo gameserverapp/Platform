@@ -29,9 +29,11 @@ These are the relative paths __inside a docker container__.
 #### Linux
 
 Game files: `/serverfiles`
+Alternative game files path: `/home/containeruser/serverfiles`
 
 #### Windows
 Game files: `C:\serverfiles`
+Alternative game files path: `C:\Users\ContainerUser\serverfiles`
 
 ## Useful Docker parameters
 Configure custom Docker parameters using [Docker launch params](/dashboard/game_servers/getting_started/#docker-launch-params).
