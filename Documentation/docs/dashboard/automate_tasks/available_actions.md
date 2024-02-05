@@ -156,57 +156,33 @@ This Action block supports adding sub-Action blocks, which run after specified a
 
 ![Automations / Tasks - Action - Queue / Schedule](/img/dashboard/automate_tasks/actions/action_queue_schedule.png)
 
-### Task control
+
+## Manage items
+
+### Task actions
 Enable or Disable a Task. Can be useful for events etc.
 
 ![Automations / Tasks - Action - Task control](/img/dashboard/automate_tasks/actions/action_task_control.png)
 
-### Shop pack control
+### Shop pack actions
 Show or hide a Shop pack.
 
 ![Automations / Tasks - Action - Shop pack control](/img/dashboard/automate_tasks/actions/action_shop_pack_control.jpg)
 
-### Supporter Tier control
+### Supporter Tier actions
 Show or hide a Supporter Tier.
 
 ![Automations / Tasks - Action - Supporter Tier control](/img/dashboard/automate_tasks/actions/action_supporter_tier_control.jpg)
 
-## Game server management
+### Game server actions
+Lets you perform various actions, like:
+- Start game server
+- Schedule shutdown (with option countdown)
+- Schedule restart (with option countdown)
+- Schedule update (with option countdown)
+- Change config template
+- Change map
+- Create backup (with cleanup option)
+- Wipe game server (full or partial)
 
-### Change Config template
-Can be used to automatically activate weekend rates, allow players to pay for increased rates and much more.
-
-![Automations / Tasks - Action - Change config template](/img/dashboard/automate_tasks/actions/action_change_config_template.png)
-
-### Start game server
-Starts the game server(s) for which the task is activated.
-
-![Automations / Tasks - Action - start game server](/img/dashboard/automate_tasks/actions/action_start_gameserver.png)
-
-### Schedule shutdown
-Schedule a shutdown for the game server(s) for which the task is activated.
-
-![Automations / Tasks - Action - schedule shutdown](/img/dashboard/automate_tasks/actions/action_schedule_shutdown.png)
-
-### Schedule restart
-Schedule a restart for the game server(s) for which the task is activated.
-
-![Automations / Tasks - Action - schedule restart](/img/dashboard/automate_tasks/actions/action_schedule_restart.png)
-
-### Schedule update
-Schedule an update for the game server(s) for which the task is activated.
-
-![Automations / Tasks - Action - schedule update](/img/dashboard/automate_tasks/actions/action_schedule_update.png)
-
-### Wipe game server
-Perform a game server wipe, with various options like:
-- Full wipe (same as Danger zone wipe)
-- Wipe player data only (RUST)
-- Wipe world only (RUST)
-
-![Automations / Tasks - Action - wipe game server](/img/dashboard/automate_tasks/actions/action_wipe_gameserver.png)
-
-### Create backup
-Create a backup with an optional automated cleanup of old backups with the same name.
-
-![Automations / Tasks - Action - create backup](/img/dashboard/automate_tasks/actions/action_create_backup.png)
+![Automations / Tasks - Action - Game server actions](/img/dashboard/automate_tasks/actions/action_gameserver_actions.jpg)
