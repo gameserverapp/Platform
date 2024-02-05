@@ -181,7 +181,8 @@ Lets you perform various actions, like:
 - Schedule restart (with option countdown)
 - Schedule update (with option countdown)
 - Change config template
-- Change map
+- Change map / seed
+- Generate random seed (numbers, lowercase & uppercase letters)
 - Create backup (with cleanup option)
 - Wipe game server (full or partial)
 
