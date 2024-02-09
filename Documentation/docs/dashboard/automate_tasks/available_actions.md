@@ -30,10 +30,10 @@ Give player the Donor status for predetermined amount of time.
 ![Automations / Tasks - Action - Donor status](/img/dashboard/automate_tasks/actions/action_donor_status.png)
 
 ### Send tokens
-Send tokens to the associated or all (online) players.
+Send tokens to the player.
 Works with both a fixed amount and a random amount, where you can set the range.
 
-![Automations / Tasks - Action - Send tokens](/img/dashboard/automate_tasks/actions/action_send_tokens.png)
+![Automations / Tasks - Action - Send tokens](/img/dashboard/automate_tasks/actions/action_send_tokens.jpg)
 
 ### Shop pack
 Send a Shop pack to the player. This Action is not available in the Shop pack Delivery Builder.
@@ -155,6 +155,15 @@ Schedule actions that should execute somewhere in the future.
 This Action block supports adding sub-Action blocks, which run after specified amount of time.
 
 ![Automations / Tasks - Action - Queue / Schedule](/img/dashboard/automate_tasks/actions/action_queue_schedule.png)
+
+### Run actions per player
+Loops over the selected player group and runs the actions configured for each player.
+Useful for sending tokens to all online players, for example.
+
+Currently available groups:
+- Online players
+
+![Automations / Tasks - Action - Run actions per player](/img/dashboard/automate_tasks/actions/action_run_actions_per_player.jpg)
 
 
 ## Manage items

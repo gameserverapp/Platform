@@ -71,7 +71,9 @@ Achievement tasks can be triggered based on the following criteria:
   - Player is whitelisted for [X]
   - Player has over [X] tokens
   - Player voted [X] times [since]
+  - Player connected other account (any or specific type)
 - Character
+  - Character minutes online above [X]
   - Character reached level [X]
 
 ### Scheduled
@@ -110,8 +112,8 @@ Trigger / Events tasks can be run based on the following criteria:
   - Player voted [X] times [since]
   - New review posted
 - Report
-  - New report created
-  - Report closed
+  - New report created (any or specific type)
+  - Report closed (any or specific type)
 - Game server
   - Game server comes online
 
