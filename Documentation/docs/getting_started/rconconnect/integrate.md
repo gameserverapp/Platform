@@ -11,7 +11,7 @@ When you aren't using DediConnect, make sure to [connect game server with RconCo
 When there is no `Integrate` tab you do not need to take any further steps. Your game server is fully integrated and ready to go!
 :::
 
-## Atlas & ARK: Survival Evolved
+## Atlas & ARK
 
 Find the `Integrate` tab under [game server settings](/dashboard/game_servers/getting_started#settings) for RconConnect servers only.
 
