@@ -14,63 +14,35 @@ Supports unlimited numbers of commands. For Shop packs the Game selector is hidd
 
 ![Automations / Tasks - Action - in-game command](/img/dashboard/automate_tasks/actions/action_ingame_command.png)
 
-### In-game DM
-Send an in-game Direct Message (DM) to the character.
-
-![Automations / Tasks - Action - in-game dm](/img/dashboard/automate_tasks/actions/action_ingame_dm.png)
-
 ### In-game broadcast
 Send an in-game global message / broadcast to the game server.
 
 ![Automations / Tasks - Action - in-game broadcast](/img/dashboard/automate_tasks/actions/action_ingame_broadcast.png)
 
-### Donor status
-Give player the Donor status for predetermined amount of time.
+### Wipe / reset tokens
+This action will reset the tokens for all players on the dashboard. Can only run once every 15 minutes.
 
-![Automations / Tasks - Action - Donor status](/img/dashboard/automate_tasks/actions/action_donor_status.png)
+![Automations / Tasks - Action - Wipe / reset tokens](/img/dashboard/automate_tasks/actions/action_wipe_reset_tokens.jpg)
+
+### Copy / Paste GSA clipboard
+Actions can be copied, including any sub actions, to make things. The clipboard is stored for 10 minutes.
+
+![Automations / Tasks - Action - Copy to GSA clipboard](/img/dashboard/automate_tasks/actions/action_copy_to_gsa_clipboard.jpg)
+![Automations / Tasks - Action - Paste GSA clipboard](/img/dashboard/automate_tasks/actions/action_paste_gsa_clipboard.jpg)
+
+
+## Admin tools
+
+### In-game DM
+Send an in-game Direct Message (DM) to the character.
+
+![Automations / Tasks - Action - in-game dm](/img/dashboard/automate_tasks/actions/action_ingame_dm.png)
 
 ### Send tokens
 Send tokens to the player.
 Works with both a fixed amount and a random amount, where you can set the range.
 
 ![Automations / Tasks - Action - Send tokens](/img/dashboard/automate_tasks/actions/action_send_tokens.jpg)
-
-### Shop pack
-Send a Shop pack to the player. This Action is not available in the Shop pack Delivery Builder.
-
-![Automations / Tasks - Action - Shop pack](/img/dashboard/automate_tasks/actions/action_shop_pack.png)
-
-### Integration mod
-Activate special GSA Integration mod features, like:
-- Open Report UI
-- Open Review UI
-- Kill player
-- Teleport player to coordinates
-- Give EXP to player
-
-![Automations / Tasks - Action - Integration mod](/img/dashboard/automate_tasks/actions/action_integration_mod.png)
-
-
-### Claim votes
-Claims any claimable votes for the player.
-
-![Automations / Tasks - Action - Claim vote](/img/dashboard/automate_tasks/actions/action_claim_vote.png)
-
-## Admin tools
-
-### Whitelist
-Add / remove whitelist for a specific cluster, game server or all.
-
-![Automations / Tasks - Action - whitelist 1](/img/dashboard/automate_tasks/actions/action_whitelist_1.png)
-
-![Automations / Tasks - Action - whitelist 2](/img/dashboard/automate_tasks/actions/action_whitelist_2.png)
-
-### Custom Role
-Add or remove a Custom Role for the associated player.
-
-![Automations / Tasks - Action - Custom role 1](/img/dashboard/automate_tasks/actions/action_custom_role_1.png)
-
-![Automations / Tasks - Action - Custom role 2](/img/dashboard/automate_tasks/actions/action_custom_role_2.png)
 
 ### Mute / Unmute player
 Mute / Unmute player on the game server(s).
@@ -90,6 +62,45 @@ Bans / unbans player from the game server(s).
 ![Automations / Tasks - Action - Unban player](/img/dashboard/automate_tasks/actions/action_unban_player.jpg)
 
 ![Automations / Tasks - Action - Ban player](/img/dashboard/automate_tasks/actions/action_ban_player.jpg)
+
+### Integration mod
+Activate special GSA Integration mod features, like:
+- Open Report UI
+- Open Review UI
+- Kill player
+- Teleport player to coordinates
+- Give EXP to player
+
+![Automations / Tasks - Action - Integration mod](/img/dashboard/automate_tasks/actions/action_integration_mod.png)
+
+### Whitelist
+Add / remove whitelist for a specific cluster, game server or all.
+
+![Automations / Tasks - Action - whitelist 1](/img/dashboard/automate_tasks/actions/action_whitelist_1.png)
+
+![Automations / Tasks - Action - whitelist 2](/img/dashboard/automate_tasks/actions/action_whitelist_2.png)
+
+### Custom Role
+Add or remove a Custom Role for the associated player.
+
+![Automations / Tasks - Action - Custom role 1](/img/dashboard/automate_tasks/actions/action_custom_role_1.png)
+
+![Automations / Tasks - Action - Custom role 2](/img/dashboard/automate_tasks/actions/action_custom_role_2.png)
+
+### Donor status
+Give player the Donor status for predetermined amount of time.
+
+![Automations / Tasks - Action - Donor status](/img/dashboard/automate_tasks/actions/action_donor_status.png)
+
+### Shop pack
+Send a Shop pack to the player. This Action is not available in the Shop pack Delivery Builder.
+
+![Automations / Tasks - Action - Shop pack](/img/dashboard/automate_tasks/actions/action_shop_pack.png)
+
+### Claim votes
+Claims any claimable votes for the player.
+
+![Automations / Tasks - Action - Claim vote](/img/dashboard/automate_tasks/actions/action_claim_vote.png)
 
 ## Discord
 
