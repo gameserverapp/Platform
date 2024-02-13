@@ -97,6 +97,11 @@ Send a Shop pack to the player. This Action is not available in the Shop pack De
 
 ![Automations / Tasks - Action - Shop pack](/img/dashboard/automate_tasks/actions/action_shop_pack.png)
 
+### Storage pack
+Send an in-game upload. This action is only available for ARK: Survival Evolved inside Shop packs.
+
+![Automations / Tasks - Action - Storage pack](/img/dashboard/automate_tasks/actions/action_storage_pack.jpg)
+
 ### Claim votes
 Claims any claimable votes for the player.
 
