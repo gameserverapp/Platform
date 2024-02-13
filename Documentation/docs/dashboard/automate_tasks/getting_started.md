@@ -71,10 +71,11 @@ Achievement tasks can be triggered based on the following criteria:
   - Player is whitelisted for [X]
   - Player has over [X] tokens
   - Player voted [X] times [since]
+  - Player voted
   - Player connected other account (any or specific type)
 - Character
-  - Character minutes online above [X]
   - Character reached level [X]
+  - Character minutes online above [X]
 
 ### Scheduled
 
@@ -87,11 +88,16 @@ Scheduled tasks can be run based on the following criteria:
   - At specific moment [date & time] (runs once)
 - Repeating
   - Every [X] minutes
+- Hourly
   - Every hour at minute [X]
   - Every [X] hours at minute [Y]
+- Daily
   - Every day at [hour]
+- Weekly
   - Weekly at specific day and time
+- Monthly
   - Monthly at specific day and time
+  - Monthly at [X]nth day and time
 
 ### Trigger / event
 
@@ -105,9 +111,10 @@ Trigger / Events tasks can be run based on the following criteria:
   - Character goes offline
   - New character created
   - Character Wake up (ARK / ATLAS only)
-- Player
+- Chat
   - Player chat contains [X] (one or multiple)
   - Player chat exactly matches [X] (one or multiple)
+- Vote / Review
   - Player voted
   - Player voted [X] times [since]
   - New review posted
@@ -133,6 +140,14 @@ When `Run for each game server(s)` is active you must select one or more cluster
 
 #### Only run when game server is online
 By default tasks will only run for game servers that are online. If available you can disable the switch to let tasks also run for offline game servers.
+
+#### Delay between servers
+Adds delay between each game server task, in order to spread load when running on many game servers.
+
+Options:
+- No delay
+- 20 second delay
+- 40 second delay
 
 ### Run actions when player is online
 When enabled this setting will ensure the actions wait for the player to come online before running. This avoids issues with actions (commands for example) that do not support offline delivery. Can be turned off for actions that don't depend on the player being online.

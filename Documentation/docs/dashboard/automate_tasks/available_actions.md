@@ -165,6 +165,12 @@ Currently available groups:
 
 ![Automations / Tasks - Action - Run actions per player](/img/dashboard/automate_tasks/actions/action_run_actions_per_player.jpg)
 
+### Run actions per game server
+Loops over the selected game servers and runs the actions configured for each game server.
+This action is only available in Shop packs and Supporter Tiers.
+
+![Automations / Tasks - Action - Run actions per game server](/img/dashboard/automate_tasks/actions/action_run_actions_per_gameserver.jpg)
+
 
 ## Manage items
 
