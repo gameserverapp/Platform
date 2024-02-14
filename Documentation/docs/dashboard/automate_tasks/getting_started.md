@@ -124,6 +124,18 @@ Trigger / Events tasks can be run based on the following criteria:
 - Game server
   - Game server comes online
 
+### Webhook
+
+Use external applications like bots or apps to run actions on the dashboard.
+
+![Automations / Tasks - type - Webhook](/img/dashboard/automate_tasks/task_type_webhook.jpg)
+
+Webhook options:
+- Generic webhook
+- Player webhook
+- Character webhook
+- Game server webhook
+
 ## Settings
 
 ![Automations / Tasks - Task settings](/img/dashboard/automate_tasks/task_settings.jpg)
