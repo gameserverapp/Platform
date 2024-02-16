@@ -166,6 +166,13 @@ html[data-theme='dark'] {
                 margin-right:50px;
             }
 
+
+            @media (max-width: 600px) {
+                .navbar__item:not(.header-discord-link) {
+                    display:none !important;
+                }
+            }
+
             .icon-link {
                 padding: 0.5rem;
                 display: flex;
