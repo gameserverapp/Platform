@@ -46,7 +46,7 @@ Use the `Shortcut navigation` on the right to quickly navigate to the right file
 #### Easy & Advanced-mode
 While all games support `Advanced-mode`, some games support `Easy-mode`. With `Easy-mode` the settings are converted into a form with switches for easy management. 
 
-Switch between modes using the <icon icon="fa-solid fa-caret-down" size="lg" /> icon in the __top-right corner__ and clicking `Switch to Advanced-mode` or `Switch to Easy-mode`.
+Switch between modes using the <Icon icon="fa-solid fa-caret-down" size="lg" /> icon in the __top-right corner__ and clicking `Switch to Advanced-mode` or `Switch to Easy-mode`.
 
 ##### Easy-mode example
 Easy-mode presents a form with switches and input fields where you can manage a select group of settings.
@@ -147,7 +147,7 @@ In the popup you can write text using [Markdown styling](https://simplemde.com/m
 
 ![Config template - notes 2](/img/dashboard/gameserver/config_template/config_notes_2.jpg)
 
-Configs with notes show a little <icon icon="fa-solid fa-sticky-note" size="lg" /> icon at the Config template overview. Hover over the icon to see a summary.
+Configs with notes show a little <Icon icon="fa-solid fa-sticky-note" size="lg" /> icon at the Config template overview. Hover over the icon to see a summary.
 
 ![Config template - notes 3](/img/dashboard/gameserver/config_template/config_notes_3.jpg)
 
@@ -162,7 +162,7 @@ Configs with notes show a little <icon icon="fa-solid fa-sticky-note" size="lg" 
 #### Activate on game servers
 Besides [choosing a Config template from the game server settings](/dashboard/game_servers/getting_started#settings) can you also activate a config template on game servers from a Config template.
 
-Click the <icon icon="fa-solid fa-caret-down" size="lg" /> icon in the __top-right corner__ and click `Activate on servers`.
+Click the <Icon icon="fa-solid fa-caret-down" size="lg" /> icon in the __top-right corner__ and click `Activate on servers`.
 
 ![Config template - activate on servers 1](/img/dashboard/gameserver/config_template/config_template_activate_on_servers_1.jpg)
 
@@ -174,7 +174,7 @@ In the popup you can see which servers already have the Config template activate
 #### Restart game servers
 Apply changes directly from the Config template.
 
-Click the <icon icon="fa-solid fa-caret-down" size="lg" /> icon in the __top-right corner__ and click `Restart servers`.
+Click the <Icon icon="fa-solid fa-caret-down" size="lg" /> icon in the __top-right corner__ and click `Restart servers`.
 
 ![Config template - restart servers 1](/img/dashboard/gameserver/config_template/config_template_restart_servers_1.jpg)
 
@@ -188,7 +188,7 @@ Config template groups help keep config templates organised and tidy.
 You can add existing templates to a group or change the group for a template.
 
 ### Create template group
-Click <icon icon="fa-solid fa-plus-square" size="lg" /> next to "Config templates" to create a new group.
+Click <Icon icon="fa-solid fa-plus-square" size="lg" /> next to "Config templates" to create a new group.
 
 ![Config template group - create 1](/img/dashboard/gameserver/config_template/config_template_group_add_1.jpg)
 
@@ -204,7 +204,7 @@ Add existing templates to a group or change the group for a template by selectin
 
 ### Manage template groups
 
-Reorder, rename or delete template groups by clicking <icon icon="fa-solid fa-pen-square" size="lg" />.
+Reorder, rename or delete template groups by clicking <Icon icon="fa-solid fa-pen-square" size="lg" />.
 
 ![Config template group - manage groups 1](/img/dashboard/gameserver/config_template/config_template_group_manage_1.jpg)
 
@@ -217,4 +217,4 @@ For ARK: Survival Evolved & ARK: Survival Ascended you can use Beacon to manage 
 
 [How to import configs on Beacon >](https://usebeacon.app/help/importing_existing_config)
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/N35NyETlY6w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/N35NyETlY6w" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>

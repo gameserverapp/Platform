@@ -75,7 +75,7 @@ Change the order by dragging the game servers up / down.
 ## Manage clusters
 
 ### Re-order, Rename & Delete
-Click <icon icon="fa-solid fa-pen-square" size="lg" /> to open the window where you can re-order, rename and delete clusters.
+Click <Icon icon="fa-solid fa-pen-square" size="lg" /> to open the window where you can re-order, rename and delete clusters.
 
 ![Clusters - change order](/img/dashboard/gameserver/clusters/change_cluster_order.jpg)
 

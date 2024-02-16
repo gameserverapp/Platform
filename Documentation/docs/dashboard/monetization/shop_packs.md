@@ -69,7 +69,7 @@ Click the `Add sub package` at the bottom of the `Sub packages` page to add a ne
 #### Convert Single to Collection sub package
 Add an existing `Single` Shop pack to a collection, for example when merging similar items into one Collection.
 
-Click the <icon icon="fa-solid fa-caret-down" size="lg" /> icon on the Shop pack you want to add to a Collection and click ` Add to Collection`.
+Click the <Icon icon="fa-solid fa-caret-down" size="lg" /> icon on the Shop pack you want to add to a Collection and click ` Add to Collection`.
 
 ![Monetization - Convert Single to Collect sub package 1](/img/dashboard/monetization/shop_packs/convert_single_to_collection_sub_package_1.jpg)
 
@@ -81,15 +81,15 @@ Select which `Collection` the Single item should be added too.
 ### Settings, Pricing & Delivery
 Apart from the Collection settings tab is it possible to change settings per sub package.
 
-Click the <icon icon="fa-solid fa-cog" size="lg" /> icon on the right of each sub package and click `Settings` or `Pricing & delivery` to edit the sub package settings.
+Click the <Icon icon="fa-solid fa-cog" size="lg" /> icon on the right of each sub package and click `Settings` or `Pricing & delivery` to edit the sub package settings.
 
 Click the title / badges for a shortcut to `Settings` or `Pricing & delivery`.
 
 ![Monetization - Sub package settings](/img/dashboard/monetization/shop_packs/sub_package_settings.jpg)
 
 ### Manage
-Drag (up/down) the <icon icon="fa-solid fa-sort" size="lg" /> on the left of each sub package to change the sub package order.
-Click the <icon icon="fa-solid fa-cog" size="lg" /> icon on the right for cloning or deleting a sub package.
+Drag (up/down) the <Icon icon="fa-solid fa-sort" size="lg" /> on the left of each sub package to change the sub package order.
+Click the <Icon icon="fa-solid fa-cog" size="lg" /> icon on the right for cloning or deleting a sub package.
 
 
 ![Monetization - Sub package manage](/img/dashboard/monetization/shop_packs/sub_package_manage.jpg)
@@ -187,9 +187,9 @@ __Example:__
 
 
 ## Manage Shop packs
-Change the Shop pack order by dragging <icon icon="fa-solid fa-sort" size="lg" /> up / down.
+Change the Shop pack order by dragging <Icon icon="fa-solid fa-sort" size="lg" /> up / down.
 
-Click the <icon icon="fa-solid fa-caret-down" size="lg" /> icon on the right with each Shop pack to clone or delete.
+Click the <Icon icon="fa-solid fa-caret-down" size="lg" /> icon on the right with each Shop pack to clone or delete.
 
 Use the `Visit shop` button at the top-right to see how changes affect the shop.
 

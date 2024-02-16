@@ -16,13 +16,30 @@ const config = {
     projectName: 'Platform',
 
     plugins: [
-        'docusaurus-plugin-sass'
+        'docusaurus-plugin-sass',
+        // [
+        //     "docusaurus-plugin-openapi",
+        //     {
+        //         id: 'system-api',
+        //         path: './docs/api/system-api.yaml',
+        //         routeBasePath: '/developers/system-api'
+        //     }
+        // ],
+        // [
+        //     "docusaurus-plugin-openapi",
+        //     {
+        //         id: 'community-api',
+        //         path: './docs/api/community-api.yaml',
+        //         routeBasePath: '/developers/community-api'
+        //     }
+        // ]
     ],
 
     presets: [
         [
-            '@docusaurus/preset-classic',
+            'docusaurus-preset-openapi',
             {
+                api: false,
                 docs: {
                     sidebarPath: 'sidebars.js',
                     editUrl: 'https://github.com/gameserverapp/platform/tree/main/Documentation',
@@ -30,11 +47,11 @@ const config = {
                     // showLastUpdateTime: true, //not supported by CloudFlare
                     // showLastUpdateAuthor: true //not supported by CloudFlare
                 },
-                blog: {
-                    showReadingTime: true,
-                },
+                blog: false,
                 theme: {
-                    customCss: require.resolve('./src/css/custom.scss'),
+                    customCss: [
+                        './src/css/custom.scss'
+                    ],
                 },
                 gtag: {
                     trackingID: 'G-6YHGK18Q02',
@@ -95,10 +112,6 @@ const config = {
                 items: [
                     //left
                     {
-                        type: 'search',
-                        position: 'left',
-                    },
-                    {
                         type: 'doc',
                         position: 'left',
                         docId: 'getting_started',
@@ -109,25 +122,37 @@ const config = {
                         docId: 'dashboard',
                         label: 'Dashboard',
                     },
+                    // {
+                    //     label: "Developers",
+                    //     position: "left",
+                    //     items: [
+                    //         {
+                    //             to: "/developers/system-api",
+                    //             label: "System API"
+                    //         },
+                    //         {
+                    //             to: "/developers/community-api",
+                    //             label: "Community API"
+                    //         },
+                    //     ],
+                    // },
                     {
-                        type: 'doc',
+                        type: 'search',
                         position: 'left',
-                        docId: 'developers',
-                        label: 'Developers',
                     },
 
                     //right
                     {
-                        href: 'https://www.gameserverapp.com/',
-                        label: 'Visit website',
+                        href: 'https://www.gameserverapp.com/join-discord',
+                        // label: 'Join Discord',
                         position: 'right',
+                        className: 'header-discord-link',
                         // className: 'gsa-login',
                     },
                     {
                         href: 'https://dash.gameserverapp.com',
-                        label: 'Login',
+                        label: 'Dashboard',
                         position: 'right',
-                        className: 'gsa-login',
                     },
                     // {
                     //     href: 'https://www.gameserverapp.com/support/get-in-touch',

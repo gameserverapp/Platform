@@ -34,7 +34,7 @@ You can switch between dashboards / communities via the dropdown button in the _
 ![Switch dashboard](/img/dashboard/getting_started/switch_dashboard.jpg)
 
 ### Quick link to docs
-On every page you can find a blue <icon icon="fa-solid fa-question-circle" size="lg" /> icon which upon clicking will open the docs for the specific page.
+On every page you can find a blue <Icon icon="fa-solid fa-question-circle" size="lg" /> icon which upon clicking will open the docs for the specific page.
 
 ![Help icon](/img/dashboard/getting_started/help_icon.jpg)
 

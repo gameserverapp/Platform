@@ -15,7 +15,7 @@ Add application, whitelist, or staff recruit forms to the community website with
 ### Review applications
 
 #### 1. Go to `Unprocessed`
-Click the number on the `Unprocessed` column or click the <icon icon="fa-solid fa-clipboard-check" size="lg" /> icon for the form you want to review.
+Click the number on the `Unprocessed` column or click the <Icon icon="fa-solid fa-clipboard-check" size="lg" /> icon for the form you want to review.
 
 ![Community - Forms - Review applications 1](/img/dashboard/community/form/review_form_1.jpg)
 
@@ -122,7 +122,7 @@ Choose what kind of field to add to the form.
 ![Community - Forms - Form builder 2](/img/dashboard/community/form/formbuilder_2.jpg)
 
 ### Manage fields
-Drag fields up/down to change the order using the <icon icon="fa-solid fa-arrows-alt" size="lg" /> icon or delete a field by clicking <icon icon="fa-solid fa-trash" size="lg" />.
+Drag fields up/down to change the order using the <Icon icon="fa-solid fa-arrows-alt" size="lg" /> icon or delete a field by clicking <Icon icon="fa-solid fa-trash" size="lg" />.
 
 ![Community - Forms - Form builder 3](/img/dashboard/community/form/formbuilder_3.jpg)
 

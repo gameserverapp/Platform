@@ -73,8 +73,8 @@ In specific cases is it possible to rename the player. This is mainly for fixing
 
 Keep in mind that changing the name can cause problems for the player, like cluster chat no longer working. Only use this to fix mentioned issues above.
 
-#### 1. Click the <icon icon="fa-solid fa-pencil-alt" size="md" /> icon
-Only specific players can have their name changed. The <icon icon="fa-solid fa-pencil-alt" size="md" /> icon is visible when this is supported.
+#### 1. Click the <Icon icon="fa-solid fa-pencil-alt" /> icon
+Only specific players can have their name changed. The <Icon icon="fa-solid fa-pencil-alt" /> icon is visible when this is supported.
 
 ![Admin tools - Player detail - Rename player 1](/img/dashboard/admin_tools/general/rename_player_1.jpg)
 

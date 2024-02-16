@@ -15,7 +15,7 @@ Learn how to connect your dedicated root machine with DediConnect.
 Ensure the machine has a [supported OS](/getting_started/dediconnect/requirements) installed and meets the [requirements](/getting_started/dediconnect/requirements). Windows machine must [run the GSA install script first](/getting_started/dediconnect/installation#prepare-a-windows-machine)!
 :::
 
-Add a new machine from the [machine overview page](https://dash.gameserverapp.com/machine) or take a shortcut by clicking the <icon icon="fa-solid fa-plus-square" size="lg" /> next to `Machines`.
+Add a new machine from the [machine overview page](https://dash.gameserverapp.com/machine) or take a shortcut by clicking the <Icon icon="fa-solid fa-plus-square" size="lg" /> next to `Machines`.
 
 
 ![Connect machine 1](/img/getting_started/dediconnect/installation/connect_machine_1.jpg)

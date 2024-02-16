@@ -61,7 +61,7 @@ Installation usually takes only a few minutes. The installed version is displaye
 
 
 ### Change load order
-Certain mods / plugins need to load in using a specific load order. The load order can be changed by grabbing the <icon icon="fa-solid fa-sort" size="md" /> and drag the mod / plugin to the desired position.
+Certain mods / plugins need to load in using a specific load order. The load order can be changed by grabbing the <Icon icon="fa-solid fa-sort" /> and drag the mod / plugin to the desired position.
 
 ![Mods & plugins - mod / plugin load order](/img/dashboard/gameserver/mods_plugins/change_mod-plugin_load_order.jpg)
 
@@ -99,7 +99,7 @@ For example, you can find the [GameServerApp.com integration mod on Steam >](htt
 ![Mods & plugins - Install mod](/img/dashboard/gameserver/mods_plugins/install_mod.jpg)
 
 ### Change load order
-Certain mods need to load in using a specific load order. The load order can be changed by grabbing the <icon icon="fa-solid fa-sort" size="md" /> and drag the mod to the desired position.
+Certain mods need to load in using a specific load order. The load order can be changed by grabbing the <Icon icon="fa-solid fa-sort" /> and drag the mod to the desired position.
 
 ![Mods & plugins - mod load order](/img/dashboard/gameserver/mods_plugins/change_mod_load_order.jpg)
 

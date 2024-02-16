@@ -13,7 +13,7 @@ Create custom tasks that execute actions based on player achievements, time sche
 ## Create automation / task
 
 ### 1. Open "Create new task" popup
-Click <icon icon="fa-solid fa-plus-square" size="lg" /> next to "Automations" to create a new task.
+Click <Icon icon="fa-solid fa-plus-square" size="lg" /> next to "Automations" to create a new task.
 
 ![Automations / Tasks - create task 1](/img/dashboard/automate_tasks/create_task_1.jpg)
 
@@ -181,12 +181,12 @@ Task groups help keep tasks organised and tidy.
 You can add existing tasks to a group or change the group for a task.
 
 ### Create task group
-Click <icon icon="fa-solid fa-plus-square" size="lg" /> next to "Task groups" to create a new task group.
+Click <Icon icon="fa-solid fa-plus-square" size="lg" /> next to "Task groups" to create a new task group.
 
 ![Automations / Tasks - create task group 1](/img/dashboard/automate_tasks/create_task_group_1.jpg)
 
 ### Manage task groups
-Reorder, rename or delete template groups by clicking <icon icon="fa-solid fa-pen-square" size="lg" />.
+Reorder, rename or delete template groups by clicking <Icon icon="fa-solid fa-pen-square" size="lg" />.
 
 ![Automations / Tasks - manage task group 1](/img/dashboard/automate_tasks/manage_task_group_1.jpg)
 

@@ -22,61 +22,63 @@ Discord users should first connect their Discord to GSA in order for the bot to 
             <td>Role</td>
         </tr>
     </thead>
-    <tr>
-        <td>
-            <strong>!help</strong>
-        </td>
-        <td>
-            Returns all available commands.
-        </td>
-        <td>
-            *
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <strong>!servers</strong>
-        </td>
-        <td>
-            Provides a list of available game server for the community
-        </td>
-        <td>
-            Player
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <strong>!vote</strong>
-        </td>
-        <td>
-            Provides a list of available voting site URLs.
-        </td>
-        <td>
-            Player
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <strong>!claim</strong>
-        </td>
-        <td>
-            Claim reward after player casted votes.
-        </td>
-        <td>
-            Player
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <strong>!kickme</strong>
-        </td>
-        <td>
-            Kicks player from the game server they are on.
-        </td>
-        <td>
-            Player
-        </td>
-    </tr>
+    <tbody>
+        <tr>
+            <td>
+                <strong>!help</strong>
+            </td>
+            <td>
+                Returns all available commands.
+            </td>
+            <td>
+                *
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <strong>!servers</strong>
+            </td>
+            <td>
+                Provides a list of available game server for the community
+            </td>
+            <td>
+                Player
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <strong>!vote</strong>
+            </td>
+            <td>
+                Provides a list of available voting site URLs.
+            </td>
+            <td>
+                Player
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <strong>!claim</strong>
+            </td>
+            <td>
+                Claim reward after player casted votes.
+            </td>
+            <td>
+                Player
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <strong>!kickme</strong>
+            </td>
+            <td>
+                Kicks player from the game server they are on.
+            </td>
+            <td>
+                Player
+            </td>
+        </tr>
+    </tbody>
 </table>
 
 ### Group commands
@@ -89,14 +91,17 @@ Group commands are available on Discord servers that were connected via a Commun
             <td>Info</td>
         </tr>
     </thead>
-    <tr>
-        <td>
-            <strong>!motd [message]</strong>
-        </td>
-        <td>
-            Sets the Message of the Day for your group.
-        </td>
-    </tr>
+
+    <tbody>
+        <tr>
+            <td>
+                <strong>!motd [message]</strong>
+            </td>
+            <td>
+                Sets the Message of the Day for your group.
+            </td>
+        </tr>
+    </tbody>
 </table>
 
 ### Admin commands
@@ -110,54 +115,57 @@ Commands that control game servers are only working for DediConnect game servers
             <td>Info</td>
         </tr>
     </thead>
-    <tr>
-        <td>
-            <strong>!start</strong> [server ID or 'all']
-        </td>
-        <td>
-            Perform "start" action for game server(s).
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <strong>!stop</strong> [server ID or 'all'] [countdown: now,5,15,30 or 60]
-        </td>
-        <td>
-            Perform "stop" action for game server(s), with countdown (optional).
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <strong>!restart</strong> [server ID or 'all'] [countdown: now,5,15,30 or 60]
-        </td>
-        <td>
-            Perform "restart" action for game server(s), with countdown (optional).
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <strong>!update</strong> [server ID or 'all'] [countdown: now,5,15,30 or 60]
-        </td>
-        <td>
-            Perform "update" action for game server(s), with countdown (optional).
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <strong>!cancel</strong> [server ID or 'all']
-        </td>
-        <td>
-            Cancels current shutdown/stop, restart & update scheduled action for game server(s).
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <strong>!snapshot</strong> [server ID or 'all']  [snapshot name]
-        </td>
-        <td>
-            Perform "create back up" action for game server(s).
-        </td>
-    </tr>
+
+    <tbody>
+        <tr>
+            <td>
+                <strong>!start</strong> [server ID or 'all']
+            </td>
+            <td>
+                Perform "start" action for game server(s).
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <strong>!stop</strong> [server ID or 'all'] [countdown: now,5,15,30 or 60]
+            </td>
+            <td>
+                Perform "stop" action for game server(s), with countdown (optional).
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <strong>!restart</strong> [server ID or 'all'] [countdown: now,5,15,30 or 60]
+            </td>
+            <td>
+                Perform "restart" action for game server(s), with countdown (optional).
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <strong>!update</strong> [server ID or 'all'] [countdown: now,5,15,30 or 60]
+            </td>
+            <td>
+                Perform "update" action for game server(s), with countdown (optional).
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <strong>!cancel</strong> [server ID or 'all']
+            </td>
+            <td>
+                Cancels current shutdown/stop, restart & update scheduled action for game server(s).
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <strong>!snapshot</strong> [server ID or 'all']  [snapshot name]
+            </td>
+            <td>
+                Perform "create back up" action for game server(s).
+            </td>
+        </tr>
+    </tbody>
 </table>
 
 ## Features

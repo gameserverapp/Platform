@@ -33,7 +33,7 @@ You can change the recipient Character, retry failed deliveries or archive a del
 Every action on a delivery is logged to help you understand what happened. This is especially helpful when deliveries are failing.
 
 :::tip Log details
-Click the <icon icon="fa-solid fa-chevron-down" size="lg" /> icon in the logs section to show more details.
+Click the <Icon icon="fa-solid fa-chevron-down" size="lg" /> icon in the logs section to show more details.
 :::
 
 :::caution Solve command issues
