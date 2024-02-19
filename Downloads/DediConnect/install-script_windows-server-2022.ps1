@@ -1,6 +1,23 @@
 Set-ExecutionPolicy Bypass -Scope Process -force
 Set-ExecutionPolicy Bypass -force
 
+function Test-Administrator
+{
+    [OutputType([bool])]
+    param()
+    process {
+        [Security.Principal.WindowsPrincipal]$user = [Security.Principal.WindowsIdentity]::GetCurrent();
+        return $user.IsInRole([Security.Principal.WindowsBuiltinRole]::Administrator);
+    }
+}
+
+if(-not (Test-Administrator))
+{
+    Write-Error "This script must be executed as Administrator.";
+    pause;
+    exit 1;
+}
+
 Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0
 
 Set-Service -Name sshd -StartupType Automatic
