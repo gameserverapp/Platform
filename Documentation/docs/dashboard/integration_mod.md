@@ -114,7 +114,7 @@ The Gem acts like any other consumable: it can be exchanged and/or stolen.
 ![Integration mod - ](/img/dashboard/integration_mod/token_gems.jpg)
 
 :::info
-These codes below are prepared for use in Shop packs using [In-game commands](/dashboard/automate_tasks/available_actions#in-game-command).
+These codes below are prepared for use in Shop packs using [In-game commands](/dashboard/automate_tasks/actions#in-game-command).
 To use the commands outside the Shop packs, make sure to replace `{gameid}` with the in-game character ID (not the Steam id).
 :::
 

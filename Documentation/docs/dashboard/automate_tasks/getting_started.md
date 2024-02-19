@@ -33,7 +33,7 @@ Select when the task should run.
 
 ### 3. Add actions
 
-Click `Add action` to open the popup. [See all available task actions >](/dashboard/automate_tasks/available_actions)
+Click `Add action` to open the popup. [See all available task actions >](/dashboard/automate_tasks/actions)
 
 You can add various actions to a task. Each action performs a different task that you can configure.
 

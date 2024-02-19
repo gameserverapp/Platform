@@ -32,7 +32,7 @@ Enter a currency, price and payment type (one-time or recurring). Click `Save se
 ### 3. Add actions
 Add actions to the `Delivery content` tab. These actions will execute when players buy the Supporter Tier. When the Supporter Tier is a `recurring` subscription it will execute the actions from `Delivery content` every time the subscription is renewed successfully.
 
-The actions are similar to Task actions. [Learn more about the available actions >](/dashboard/automate_tasks/available_actions)
+The actions are similar to Task actions. [Learn more about the available actions >](/dashboard/automate_tasks/actions)
 
 ![Monetization - Create Supporter Tier 4](/img/dashboard/monetization/supporter_tiers/create_tier_4.jpg)
 
@@ -44,7 +44,7 @@ This steps applies to recurring subscription only.
 
 When a recurring subscription expired all actions from the `Expired actions` are executed. This lets you remove any roles, whitelist access etc. when a subscription runs out.
 
-The actions are similar to Task actions. [Learn more about the available actions >](/dashboard/automate_tasks/available_actions)
+The actions are similar to Task actions. [Learn more about the available actions >](/dashboard/automate_tasks/actions)
 
 ![Monetization - Create Supporter Tier 5](/img/dashboard/monetization/supporter_tiers/create_tier_5.jpg)
 

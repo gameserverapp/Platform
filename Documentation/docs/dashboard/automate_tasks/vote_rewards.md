@@ -70,7 +70,7 @@ Click `Add condition` to save the condition.
 ![Automations / Tasks - Create vote reward 5](/img/dashboard/automate_tasks/vote_reward/create_vote_reward_5.jpg)
 
 #### 3. Add actions
-By adding actions to the Vote reward you determine what GSA should do / send to the player when they claimed a vote. These actions are similar to Task actions. [Learn more about the available actions](/dashboard/automate_tasks/available_actions).
+By adding actions to the Vote reward you determine what GSA should do / send to the player when they claimed a vote. These actions are similar to Task actions. [Learn more about the available actions](/dashboard/automate_tasks/actions).
 
 ![Automations / Tasks - Create vote reward 6](/img/dashboard/automate_tasks/vote_reward/create_vote_reward_6.jpg)
 

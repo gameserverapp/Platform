@@ -1,5 +1,5 @@
 ---
-title: Available actions
+title: Actions
 sidebar_position: 1
 ---
 Most actions listed on this page are available for Tasks, Shop packs, Supporter Tiers and Vote rewards.

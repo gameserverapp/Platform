@@ -44,7 +44,7 @@ If the selected game supports the in-game shop, you can also select an in-game i
 
 ### 3. Add actions
 Adding actions is a little different for both Shop pack types.
-The actions are similar to Task actions. [Learn more about the available actions >](/dashboard/automate_tasks/available_actions)
+The actions are similar to Task actions. [Learn more about the available actions >](/dashboard/automate_tasks/actions)
 
 #### Single
 Add actions to the `Delivery content` tab. These actions will execute when players buy the Shop pack.

@@ -1,6 +1,6 @@
 ---
 title: History / run logs
-sidebar_position: 2
+sidebar_position: 3
 ---
 
 See history task runs including server responses and other useful information to help understand what each task did.
