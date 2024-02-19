@@ -12,10 +12,14 @@ Most actions listed on this page are available for Tasks, Shop packs, Supporter 
 Execute in-game RCON / Websocket / Telnet commands, with variables.
 Supports unlimited numbers of commands. For Shop packs the Game selector is hidden.
 
+[Variables](/dashboard/automate_tasks/variables) are available with this action.
+
 ![Automations / Tasks - Action - in-game command](/img/dashboard/automate_tasks/actions/action_ingame_command.png)
 
 ### In-game broadcast
 Send an in-game global message / broadcast to the game server.
+
+[Variables](/dashboard/automate_tasks/variables) are available with this action.
 
 ![Automations / Tasks - Action - in-game broadcast](/img/dashboard/automate_tasks/actions/action_ingame_broadcast.png)
 
@@ -36,11 +40,15 @@ Actions can be copied, including any sub actions, to make things. The clipboard 
 ### In-game DM
 Send an in-game Direct Message (DM) to the character.
 
+[Variables](/dashboard/automate_tasks/variables) are available with this action.
+
 ![Automations / Tasks - Action - in-game dm](/img/dashboard/automate_tasks/actions/action_ingame_dm.png)
 
 ### Send tokens
 Send tokens to the player.
 Works with both a fixed amount and a random amount, where you can set the range.
+
+[Variables](/dashboard/automate_tasks/variables) are available with this action.
 
 ![Automations / Tasks - Action - Send tokens](/img/dashboard/automate_tasks/actions/action_send_tokens.jpg)
 
@@ -119,10 +127,14 @@ Assign or remove a Discord Role from the associated Discord user.
 ### Discord message
 Post a custom message in your selected Discord channel.
 
+[Variables](/dashboard/automate_tasks/variables) are available with this action.
+
 ![Automations / Tasks - Action - discord message](/img/dashboard/automate_tasks/actions/action_discord_message.png)
 
 ### Discord embed
 Post a custom Discord embed in your selected Discord channel. Accepts raw json embed format.
+
+[Variables](/dashboard/automate_tasks/variables) are available with this action.
 
 ![Automations / Tasks - Action - discord embed](/img/dashboard/automate_tasks/actions/action_discord_embed.jpg)
 
@@ -169,6 +181,8 @@ This Action block supports adding sub-Action blocks, per Randomizer option.
 ### Queue / Schedule
 Schedule actions that should execute somewhere in the future.
 This Action block supports adding sub-Action blocks, which run after specified amount of time.
+
+Minimum delay: 3 minutes.
 
 ![Automations / Tasks - Action - Queue / Schedule](/img/dashboard/automate_tasks/actions/action_queue_schedule.png)
 
