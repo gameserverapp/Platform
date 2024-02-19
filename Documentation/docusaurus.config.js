@@ -17,22 +17,24 @@ const config = {
 
     plugins: [
         'docusaurus-plugin-sass',
-        // [
-        //     "docusaurus-plugin-openapi",
-        //     {
-        //         id: 'system-api',
-        //         path: './docs/api/system-api.yaml',
-        //         routeBasePath: '/developers/system-api'
-        //     }
-        // ],
-        // [
-        //     "docusaurus-plugin-openapi",
-        //     {
-        //         id: 'community-api',
-        //         path: './docs/api/community-api.yaml',
-        //         routeBasePath: '/developers/community-api'
-        //     }
-        // ]
+        [
+            "docusaurus-plugin-openapi",
+            {
+                id: 'system-api',
+
+                path: './docs/api/openapi.yaml',
+                // path: './docs/api/system-api.yaml',
+                routeBasePath: '/developers/system-api'
+            }
+        ],
+        [
+            "docusaurus-plugin-openapi",
+            {
+                id: 'community-api',
+                path: './docs/api/community-api.yaml',
+                routeBasePath: '/developers/community-api'
+            }
+        ]
     ],
 
     presets: [
@@ -122,20 +124,20 @@ const config = {
                         docId: 'dashboard',
                         label: 'Dashboard',
                     },
-                    // {
-                    //     label: "Developers",
-                    //     position: "left",
-                    //     items: [
-                    //         {
-                    //             to: "/developers/system-api",
-                    //             label: "System API"
-                    //         },
-                    //         {
-                    //             to: "/developers/community-api",
-                    //             label: "Community API"
-                    //         },
-                    //     ],
-                    // },
+                    {
+                        label: "Developers",
+                        position: "left",
+                        items: [
+                            {
+                                to: "/developers/system-api/introduction",
+                                label: "System API"
+                            },
+                            {
+                                to: "/developers/community-api",
+                                label: "Community API"
+                            },
+                        ],
+                    },
                     {
                         type: 'search',
                         position: 'left',

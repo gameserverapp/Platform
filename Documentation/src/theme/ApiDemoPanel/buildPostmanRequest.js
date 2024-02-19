@@ -1,0 +1,349 @@
+import cloneDeep from "lodash/cloneDeep";
+import sdk from "postman-collection";
+function endsWithHalfSurrogatePair(value) {
+  if (value.length === 0) {
+    return false;
+  }
+  const lastIndex = value.length - 1;
+  const charCode = value.charCodeAt(lastIndex);
+  // https://unicodebook.readthedocs.io/unicode_encodings.html#utf-16-surrogate-pairs
+  // If ends with high surrogates string is invalid and encodeURIComponent fails
+  // Only end checked for cases where surrogates input is sequential
+  // We assume the user inputs a valid string but sequential write might temporarily
+  // result in half a pair ending string
+  if (charCode < 0xd800 || charCode > 0xdbff) {
+    return false; // If any character is not a high surrogate, return false
+  }
+  return true;
+}
+function safeEncodeURIComponent(value) {
+  if (typeof value === "string" && endsWithHalfSurrogatePair(value)) {
+    return encodeURIComponent(value.slice(0, -1));
+  }
+  return encodeURIComponent(value);
+}
+export function openApiQueryParams2PostmanQueryParams(queryParams) {
+  let qp = [];
+  for (const param of queryParams) {
+    if (Array.isArray(param.value) && param?.explode === true) {
+      for (const value of param.value) {
+        qp.push({
+          ...param,
+          value,
+        });
+      }
+    } else {
+      qp.push(param);
+    }
+  }
+  return qp
+    .map((param) => {
+      if (!param.value) {
+        return undefined;
+      }
+      let delimiter = ",";
+      if (param?.style === "spaceDelimited") {
+        delimiter = "%20";
+      } else if (param?.style === "pipeDelimited") {
+        delimiter = "|";
+      }
+      if (Array.isArray(param.value)) {
+        return new sdk.QueryParam({
+          key: param.name,
+          value: param.value.map(safeEncodeURIComponent).join(delimiter),
+        });
+      }
+
+      // Parameter allows empty value: "/hello?extended"
+      if (param.allowEmptyValue) {
+        if (param.value === "true") {
+          return new sdk.QueryParam({
+            key: param.name,
+            value: null,
+          });
+        }
+        return undefined;
+      }
+      return new sdk.QueryParam({
+        key: param.name,
+        value: safeEncodeURIComponent(param.value),
+      });
+    })
+    .filter((item) => item !== undefined);
+}
+function setQueryParams(postman, queryParams) {
+  postman.url.query.clear();
+  const qp = openApiQueryParams2PostmanQueryParams(queryParams);
+  if (qp.length > 0) {
+    postman.addQueryParams(qp);
+  }
+}
+function setPathParams(postman, queryParams) {
+  const recursiveEncodeURIComponent = (c) =>
+    Array.isArray(c)
+      ? c.map(safeEncodeURIComponent)
+      : safeEncodeURIComponent(c);
+  const source = queryParams.map((param) => {
+    return new sdk.Variable({
+      key: param.name,
+      value: param.value
+        ? recursiveEncodeURIComponent(param.value)
+        : `:${param.name}`,
+    });
+  });
+  postman.url.variables.assimilate(source, false);
+}
+function buildCookie(cookieParams) {
+  const cookies = cookieParams
+    .map((param) => {
+      if (param.value && !Array.isArray(param.value)) {
+        return new sdk.Cookie({
+          // TODO: Is this right?
+          path: "",
+          domain: "",
+          key: param.name,
+          value: param.value,
+        });
+      }
+      return undefined;
+    })
+    .filter((item) => item !== undefined);
+  const list = new sdk.CookieList(null, cookies);
+  return list.toString();
+}
+function setHeaders(postman, contentType, accept, cookie, headerParams, other) {
+  postman.headers.clear();
+  if (contentType) {
+    postman.addHeader({
+      key: "Content-Type",
+      value: contentType,
+    });
+  }
+  if (accept) {
+    postman.addHeader({
+      key: "Accept",
+      value: accept,
+    });
+  }
+  headerParams.forEach((param) => {
+    if (param.value && !Array.isArray(param.value)) {
+      postman.addHeader({
+        key: param.name,
+        value: param.value,
+      });
+    }
+  });
+  other.forEach((header) => {
+    postman.addHeader(header);
+  });
+  if (cookie) {
+    postman.addHeader({
+      key: "Cookie",
+      value: cookie,
+    });
+  }
+}
+
+// TODO: this is all a bit hacky
+function setBody(clonedPostman, body) {
+  if (clonedPostman.body === undefined) {
+    return;
+  }
+  if (body.type === "empty") {
+    clonedPostman.body = undefined;
+    return;
+  }
+  if (body.type === "raw" && body.content?.type === "file") {
+    // treat it like file.
+    clonedPostman.body.mode = "file";
+    clonedPostman.body.file = {
+      src: body.content.value.src,
+    };
+    return;
+  }
+  switch (clonedPostman.body.mode) {
+    case "raw": {
+      // check file even though it should already be set from above
+      if (body.type !== "raw" || body.content?.type === "file") {
+        clonedPostman.body = undefined;
+        return;
+      }
+      clonedPostman.body.raw = body.content?.value ?? "";
+      return;
+    }
+    case "formdata": {
+      clonedPostman.body.formdata?.clear();
+      if (body.type !== "form") {
+        // treat it like raw.
+        clonedPostman.body.mode = "raw";
+        clonedPostman.body.raw = `${body.content?.value}`;
+        return;
+      }
+      const params = Object.entries(body.content)
+        .filter((entry) => !!entry[1])
+        .map(([key, content]) => {
+          if (content.type === "file") {
+            return new sdk.FormParam({
+              key: key,
+              ...content,
+            });
+          }
+          return new sdk.FormParam({
+            key: key,
+            value: content.value,
+          });
+        });
+      clonedPostman.body.formdata?.assimilate(params, false);
+      return;
+    }
+    case "urlencoded": {
+      clonedPostman.body.urlencoded?.clear();
+      if (body.type !== "form") {
+        // treat it like raw.
+        clonedPostman.body.mode = "raw";
+        clonedPostman.body.raw = `${body.content?.value}`;
+        return;
+      }
+      const params = Object.entries(body.content)
+        .filter((entry) => !!entry[1])
+        .filter(([_key, content]) => content.type !== "array")
+        .map(([key, content]) => {
+          if (
+            content.type !== "file" &&
+            content.type !== "array" &&
+            content.value
+          ) {
+            return new sdk.QueryParam({
+              key: key,
+              value: content.value,
+            });
+          }
+          return undefined;
+        })
+        .filter((item) => item !== undefined);
+      const arrayParams = Object.entries(body.content)
+        .filter((entry) => !!entry[1])
+        .filter(([_key, content]) => content.type === "array")
+        .map(([key, content]) => {
+          if (content.type === "array" && content.value) {
+            return {
+              key: key,
+              values: content.value?.value?.map(
+                (e) =>
+                  new sdk.QueryParam({
+                    key: key,
+                    value: e,
+                  })
+              ),
+            };
+          }
+          return undefined;
+        })
+        .filter((item) => item !== undefined && item?.values !== undefined);
+      clonedPostman.body.urlencoded?.assimilate(params, false);
+
+      // Now let's append the array keys
+      for (const arrayParam of arrayParams) {
+        clonedPostman.body.urlencoded?.remove(
+          (e) => e.key === arrayParam?.key,
+          undefined
+        );
+        arrayParam?.values?.forEach((queryParam) =>
+          clonedPostman.body?.urlencoded?.append(queryParam)
+        );
+      }
+      console.log(clonedPostman.body.urlencoded);
+      return;
+    }
+    default:
+      return;
+  }
+}
+
+// TODO: finish these types
+
+function buildPostmanRequest(
+  postman,
+  {
+    queryParams,
+    pathParams,
+    cookieParams,
+    contentType,
+    accept,
+    headerParams,
+    body,
+    server,
+    auth,
+  }
+) {
+  const clonedPostman = cloneDeep(postman);
+  clonedPostman.url.protocol = undefined;
+  clonedPostman.url.host = [window.location.origin];
+  if (server) {
+    let url = server.url.replace(/\/$/, "");
+    const variables = server.variables;
+    if (variables) {
+      Object.keys(variables).forEach((variable) => {
+        url = url.replace(`{${variable}}`, variables[variable].storedValue);
+      });
+    }
+    clonedPostman.url.host = [url];
+  }
+  setQueryParams(clonedPostman, queryParams);
+  setPathParams(clonedPostman, pathParams);
+  const cookie = buildCookie(cookieParams);
+  let otherHeaders = [];
+  let selectedAuth = [];
+  if (auth.selected !== undefined) {
+    selectedAuth = auth.options[auth.selected];
+  }
+  for (const a of selectedAuth) {
+    // Bearer Auth
+    if (a.type === "http" && a.scheme === "bearer") {
+      const { token } = auth.data[a.key];
+      if (token === undefined) {
+        continue;
+      }
+      otherHeaders.push({
+        key: "Authorization",
+        value: `Bearer ${token}`,
+      });
+      continue;
+    }
+
+    // Basic Auth
+    if (a.type === "http" && a.scheme === "basic") {
+      const { username, password } = auth.data[a.key];
+      if (username === undefined || password === undefined) {
+        continue;
+      }
+      otherHeaders.push({
+        key: "Authorization",
+        value: `Basic ${window.btoa(`${username}:${password}`)}`,
+      });
+      continue;
+    }
+    if (a.type === "apiKey" && a.in === "header") {
+      if (auth.data && auth.data[a.key]) {
+        const value = auth.data[a.key][a.name];
+        if (value) {
+          otherHeaders.push({
+            key: a.name,
+            value,
+          });
+        }
+      }
+    }
+  }
+  setHeaders(
+    clonedPostman,
+    contentType,
+    accept,
+    cookie,
+    headerParams,
+    otherHeaders
+  );
+  setBody(clonedPostman, body);
+  return clonedPostman;
+}
+export default buildPostmanRequest;

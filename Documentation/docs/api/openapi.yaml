@@ -1,0 +1,439 @@
+openapi: 3.0.0
+info:
+  title: 'System API'
+  description: "Access and control game server, players, monetization, tasks via external applications.\n\n:::warning WORK IN PROGRESS\nThis API is work in progress. Things may change.\n:::\n## 3rd party Integration\nWhen you're developing a 3rd party app that connects with the System API, you need to include your GSA-ID header with all requests.\nIf you don't have a GSA-ID yet, please contact support@gameserverapp.com.\n\n## Request headers\nAll requests must include your Authorization and Accept header.\nUse Accept => application/json.\n\n## Rate limit\nYou are rate limited to 40 requests per minute."
+  contact:
+    email: support@gameserverapp.com
+  version: '2'
+servers:
+  -
+    url: 'https://api.gameserverapp.com'
+    description: api.gameserverapp.com
+paths:
+  '/system-api/v2/config-template/{configtemplate_id}/config/{location}':
+    get:
+      tags:
+        - Config
+      summary: 'Get config'
+      description: 'Get a particular Config for the Config template.'
+      operationId: getConfig
+      parameters:
+        -
+          name: configtemplate_id
+          in: path
+          required: true
+          schema:
+            type: integer
+          example: '39581'
+        -
+          name: location
+          in: path
+          required: true
+          schema:
+            type: string
+          example: GameUserSettings.ini
+      responses:
+        '200':
+          description: 'successful operation'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Config'
+      security:
+        -
+          systemapi-passport:
+            - config-template
+    put:
+      tags:
+        - Config
+      summary: 'Update config content'
+      description: 'Update particular Config for Config template.'
+      operationId: updateConfig
+      parameters:
+        -
+          name: configtemplate_id
+          in: path
+          required: true
+          schema:
+            type: integer
+          example: '39581'
+        -
+          name: location
+          in: path
+          required: true
+          schema:
+            type: string
+          example: GameUserSettings.ini
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              required:
+                - content
+              properties:
+                content:
+                  type: string
+                  example: '[ServerSettings]\r\nAutoSavePeriodMinutes=30.000000\r\n\r\nHarvestAmountMultiplier=1.000000'
+              type: object
+      responses:
+        '200':
+          description: 'successful operation'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Config'
+      security:
+        -
+          systemapi-passport:
+            - config-template
+  /system-api/v2/config-templates:
+    get:
+      tags:
+        - 'Config Template'
+      summary: 'All Config templates'
+      description: 'Lists all games currently supported on GSA.'
+      operationId: AllConfigTemplates
+      responses:
+        '200':
+          description: 'successful operation'
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ConfigTemplate'
+      security:
+        -
+          systemapi-passport:
+            - config-template
+  '/system-api/v2/config-template/{configtemplate_id}':
+    get:
+      tags:
+        - 'Config Template'
+      summary: 'Get Config template'
+      description: 'Get the Config template for the provided ID.'
+      operationId: getConfigTemplate
+      parameters:
+        -
+          name: configtemplate_id
+          in: path
+          required: true
+          schema:
+            type: integer
+          example: '39581'
+      responses:
+        '200':
+          description: 'successful operation'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConfigTemplate'
+      security:
+        -
+          systemapi-passport:
+            - config-template
+    put:
+      tags:
+        - 'Config Template'
+      summary: 'Update Config template'
+      description: 'Update an existing Config template.'
+      operationId: updateConfigTemplate
+      parameters:
+        -
+          name: configtemplate_id
+          in: path
+          required: true
+          schema:
+            type: integer
+          example: '39581'
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              required:
+                - name
+              properties:
+                name:
+                  type: string
+                  example: 'My config template'
+              type: object
+      responses:
+        '200':
+          description: 'successful operation'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConfigTemplate'
+      security:
+        -
+          systemapi-passport:
+            - config-template
+  /system-api/v2/config-template:
+    post:
+      tags:
+        - 'Config Template'
+      summary: 'Store Config template'
+      description: 'Store a new Config template.'
+      operationId: storeConfigTemplate
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              required:
+                - name
+                - app_id
+              properties:
+                name:
+                  type: string
+                  example: 'My config template'
+                app_id:
+                  type: integer
+                  example: '376030'
+              type: object
+      responses:
+        '200':
+          description: 'successful operation'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConfigTemplate'
+      security:
+        -
+          systemapi-passport:
+            - config-template
+  '/system-api/v2/config-template/{configtemplate_id}/restart-servers':
+    post:
+      tags:
+        - 'Config Template'
+      summary: 'Restart Config servers'
+      description: 'Restart all servers that have this Config template connected.'
+      operationId: restartServersConfigTemplate
+      parameters:
+        -
+          name: configtemplate_id
+          in: path
+          required: true
+          schema:
+            type: integer
+          example: '39581'
+      responses:
+        '200':
+          description: 'successful operation'
+          content:
+            application/json:
+              schema:
+                properties:
+                  data: { type: string, example: 'Restart requested' }
+                type: object
+        '400':
+          description: 'No servers connected'
+          content:
+            application/json:
+              schema:
+                properties:
+                  message: { type: string, example: 'No servers connected' }
+                type: object
+      security:
+        -
+          systemapi-passport:
+            - config-template
+  /system-api/v2/game/available:
+    get:
+      tags:
+        - Game
+      summary: 'All supported games'
+      description: 'Lists all games currently supported on GSA.'
+      operationId: AllGames
+      responses:
+        '200':
+          description: 'successful operation'
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Game'
+  '/system-api/v2/task/{task_id}/execute':
+    post:
+      tags:
+        - Task
+      summary: 'Execute task'
+      description: 'Executes any `webhook` tasks.'
+      operationId: executeTask
+      parameters:
+        -
+          name: task_id
+          in: path
+          required: true
+          schema:
+            type: integer
+          example: '88683'
+        -
+          name: character_id
+          in: query
+          required: false
+          schema:
+            type: integer
+          example: '46353'
+        -
+          name: service_id
+          in: query
+          required: false
+          schema:
+            type: integer
+          example: '50385'
+      responses:
+        '200':
+          description: 'Webhook triggered'
+          content:
+            application/json: {  }
+      security:
+        -
+          systemapi-passport:
+            - task
+components:
+  schemas:
+    Config:
+      properties:
+        id:
+          type: integer
+          example: '539274'
+        location:
+          type: string
+          example: GameUserSettings.ini
+        content:
+          type: string
+          example: '[ServerSettings]\r\nAutoSavePeriodMinutes=30.000000\r\n\r\nHarvestAmountMultiplier=1.000000'
+        config_template_id:
+          type: integer
+          example: '49284'
+        framework_id:
+          type: integer
+          example: 'null'
+        plugin_id:
+          type: integer
+          example: 'null'
+        config_template:
+          $ref: '#/components/schemas/ConfigTemplate'
+        created_at:
+          title: 'Create date'
+          type: string
+          format: date-time
+          example: '2024-02-16T19:53:28.000000Z'
+        updated_at:
+          title: 'Last update date'
+          type: string
+          format: date-time
+          example: '2024-02-16T19:53:28.000000Z'
+      type: object
+    ConfigTemplate:
+      properties:
+        id:
+          type: integer
+          example: '49284'
+        name:
+          type: string
+          example: 'My config template'
+        app_id:
+          type: integer
+          example: '376030'
+        advanced_mode:
+          type: boolean
+          example: 'true'
+        can_edit:
+          type: boolean
+          example: 'true'
+        server_count:
+          type: integer
+          example: '16'
+        files:
+          properties:
+            files:
+              type: array
+              items:
+                type: string
+                default: GameUserSettings.ini
+            parameters:
+              properties:
+                branch:
+                  properties: { name: { type: string, example: 'SteamCMD branch' }, info: { type: string, example: 'Loads special steam branch...' }, settings: { type: boolean, example: 'true' }, type: { type: string, example: text } }
+                  type: object
+              type: object
+          type: object
+        configs:
+          type: array
+          items:
+            $ref: '#/components/schemas/Config'
+        created_at:
+          title: 'Create date'
+          type: string
+          format: date-time
+          example: '2024-02-16T19:53:28.000000Z'
+        updated_at:
+          title: 'Last update date'
+          type: string
+          format: date-time
+          example: '2024-02-16T19:53:28.000000Z'
+      type: object
+    Game:
+      properties:
+        app_id:
+          type: integer
+          example: '376030'
+        name:
+          type: string
+          example: 'ARK: Survival Evolved'
+        icon:
+          type: string
+          example: 'http://dash.gameserverapp.com/img/games/ark-se.png'
+        banner:
+          type: string
+          example: 'https://steamcdn-a.akamaihd.net/steam/apps/346110/header.jpg'
+        steam:
+          properties:
+            client_id:
+              type: integer
+              example: '346110'
+            server_id:
+              type: integer
+              example: '376030'
+          type: object
+        support:
+          properties:
+            delivery:
+              type: boolean
+              example: 'true'
+            level:
+              type: boolean
+              example: 'false'
+            gender:
+              type: boolean
+              example: 'false'
+          type: object
+        features:
+          type: array
+          items:
+            properties:
+              id:
+                type: string
+                example: game-server-manager
+              promo_id:
+                type: string
+                example: game-server-manager
+              name:
+                type: string
+                example: 'Game server manager'
+              description:
+                type: string
+              value:
+                type: string
+                example: partially
+            type: object
+      type: object
+  securitySchemes:
+    systemapi-passport:
+      type: http
+      scheme: bearer
+security:
+  -
+    systemapi-passport: []
