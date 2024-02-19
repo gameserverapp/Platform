@@ -9,7 +9,51 @@ Learn how to connect your dedicated root machine with DediConnect.
 
 ![Connect machine 1](/img/getting_started/dediconnect/installation/connect_machine_page.jpg)
 
-## Connect DediConnect
+## Prepare a Windows machine
+
+:::warning WINDOWS ONLY
+These steps are for Windows only. For Linux machines, [continue here](#connect-with-dediconnect).
+:::
+
+Before a Windows machine can connect with DediConnect, it must first run a script that will update the machine and prepare it for hosting game servers. If you are running a non-Windows machine, skip to the "Connect with Dediconnect" Section.
+
+### 1. Login with RDP
+Use [Microsoft Remote Desktop](https://www.microsoft.com/en-us/p/microsoft-remote-desktop/9wzdncrfj3ps?activetab=pivot:overviewtab) to login on your dedicated machine using the `Administrator` account and the password you received from your hosting provider.
+
+:::info `Administrator` user required
+Did your machine come without a `Administrator` user account?
+
+[Learn how to activate it >](/getting_started/dediconnect/installation#activate-administrator-user-on-windows)
+:::
+
+### 2. Open "PowerShell"
+Click the `Windows Start` button and type `Powershell` and hit `enter` to open it.
+
+![Windows install 1](/img/getting_started/dediconnect/installation/windows_install_1.jpeg)
+
+### 3. Run command in PowerShell
+Copy the command for your OS and paste it into PowerShell. Then hit `enter` to execute it. When the script has finished it will restart the machine.
+
+##### Windows Server 2019
+```powershell
+Invoke-WebRequest -Uri https://raw.githubusercontent.com/gameserverapp/Platform/main/Downloads/DediConnect/install-script_windows-server-2019.ps1 -OutFile .\install-script.ps1; .\install-script.ps1
+```
+
+##### Windows Server 2022
+```powershell
+Invoke-WebRequest -Uri https://raw.githubusercontent.com/gameserverapp/Platform/main/Downloads/DediConnect/install-script_windows-server-2022.ps1 -OutFile .\install-script.ps1; .\install-script.ps1
+```
+
+:::warning Wait for reboot
+After hitting `enter` it may take a while for the script to finish. Do __not__ close the window. Wait for the machine to reboot, this may take up to 30 minutes.
+:::
+
+
+### 4. Wait for machine to come back online
+After the machine rebooted and it is operational it is ready to [connect with Dediconnect](/getting_started/dediconnect/installation).
+
+
+## Connect with DediConnect
 
 :::caution before you begin
 Ensure the machine has a [supported OS](/getting_started/dediconnect/requirements) installed and meets the [requirements](/getting_started/dediconnect/requirements). Windows machine must [run the GSA install script first](/getting_started/dediconnect/installation#prepare-a-windows-machine)!
@@ -55,47 +99,6 @@ When the installation finished you can start using the machine.
 [Learn how to install game servers and services >](/dashboard/machines/install_game-server_service#how-to-install-game-server)
 
 ![Connect machine 5](/img/getting_started/dediconnect/installation/connect_machine_5.jpg)
-
-
-## Prepare a Windows machine
-
-Before a Windows machine can connect with DediConnect, it must first run a script that will update the machine and prepare it for hosting game servers.
-
-### 1. Login with RDP
-Use [Microsoft Remote Desktop](https://www.microsoft.com/en-us/p/microsoft-remote-desktop/9wzdncrfj3ps?activetab=pivot:overviewtab) to login on your dedicated machine using the `Administrator` account and the password you received from your hosting provider.
-
-:::info `Administrator` user required
-Did your machine come without a `Administrator` user account?
-
-[Learn how to activate it >](/getting_started/dediconnect/installation#activate-administrator-user-on-windows)
-:::
-
-### 2. Open "PowerShell"
-Click the `Windows Start` button and type `Powershell` and hit `enter` to open it.
-
-![Windows install 1](/img/getting_started/dediconnect/installation/windows_install_1.jpeg)
-
-### 3. Run command in PowerShell
-Copy the command for your OS and paste it into PowerShell. Then hit `enter` to execute it. When the script has finished it will restart the machine.
-
-##### Windows Server 2019
-```powershell
-Invoke-WebRequest -Uri https://raw.githubusercontent.com/gameserverapp/Platform/main/Downloads/DediConnect/install-script_windows-server-2019.ps1 -OutFile .\install-script.ps1; .\install-script.ps1
-```
-
-##### Windows Server 2022
-```powershell
-Invoke-WebRequest -Uri https://raw.githubusercontent.com/gameserverapp/Platform/main/Downloads/DediConnect/install-script_windows-server-2022.ps1 -OutFile .\install-script.ps1; .\install-script.ps1
-```
-
-:::warning Wait for reboot
-After hitting `enter` it may take a while for the script to finish. Do __not__ close the window. Wait for the machine to reboot, this may take up to 30 minutes.
-:::
-
-
-### 4. Wait for machine to come back online
-After the machine rebooted and it is operational it is ready to [connect with Dediconnect](/getting_started/dediconnect/installation).
-
 
 ## 💥 Troubleshooting 💥
 
