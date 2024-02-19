@@ -11,6 +11,10 @@ Learn how to connect your dedicated root machine with DediConnect.
 
 ## Prepare a Windows machine
 
+:::warning WINDOWS ONLY
+These steps are for Windows only. For Linux machines, [continue here](#connect-with-dediconnect).
+:::
+
 Before a Windows machine can connect with DediConnect, it must first run a script that will update the machine and prepare it for hosting game servers. If you are running a non-Windows machine, skip to the "Connect with Dediconnect" Section.
 
 ### 1. Login with RDP
