@@ -62,7 +62,7 @@ Here are some offset examples for different configurations:
 ### Windows
 
 #### 1. Install GSA script
-If you haven't already, ensure you [installed the GSA script on your Windows machine](/getting_started/dediconnect/installation#windows).
+If you haven't already, ensure you [installed the GSA script on your Windows machine](/getting_started/dediconnect/installation#prepare-a-windows-machine).
 
 #### 2. Open sshd_config in Notepad
 Navigate to `C:\ProgramData\ssh`and open `sshd_config` with Notepad.

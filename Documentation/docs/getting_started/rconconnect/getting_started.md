@@ -34,7 +34,7 @@ For certain games RconConnect needs FTP access to support features like admin to
 :::
 
 :::caution Find FTP path
-If you're unable to find the right path or the form keeps reporting an error about the FTP path you provided: [Learn how to find the right FTP path >](/getting_started/rconconnect/getting_started#find-the-right-ftp-path)
+If you're unable to find the right path or the form keeps reporting an error about the FTP path you provided: [Learn how to find the right FTP path >](/getting_started/rconconnect/getting_started#find-the-savedarks-ftp-path)
 :::
 
 ### 3. Integrate game server

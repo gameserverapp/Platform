@@ -87,7 +87,7 @@ Leave the `Discord name` field empty to hide the game server on Discord.
 :::
 
 ### Automation
-Automation settings can be configured per game server or for all game servers collectively through [Config template settings](/dashboard/game_servers/config_templates#game-server-automation-settings). Using a Config template can be useful when using the same automation settings for all game servers.
+Automation settings can be configured per game server or for all game servers collectively through [Config template settings](/dashboard/game_servers/config_templates#settings). Using a Config template can be useful when using the same automation settings for all game servers.
 
 When the settings are managed via a Config template it will show the `Inherited` label.
 
@@ -229,7 +229,7 @@ Set up custom [Docker parameters](https://docs.docker.com/engine/reference/run/#
 This is great for things like isolation, dedicated resources and other settings you may want to use.
 
 :::caution Delete Docker container (Windows only)
-After changing the docker launch params, make sure to follow the instructions to [delete the docker container](/dashboard/machines/practical_info#delete-container).
+After changing the docker launch params, make sure to follow the instructions to [delete the docker container](/dashboard/machines/practical_info#delete-docker-container).
 :::
 
 ![Game server - danger zone - docker launch params](/img/dashboard/gameserver/getting_started/gameserver_dangerzone_docker_params.jpg)

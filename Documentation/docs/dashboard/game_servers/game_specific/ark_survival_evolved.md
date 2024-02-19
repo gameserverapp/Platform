@@ -3,7 +3,7 @@ title: "ARK: Survival Evolved"
 ---
 
 ## Dynamic configs / Live Tuning
-Manage ARK's `DynamicConfig` and `DefaultOverloads.json` through [Config templates](/dashboard/game_servers/config_templates/#game-config). 
+Manage ARK's `DynamicConfig` and `DefaultOverloads.json` through [Config templates](/dashboard/game_servers/config_templates#game-config). 
 
 :::info 15 minute refresh timer
 After making changes to the Config template it may take up to 15 minutes for the ARK game server to pick up the changes. This is normal.

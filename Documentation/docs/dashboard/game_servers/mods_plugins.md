@@ -51,7 +51,7 @@ In the `Available mods / plugins` window you can use search to find mods / plugi
 
 ![Mods & plugins - install plugin 2](/img/dashboard/gameserver/mods_plugins/install_plugin_2.jpg)
 
-Select one or multiple game servers that should have the mod / plugin installed. Make sure the [framework is installed](#plugin-framework) on all selected servers.
+Select one or multiple game servers that should have the mod / plugin installed. Make sure the [framework is installed](/dashboard/game_servers/mods_plugins#mod--plugin-framework) on all selected servers.
 
 ![Mods & plugins - install plugin 3](/img/dashboard/gameserver/mods_plugins/install_plugin_3.jpg)
 
@@ -76,7 +76,7 @@ To uninstall the mod / plugin go to `Actions` and click `Delete mod / plugin`.
 
 
 ### Configs
-When supported, mod / plugin configuration files can be managed via the [Config templates `Plugin` section](/dashboard/game_servers/config_templates#plugin-configs).
+When supported, mod / plugin configuration files can be managed via the [Config templates `Plugin` section](/dashboard/game_servers/config_templates#mod--plugin-configs).
 
 Click `Add to config templ.` to add the mod / plugin to the Config template for the selected game server.
 
@@ -125,7 +125,7 @@ Configure how long the in-game countdown should run before automatically updatin
 
 To turn off auto-updating select `DISABLE auto update`.
 
-The auto-updating countdown range can also [inherit settings from a Config template](/dashboard/game_servers/config_templates#game-server-automation-settings).
+The auto-updating countdown range can also [inherit settings from a Config template](/dashboard/game_servers/config_templates#settings).
 
 ### Mods
 ![Mods & plugins - mod update countdown](/img/dashboard/gameserver/mods_plugins/mod_update_countdown.jpg)

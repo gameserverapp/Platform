@@ -30,7 +30,7 @@ Before you continue it's important to [create a backup](/dashboard/game_servers/
 [Run a game server update](/dashboard/game_servers/getting_started#controls) even when there is no update available for the game server. A manual update will validate the game server files.
 
 ### 6. Default config
-Activate a [Default config](/dashboard/game_servers/config_templates#default-configs) on the game server and restart it.
+Activate a [Default config](/dashboard/game_servers/config_templates#default-config--template) on the game server and restart it.
 
 :::tip Working now?
 When the game server does start with a `Default config` you should check your original config for issues.
@@ -46,14 +46,14 @@ The map you selected is either broken or you entered an incorrect custom map pat
 :::
 
 ### 8. Remove all mods & plugins
-Ensure no [mods](/dashboard/game_servers/mods_plugins#update--delete) and [plugins](/dashboard/game_servers/mods_plugins#manage-plugins) are loaded in (check the logs!) and restart the game server.
+Ensure no [mods](/dashboard/game_servers/mods_plugins#update--delete) and [plugins](/dashboard/game_servers/mods_plugins#update--delete) are loaded in (check the logs!) and restart the game server.
 
 :::tip Working now?
 A mod or plugin was causing the problem. Slowly enable mods / plugins one by one and restart the server every time you add a new one. When the server stops working again you know which mod / plugin caused it.
 :::
 
 ### 9. Reinstall game server
-Occasionally something goes wrong with game servers. When none of the above suggestions solved the problems, please try [re-installing the game server](/dashboard/game_servers/getting_started/#re-install)
+Occasionally something goes wrong with game servers. When none of the above suggestions solved the problems, please try [re-installing the game server](/dashboard/game_servers/getting_started#re-install)
 
 
 ## Increased memory usage

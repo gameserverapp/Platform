@@ -20,7 +20,7 @@ Enter a `name` and select which `game` the config template is for. Click `Create
 ![Config template - create new 2](/img/dashboard/gameserver/config_template/config_template_create_new_2.jpg)
 
 ### Default config / template
-For every game we created a `Default config`, which is a good starting point for new game servers. The `Default config` can also be used [during troubleshooting](/dashboard/game_servers/troubleshooting#game-server-not-starting), to rule out any issues with your configs.
+For every game we created a `Default config`, which is a good starting point for new game servers. The `Default config` can also be used [during troubleshooting](/dashboard/game_servers/troubleshooting#game-server-not-starting--crashing), to rule out any issues with your configs.
 
 ![Config template - default config](/img/dashboard/gameserver/config_template/config_template_default_configs.jpg)
 
