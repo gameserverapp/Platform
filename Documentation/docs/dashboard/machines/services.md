@@ -5,6 +5,13 @@ sidebar_position: 1
 
 DediConnect can install various services on your machine. These services are optional and are usually required by game servers, like needing a MySQL database to store data.
 
+## How to install a service
+
+Navigate to the machine settings and click the `Actions` button in the __top-right corner__ and then click `Install service`.
+
+[Go to Machines >](https://dash.gameserverapp.com/machine)
+
+![Install game server & services on machine](/img/dashboard/machines/getting_started/install_gameserver_service.jpg)
 
 ## Available services
 
