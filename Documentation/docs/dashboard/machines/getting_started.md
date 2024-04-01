@@ -67,10 +67,10 @@ While we agree that having to enter Steam credentials and disabling Steam Guard 
 ![Machine settings - steam download credentials](/img/dashboard/machines/getting_started/machine_steam_download_credentials.jpg)
 
 ### Restrict access
-This feature will automatically setup the firewall for the machine and block any outside connections to sensitive ports.
-You can add IP addresses to the list, which will have access to all ports.
+This will automatically configure the firewall on the machine and block any unwanted connections to the machine, without affecting player connections.
+You can add other IP addresses (like your home IP) to the list, which will let traffic from that IP address bypass the firewall rules.
 
-It's also possible to ignore this option, which will remove the security warning from the machine pages. This is not recommended for beginners.
+When you don't want to use this feature, you can select `Ignore` on the `Restrict access` settings. This will remove the security warning from the machine pages.
 
 ![Machine settings - Restrict access 1](/img/dashboard/machines/getting_started/restrict_access_machine_actions_1.jpg)
 ![Machine settings - Restrict access 2](/img/dashboard/machines/getting_started/restrict_access_machine_actions_2.jpg)
