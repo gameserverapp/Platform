@@ -7,13 +7,21 @@ Variables can be used in various actions to add information like the character n
 
 ![Automations / Tasks - Variables](/img/dashboard/automate_tasks/variables/example_variables.jpg)
 
+:::warning RCON command issues
+Learn what you can do when commands / variables are not working: 
+https://docs.gameserverapp.com/dashboard/monetization/deliveries#-troubleshooting-
+:::
+
 ## Players
 
 ### Player ID
-`{serviceid}` Shows the player ID (steam, epic, EOS, mojang etc) for player.
+`{player.id}` Shows the player ID (steam, epic, EOS, mojang etc) for player.
 
 ### Username
-`{username}` Shows the username for player.
+`{player.username}` Shows the username for player.
+
+### Token count
+`{player.token_count}` Shows the token amount for player.
 
 ### Custom role
 `{custom_role.1.hours_remaining}` Shows the remaining time in hours, for custom role ID.
@@ -23,36 +31,32 @@ Variables can be used in various actions to add information like the character n
 ## Character
 
 ### Character ID
-`{characterid}` Shows the in-game character ID.
+`{character.id}` Shows the in-game character ID.
 
 ### Character name
-`{charname}` Shows the in-game character name.
-
-### Tokens
-`{chartokens}` Shows the token amount.
-
-### Custom role
-`{custom_role.1.hours_remaining}` Shows the remaining time in hours, for custom role ID.
-`{custom_role.1.days_remaining}` Shows the remaining time in days, for custom role ID.
+`{character.name}` Shows the in-game character name.
 
 
 ## Group
 
 ### Group ID
-`{servername}` Shows the in-game group ID.
+`{group.id}` Shows the in-game group ID.
 
 ### Group name
-`{groupname}` Shows the in-game group name.
+`{group.name}` Shows the in-game group name.
 
 ## Game server
 
 ### Game server name
-`{servername}` Shows game server name (list name).
+`{gameserver.name}` Shows game server name (list name).
 
 ### Website name
-`{serverwebsitename}` Shows game server website name.
+`{gameserver.website_name}` Shows game server website name.
+
+### Online player count
+`{gameserver.online_player_count}` Shows the number of online players.
 
 ## Cluster
 
 ### Cluster name
-`{clustername}` Shows cluster name.
+`{cluster.name}` Shows cluster name.

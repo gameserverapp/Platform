@@ -76,7 +76,7 @@ When activating the brush by hitting your dino, you:
 For both there are clear alerts and a countdown, to indicate what is going on.
 
 ### In-game command
-The command: `scriptcommand gsadinocoloring 1 {serviceid}`
+The command: `scriptcommand gsadinocoloring 1 {player.id}`
 
 
 ## Enhanced notifications
@@ -115,7 +115,7 @@ The Gem acts like any other consumable: it can be exchanged and/or stolen.
 
 :::info
 These codes below are prepared for use in Shop packs using [In-game commands](/dashboard/automate_tasks/actions#in-game-command).
-To use the commands outside the Shop packs, make sure to replace `{gameid}` with the in-game character ID (not the Steam id).
+To use the commands outside the Shop packs, make sure to replace `{character.id}` with the in-game character ID (not the Steam id).
 :::
 
 ### 1 Token Gem
@@ -123,12 +123,12 @@ To use the commands outside the Shop packs, make sure to replace `{gameid}` with
 
 ARK:SA Command:
 ```
-GiveItemToPlayer {gameid} "/gsa-mod/Tokens/Consumables/1/PrimalItemConsumable_Token_GSA_1.PrimalItemConsumable_Token_GSA_1" 1 0 0
+GiveItemToPlayer {character.id} "/gsa-mod/Tokens/Consumables/1/PrimalItemConsumable_Token_GSA_1.PrimalItemConsumable_Token_GSA_1" 1 0 0
 ```
 
 ARK:SE Command:
 ```
-GiveItemToPlayer {gameid} "Blueprint'/Game/Mods/gsa-mod/Tokens/Consumables/1/PrimalItemConsumable_Token_gsa_1.PrimalItemConsumable_Token_GSA_1'" 1 0 0
+GiveItemToPlayer {character.id} "Blueprint'/Game/Mods/gsa-mod/Tokens/Consumables/1/PrimalItemConsumable_Token_gsa_1.PrimalItemConsumable_Token_GSA_1'" 1 0 0
 ```
 Blueprint class: `PrimalItemConsumable_Token_gsa_1_C`
 
@@ -138,12 +138,12 @@ Blueprint class: `PrimalItemConsumable_Token_gsa_1_C`
 
 ARK:SA Command:
 ```
-GiveItemToPlayer {gameid} "/gsa-mod/Tokens/Consumables/5/PrimalItemConsumable_Token_GSA_5.PrimalItemConsumable_Token_GSA_5" 1 0 0
+GiveItemToPlayer {character.id} "/gsa-mod/Tokens/Consumables/5/PrimalItemConsumable_Token_GSA_5.PrimalItemConsumable_Token_GSA_5" 1 0 0
 ```
 
 ARK:SE Command:
 ```
-GiveItemToPlayer {gameid} "Blueprint'/Game/Mods/gsa-mod/Tokens/Consumables/5/PrimalItemConsumable_Token_gsa_5.PrimalItemConsumable_Token_GSA_5'" 1 0 0
+GiveItemToPlayer {character.id} "Blueprint'/Game/Mods/gsa-mod/Tokens/Consumables/5/PrimalItemConsumable_Token_gsa_5.PrimalItemConsumable_Token_GSA_5'" 1 0 0
 ```
 Blueprint class: `PrimalItemConsumable_Token_gsa_5_C`
 
@@ -152,12 +152,12 @@ Blueprint class: `PrimalItemConsumable_Token_gsa_5_C`
 
 ARK:SA Command:
 ```
-GiveItemToPlayer {gameid} "/gsa-mod/Tokens/Consumables/10/PrimalItemConsumable_Token_GSA_10.PrimalItemConsumable_Token_GSA_10" 1 0 0
+GiveItemToPlayer {character.id} "/gsa-mod/Tokens/Consumables/10/PrimalItemConsumable_Token_GSA_10.PrimalItemConsumable_Token_GSA_10" 1 0 0
 ```
 
 ARK:SE Command:
 ```
-GiveItemToPlayer {gameid} "Blueprint'/Game/Mods/gsa-mod/Tokens/Consumables/10/PrimalItemConsumable_Token_gsa_10.PrimalItemConsumable_Token_GSA_10'" 1 0 0
+GiveItemToPlayer {character.id} "Blueprint'/Game/Mods/gsa-mod/Tokens/Consumables/10/PrimalItemConsumable_Token_gsa_10.PrimalItemConsumable_Token_GSA_10'" 1 0 0
 ```
 Blueprint class: `PrimalItemConsumable_Token_gsa_10_C`
 
@@ -166,12 +166,12 @@ Blueprint class: `PrimalItemConsumable_Token_gsa_10_C`
 
 ARK:SA Command:
 ```
-GiveItemToPlayer {gameid} "/gsa-mod/Tokens/Consumables/25/PrimalItemConsumable_Token_GSA_25.PrimalItemConsumable_Token_GSA_25" 1 0 0
+GiveItemToPlayer {character.id} "/gsa-mod/Tokens/Consumables/25/PrimalItemConsumable_Token_GSA_25.PrimalItemConsumable_Token_GSA_25" 1 0 0
 ```
 
 ARK:SE Command:
 ```
-GiveItemToPlayer {gameid} "Blueprint'/Game/Mods/gsa-mod/Tokens/Consumables/25/PrimalItemConsumable_Token_gsa_25.PrimalItemConsumable_Token_GSA_25'" 1 0 0
+GiveItemToPlayer {character.id} "Blueprint'/Game/Mods/gsa-mod/Tokens/Consumables/25/PrimalItemConsumable_Token_gsa_25.PrimalItemConsumable_Token_GSA_25'" 1 0 0
 ```
 Blueprint class: `PrimalItemConsumable_Token_gsa_25_C`
 
@@ -180,12 +180,12 @@ Blueprint class: `PrimalItemConsumable_Token_gsa_25_C`
 
 ARK:SA Command:
 ```
-GiveItemToPlayer {gameid} "/gsa-mod/Tokens/Consumables/50/PrimalItemConsumable_Token_GSA_50.PrimalItemConsumable_Token_GSA_50" 1 0 0
+GiveItemToPlayer {character.id} "/gsa-mod/Tokens/Consumables/50/PrimalItemConsumable_Token_GSA_50.PrimalItemConsumable_Token_GSA_50" 1 0 0
 ```
 
 ARK:SE Command:
 ```
-GiveItemToPlayer {gameid} "Blueprint'/Game/Mods/gsa-mod/Tokens/Consumables/50/PrimalItemConsumable_Token_gsa_50.PrimalItemConsumable_Token_GSA_50'" 1 0 0
+GiveItemToPlayer {character.id} "Blueprint'/Game/Mods/gsa-mod/Tokens/Consumables/50/PrimalItemConsumable_Token_gsa_50.PrimalItemConsumable_Token_GSA_50'" 1 0 0
 ```
 Blueprint class: `PrimalItemConsumable_Token_gsa_50_C`
 
@@ -194,12 +194,12 @@ Blueprint class: `PrimalItemConsumable_Token_gsa_50_C`
 
 ARK:SA Command:
 ```
-GiveItemToPlayer {gameid} "/gsa-mod/Tokens/Consumables/100/PrimalItemConsumable_Token_GSA_100.PrimalItemConsumable_Token_GSA_100" 1 0 0
+GiveItemToPlayer {character.id} "/gsa-mod/Tokens/Consumables/100/PrimalItemConsumable_Token_GSA_100.PrimalItemConsumable_Token_GSA_100" 1 0 0
 ```
 
 ARK:SE Command:
 ```
-GiveItemToPlayer {gameid} "Blueprint'/Game/Mods/gsa-mod/Tokens/Consumables/100/PrimalItemConsumable_Token_gsa_100.PrimalItemConsumable_Token_GSA_100'" 1 0 0
+GiveItemToPlayer {character.id} "Blueprint'/Game/Mods/gsa-mod/Tokens/Consumables/100/PrimalItemConsumable_Token_gsa_100.PrimalItemConsumable_Token_GSA_100'" 1 0 0
 ```
 Blueprint class: `PrimalItemConsumable_Token_gsa_100_C`
 
@@ -208,12 +208,12 @@ Blueprint class: `PrimalItemConsumable_Token_gsa_100_C`
 
 ARK:SA Command:
 ```
-GiveItemToPlayer {gameid} "/gsa-mod/Tokens/Consumables/250/PrimalItemConsumable_Token_GSA_250.PrimalItemConsumable_Token_GSA_250" 1 0 0
+GiveItemToPlayer {character.id} "/gsa-mod/Tokens/Consumables/250/PrimalItemConsumable_Token_GSA_250.PrimalItemConsumable_Token_GSA_250" 1 0 0
 ```
 
 ARK:SE Command:
 ```
-GiveItemToPlayer {gameid} "Blueprint'/Game/Mods/gsa-mod/Tokens/Consumables/250/PrimalItemConsumable_Token_gsa_250.PrimalItemConsumable_Token_GSA_250'" 1 0 0
+GiveItemToPlayer {character.id} "Blueprint'/Game/Mods/gsa-mod/Tokens/Consumables/250/PrimalItemConsumable_Token_gsa_250.PrimalItemConsumable_Token_GSA_250'" 1 0 0
 ```
 Blueprint class: `PrimalItemConsumable_Token_gsa_250_C`
 
@@ -222,12 +222,12 @@ Blueprint class: `PrimalItemConsumable_Token_gsa_250_C`
 
 ARK:SA Command:
 ```
-GiveItemToPlayer {gameid} "/gsa-mod/Tokens/Consumables/500/PrimalItemConsumable_Token_GSA_500.PrimalItemConsumable_Token_GSA_500" 1 0 0
+GiveItemToPlayer {character.id} "/gsa-mod/Tokens/Consumables/500/PrimalItemConsumable_Token_GSA_500.PrimalItemConsumable_Token_GSA_500" 1 0 0
 ```
 
 ARK:SE Command:
 ```
-GiveItemToPlayer {gameid} "Blueprint'/Game/Mods/gsa-mod/Tokens/Consumables/500/PrimalItemConsumable_Token_gsa_500.PrimalItemConsumable_Token_GSA_500'" 1 0 0
+GiveItemToPlayer {character.id} "Blueprint'/Game/Mods/gsa-mod/Tokens/Consumables/500/PrimalItemConsumable_Token_gsa_500.PrimalItemConsumable_Token_GSA_500'" 1 0 0
 ```
 Blueprint class: `PrimalItemConsumable_Token_gsa_500_C`
 
@@ -236,12 +236,12 @@ Blueprint class: `PrimalItemConsumable_Token_gsa_500_C`
 
 ARK:SA Command:
 ```
-GiveItemToPlayer {gameid} "/gsa-mod/Tokens/Consumables/1000/PrimalItemConsumable_Token_GSA_1000.PrimalItemConsumable_Token_GSA_1000" 1 0 0
+GiveItemToPlayer {character.id} "/gsa-mod/Tokens/Consumables/1000/PrimalItemConsumable_Token_GSA_1000.PrimalItemConsumable_Token_GSA_1000" 1 0 0
 ```
 
 ARK:SE Command:
 ```
-GiveItemToPlayer {gameid} "Blueprint'/Game/Mods/gsa-mod/Tokens/Consumables/1000/PrimalItemConsumable_Token_gsa_1000.PrimalItemConsumable_Token_GSA_1000'" 1 0 0
+GiveItemToPlayer {character.id} "Blueprint'/Game/Mods/gsa-mod/Tokens/Consumables/1000/PrimalItemConsumable_Token_gsa_1000.PrimalItemConsumable_Token_GSA_1000'" 1 0 0
 ```
 Blueprint class: `PrimalItemConsumable_Token_gsa_1000_C`
 
