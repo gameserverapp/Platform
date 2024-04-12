@@ -223,16 +223,20 @@ When using Custom ports you may cause issues with conflicting ports. GSA does no
 
 ![Game server - danger zone - custom ports](/img/dashboard/gameserver/getting_started/gameserver_dangerzone_custom_ports.jpg)
 
-### Docker launch params
-Set up custom [Docker parameters](https://docs.docker.com/engine/reference/run/#runtime-constraints-on-resources) to change how the Docker container runs for each game server.
+### Docker container settings
+Change how the Docker container behaves. Configure CPU & memory limits, add mounts and set other custom Docker parameters.
 
-This is great for things like isolation, dedicated resources and other settings you may want to use.
 
-:::caution Delete Docker container (Windows only)
-After changing the docker launch params, make sure to follow the instructions to [delete the docker container](/dashboard/machines/practical_info#delete-docker-container).
-:::
 
-![Game server - danger zone - docker launch params](/img/dashboard/gameserver/getting_started/gameserver_dangerzone_docker_params.jpg)
+![Game server - danger zone - docker settings](/img/dashboard/gameserver/getting_started/gameserver_dangerzone_container_settings.jpg)
+![Game server - danger zone - docker settings](/img/dashboard/gameserver/getting_started/gameserver_dangerzone_container_settings_modal.jpg)
+
+### Delete container
+This will delete the container, which generally won't cause any issues to existing game servers. A new container is automatically created when the game server is started again.
+
+Deleting the container may change the HWID and/or delete files that are stored <u>outside</u> folders created by GSA. Backup important files manually when unsure.
+
+![Game server - danger zone - delete container](/img/dashboard/gameserver/getting_started/gameserver_dangerzone_delete_container.jpg)
 
 
 ### Delete dashboard data / stats
@@ -244,8 +248,10 @@ Select a date in the future to remove all data for the game server.
 
 ![Game server - danger zone - wipe data](/img/dashboard/gameserver/getting_started/gameserver_dangerzone_wipe_data.jpg)
 
-### Delete container
-This will remove all files from the machine and release the ports for other game servers. While it will create a backup, it might not back up manual changes. Make sure you create a manual backup if you made manual changes.
+### Delete game server
+This will delete all game server file, the Docker container for the game server and release the IP + ports combination.
 
-![Game server - danger zone - delete container](/img/dashboard/gameserver/getting_started/gameserver_dangerzone_delete_container.jpg)
+While it will create a `pre-delete` backup, it might not back up manual changes. Make sure to manually back up anything that was added/changed without using the GSA dashboard.
+
+![Game server - danger zone - delete container](/img/dashboard/gameserver/getting_started/gameserver_dangerzone_delete_gameserver.jpg)
 

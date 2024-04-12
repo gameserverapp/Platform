@@ -35,18 +35,6 @@ Alternative game files path: `/home/containeruser/serverfiles`
 Game files: `C:\serverfiles`
 Alternative game files path: `C:\Users\ContainerUser\serverfiles`
 
-## Useful Docker parameters
-Configure custom Docker parameters using [Docker launch params](/dashboard/game_servers/getting_started#docker-launch-params).
-
-### Mount a folder (symlink equivalent)
-GSA automatically mounts the game server files directory inside the container (see paths above). In cases where you need one or more custom folders mounted, you can do so by adding the following line to the Docker launch params, per folder you want to mount:
-
-`-v C:\path\on\machine:C:\path\inside\container`
-
-The example above will mount the folder `C:\path\on\machine` (on the machine) inside the container at the path `C:\path\inside\container`.
-
-For Linux the same principle applies, but with different paths.
-
 ## Access container console
 In some occasions you may want to login on the container and fire command manually.
 
@@ -57,19 +45,3 @@ Login with SSH and run `docker exec -it {container name} bash`
 
 ### Windows
 Login with RDP and open Powershell. Then run `docker exec -it {container name} cmd`
-
-## Delete Docker container
-Learn how to delete a Docker container. Deleting a container __does not remove the save files__ for a server, as long as you follow the instructions below. Shutdown the game server before doing this.
-
-:::caution HWID change
-Deleting a Docker container will in most cases change the HWID for that game server. If you use plugins with HWID licenses you may need to update the license.
-:::
-
-Each DediConnect container comes with a `container name`. The `container name` can be found on the game server settings page, in the top-right corner.
-
-
-### Linux
-Login with SSH and run `docker rm {container name}`
-
-### Windows
-Login with RDP and open Powershell. Then run `docker rm {container name}`
