@@ -132,6 +132,7 @@ Adds extra flexibility to Config templates. Can be used to automatically load in
 #### Game config variables
 - `%%BANLIST%%` replaced with ban list URL for game server
 - `%%MODIDS%%` replaced with id's of all installed mods
+- `%%ADMINLISTURL%%` replaced with the admin list URL for game server
 
 #### Plugin config variables
 - `%%RCON_PORT%%` replaced with RCON port for the game server
