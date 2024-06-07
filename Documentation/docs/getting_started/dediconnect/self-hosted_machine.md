@@ -5,6 +5,8 @@ sidebar_position: 9999
 
 When using a dedicated server connected to a home / office network, there are a couple extra things you may need to configure.
 
+[Installation instructions>](/getting_started/dediconnect/installation)
+
 
 :::caution Check requirements
 Make sure your setup meets the [hardware requirements](/getting_started/dediconnect/requirements#hardware-specifications) and your machine runs a [supported Operating Systems (OS)](/getting_started/dediconnect/requirements#supported-operating-systems-os).

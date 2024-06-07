@@ -21,7 +21,7 @@ Windows machine must [run the GSA install script](/getting_started/dediconnect/i
 
 ### Supported games
 
-[Visit the Connect DediConnect machine page](https://dash.gameserverapp.com/order/machine) for up-to-date information about Game support per Operating System.
+[Visit the Connect DediConnect machine page](https://dash.gameserverapp.com/order/machine) for up-to-date information about Game support per Operating System. Games not on the list might be available through [blueprints](/dashboard/blueprints).
 
 ![Connect machine 1](/img/getting_started/dediconnect/installation/game_support_os.jpg)
 

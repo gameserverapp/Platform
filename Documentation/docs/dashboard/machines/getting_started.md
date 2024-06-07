@@ -66,14 +66,14 @@ While we agree that having to enter Steam credentials and disabling Steam Guard 
 
 ![Machine settings - steam download credentials](/img/dashboard/machines/getting_started/machine_steam_download_credentials.jpg)
 
-### Restrict access
+### Firewall
 This will automatically configure the firewall on the machine and block any unwanted connections to the machine, without affecting player connections.
 You can add other IP addresses (like your home IP) to the list, which will let traffic from that IP address bypass the firewall rules.
 
-When you don't want to use this feature, you can select `Ignore` on the `Restrict access` settings. This will remove the security warning from the machine pages.
+When you don't want to use this feature, you can select `Ignore` on the `Firewall` settings. This will remove the security warning from the machine pages.
 
-![Machine settings - Restrict access 1](/img/dashboard/machines/getting_started/restrict_access_machine_actions_1.jpg)
-![Machine settings - Restrict access 2](/img/dashboard/machines/getting_started/restrict_access_machine_actions_2.jpg)
+![Machine settings - Firewall 1](/img/dashboard/machines/getting_started/restrict_access_machine_actions_1.jpg)
+![Machine settings - Firewall 2](/img/dashboard/machines/getting_started/restrict_access_machine_actions_2.jpg)
 
 ### Throttle / stagger actions
 In certain cases you may want to reduce the number of things that happen simultaneously on your machine. When too many things, like updating all game servers, happen simultaneously it might cause severe performance issues with a machine.
