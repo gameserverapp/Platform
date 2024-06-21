@@ -134,8 +134,9 @@ Adds extra flexibility to Config templates. Can be used to automatically load in
 - `%%MODIDS%%` replaced with id's of all installed mods
 - `%%ADMINLISTURL%%` replaced with the admin list URL for game server
 
-#### Plugin config variables
-- `%%RCON_PORT%%` replaced with RCON port for the game server
+#### Blueprint variables
+The more advanced variables listed on the [blueprint variables section](/dashboard/blueprints#variables) are also available in Config templates. These will replace the variables above entirely in the future.
+
 
 ### Keep notes
 Help everyone on the team stay updated about what changed for each Config template.
