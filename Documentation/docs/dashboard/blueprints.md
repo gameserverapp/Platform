@@ -122,3 +122,8 @@ Example: `cb0440e7-d2e0-4eed-809c-16fa812ea928`
 #### `{config_template.settings.branch}`
 Returns the branch settings, that were entered on the Settings page for the selected Config template.<br />
 Example: `public`
+
+
+#### `{config_parameter id=""}`
+Returns the content of the parameter, that was set on the Config template.<br />
+Example: when the config template has a parameter (id) `end`, you can reference it like so: `{config_parameter id="end"}`
