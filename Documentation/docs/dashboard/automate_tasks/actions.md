@@ -166,6 +166,7 @@ This Action block supports adding sub-Action blocks, which run when the conditio
   - Game server online player count
   - Game server is scheduled
   - Game server has update available
+  - Game server active Config template
 - Date
   - Date & time
   - Day of the week
