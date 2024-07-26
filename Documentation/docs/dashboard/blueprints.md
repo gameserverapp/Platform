@@ -21,6 +21,16 @@ This section is currently being developed.
 These variables are available in blueprint and Config templates files. Variables can be useful in cases where you want to replace a static (hardcoded) setting, like a port number, with a dynamic one. For example to make the game port automatically adjust to whatever GSA assigns to the container.
 
 
+### Dashboard
+
+#### `{api.community.client_id}`
+Returns the Community API `client_id`. Only available in Config templates.<br />
+Example: `083e2257-c7d6-444d-ac17-e5334ede9b27`
+
+#### `{api.community.client_secret}`
+Returns the Community API `client_secret`. Only available in Config templates.<br />
+Example: `GV0bESCnrrwAEHkHA90m6bwAD3Em49pi`
+
 ### Machine
 
 #### `{machine.ip}`
