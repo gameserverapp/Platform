@@ -1,3 +1,7 @@
+# ########################################################
+# Copyright © 2022 GameServerApp.com. All rights reserved.
+# ########################################################
+
 Set-ExecutionPolicy Bypass -Scope Process -force
 Set-ExecutionPolicy Bypass -force
 
