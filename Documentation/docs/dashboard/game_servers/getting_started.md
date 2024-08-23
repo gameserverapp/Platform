@@ -48,19 +48,8 @@ The game server settings page gives quick access to most settings, a performance
 
 ![Game server - settings](/img/dashboard/gameserver/getting_started/gameserver_settings.jpg)
 
-Edit the [Config template](/dashboard/game_servers/config_templates), map, [cluster](/dashboard/game_servers/clusters), game server slots and admin passwords.
 
-You can select any slot limit that is supported by the game.
-
-![Game server - settings - basic](/img/dashboard/gameserver/getting_started/gameserver_settings_basic.jpg)
-
-:::tip custom map
-You can set up a custom map by changing the map to `Custom map`, which will bring up a field where you can add the custom map name.
-
-![Game server - custom map](/img/dashboard/gameserver/getting_started/gameserver_custom_map.jpg)
-:::
-
-### Change names
+### Server names (website, Discord etc.)
 
 ![Game server - settings - names](/img/dashboard/gameserver/getting_started/gameserver_settings_names.jpg)
 
@@ -85,6 +74,43 @@ This is the name that the [Discord Bot](/dashboard/discord-bot) will show when i
 :::info Hide on discord
 Leave the `Discord name` field empty to hide the game server on Discord.
 :::
+
+### General
+
+![Game server - settings - basic](/img/dashboard/gameserver/getting_started/gameserver_settings_basic.jpg)
+
+#### Config template
+Activate a different [Config template](/dashboard/game_servers/config_templates) on the game server. 
+
+:::tip
+Tasks can [automatically change the Config template](/dashboard/automate_tasks/actions#game-server-actions) for a game server.
+:::
+
+##### Blueprint alert
+When the game server and Config template use different blueprints (versions) an alert icon may appear.\
+It is not required to use identical blueprints (versions), but it may cause issues when the blueprints (versions) have too many differences.
+
+![Game server - settings - Config template blueprint different alert](/img/dashboard/gameserver/getting_started/gameserver_settings_basic_blueprint_different.jpg)
+
+#### Map
+Change the map to one of the preset options or enter a custom map by changing the map to `Custom map` (on the popup), which will bring up a field where you can add the custom map name.
+
+![Game server - custom map](/img/dashboard/gameserver/getting_started/gameserver_custom_map.jpg)
+
+:::tip
+Tasks can [automatically change the map / seed](/dashboard/automate_tasks/actions#game-server-actions) for a game server.
+:::
+
+#### Cluster
+Switching the game server to a different [cluster](/dashboard/game_servers/clusters) is only possible when the game server is shutdown.
+
+#### Slots
+You can change the slot limit to anything that is supported by the game.\
+Some games may experience issues when the number is too high.
+
+#### In-game admin password
+GameServerApp automatically assigns a unique `in-game admin password` for every game server.\
+This eliminates the need to include in-game passwords on Config templates, reducing the chance that admins can get access to passwords they should not have access too.
 
 ### Automation
 Automation settings can be configured per game server or for all game servers collectively through [Config template settings](/dashboard/game_servers/config_templates#settings). Using a Config template can be useful when using the same automation settings for all game servers.
@@ -119,7 +145,8 @@ See the recent activity for the game server.
 ![Game server - settings - activity](/img/dashboard/gameserver/getting_started/gameserver_settings_activity.jpg)
 
 ### Console
-See the console output and send commands or chat to the game server.
+See the console output and send commands or chat to the game server.\
+Command responses are captured and displayed on the console window.
 
 ![Game server - settings - consoles](/img/dashboard/gameserver/getting_started/gameserver_settings_console.jpg)
 
@@ -150,7 +177,10 @@ This feature requires having the GameServerApp.com Integration mod installed on 
 
 ## Logs
 Game server logs are directly accessible via the game server settings page, under the `Logs` tab.
-You can also access all logs via [FTP](#connect--ftp-info).
+You can also access all (older) logs via [FTP](#connect--ftp-info).
+
+The Docker container console logs and STEAM install + updates logs are also accessible on the logs page (when applicable).
+
 
 ![Game server - logs](/img/dashboard/gameserver/getting_started/gameserver_logs.jpg)
 
@@ -181,11 +211,22 @@ Install a different game on the game servers. Make sure to update your Config te
 Not all games supported every Operating System (OS). See the [list of supported games per OS](https://dash.gameserverapp.com/order/machine).
 :::
 
-![Game server - danger zone - change game](/img/dashboard/gameserver/getting_started/gameserver_dangerzone_change_game.jpg)
+![Game server - danger zone - change game 1](/img/dashboard/gameserver/getting_started/gameserver_dangerzone_change_game_1.jpg)
+
+While changing the game, it's also possible to select a specific [blueprint](/dashboard/blueprints).\
+GameServerApp will reinstall the game server with the selected game and blueprint, when the game was changed.
+
+![Game server - danger zone - change game 2](/img/dashboard/gameserver/getting_started/gameserver_dangerzone_change_game_2.jpg) 
+
+
+### Change blueprint
+In order to change the [blueprint](/dashboard/blueprints), the game server must be shutdown.\
+After changing the blueprint you may need to [delete the container](/dashboard/game_servers/getting_started#delete-container) or even [reinstall the game server](/dashboard/game_servers/getting_started#re-install). This ensures all changes are properly applied.
+
+![Game server - danger zone - change blueprint 1](/img/dashboard/gameserver/getting_started/gameserver_dangerzone_change_blueprint_1.jpg)
 
 ### Re-install
-Before re-install a backup is created that stores the save files and info about installed mods and plugins.
-
+Before re-install a backup is created that stores the save files and info about installed mods and plugins.\
 This process will remove all files from the disk and reinstall from previously downloaded game files.
 
 ![Game server - danger zone - re-install](/img/dashboard/gameserver/getting_started/gameserver_dangerzone_reinstall.jpg)

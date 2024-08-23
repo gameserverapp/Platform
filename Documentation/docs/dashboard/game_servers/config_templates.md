@@ -34,7 +34,6 @@ Some games have multiple examples. Click a `Default config` to add it to your da
 
 ## Config templates
 
-
 ### Game config
 Each game comes with different configuration files and settings on the `Game` tab. You can manage all relevant files and settings from there.
 
