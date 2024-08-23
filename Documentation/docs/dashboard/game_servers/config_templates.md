@@ -15,7 +15,10 @@ To create a new config template that is empty click `+ Add Config template` on t
 
 ![Config template - create new 1](/img/dashboard/gameserver/config_template/config_template_create_new_1.jpg)
 
-Enter a `name` and select which `game` the config template is for. Click `Create` to create a new Config template.
+Enter a `name` and select which `game` the config template is for.\
+Optionally can you change the blueprint. When unsure, it's best to go with the `Default blueprint`.
+
+Click `Create` to create a new Config template.
 
 ![Config template - create new 2](/img/dashboard/gameserver/config_template/config_template_create_new_2.jpg)
 
@@ -62,8 +65,7 @@ Advanced-mode shows all relevant files and settings that you may want to change 
 ### Mod / Plugin configs
 
 #### General / Framework configs
-Some frameworks have general settings that determine how the framework functions, like PaperMC. 
-
+Some frameworks have general settings that determine how the framework functions, like PaperMC.\
 For frameworks with general settings you can, in most cases, manage the framework settings from the `Mod / Plugin` tab too.
 
 ![Config template - framework settings](/img/dashboard/gameserver/config_template/framework_settings_papermc.jpg)
@@ -88,11 +90,20 @@ Besides adding the config to your config template is it also possible to install
 ![Config template - add plugin config and install on game server](/img/dashboard/gameserver/config_template/add_config_or_add_and_install.jpg)
 
 
-
 ### Settings
-Change the Config template name, manage Admin ID's, configure automations and more advanced settings.
+Edit the Config template name, change the blueprint, manage Admin ID's, configure automations and more advanced settings.
 
 ![Config template - settings](/img/dashboard/gameserver/config_template/config_template_settings.jpg)
+
+#### Blueprint
+
+With blueprints, you can change which config files are listed on the config template.\
+This is useful for games that aren't officially supported on GameServerApp, but also for existing games that miss certain config files.
+
+##### Change blueprint for Config template
+On the "Change blueprint for Config template" popup you can (optionally) also update the blueprint for all connected game servers. So the Config template and all connected game servers use the same blueprint.
+
+![Config template - settings - blueprint](/img/dashboard/gameserver/config_template/config_template_settings_blueprint.jpg)
 
 #### Access
 
@@ -102,7 +113,7 @@ Change the Config template name, manage Admin ID's, configure automations and mo
 Grant admin privileges to all ID's listed in the field. This automatically deploys to all connected game servers.
 
 #### Automation
-The automation settings in a Config template can be used to automate game servers.
+The automation settings in a Config template can be used to automate game servers.\
 See the [Game server automation section](/dashboard/game_servers/getting_started#automation) for more details.
 
 ![Config template - settings - automation](/img/dashboard/gameserver/config_template/config_template_settings_automation.jpg)
