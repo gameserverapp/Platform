@@ -57,7 +57,7 @@ If you made a mistake, you can delete the followed blueprint. This will remove i
 
 
 **Blueprint updates**\
-When the blueprint author uploads a new version for the blueprint, it will be available on your dashboard too. Game servers and Config templates do not automatically update to the latest version.
+When the blueprint author uploads a new version for the blueprint, it will be available on your dashboard too. Game servers and Config templates do not automatically [update to the latest version](/dashboard/blueprints/getting_started#versions).
 
 ![Blueprint - Follow blueprint - Show followed blueprint on blueprint overview](/img/dashboard/blueprint/getting_started/follow_blueprint_overview.jpg)
 
