@@ -134,7 +134,7 @@ Blueprints can change almost every aspect of a game server, like:
 Every blueprint comes with a `Config template` section. This is where configuration files and parameters are registered.
 GameServerApp takes care of uploading the files and parameters to the game server.
 
-After changing the `Config template` section on a blueprint, you can [update the blueprint on the Config template settings page](/dashboard/game_servers/config_templates#settings).
+After changing the `Config template` section, on a blueprint, you should [activate the new blueprint version](/dashboard/blueprints/getting_started#activate-blueprint-version) to apply the changes to the game servers & Config templates.
 
 
 ![Blueprint - What blueprints can do for - Config templates](/img/dashboard/blueprint/getting_started/blueprint_reference_config_template.jpg)
