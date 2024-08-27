@@ -66,4 +66,4 @@ The example below runs every 30 minutes and retains 10 copies.
 
 
 ## Blueprint
-Control what files are included in backups, using [blueprints](/dashboard/blueprints). This is useful when you have a custom game server setup.
+Control what files are included in backups, using [blueprints](/dashboard/blueprints/getting_started). This is useful when you have a custom game server setup.

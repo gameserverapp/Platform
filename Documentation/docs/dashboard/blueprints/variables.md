@@ -1,24 +1,13 @@
 ---
-title: Blueprints
-sidebar_position: 2.4
+title: Blueprint variables
+sidebar_label: Variables
+sidebar_position: 3
 ---
 
-Customize how game servers work under the hood and control what fields are listed on [Config templates](/dashboard/game_servers/config_templates).
-Blueprints can also be used to host games that are not officially supported by GSA.
+Variables are useful in cases where you need to insert a specific machine directory, game server port or cluster ID on blueprints or Config templates.
 
-This feature is mostly intended for advanced users, with some experience hosting game servers.
+The variables below can be used on blueprints and Config templates.
 
-[Go to Blueprints >](https://dash.gameserverapp.com/server/blueprint)
-
-:::warning Work in progress
-This section is currently being developed.
-:::
-
-
-
-## Variables
-
-These variables are available in blueprint and Config templates files. Variables can be useful in cases where you want to replace a static (hardcoded) setting, like a port number, with a dynamic one. For example to make the game port automatically adjust to whatever GSA assigns to the container.
 
 
 ### Dashboard

@@ -213,14 +213,14 @@ Not all games supported every Operating System (OS). See the [list of supported 
 
 ![Game server - danger zone - change game 1](/img/dashboard/gameserver/getting_started/gameserver_dangerzone_change_game_1.jpg)
 
-While changing the game, it's also possible to select a specific [blueprint](/dashboard/blueprints).\
+While changing the game, it's also possible to select a specific [blueprint](/dashboard/blueprints/getting_started).\
 GameServerApp will reinstall the game server with the selected game and blueprint, when the game was changed.
 
 ![Game server - danger zone - change game 2](/img/dashboard/gameserver/getting_started/gameserver_dangerzone_change_game_2.jpg) 
 
 
 ### Change blueprint
-In order to change the [blueprint](/dashboard/blueprints), the game server must be shutdown.\
+In order to change the [blueprint](/dashboard/blueprints/getting_started), the game server must be shutdown.\
 After changing the blueprint you may need to [delete the container](/dashboard/game_servers/getting_started#delete-container) or even [reinstall the game server](/dashboard/game_servers/getting_started#re-install). This ensures all changes are properly applied.
 
 ![Game server - danger zone - change blueprint 1](/img/dashboard/gameserver/getting_started/gameserver_dangerzone_change_blueprint_1.jpg)

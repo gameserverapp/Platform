@@ -145,7 +145,7 @@ Adds extra flexibility to Config templates. Can be used to automatically load in
 - `%%ADMINLISTURL%%` replaced with the admin list URL for game server
 
 #### Blueprint variables
-The more advanced variables listed on the [blueprint variables section](/dashboard/blueprints#variables) are also available in Config templates. These will replace the variables above entirely in the future.
+The more advanced variables listed on the [blueprint variables section](/dashboard/blueprints/variables) are also available in Config templates. These will replace the variables above entirely in the future.
 
 
 ### Keep notes
