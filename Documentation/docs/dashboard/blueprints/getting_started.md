@@ -28,6 +28,37 @@ Blueprints are useful for:
 
 ## Using blueprints
 
+### Switching blueprints
+
+While working with [game servers](/dashboard/game_servers/getting_started#change-blueprint) or [Config templates](/dashboard/game_servers/config_templates#settings), you may come across a dropdown menu that lets you select a `blueprint`.
+
+You can choose from 3 blueprint categories:
+- **GameServerApp blueprints** - Official / Default GSA blueprints that are available by default.
+- **Followed blueprints** - Community-generated blueprints that you [follow on the marketplace](/dashboard/blueprints/getting_started#follow-a-marketplace-blueprint).
+- **Your blueprints** - Blueprints created or [forked](/dashboard/blueprints/getting_started#fork) by you (or [admins](/dashboard/admin_teams) on your dashboard).
+
+![Blueprint - using blueprints - select blueprint dropdown](/img/dashboard/blueprint/getting_started/blueprint_select_dropdown.jpg)
+
+
+### Versions
+Each time the author makes changes to a blueprint, it's saved as a new version.\
+Versions help you track changes and enable you to roll back to earlier versions if needed.
+
+When a new blueprint version is released, you can [update game servers and Config templates to the latest version](/dashboard/blueprints/getting_started#activate-blueprint-version).
+
+![Blueprint - using blueprints - blueprint versioning](/img/dashboard/blueprint/getting_started/blueprint_versioning.jpg)
+
+
+#### Activate blueprint version
+Select a blueprint version on the right-hand version menu, on the blueprint page, and click `Activate selected version`. Then select one or multiple game servers and/or Config templates, on the popup.
+
+The selected game servers & Config templates will have their blueprint changed to the selected version.\
+Game servers must be shutdown before changing the blueprint.
+
+![Blueprint - using blueprints - blueprint activate version](/img/dashboard/blueprint/getting_started/blueprint_version_activate.jpg)
+
+On the marketplace you can find Official and community-generated blueprints. It's a source for inspiration and a place to share with the community.
+
 
 ### Follow a marketplace blueprint
 
@@ -61,48 +92,16 @@ When the blueprint author uploads a new version for the blueprint, it will be av
 
 ![Blueprint - Follow blueprint - Show followed blueprint on blueprint overview](/img/dashboard/blueprint/getting_started/follow_blueprint_overview.jpg)
 
-### Change blueprints
-
-When working with [game servers](/dashboard/game_servers/getting_started#change-blueprint) or [Config templates](/dashboard/game_servers/config_templates#settings), you may come across a dropdown menu that lets you select a different blueprint.
-
-You can choose from 3 blueprint categories:
-- **GameServerApp blueprints** - Official / Default GSA blueprints that are available by default.
-- **Followed blueprints** - Community-generated blueprints that you [follow on the marketplace](/dashboard/blueprints/getting_started#marketplace).
-- **Your blueprints** - Blueprints created or [forked](/dashboard/blueprints/getting_started#fork) by you (or [admins](/dashboard/admin_teams) on your dashboard).
-
-![Blueprint - using blueprints - select blueprint dropdown](/img/dashboard/blueprint/getting_started/blueprint_select_dropdown.jpg)
+### Manage
 
 
-### Versions
-Every time the author makes changes to a blueprint, it is saved under a new version.\
-Versions help you keep track of changes and allow for rolling back to previous versions.
-
-When a new blueprint version is released, you can [update game servers and Config templates to the latest version](/dashboard/blueprints/getting_started#activate-blueprint-version).
-
-![Blueprint - using blueprints - blueprint versioning](/img/dashboard/blueprint/getting_started/blueprint_versioning.jpg)
-
-
-#### Activate blueprint version
-Select a blueprint version on the right-hand version menu, on the blueprint page, and click `Activate selected version`. Then select one or multiple game servers and/or Config templates, on the popup.
-
-The selected game servers & Config templates will have their blueprint changed to the selected version.\
-Game servers must be shutdown before changing the blueprint.
-
-![Blueprint - using blueprints - blueprint activate version](/img/dashboard/blueprint/getting_started/blueprint_version_activate.jpg)
-
-On the marketplace you can find Official and community-generated blueprints. It's a source for inspiration and a place to share with the community.
-
-
-
-## Manage
-
-### Clone
+#### Clone
 By cloning a blueprint, you create an exact copy of the original.\
 Clones are automatically unpublished and all blueprint versions will be switched over to `DEV mode`.
 
 ![Blueprint - Manage - Clone blueprint](/img/dashboard/blueprint/getting_started/clone_blueprint.jpg)
 
-### Fork
+#### Fork
 Forking is basically the same as Cloning: It creates an exact copy of the original.
 
 The main difference between forking and cloning, is that you cannot clone a blueprint from the marketplace. When the marketplace blueprint supports forking, it lets you copy the original and make changes.
@@ -110,7 +109,7 @@ The main difference between forking and cloning, is that you cannot clone a blue
 
 ![Blueprint - Manage - Fork blueprint](/img/dashboard/blueprint/getting_started/fork_blueprint.jpg)
 
-### Delete
+#### Delete
 When you no longer need a blueprint, you can remove it via the [blueprint overview page](https://dash.gameserverapp.com/server/blueprint).
 
 ![Blueprint - Manage - Delete blueprint](/img/dashboard/blueprint/getting_started/delete_blueprint.jpg)
@@ -119,7 +118,7 @@ When you no longer need a blueprint, you can remove it via the [blueprint overvi
 
 ## What blueprints can do for...
 
-[Learn how to create your first blueprint >](/dashboard/blueprints/create_blueprint)
+[Learn how to create your first blueprint >](/dashboard/blueprints/create_and_manage_blueprints)
 
 ### Game servers
 Blueprints can change almost every aspect of a game server, like:
@@ -138,3 +137,5 @@ After changing the `Config template` section, on a blueprint, you should [activa
 
 
 ![Blueprint - What blueprints can do for - Config templates](/img/dashboard/blueprint/getting_started/blueprint_reference_config_template.jpg)
+
+

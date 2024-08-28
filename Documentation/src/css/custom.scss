@@ -173,6 +173,10 @@ html[data-theme='dark'] {
     border:2px solid rgb(47,47,47)
 }
 
+.markdown p + ul {
+    margin-top: -1.1em;
+}
+
 .menu__list-item.add-on {
     color:#f0ad4e
 }

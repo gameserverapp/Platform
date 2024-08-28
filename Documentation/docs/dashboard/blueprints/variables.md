@@ -1,7 +1,7 @@
 ---
 title: Blueprint variables
 sidebar_label: Variables
-sidebar_position: 3
+sidebar_position: 77
 ---
 
 Variables are useful in cases where you need to insert a specific machine directory, game server port or cluster ID on blueprints or Config templates.
