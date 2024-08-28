@@ -102,9 +102,11 @@ Clones are automatically unpublished and all blueprint versions will be switched
 ![Blueprint - Manage - Clone blueprint](/img/dashboard/blueprint/getting_started/clone_blueprint.jpg)
 
 #### Fork
-Forking is basically the same as Cloning: It creates an exact copy of the original.
+Forking is essentially the same as cloning: it creates an exact copy of the original.
 
-The main difference between forking and cloning, is that you cannot clone a blueprint from the marketplace. When the marketplace blueprint supports forking, it lets you copy the original and make changes.
+The key difference between forking and cloning is that you can't clone a blueprint from the marketplace. If the marketplace blueprint supports forking, it allows you to copy the original and make changes.
+
+The blueprint author can disable the ability to fork a blueprint. In that case, the fork button won't be visible.
 
 
 ![Blueprint - Manage - Fork blueprint](/img/dashboard/blueprint/getting_started/fork_blueprint.jpg)
