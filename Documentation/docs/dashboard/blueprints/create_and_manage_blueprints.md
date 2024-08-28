@@ -37,7 +37,7 @@ When you need to change parts of a blueprint, you should add a new version. Vers
 GameServerApp will automatically assign a new version number for each new version. \
 If you prefer, you can set a custom version number—just ensure it follows the [Semantic Versioning 2.0.0](https://semver.org/) guidelines.
 
-After [setting up the Linux or Windows blueprint fields](/dashboard/blueprints/create_blueprint#create-type-blueprint), you can (optional) explain what you changed in the changelog field. 
+After [setting up the Linux or Windows blueprint fields](/dashboard/blueprints/create_and_manage_blueprints#blueprint-form), you can (optional) explain what you changed in the changelog field. 
 This is particularly useful when you plan to [publish the version on the marketplace](#), as it helps folks understand what changed.
 
 ![Blueprint - Create a blueprint - Add version](/img/dashboard/blueprint/create_blueprint/create_blueprint_create_version_2.jpg)
