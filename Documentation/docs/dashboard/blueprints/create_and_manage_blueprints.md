@@ -7,6 +7,7 @@ Learn how to create your first blueprint, add new versions, and effectively use 
 **How-to Guides:**
 - [Create a blueprint for STEAM games](/dashboard/blueprints/how-to/create_steam_blueprint)
 - [Create a blueprint for existing Docker containers](/dashboard/blueprints/how-to/create_custom_blueprint)
+- [Create a blueprint using LinuxGSM](/dashboard/blueprints/how-to/create_linuxgsm_blueprint)
 - [Publish a blueprint on the marketplace](/dashboard/blueprints/how-to/publish_blueprint_on_marketplace)
 
 :::warning Work in Progress

@@ -12,7 +12,7 @@ In this guide, we'll walk you through creating a blueprint for [Myth of Empires]
 This section is currently under development.
 :::
 
-## Introduction
+## Intro
 
 For this guide, we assume you've already [created a blueprint](/dashboard/blueprints/create_and_manage_blueprints#create-a-blueprint) and are now on [the `Add version` page](/dashboard/blueprints/create_and_manage_blueprints#add-version).
 
