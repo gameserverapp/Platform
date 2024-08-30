@@ -8,10 +8,6 @@ Learn how to create a blueprint for STEAM games.
 
 In this guide, we'll walk you through creating a blueprint for [Myth of Empires](https://store.steampowered.com/app/1371580/Myth_of_Empires/). While this example focuses on setting up a Windows blueprint, the same principles apply to Linux.
 
-:::warning Work in Progress
-This section is currently under development.
-:::
-
 ## Intro
 
 For this guide, we assume you've already [created a blueprint](/dashboard/blueprints/create_and_manage_blueprints#create-a-blueprint) and are now on [the `Add version` page](/dashboard/blueprints/create_and_manage_blueprints#add-version).

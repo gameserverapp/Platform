@@ -5,10 +5,6 @@ sidebar_position: 4
 
 This guide will help you create a blueprint using the [LinuxGSM](https://linuxgsm.com/) template. In this example, we'll create a blueprint for [Left 4 Dead 2](https://linuxgsm.com/servers/l4d2server/) using the [LinuxGSM Docker container](https://hub.docker.com/r/gameservermanagers/gameserver).
 
-:::warning Work in Progress
-This section is currently being developed.
-:::
-
 ## Intro
 
 This guide assumes you have already [created a blueprint](/dashboard/blueprints/create_and_manage_blueprints#create-a-blueprint) and are currently on [the `Add version` page](/dashboard/blueprints/create_and_manage_blueprints#add-version).
