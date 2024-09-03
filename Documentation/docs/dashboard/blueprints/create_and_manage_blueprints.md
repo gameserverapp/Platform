@@ -65,7 +65,6 @@ Only published versions will appear on the marketplace. You can identify a publi
 ## Blueprint form
 
 
-
 ### Game
 
 ### Config template
@@ -78,3 +77,6 @@ Only published versions will appear on the marketplace. You can identify a publi
 
 
 
+## Help
+
+### Find & register config files
