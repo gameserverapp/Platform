@@ -22,7 +22,7 @@ We used the `GSA + Steam (Windows only)` blueprint template for this guide. Usin
 
 ### Steam Client & Server ID
 
-Enter the STEAM Client & Server ID for the game server in the appropriate fields ([Learn how to find STEAM IDs](/dashboard/blueprints/how-to/create_steam_blueprint#finding-steam-ids)).
+Enter the STEAM Client & Server ID for the game server in the appropriate fields ([Learn how to find STEAM IDs](/dashboard/blueprints/create_and_manage_blueprints#finding-steam-ids)).
 
 For this example, we used:
 - Client ID: `1371580`
@@ -102,7 +102,6 @@ Since GSA automatically assigns ports for each game server, it's crucial to use 
 
 ### 4.2 Config Files
 
-[//]: # (todo add config file info)
 
 **Test & Repeat**\
 You can now [activate the new version on the game server](/dashboard/blueprints/getting_started#activate-blueprint-version) and restart the game server.\
@@ -119,24 +118,6 @@ Learn how to configure settings like uptime monitoring, RCON, backups, and more 
 
 ## Help
 
-### Finding STEAM IDs
-
-#### Client ID
-The Steam store URL contains the `STEAM Client ID`. In this example, the `STEAM Client ID` is `1371580`: https://store.steampowered.com/app/1371580/Myth_of_Empires/
-
-#### Server ID
-In most cases, the `STEAM Server ID` is different from the `STEAM Client ID`.\
-Finding the `STEAM Server ID` is usually a bit more complicated. Websites like [SteamDB.info](https://steamdb.info/) can help you find it.
-
-##### Search SteamDB
-Use the search feature on [SteamDB.info](https://steamdb.info/) and search for: `{game name} dedicated server`.\
-Replace `{game name}` with the actual name of the game.
-
-In our example, we searched for: `myth of empires dedicated server`.
-
-![Blueprint - Create a blueprint - Find server id](/img/dashboard/blueprint/create_steam_blueprint/steamdb.jpg)
-
-According to [SteamDB.info](https://steamdb.info/), `1794810` is the Server ID for Myth of Empires.
 
 ### Finding Executable Path
 [Search SteamDB for the dedicated server files](/dashboard/blueprints/how-to/create_steam_blueprint#search-steamdb) and click on the Dedicated server. Then go to the `Configuration` page, and look for `Executable`.
