@@ -206,17 +206,16 @@ Setting recovery mode to `Disabled` will prevent GSA from trying to restart the 
 Register which paths should have everything removed when a wipe is requested via the dashboard.\
 The entered paths should be relative to the `container path` on the host.
 
-Examples:
+:::info Examples
 
 **Linux**\
-When you want to wipe the following folder: `/home/GameServerApp/containers/XXXXXX/serverfiles/ShooterGame/Saved/SavedArks`
-
+When you want to wipe the following folder: `/home/GameServerApp/containers/XXXXXX/serverfiles/ShooterGame/Saved/SavedArks`\
 Enter in the `Wiped folders`: `/serverfiles/ShooterGame/Saved/SavedArks`
 
 **Windows**\
-When you want to wipe the following folder: `C:\GameServerApp\containers\XXXXXX\serverfiles\ShooterGame\Saved\SavedArks`
-
-Enter in the `Wiped folders`: `/serverfiles/ShooterGame/Saved/SavedArks`
+When you want to wipe the following folder: `C:\GameServerApp\containers\XXXXXX\serverfiles\ShooterGame\Saved\SavedArks`\
+Enter in the `Wiped folders`: `\serverfiles\ShooterGame\Saved\SavedArks`
+:::
 
 #### Backup Folders
 
@@ -224,17 +223,17 @@ Register which folders must be included in backups.
 
 The `folder name` can be anything and is only used as a folder name inside the backup to group the files for the given path. The `path` must be relative to the `container path` on the host.
 
-Examples:
+:::info Examples
 
 **Linux**\
-When you want to back up the following folder: `/home/GameServerApp/containers/XXXXXX/serverfiles/ShooterGame/Saved/SavedArks`
-
+When you want to back up the following folder: `/home/GameServerApp/containers/XXXXXX/serverfiles/ShooterGame/Saved/SavedArks`\
 Enter as `path`: `/serverfiles/ShooterGame/Saved/SavedArks`
 
 **Windows**\
-When you want to back up the following folder: `C:\GameServerApp\containers\XXXXXX\serverfiles\ShooterGame\Saved\SavedArks`
+When you want to back up the following folder: `C:\GameServerApp\containers\XXXXXX\serverfiles\ShooterGame\Saved\SavedArks`\
+Enter as `path`: `\serverfiles\ShooterGame\Saved\SavedArks`
+:::
 
-Enter as `path`: `/serverfiles/ShooterGame/Saved/SavedArks`
 
 #### Custom Backup & Restore Scripts
 
@@ -242,12 +241,95 @@ These fields can be used to run special commands for creating and restoring back
 
 
 ### Config template
+Blueprints let you control what fields are available on a [Config template](/dashboard/game_servers/config_templates).\
+Use [variables](/dashboard/blueprints/variables) in both `Files` and `Parameters` to automatically fill in ports etc.
+
+![Blueprint - Blueprint form - Config Templates](/img/dashboard/blueprint/getting_started/blueprint_reference_config_template.jpg)
 
 #### Files
+Register configuration files under `Files`. These are usually `.json`, `.ini`, or `.cfg` files, but can be any kind of find.
+
+For each file registration you can use the following fields:
+
+**Name**\
+As the name suggests, this is the name that is used on the Config template.
+
+**Path**\
+The entered path should be relative to the `container path` on the host.
+
+:::info Examples
+
+**Linux**\
+Config file location: `/home/GameServerApp/containers/XXXXXX/serverfiles/ShooterGame/Game.ini`\
+Enter in `path`: `/serverfiles/ShooterGame/Game.ini`
+
+**Windows**\
+Config file location: `C:\GameServerApp\containers\XXXXXX\serverfiles\ShooterGame\Game.ini`\
+Enter in `path`:  `\serverfiles\ShooterGame\Game.ini`
+:::
+
+**Info**\
+The `Info` field can be used to provide information about what this config file is for.
+
+**Default content**\
+When the Config template field for this `config file` is empty, the `default content` will be used. This can be useful if you want to provide a fully working blueprint that includes configuration files.
+
+
+![Blueprint - Blueprint form - Config Template file example](/img/dashboard/blueprint/create_blueprint/blueprint_form_files_example.jpg)
 
 #### Parameters
+Most game servers use `launch/start parameters` for settings like ports, passwords, and server list names. These settings often look like `-Ports 7777` or `-QueryPort 27015`.
+
+For each parameter registration you can use the following fields:
+
+
+**ID**\
+The ID is used for referencing. For example when using the [`{config_parameter id=""}`](/dashboard/blueprints/variables#config_parameter-id) variable.
+
+For example, when the `ID` is `launch_parameter`, the variable should look like:\
+`{config_parameter id="launch_parameter"}`
+
+**Name**\
+This is the parameter name, and is only used as the `parameter name` on Config templates.
+
+**Info**\
+The `Info` field can be used to provide information about what this parameter is for.
+
+
+![Blueprint - Blueprint form - Config Template parameter example](/img/dashboard/blueprint/create_blueprint/blueprint_form_parameter_example.jpg)
 
 ### Directories
+Registering specific directories can be useful in cases where you want to have specific folders accessible through FTP or to set up a folder designated for plugins etc.
+
+All folders registered under `Directories` are automatically made available via FTP. If a folder is missing after making a change, you may need to reinstall the game server to have it show up on FTP.
+
+
+For each directory registration you can use the following fields:
+
+**Name**\
+The `path` will show up in FTP as the `name` provided. In other words, the `path` is mounted to a folder using `name`, as its name.
+
+**Path**\
+The entered path should be relative to the `container path` on the host.
+
+:::info Examples
+
+**Linux**\
+Folder: `/home/GameServerApp/containers/XXXXXX/serverfiles/ShooterGame/Saved`\
+Enter in `path`: `/serverfiles/ShooterGame/Saved`
+
+**Windows**\
+Folder: `C:\GameServerApp\containers\XXXXXX\serverfiles\ShooterGame\Saved`\
+Enter in `path`:  `\serverfiles\ShooterGame\Saved`
+:::
+
+**Create**\
+Determines whether this folder should be created during installation. For most cases it's best to set this to `No`.
+
+**Type**\
+Configure what kind of folder this is. For example, folders with the type `Logs` will automatically be scanned for log files, which are automatically listed on the [Logs page](/dashboard/game_servers/getting_started#logs), for game servers.
+
+![Blueprint - Blueprint form - Config Template parameter example](/img/dashboard/blueprint/create_blueprint/blueprint_form_directories_example.jpg)
 
 ### Docker
 
