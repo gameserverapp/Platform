@@ -332,27 +332,125 @@ Configure what kind of folder this is. For example, folders with the type `Logs`
 ![Blueprint - Blueprint form - Config Template parameter example](/img/dashboard/blueprint/create_blueprint/blueprint_form_directories_example.jpg)
 
 ### Docker
+The Docker settings are required for all blueprints, as they are the foundation of every game server.\
+If you're trying to use an existing Docker container, take a look at the [Create blueprint for existing Docker container guide](/dashboard/blueprints/how-to/create_custom_blueprint).
+
+![Blueprint - Blueprint form - Docker overview](/img/dashboard/blueprint/create_blueprint/blueprint_form_docker_overview.jpg)
 
 #### Image
 
+The Docker image always requires an `image name`, but the `version / tag` is optional. To avoid issues it is recommended to always use a `version / tag`.
+
+GSA will automatically download (pull) any public Docker images and make sure the right version is present on the machine.
 
 ##### Official GSA Docker images
+We created [special Docker containers for the `GSA + Steam` game type](https://hub.docker.com/u/gameserverapp). They are ready for use.
+
+##### Linux
+These Linux images can be used on [all supported Linux Operating Systems](/getting_started/dediconnect/requirements#supported-operating-systems-os).
+
+**Proton support**:
+- **Image**: `gameserverapp/dediconnect-linux`
+- **Version**: `proton-debian12`
+
+**Basic support**:
+- **Image**: `gameserverapp/dediconnect-linux`
+- **Version**: `debian-12`
+
+##### Windows
+These Windows images can be used on [all supported Windows Operating Systems](/getting_started/dediconnect/requirements#supported-operating-systems-os).\
+Use the `{dynamic-os-tag}` tag so GSA automatically grabs the right version for Windows Server 2019 or 2022.
+
+**Unreal engine support**:
+- **Image**: `gameserverapp/dediconnect-windows`
+- **Version**: `{dynamic-os-tag}-ue5`
+
+**Basic support**:
+- **Image**: `gameserverapp/dediconnect-windows`
+- **Version**: `{dynamic-os-tag}`
+
+
 
 #### Environment variables
+Most existing Docker containers use [Docker environment variables](https://docs.docker.com/reference/dockerfile/#env). They are often used to override specific settings for the Docker container.
+
+When working with existing Docker containers, we recommend checking the documentation for that Docker container for any information about environment variable use.
 
 #### Mounts
+Mounts let you mount a folder to the Docker container.
+
+**Host path**\
+You can enter any path on the machine, as the `Host path`. Unlike most other paths on the blueprint form, is this path __not__ relative to the container folder. This is useful when you need to mount a folder that is not within the container folder.
+
+There are [various path variables](/dashboard/blueprints/variables#containerhome_root) that you can use to specify frequently used paths, like the container home directory: `{container.home_root}`.
+
+Example:\
+`{container.home_root}/serverfiles`
+
+**Container path**\
+The path entered under `Container path` is where, inside the container, the folder from the `host path` will be mounted to.
+
+When working with existing Docker containers, these paths are often specified in the documentation.
 
 #### Ports
+When mapping ports, it's important to specify the `type` of port. The `type` helps GSA understand which ports it needs to use to establish a connection with RCON, for example.
 
+The multiplier is used to assign ports to game servers.  The multiplier number determines how ports will be assigned to game server using the blueprint.
 
+Example:\
+When the port is set to 7777 and the multiplier is set to 2, it will result in:
+Game server 1 will use port 7777
+Game server 2 will use port 7779
+Game server 3 will use port 7781
+Game server 4 will use port 7783
 
 
 ## Help
 
 ### Find & register config files
+When you're not sure what the right path is for a config file that you want to register as a [blueprint config file](/dashboard/blueprints/create_and_manage_blueprints#files), you can use these steps to find it.
+
+#### 1. Launch a server for blueprint
+In order to find the paths, we must first install a new game server using the blueprint. It's important that you [have at least one directory registered](/dashboard/blueprints/create_and_manage_blueprints#directories), that points to the `serverfiles` folder.
+
+#### 2. Connect with FTP
+Use your favorite FTP client to access the game server's FTP.\
+You can [find the FTP credentials on the `Connect` page](/dashboard/game_servers/getting_started#connect--ftp-info).
+
+#### 3. Locate config file
+On your FTP client, navigate to where the config file is located and take note of the path. When unsure, check the wiki / documentation of the game for more info.
+
+The path for our example below results in:\
+`/serverfiles/Config/LinuxServer/Game.ini`
+
+This is the `path` that you need to register.
+
+![Blueprint - Create & Manage blueprint - Help - Find config path](/img/dashboard/blueprint/create_blueprint/find_config_path.jpg)
+
+
 
 
 ### Find the executable path
+Use these steps to find the game server executable for a game server.
+
+#### 1. Launch a server for blueprint
+In order to find the paths, we must first install a new game server using the blueprint. It's important that you [have at least one directory registered](/dashboard/blueprints/create_and_manage_blueprints#directories), that points to the `serverfiles` folder.
+
+#### 2. Connect with FTP
+Use your favorite FTP client to access the game server's FTP.\
+You can [find the FTP credentials on the `Connect` page](/dashboard/game_servers/getting_started#connect--ftp-info).
+
+#### 3. Locate executable
+On your FTP client, navigate to where the executable should be located. When unsure, check the wiki / documentation of the game for more info.
+
+The path for our example below results in:\
+`/serverfiles/MOE/Binaries/Win64/MOEServer.exe`
+
+This is the `executable path`.
+
+![Blueprint - Create & Manage blueprint - Help - Find config path](/img/dashboard/blueprint/create_blueprint/find_executable_path.jpg)
+
+
 
 
 ### Finding STEAM IDs
