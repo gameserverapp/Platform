@@ -10,10 +10,6 @@ Learn how to create your first blueprint, add new versions, and effectively use 
 - [Create a blueprint using LinuxGSM](/dashboard/blueprints/how-to/create_linuxgsm_blueprint)
 - [Publish a blueprint on the marketplace](/dashboard/blueprints/how-to/publish_blueprint_on_marketplace)
 
-:::warning Work in Progress
-This section is currently being developed.
-:::
-
 ## The Basics
 
 ### Create a Blueprint
