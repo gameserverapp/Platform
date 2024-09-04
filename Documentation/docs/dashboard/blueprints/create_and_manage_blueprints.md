@@ -108,11 +108,11 @@ Enter the executable path that works inside the container.
 When using Official GSA docker containers, the game files are mounted to the container under `/serverfiles`:
 
 - Linux:
-  - On host: `/home/GameServerApp/containers/XXXXXX/serverfiles`
-  - Inside container: `/home/containeruser/serverfiles`
+    - On host: `/home/GameServerApp/containers/XXXXXX/serverfiles`
+    - Inside container: `/home/containeruser/serverfiles`
 - Windows:
-  - On host: `C:\GameServerApp\containers\XXXXXX\serverfiles`
-  - Inside container: `C:\Users\ContainerUser\serverfiles`
+    - On host: `C:\GameServerApp\containers\XXXXXX\serverfiles`
+    - Inside container: `C:\Users\ContainerUser\serverfiles`
 :::
 
 Example:\
@@ -234,240 +234,223 @@ When you want to back up the following folder: `C:\GameServerApp\containers\XXXX
 Enter as `path`: `\serverfiles\ShooterGame\Saved\SavedArks`
 :::
 
-
 #### Custom Backup & Restore Scripts
 
 These fields can be used to run special commands for creating and restoring backups. For example, when you want to include specific plugin files or filter out unneeded files.
 
 
 ### Config template
-Blueprints let you control what fields are available on a [Config template](/dashboard/game_servers/config_templates).\
-Use [variables](/dashboard/blueprints/variables) in both `Files` and `Parameters` to automatically fill in ports etc.
+
+Blueprints let you control what fields are available on a [Config template](/dashboard/game_servers/config_templates). You can use [variables](/dashboard/blueprints/variables) in both `Files` and `Parameters` to automatically fill in ports and other values.
 
 ![Blueprint - Blueprint form - Config Templates](/img/dashboard/blueprint/getting_started/blueprint_reference_config_template.jpg)
 
 #### Files
-Register configuration files under `Files`. These are usually `.json`, `.ini`, or `.cfg` files, but can be any kind of find.
 
-For each file registration you can use the following fields:
+Register configuration files under `Files`. These are usually `.json`, `.ini`, or `.cfg` files, but they can be any kind of file.
 
-**Name**\
-As the name suggests, this is the name that is used on the Config template.
+For each file registration, you can use the following fields:
 
-**Path**\
+**Name**  
+This is the name used on the Config template.
+
+**Path**  
 The entered path should be relative to the `container path` on the host.
 
 :::info Examples
 
-**Linux**\
-Config file location: `/home/GameServerApp/containers/XXXXXX/serverfiles/ShooterGame/Game.ini`\
+**Linux**  
+Config file location: `/home/GameServerApp/containers/XXXXXX/serverfiles/ShooterGame/Game.ini`  
 Enter in `path`: `/serverfiles/ShooterGame/Game.ini`
 
-**Windows**\
-Config file location: `C:\GameServerApp\containers\XXXXXX\serverfiles\ShooterGame\Game.ini`\
+**Windows**  
+Config file location: `C:\GameServerApp\containers\XXXXXX\serverfiles\ShooterGame\Game.ini`  
 Enter in `path`:  `\serverfiles\ShooterGame\Game.ini`
 :::
 
-**Info**\
-The `Info` field can be used to provide information about what this config file is for.
+**Info**  
+The `Info` field can be used to provide information about the config file.
 
-**Default content**\
-When the Config template field for this `config file` is empty, the `default content` will be used. This can be useful if you want to provide a fully working blueprint that includes configuration files.
-
+**Default content**  
+When the Config template field for this `config file` is empty, the `default content` will be used. This is helpful when providing a fully working blueprint that includes configuration files.
 
 ![Blueprint - Blueprint form - Config Template file example](/img/dashboard/blueprint/create_blueprint/blueprint_form_files_example.jpg)
 
 #### Parameters
-Most game servers use `launch/start parameters` for settings like ports, passwords, and server list names. These settings often look like `-Ports 7777` or `-QueryPort 27015`.
 
-For each parameter registration you can use the following fields:
+Most game servers use `launch/start parameters` for settings like ports, passwords, and server list names. These parameters typically look like `-Ports 7777` or `-QueryPort 27015`.
 
+For each parameter registration, you can use the following fields:
 
-**ID**\
-The ID is used for referencing. For example when using the [`{config_parameter id=""}`](/dashboard/blueprints/variables#config_parameter-id) variable.
+**ID**  
+The ID is used for referencing. For example, when using the `{config_parameter id=""}` variable.
 
-For example, when the `ID` is `launch_parameter`, the variable should look like:\
+For example, when the `ID` is `launch_parameter`, the variable would look like:  
 `{config_parameter id="launch_parameter"}`
 
-**Name**\
-This is the parameter name, and is only used as the `parameter name` on Config templates.
+**Name**  
+This is the parameter name used on Config templates.
 
-**Info**\
-The `Info` field can be used to provide information about what this parameter is for.
-
+**Info**  
+The `Info` field can be used to provide information about the parameter.
 
 ![Blueprint - Blueprint form - Config Template parameter example](/img/dashboard/blueprint/create_blueprint/blueprint_form_parameter_example.jpg)
 
 ### Directories
-Registering specific directories can be useful in cases where you want to have specific folders accessible through FTP or to set up a folder designated for plugins etc.
 
-All folders registered under `Directories` are automatically made available via FTP. If a folder is missing after making a change, you may need to reinstall the game server to have it show up on FTP.
+Registering specific directories can be useful when you want specific folders accessible through FTP or need a folder designated for plugins.
 
+All folders registered under `Directories` are automatically made available via FTP. If a folder is missing after making a change, you may need to reinstall the game server for it to appear on FTP.
 
-For each directory registration you can use the following fields:
+For each directory registration, you can use the following fields:
 
-**Name**\
-The `path` will show up in FTP as the `name` provided. In other words, the `path` is mounted to a folder using `name`, as its name.
+**Name**  
+The `path` will show up in FTP as the `name` provided. The `path` is mounted to a folder using `name` as its name.
 
-**Path**\
+**Path**  
 The entered path should be relative to the `container path` on the host.
 
 :::info Examples
 
-**Linux**\
-Folder: `/home/GameServerApp/containers/XXXXXX/serverfiles/ShooterGame/Saved`\
+**Linux**  
+Folder: `/home/GameServerApp/containers/XXXXXX/serverfiles/ShooterGame/Saved`  
 Enter in `path`: `/serverfiles/ShooterGame/Saved`
 
-**Windows**\
-Folder: `C:\GameServerApp\containers\XXXXXX\serverfiles\ShooterGame\Saved`\
+**Windows**  
+Folder: `C:\GameServerApp\containers\XXXXXX\serverfiles\ShooterGame\Saved`  
 Enter in `path`:  `\serverfiles\ShooterGame\Saved`
 :::
 
-**Create**\
-Determines whether this folder should be created during installation. For most cases it's best to set this to `No`.
+**Create**  
+Determines whether this folder should be created during installation. For most cases, it's best to set this to `No`.
 
-**Type**\
-Configure what kind of folder this is. For example, folders with the type `Logs` will automatically be scanned for log files, which are automatically listed on the [Logs page](/dashboard/game_servers/getting_started#logs), for game servers.
+**Type**  
+Configure the kind of folder it is. For example, folders with the type `Logs` will be automatically scanned for log files, which are then listed on the [Logs page](/dashboard/game_servers/getting_started#logs) for game servers.
 
-![Blueprint - Blueprint form - Config Template parameter example](/img/dashboard/blueprint/create_blueprint/blueprint_form_directories_example.jpg)
+![Blueprint - Blueprint form - Directory Example](/img/dashboard/blueprint/create_blueprint/blueprint_form_directories_example.jpg)
 
 ### Docker
-The Docker settings are required for all blueprints, as they are the foundation of every game server.\
-If you're trying to use an existing Docker container, take a look at the [Create blueprint for existing Docker container guide](/dashboard/blueprints/how-to/create_custom_blueprint).
 
-![Blueprint - Blueprint form - Docker overview](/img/dashboard/blueprint/create_blueprint/blueprint_form_docker_overview.jpg)
+The Docker settings are essential for all blueprints as they form the foundation of every game server. If you're using an existing Docker container, refer to the [Create blueprint for existing Docker container guide](/dashboard/blueprints/how-to/create_custom_blueprint).
+
+![Blueprint - Docker Overview](/img/dashboard/blueprint/create_blueprint/blueprint_form_docker_overview.jpg)
 
 #### Image
 
-The Docker image always requires an `image name`, but the `version / tag` is optional. To avoid issues it is recommended to always use a `version / tag`.
+The Docker image always requires an `image name`, while the `version/tag` is optional. However, it is recommended to always use a `version/tag` to avoid issues.
 
-GSA will automatically download (pull) any public Docker images and make sure the right version is present on the machine.
+GSA will automatically pull public Docker images and ensure the correct version is present on the machine.
 
-##### Official GSA Docker images
-We created [special Docker containers for the `GSA + Steam` game type](https://hub.docker.com/u/gameserverapp). They are ready for use.
+##### Official GSA Docker Images
+
+We provide [special Docker containers for the `GSA + Steam` game type](https://hub.docker.com/u/gameserverapp). They are ready for use.
 
 ##### Linux
+
 These Linux images can be used on [all supported Linux Operating Systems](/getting_started/dediconnect/requirements#supported-operating-systems-os).
 
-**Proton support**:
+**Proton Support**:
 - **Image**: `gameserverapp/dediconnect-linux`
 - **Version**: `proton-debian12`
 
-**Basic support**:
+**Basic Support**:
 - **Image**: `gameserverapp/dediconnect-linux`
 - **Version**: `debian-12`
 
 ##### Windows
-These Windows images can be used on [all supported Windows Operating Systems](/getting_started/dediconnect/requirements#supported-operating-systems-os).\
-Use the `{dynamic-os-tag}` tag so GSA automatically grabs the right version for Windows Server 2019 or 2022.
 
-**Unreal engine support**:
+These Windows images can be used on [all supported Windows Operating Systems](/getting_started/dediconnect/requirements#supported-operating-systems-os).  
+Use the `{dynamic-os-tag}` tag to allow GSA to automatically grab the correct version for Windows Server 2019 or 2022.
+
+**Unreal Engine Support**:
 - **Image**: `gameserverapp/dediconnect-windows`
 - **Version**: `{dynamic-os-tag}-ue5`
 
-**Basic support**:
+**Basic Support**:
 - **Image**: `gameserverapp/dediconnect-windows`
 - **Version**: `{dynamic-os-tag}`
 
+#### Environment Variables
 
+Most Docker containers use [Docker environment variables](https://docs.docker.com/reference/dockerfile/#env) to override specific settings within the container.
 
-#### Environment variables
-Most existing Docker containers use [Docker environment variables](https://docs.docker.com/reference/dockerfile/#env). They are often used to override specific settings for the Docker container.
-
-When working with existing Docker containers, we recommend checking the documentation for that Docker container for any information about environment variable use.
+For existing Docker containers, refer to the container documentation to learn more about environment variable usage.
 
 #### Mounts
-Mounts let you mount a folder to the Docker container.
 
-**Host path**\
-You can enter any path on the machine, as the `Host path`. Unlike most other paths on the blueprint form, is this path __not__ relative to the container folder. This is useful when you need to mount a folder that is not within the container folder.
+Mounts allow you to map a folder from the host machine to the Docker container.
 
-There are [various path variables](/dashboard/blueprints/variables#containerhome_root) that you can use to specify frequently used paths, like the container home directory: `{container.home_root}`.
+**Host Path**  
+You can enter any path on the machine as the `Host path`. Unlike most other paths on the blueprint form, this path is **not** relative to the container folder. So you can also mount folders that are outside the container directory.
 
-Example:\
+There are various [path variables](/dashboard/blueprints/variables#containerhome_root) you can use, such as `{container.home_root}`, which points to frequently used paths like the container home directory.
+
+Example:  
 `{container.home_root}/serverfiles`
 
-**Container path**\
-The path entered under `Container path` is where, inside the container, the folder from the `host path` will be mounted to.
-
-When working with existing Docker containers, these paths are often specified in the documentation.
+**Container Path**  
+The `Container path` specifies where the folder from the host path will be mounted inside the container.
 
 #### Ports
-When mapping ports, it's important to specify the `type` of port. The `type` helps GSA understand which ports it needs to use to establish a connection with RCON, for example.
 
-The multiplier is used to assign ports to game servers.  The multiplier number determines how ports will be assigned to game server using the blueprint.
+When mapping ports, specify the `type` of port (e.g., RCON, game port, etc.). The `type` helps GSA understand how to use the ports.
 
-Example:\
-When the port is set to 7777 and the multiplier is set to 2, it will result in:
-Game server 1 will use port 7777
-Game server 2 will use port 7779
-Game server 3 will use port 7781
-Game server 4 will use port 7783
+The multiplier assigns ports to game servers. The multiplier number determines how ports are distributed across game servers using the blueprint.
 
+Example:  
+If the base port is 7777 and the multiplier is 2, the result would be:
+
+- Game server 1: port 7777
+- Game server 2: port 7779
+- Game server 3: port 7781
 
 ## Help
 
-### Find & register config files
-When you're not sure what the right path is for a config file that you want to register as a [blueprint config file](/dashboard/blueprints/create_and_manage_blueprints#files), you can use these steps to find it.
+### Find & Register Config Files
 
-#### 1. Launch a server for blueprint
-In order to find the paths, we must first install a new game server using the blueprint. It's important that you [have at least one directory registered](/dashboard/blueprints/create_and_manage_blueprints#directories), that points to the `serverfiles` folder.
+When unsure of the correct path for a config file you want to register, use the following steps:
 
-#### 2. Connect with FTP
-Use your favorite FTP client to access the game server's FTP.\
-You can [find the FTP credentials on the `Connect` page](/dashboard/game_servers/getting_started#connect--ftp-info).
+1. **Launch a server for the blueprint**  
+   You need to install a game server using the blueprint. Ensure you have at least one directory registered that points to the `serverfiles` folder.
 
-#### 3. Locate config file
-On your FTP client, navigate to where the config file is located and take note of the path. When unsure, check the wiki / documentation of the game for more info.
+2. **Connect via FTP**  
+   Use your FTP client to access the game server. The [FTP credentials are available on the `Connect` page](/dashboard/game_servers/getting_started#connect--ftp-info).
 
-The path for our example below results in:\
-`/serverfiles/Config/LinuxServer/Game.ini`
+3. **Locate the config file**  
+   Find the config file on the FTP client and note the path. If unsure, check the game's documentation.  
+   Example path: `/serverfiles/Config/LinuxServer/Game.ini`
 
-This is the `path` that you need to register.
+![Blueprint - Find Config Path](/img/dashboard/blueprint/create_blueprint/find_config_path.jpg)
 
-![Blueprint - Create & Manage blueprint - Help - Find config path](/img/dashboard/blueprint/create_blueprint/find_config_path.jpg)
+### Find the Executable Path
 
+To find the game server executable, follow these steps:
 
+1. **Launch a server for the blueprint**  
+   Install a game server using the blueprint. Ensure you have at least one directory registered that points to the `serverfiles` folder.
 
+2. **Connect via FTP**  
+   Use your FTP client to access the game server. The [FTP credentials are available on the `Connect` page](/dashboard/game_servers/getting_started#connect--ftp-info).
 
-### Find the executable path
-Use these steps to find the game server executable for a game server.
+3. **Locate the executable**  
+   Find the executable on the FTP client.  
+   Example path: `/serverfiles/MOE/Binaries/Win64/MOEServer.exe`
 
-#### 1. Launch a server for blueprint
-In order to find the paths, we must first install a new game server using the blueprint. It's important that you [have at least one directory registered](/dashboard/blueprints/create_and_manage_blueprints#directories), that points to the `serverfiles` folder.
-
-#### 2. Connect with FTP
-Use your favorite FTP client to access the game server's FTP.\
-You can [find the FTP credentials on the `Connect` page](/dashboard/game_servers/getting_started#connect--ftp-info).
-
-#### 3. Locate executable
-On your FTP client, navigate to where the executable should be located. When unsure, check the wiki / documentation of the game for more info.
-
-The path for our example below results in:\
-`/serverfiles/MOE/Binaries/Win64/MOEServer.exe`
-
-This is the `executable path`.
-
-![Blueprint - Create & Manage blueprint - Help - Find config path](/img/dashboard/blueprint/create_blueprint/find_executable_path.jpg)
-
-
-
+![Blueprint - Find Executable Path](/img/dashboard/blueprint/create_blueprint/find_executable_path.jpg)
 
 ### Finding STEAM IDs
 
-#### Client ID
-The Steam store URL contains the `STEAM Client ID`. In this example, the `STEAM Client ID` is `1371580`: https://store.steampowered.com/app/1371580/Myth_of_Empires/
+**Client ID**  
+The Steam store URL contains the `STEAM Client ID`. In this example, the `STEAM Client ID` is `1371580`:  
+https://store.steampowered.com/app/1371580/Myth_of_Empires/
 
-#### Server ID
-In most cases, the `STEAM Server ID` is different from the `STEAM Client ID`.\
-Finding the `STEAM Server ID` is usually a bit more complicated. Websites like [SteamDB.info](https://steamdb.info/) can help you find it.
+**Server ID**  
+In most cases, the `STEAM Server ID` is different from the `STEAM Client ID`. Websites like [SteamDB.info](https://steamdb.info/) can help you find the Server ID.
 
-##### Search SteamDB
-Use the search feature on [SteamDB.info](https://steamdb.info/) and search for: `{game name} dedicated server`.\
-Replace `{game name}` with the actual name of the game.
+**Search SteamDB**  
+Use the search feature on [SteamDB.info](https://steamdb.info/) to search for `{game name} dedicated server`.  
+For example: `myth of empires dedicated server`
 
-In our example, we searched for: `myth of empires dedicated server`.
+According to [SteamDB](https://steamdb.info/), the `STEAM Server ID` for Myth of Empires is `1794810`.
 
-![Blueprint - Create a blueprint - Find server id](/img/dashboard/blueprint/create_steam_blueprint/steamdb.jpg)
-
-According to [SteamDB.info](https://steamdb.info/), `1794810` is the Server ID for Myth of Empires.
+![Blueprint - Find STEAM Server ID](/img/dashboard/blueprint/create_steam_blueprint/steamdb.jpg)
