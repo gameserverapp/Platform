@@ -102,6 +102,7 @@ Since GSA automatically assigns ports for each game server, it's crucial to use 
 
 ### 4.2 Config Files
 
+[Learn how to find and register config files for most games, using FTP >](/dashboard/blueprints/create_and_manage_blueprints#find--register-config-files)
 
 **Test & Repeat**\
 You can now [activate the new version on the game server](/dashboard/blueprints/getting_started#activate-blueprint-version) and restart the game server.\
