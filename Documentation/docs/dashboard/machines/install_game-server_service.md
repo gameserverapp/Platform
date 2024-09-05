@@ -17,6 +17,7 @@ Select the game, [Config template](/dashboard/game_servers/config_templates) and
 Not all games are available on every Operating System (OS). You can see which OS's are supported per game.
 
 ![OS support per game](/img/dashboard/machines/getting_started/game_os_support.jpg)
+
 :::
 
 ![Install game server on machine 1](/img/dashboard/machines/getting_started/install_gameserver_1.jpg)
