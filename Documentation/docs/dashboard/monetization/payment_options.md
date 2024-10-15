@@ -72,15 +72,16 @@ Copy your unique [webhook URL from your GSA dashboard](https://dash.gameserverap
 ![Monetization - Payment Service Provider - Set up PayPal webhook 3](/img/dashboard/monetization/psp/setup_paypal_webhook_3.jpg)
 
 #### 5.3 Activate event
-Check the `Payment sale completed` event that is listed under `Payments & Payouts`. 
-
-:::warning
-Make sure you only select `Payment sale completed`.
-:::
+Ensure __only__ the following checkboxes are checked:
+- `Payment sale completed` (under `Payments & Payouts`)
+- `Billing subscription cancelled` (under `Billing subscription`)
+- `Billing subscription expired` (under `Billing subscription`)
 
 Now you can save the webhook.
 
 ![Monetization - Payment Service Provider - Set up PayPal webhook 4](/img/dashboard/monetization/psp/setup_paypal_webhook_4.jpg)
+
+![Monetization - Payment Service Provider - Set up PayPal webhook 4.1](/img/dashboard/monetization/psp/setup_paypal_webhook_4_1.jpg)
 
 
 #### 5.4 Confirm
