@@ -44,6 +44,11 @@ DediConnect requires `Root` (Linux) or `Administrator` (Windows) access in order
 
 These are the ports GSA may use to run communicate with your machine and host game servers and service on the machine:
 
+:::danger 
+DO NOT add these port to your Windows / Linux firewall. GSA will take care of all that.\
+When you rent a machine from a datacenter, you never have to configure any ports.
+:::
+
 ### Required
 - 21 `FTP`
 - 22 `SSH`

@@ -24,38 +24,75 @@ GSA staff will __never__ ask for your password or API keys. Do not share them wi
 Navigate to [developer.paypal.com](https://developer.paypal.com/) and log in. You need to have a valid PayPal account for this.
 
 ### 2. Create REST API apps
-Scroll down to the REST API apps section and hit `Create App`.
+First, make sure you are using the `LIVE` mode
+
+Then click `Apps & Credentials` in the top menu and hit `Create App`.
 
 ![Monetization - Payment Service Provider - Set up PayPal 1](/img/dashboard/monetization/psp/setup_paypal_1.jpg)
 
-### 3. Enter Application details
-Enter `GameServerApp` in the App Name field. Ignore the e-mail address in the Sandbox developer account field, as this is only for testing purposes.
-
-Hit `Create app` to continue.
+### 3. Create App
+Enter `GSA API` (or something similar) in the `App Name` field.\
+Hit `Create App` to continue.
 
 ![Monetization - Payment Service Provider - Set up PayPal 2](/img/dashboard/monetization/psp/setup_paypal_2.jpg)
 
-### 4. Switch to `LIVE`
-
-On `My Apps & Credentials` click `Live`. Then click the new app.
+### 4. Configure API features
+Before you can copy your API keys, you need to grant the necessary permissions to the new API keys.\
+Scroll down to the `Features` section.
 
 ![Monetization - Payment Service Provider - Set up PayPal 3](/img/dashboard/monetization/psp/setup_paypal_3.jpg)
 
-### 5. Configure API permissions
-Scroll down to the `Live app settings` section and enable `Accept Payments`. Click `Save` to continue.
+Enable `Vault` and `Subscriptions`. Then click `Save Changes`.
 
-:::caution Only enable `Accept Payments`
-For security reasons we recommend you only enable `Accept Payments`.
+:::caution Only enable `Vault` and `Subscriptions`
+For security reasons we recommend you only enable `Vault` and `Subscriptions`.
 :::
 
 ![Monetization - Payment Service Provider - Set up PayPal 4](/img/dashboard/monetization/psp/setup_paypal_4.jpg)
+
+
+### 5. Setup webhook
+Below where you configured the API features, you can set up webhooks.
+
+:::info
+Webhooks are used for subscriptions. Without webhooks your subscriptions won't work.
+:::
+
+#### 5.1 Add webhook
+
+Click `Add Webhook` to add your personal GSA webhook url.
+
+![Monetization - Payment Service Provider - Set up PayPal webhook 1](/img/dashboard/monetization/psp/setup_paypal_webhook_1.jpg)
+
+#### 5.2 Find your personal GSA webhook url
+Copy your unique [webhook URL from your GSA dashboard](https://dash.gameserverapp.com/monetization/settings/paypal) and enter it in the `Webhook URL` field on the PayPal developer website.
+
+![Monetization - Payment Service Provider - Set up PayPal webhook 2](/img/dashboard/monetization/psp/setup_paypal_webhook_2.jpg)
+
+![Monetization - Payment Service Provider - Set up PayPal webhook 3](/img/dashboard/monetization/psp/setup_paypal_webhook_3.jpg)
+
+#### 5.3 Activate event
+Check the `Payment sale completed` event that is listed under `Payments & Payouts`. 
+
+:::warning
+Make sure you only select `Payment sale completed`.
+:::
+
+Now you can save the webhook.
+
+![Monetization - Payment Service Provider - Set up PayPal webhook 4](/img/dashboard/monetization/psp/setup_paypal_webhook_4.jpg)
+
+
+#### 5.4 Confirm
+Confirm that the webhook only tracks `Payment sale completed` events.
+
+![Monetization - Payment Service Provider - Set up PayPal webhook 5](/img/dashboard/monetization/psp/setup_paypal_webhook_5.jpg)
 
 ### 6. Enter API keys on GSA
 Copy the `Client ID` and `Secret` from PayPal over to the [PayPal settings page at GSA](https://dash.gameserverapp.com/monetization/settings/paypal). 
 
 ![Monetization - Payment Service Provider - Set up PayPal 5](/img/dashboard/monetization/psp/setup_paypal_5.jpg)
 
-![Monetization - Payment Service Provider - Set up PayPal 6](/img/dashboard/monetization/psp/setup_paypal_6.jpg)
 
 :::success Done!
 After saving the PayPal settings form on the dashboard your PayPal account is successfully configured.

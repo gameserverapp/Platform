@@ -25,9 +25,3 @@ Hetzner offers powerful hardware running on 100% green energy! 💚
 OVH offers powerful hardware. Their "GAME" server line has top-notch DDoS protection.
 
 [See dedicated server offers](https://www.ovhcloud.com/en/bare-metal/game/prices/)
-
-### Contabo
-Contabo offers sharply priced hardware. Minor DDoS protection!
-
-[See dedicated server offers](https://contabo.com/en/dedicated-servers/) or
-[Auction servers](https://contabo.com/en/server-outlet/?filters=ssd&by=price&dir=asc)  *(No setup fee)*
