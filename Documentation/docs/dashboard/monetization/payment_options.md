@@ -52,7 +52,7 @@ For security reasons we recommend you only enable `Vault` and `Subscriptions`.
 
 
 ### 5. Setup webhook
-Below where you configured the API features, you can set up webhooks.
+Underneath the API features section you can set up webhooks.
 
 :::info
 Webhooks are used for subscriptions. Without webhooks your subscriptions won't work.
