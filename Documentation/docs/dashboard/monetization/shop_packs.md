@@ -36,8 +36,7 @@ Enter a name in the popup, select what `Type` of Shop pack and which game. Click
 ![Monetization - Create Shop pack 2](/img/dashboard/monetization/shop_packs/create_shop_pack_2.jpg)
 
 ### 2. Configure settings
-In the description you can summarize what is in the Shop pack. The description is shown on the Community website.
-
+In the description you can summarize what is in the Shop pack. The description is shown on the Community website.\
 If the selected game supports the in-game shop, you can also select an in-game image. Learn more about all [Shop pack settings >](/dashboard/monetization/shop_packs#shop-pack-settings)
 
 ![Monetization - Create Shop pack 3](/img/dashboard/monetization/shop_packs/create_shop_pack_3.jpg)
@@ -47,8 +46,7 @@ Adding actions is a little different for both Shop pack types.
 The actions are similar to Task actions. [Learn more about the available actions >](/dashboard/automate_tasks/actions)
 
 #### Single
-Add actions to the `Delivery content` tab. These actions will execute when players buy the Shop pack.
-
+The actions added here will execute when players buy the Shop pack.
 
 ![Monetization - Create Shop pack 4](/img/dashboard/monetization/shop_packs/create_shop_pack_4.jpg)
 
