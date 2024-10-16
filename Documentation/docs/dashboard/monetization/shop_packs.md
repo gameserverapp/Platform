@@ -2,202 +2,198 @@
 title: Shop packs
 sidebar_position: 3
 ---
-Sell perks for tokens using Single or Collection packs. Shop packs come with various customisable purchase limits.
 
-[Go to Shop packs >](https://dash.gameserverapp.com/monetization/shop)
+Sell perks for tokens using Single or Collection packs. Shop packs come with various customizable purchase limits.
 
-## Shop pack types
-There are 2 kind of Shop pack types:
+[Go to Shop Packs >](https://dash.gameserverapp.com/monetization/shop)
+
+## Shop Pack Types
+
+There are two types of Shop packs:
 
 ### Single
-The `Single` type Shop pack involves a single package (as the name implies). There are no sub packages for `Single` Shop packs. 
+A `Single` Shop pack involves a single package, as the name suggests. There are no sub-packages within a `Single` Shop pack.
 
 :::tip
 You can add existing `Single` packs to a `Collection`.
 :::
 
-![Monetization - Shop pack type - Single](/img/dashboard/monetization/shop_packs/shop_pack_type_single.jpg)
+![Monetization - Shop Pack Type - Single](/img/dashboard/monetization/shop_packs/shop_pack_type_single.jpg)
 
 ### Collection
-Group packages from the same category or with different quantities in `Collections`. `Collections` let you create sub packages that can be purchased separately.
+Group packages from the same category or with different quantities in `Collections`. `Collections` allow you to create sub-packages that can be purchased separately.
 
-![Monetization - Shop pack type - Collection](/img/dashboard/monetization/shop_packs/shop_pack_type_collection.jpg)
+![Monetization - Shop Pack Type - Collection](/img/dashboard/monetization/shop_packs/shop_pack_type_collection.jpg)
 
+## Create a Shop Pack
 
-## Create Shop pack
+### 1. Click `+ Add Shop Pack`
+In the __top-right corner__ of the [Shop Pack Overview page](https://dash.gameserverapp.com/monetization/shop), click `+ Add Shop Pack`.
 
-### 1. Click `+ Add Shop pack`
-Click `+ Add Shop pack` in the __top-right corner__ on the [Shop pack overview page](https://dash.gameserverapp.com/monetization/shop).
+![Monetization - Create Shop Pack 1](/img/dashboard/monetization/shop_packs/create_shop_pack_1.jpg)
 
-![Monetization - Create Shop pack 1](/img/dashboard/monetization/shop_packs/create_shop_pack_1.jpg)
+Enter a name in the popup, select the `Type` of Shop pack, and choose the game. Click `Create` to proceed.
 
-Enter a name in the popup, select what `Type` of Shop pack and which game. Click `Create` to continue.
+![Monetization - Create Shop Pack 2](/img/dashboard/monetization/shop_packs/create_shop_pack_2.jpg)
 
-![Monetization - Create Shop pack 2](/img/dashboard/monetization/shop_packs/create_shop_pack_2.jpg)
+### 2. Configure Settings
+In the description field, summarize what is in the Shop pack. This description will be visible on the Community website.\
+If the selected game supports the in-game shop, you can also choose an in-game image. Learn more about all the [Shop pack settings >](/dashboard/monetization/shop_packs#shop-pack-settings).
 
-### 2. Configure settings
-In the description you can summarize what is in the Shop pack. The description is shown on the Community website.\
-If the selected game supports the in-game shop, you can also select an in-game image. Learn more about all [Shop pack settings >](/dashboard/monetization/shop_packs#shop-pack-settings)
+![Monetization - Create Shop Pack 3](/img/dashboard/monetization/shop_packs/create_shop_pack_3.jpg)
 
-![Monetization - Create Shop pack 3](/img/dashboard/monetization/shop_packs/create_shop_pack_3.jpg)
-
-### 3. Add actions
-Adding actions is a little different for both Shop pack types.
-The actions are similar to Task actions. [Learn more about the available actions >](/dashboard/automate_tasks/actions)
+### 3. Add Actions
+Adding actions differs slightly between Shop pack types. The actions are similar to Task actions. [Learn more about available actions >](/dashboard/automate_tasks/actions).
 
 #### Single
-The actions added here will execute when players buy the Shop pack.
+The actions added here will execute when players purchase the Shop pack.
 
-![Monetization - Create Shop pack 4](/img/dashboard/monetization/shop_packs/create_shop_pack_4.jpg)
+![Monetization - Create Shop Pack 4](/img/dashboard/monetization/shop_packs/create_shop_pack_4.jpg)
 
 #### Collection
-When creating a `Collection` you should add actions to all sub packages. Check out [Sub packages `Collection`](/dashboard/monetization/shop_packs#sub-packages-collection) for more information about managing sub packages for Collections.
+When creating a `Collection`, you must add actions to all sub-packages. Refer to [Sub packages `Collection`](/dashboard/monetization/shop_packs#sub-packages-collection) for more information about managing sub-packages for Collections.
 
-![Monetization - Create Shop pack 5](/img/dashboard/monetization/shop_packs/create_shop_pack_5.jpg)
+![Monetization - Create Shop Pack 5](/img/dashboard/monetization/shop_packs/create_shop_pack_5.jpg)
 
-## Sub packages `Collection`
+## Sub-packages `Collection`
 
 ### Add to Collection
 
-#### Add new sub package
-Click the `Add sub package` at the bottom of the `Sub packages` page to add a new sub package to your existing Collection.
+#### Add New Sub-package
+To add a new sub-package to your existing Collection, click `Add Sub-package` at the bottom of the `Sub-packages` page.
 
-![Monetization - Add sub package to Collection](/img/dashboard/monetization/shop_packs/add_sub_package_to_collection.jpg)
+![Monetization - Add Sub-package to Collection](/img/dashboard/monetization/shop_packs/add_sub_package_to_collection.jpg)
 
-#### Convert Single to Collection sub package
-Add an existing `Single` Shop pack to a collection, for example when merging similar items into one Collection.
+#### Convert Single to Collection Sub-package
+Add an existing `Single` Shop pack to a Collection, such as when merging similar items into one Collection.
 
-Click the <Icon icon="fa-solid fa-caret-down" size="lg" /> icon on the Shop pack you want to add to a Collection and click ` Add to Collection`.
+Click the <Icon icon="fa-solid fa-caret-down" size="lg" /> icon on the Shop pack you want to add to a Collection, and then click `Add to Collection`.
 
-![Monetization - Convert Single to Collect sub package 1](/img/dashboard/monetization/shop_packs/convert_single_to_collection_sub_package_1.jpg)
+![Monetization - Convert Single to Collection Sub-package 1](/img/dashboard/monetization/shop_packs/convert_single_to_collection_sub_package_1.jpg)
 
-Select which `Collection` the Single item should be added too.
+Select the `Collection` to which the Single item should be added.
 
-![Monetization - Convert Single to Collect sub package 2](/img/dashboard/monetization/shop_packs/convert_single_to_collection_sub_package_2.jpg)
-
+![Monetization - Convert Single to Collection Sub-package 2](/img/dashboard/monetization/shop_packs/convert_single_to_collection_sub_package_2.jpg)
 
 ### Settings, Pricing & Delivery
-Apart from the Collection settings tab is it possible to change settings per sub package.
+You can modify settings for each sub-package individually.\
+Click the <Icon icon="fa-solid fa-cog" size="lg" /> icon on the right of each sub-package and select `Settings` or `Pricing & Delivery` to edit sub-package settings.
 
-Click the <Icon icon="fa-solid fa-cog" size="lg" /> icon on the right of each sub package and click `Settings` or `Pricing & delivery` to edit the sub package settings.
+You can also click the title or badges for a shortcut to `Settings` or `Pricing & Delivery`.
 
-Click the title / badges for a shortcut to `Settings` or `Pricing & delivery`.
-
-![Monetization - Sub package settings](/img/dashboard/monetization/shop_packs/sub_package_settings.jpg)
+![Monetization - Sub-package Settings](/img/dashboard/monetization/shop_packs/sub_package_settings.jpg)
 
 ### Manage
-Drag (up/down) the <Icon icon="fa-solid fa-sort" size="lg" /> on the left of each sub package to change the sub package order.
-Click the <Icon icon="fa-solid fa-cog" size="lg" /> icon on the right for cloning or deleting a sub package.
+To change the order of sub-packages, drag the <Icon icon="fa-solid fa-sort" size="lg" /> icon up or down on the left side of each sub-package. Click the <Icon icon="fa-solid fa-cog" size="lg" /> icon on the right to clone or delete a sub-package.
 
+![Monetization - Sub-package Manage](/img/dashboard/monetization/shop_packs/sub_package_manage.jpg)
 
-![Monetization - Sub package manage](/img/dashboard/monetization/shop_packs/sub_package_manage.jpg)
-
-## Shop pack settings
+## Shop Pack Settings
 
 ### Pricing
-Set the token price per Shop pack or sub package.
+Set the token price for each Shop pack or sub-package.
 
-:::tip free items
+:::tip Free Items
 Set the token price to `0` to make the item free.
 :::
 
-![Monetization - Settings - Token price](/img/dashboard/monetization/shop_packs/settings_token_price.jpg)
+![Monetization - Settings - Token Price](/img/dashboard/monetization/shop_packs/settings_token_price.jpg)
 
-### Labels / filters
-Labels can be used to highlight certain items, but they also function as filters for the shop.
+### Labels / Filters
+Labels can be used to highlight certain items and also serve as filters within the shop.
 
 ![Monetization - Settings - Labels](/img/dashboard/monetization/shop_packs/settings_label.jpg)
 
-#### Label example:
-![Monetization - Settings - Labels example](/img/dashboard/monetization/shop_packs/settings_label_example.jpg)
+#### Label Example:
+![Monetization - Settings - Labels Example](/img/dashboard/monetization/shop_packs/settings_label_example.jpg)
 
+### Purchase Limits
+You can limit how often players can buy certain Shop packs or sub-packages from a Collection.
 
-### Purchase limits
-Limit how frequently players can buy certain Shop packs or sub packages from a Collection.
+Options include:
+- Allow unlimited purchases.
+- Limit to once a year.
+- Limit to one purchase per [X] day(s).
+- Limit to [X] sub-packages per [X] day(s).
+- Disable the package after it's been purchased by someone (single purchase limit).
 
-Available options:
-- Allow unlimited purchases
-- Limit to once a year
-- Limit to one purchase per [X] day(s)
-- Limit to [X] sub packages per [X] day(s)
-- Disable package when bought by someone (single purchase limit)
-
-:::info single purchase
-Select `Disable package when bought by someone (single purchase limit)` to disable the Shop pack / sub package for all players immediately after someone buys the Shop pack. 
+:::info Single Purchase
+Select `Disable package when bought by someone (single purchase limit)` to disable the Shop pack or sub-package for all players immediately after someone buys it.
 :::
 
 [Learn how to reset purchase limits >](/dashboard/monetization/deliveries#reset-purchase-limits)
 
-![Monetization - Settings - Purchase limits](/img/dashboard/monetization/shop_packs/settings_purchase_limits.jpg)
+![Monetization - Settings - Purchase Limits](/img/dashboard/monetization/shop_packs/settings_purchase_limits.jpg)
 
 ### Visibility
-Determine who can see the Shop pack / sub package. Can be used to create Shop packs that are only visible to players with a specific [Custom Role](/dashboard/admin_tools/custom_roles) (VIPs for example).
+Control who can see the Shop pack or sub-package. This feature is useful for creating Shop packs that are visible only to players with a specific [Custom Role](/dashboard/admin_tools/custom_roles) (e.g., VIPs).
 
-Hiding packages can be useful in cases where you want to create a package to recover in-game items or to send items to admins using [manual delivery](#manual-delivery), but you don't want players being able to purchase the package.
+Hiding packages is useful when you need to create packages for specific purposes, like recovering in-game items or sending items to admins using [manual delivery](#manual-delivery), without letting players buy them.
 
 ![Monetization - Settings - Visibility](/img/dashboard/monetization/shop_packs/settings_visibility.jpg)
 
-### Offline delivery
-With `offline delivery` the actions will execute regardless of the buyer's in-game status (no character online for the buyer).
+### Offline Delivery
+With `offline delivery`, actions will execute regardless of whether the buyer is online or not.
 
-This can be useful for Shop packs / sub packages that grant whitelist access, for example. In those cases the player can't join the server until they are whitelisted.
+This is helpful for Shop packs or sub-packages that grant whitelist access. For example, players can't join the server until they are whitelisted.
 
 :::caution
-Most in-game commands do require the player to be online. Make sure to test Shop packs thoroughly when using `Support offline delivery`.
+Most in-game commands require the player to be online. Be sure to test Shop packs thoroughly when using `Support offline delivery`.
 :::
 
-![Monetization - Settings - Offline delivery](/img/dashboard/monetization/shop_packs/settings_offline_delivery.jpg)
+![Monetization - Settings - Offline Delivery](/img/dashboard/monetization/shop_packs/settings_offline_delivery.jpg)
 
-### Character level (min/max)
-Require the buyer's character to be above or below a certain in-game level.
+### Character Level (Min/Max)
+Require the buyer's character to be above or below a specific in-game level.
 
-Setting a min/max level can be useful for starter packs or advanced packs that should only be available for high level characters.
+Setting a min/max level is useful for starter packs or advanced packs that should only be available for characters at higher levels.
 
-![Monetization - Settings - Character level](/img/dashboard/monetization/shop_packs/settings_char_level.jpg)
+![Monetization - Settings - Character Level](/img/dashboard/monetization/shop_packs/settings_char_level.jpg)
 
-### Delivery restrictions
-Limit Shop packs / sub packages to specific clusters or game servers.
+### Delivery Restrictions
+Limit Shop packs or sub-packages to specific clusters or game servers.
 
-In addition to limiting is it also possible to prohibit delivery on specific game servers. This allows you to restrict a package to a specific cluster but rule out certain servers in that cluster.
+You can also prohibit delivery on certain game servers, allowing you to restrict packages to specific clusters while excluding specific servers within those clusters.
 
-![Monetization - Settings - Delivery restrictions](/img/dashboard/monetization/shop_packs/settings_delivery_restrictions.jpg)
+![Monetization - Settings - Delivery Restrictions](/img/dashboard/monetization/shop_packs/settings_delivery_restrictions.jpg)
 
 ### Images
-Set up an image for the Shop pack / sub package.
+Set an image for the Shop pack or sub-package.
 
-#### Website image
-![Monetization - Settings - Image website](/img/dashboard/monetization/shop_packs/settings_image_website.jpg)
+#### Website Image
+![Monetization - Settings - Image Website](/img/dashboard/monetization/shop_packs/settings_image_website.jpg)
 
 __Example:__
 
-![Monetization - Settings - Image website example](/img/dashboard/monetization/shop_packs/settings_image_website_example.jpg)
+![Monetization - Settings - Image Website Example](/img/dashboard/monetization/shop_packs/settings_image_website_example.jpg)
 
-#### In-game image
+#### In-game Image
 :::caution
-In-game images are only supported for games that have the GSA Integration mod available. In-game images reference to image paths in the game files and do not support uploaded images.
+In-game images are only supported for games that use the GSA Integration mod. In-game images reference image paths within the game files and do not support uploaded images.
 :::
 
-![Monetization - Settings - Image in-game](/img/dashboard/monetization/shop_packs/settings_image_ingame.jpg)
+![Monetization - Settings - Image In-game](/img/dashboard/monetization/shop_packs/settings_image_ingame.jpg)
 
 __Example:__
 
-![Monetization - Settings - Image ingame example](/img/dashboard/monetization/shop_packs/settings_image_ingame_example.jpg)
+![Monetization - Settings - Image In-game Example](/img/dashboard/monetization/shop_packs/settings_image_ingame_example.jpg)
 
+## Manage Shop Packs
 
-## Manage Shop packs
-Change the Shop pack order by dragging <Icon icon="fa-solid fa-sort" size="lg" /> up / down.
+To change the order of Shop packs, drag the <Icon icon="fa-solid fa-sort" size="lg" /> icon up or down.
 
-Click the <Icon icon="fa-solid fa-caret-down" size="lg" /> icon on the right with each Shop pack to clone or delete.
+Click the <Icon icon="fa-solid fa-caret-down" size="lg" /> icon on the right of each Shop pack to clone, delete or send it to a player.
 
-Use the `Visit shop` button at the top-right to see how changes affect the shop.
+Use the `Visit shop` button at the top-right to preview how your changes affect the shop.
 
-![Monetization - Manage Shop pack](/img/dashboard/monetization/shop_packs/manage_shop_pack.jpg)
+![Monetization - Manage Shop Pack](/img/dashboard/monetization/shop_packs/manage_shop_pack.jpg)
 
 ## Deliveries
-When players buy Shop packs the deliveries end up on the [Deliveries page](https://dash.gameserverapp.com/monetization/deliveries/v2).
 
-### Manual delivery
-Test or manually send Shop packs to players by clicking `+ Create delivery ` on the [Deliveries page](https://dash.gameserverapp.com/monetization/deliveries/v2).
+When players buy Shop packs, the deliveries appear on the [Deliveries page](https://dash.gameserverapp.com/monetization/deliveries/v2).
 
-![Monetization - Manual delivery 1](/img/dashboard/monetization/deliveries/deliveries_manual_delivery_1.jpg)
-![Monetization - Manual delivery 2](/img/dashboard/monetization/deliveries/deliveries_manual_delivery_2.jpg)
+### Manual Delivery
+Test or manually send Shop packs to players by clicking `+ Create Delivery` on the [Deliveries page](https://dash.gameserverapp.com/monetization/deliveries/v2).
+
+![Monetization - Manual Delivery 1](/img/dashboard/monetization/deliveries/deliveries_manual_delivery_1.jpg)
+![Monetization - Manual Delivery 2](/img/dashboard/monetization/deliveries/deliveries_manual_delivery_2.jpg)
