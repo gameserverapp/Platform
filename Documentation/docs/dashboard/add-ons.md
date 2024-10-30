@@ -64,6 +64,7 @@ Gives you access to:
 
 ### Monetization+
 Enables monetization features:
+- CSV tools ([Shop pack](/dashboard/monetization/shop_packs#csv-tools))
 - PayPal subscriptions
 - Use Stripe as processor
 - Use Patreon as processor
