@@ -214,19 +214,10 @@ The export tool allows you to export one or multiple Shop packs (Single & Collec
 
 On the [Shop pack overview page](https://dash.gameserverapp.com/monetization/shop) on your dashboard, you can find the CSV export button in the top-right corner of the screen ([see screenshot above](#csv-tools)).
 
-:::tip Export with different separator
-Sometimes, Excel may not interpret the file correctly, causing information to overflow into the next columns. To fix this, you can choose how the export should be separated. The options are:
-
-- Comma-separated: `,`
-- Semicolon-separated: `;`
-:::
-
 ![Monetization - CSV tools - Export](/img/dashboard/monetization/shop_packs/csv_tool_export_1.jpg)
 
 ### Import
 When you’re finished editing the CSV export, you can upload the CSV file again. While GSA is processing your CSV file, no changes can be made to Shop packs. This prevents any issues from overlapping.
-
-The import process automatically detects what separator was used.
 
 On the [Shop pack overview page](https://dash.gameserverapp.com/monetization/shop) on your dashboard, you can find the CSV import button in the top-right corner of the screen ([see screenshot above](#csv-tools)).
 
