@@ -38,6 +38,16 @@ After inviting admins to the dashboard, you can assign them to an `Admin team`. 
 
 ![Manage admin team member](/img/dashboard/admin_teams/manage_admins.jpg)
 
+### Transfer dashboard ownership
+Dashboards ownership can be transferred to a different team member. When transferring ownership, the current owner will lose all rights to the dashboard. This is a permanent change.
+
+Transferring ownership will revoke all created API keys for the dashboard. 
+
+:::caution
+Ownership transfers are only available for dashboards with an active add-on.
+:::
+
+![Transfer ownership to team member](/img/dashboard/admin_teams/transfer_ownership_1.jpg)
 
 ## Activity logs
 See what team members did. Use the filters on the right to narrow down to specific actions.
