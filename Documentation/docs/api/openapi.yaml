@@ -91,7 +91,7 @@ paths:
       tags:
         - 'Config Template'
       summary: 'All Config templates'
-      description: 'Lists all games currently supported on GSA.'
+      description: 'Lists all Config template for the dashboard.'
       operationId: AllConfigTemplates
       responses:
         '200':
@@ -253,6 +253,320 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Game'
+  /system-api/v2/gameservers:
+    get:
+      tags:
+        - 'Game Server'
+      summary: 'All game servers'
+      description: 'Lists all active/installed game servers for the dashboard.'
+      operationId: AllGameServers
+      responses:
+        '200':
+          description: 'successful operation'
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GameServer'
+      security:
+        -
+          systemapi-passport:
+            - gameserver
+  '/system-api/v2/gameserver/{gameserver_id}':
+    get:
+      tags:
+        - 'Game Server'
+      summary: 'Get game server'
+      description: 'Get the game server for the provided ID.'
+      operationId: getGameServer
+      parameters:
+        -
+          name: gameserver_id
+          in: path
+          required: true
+          schema:
+            type: integer
+          example: '57294'
+      responses:
+        '200':
+          description: 'successful operation'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GameServer'
+      security:
+        -
+          systemapi-passport:
+            - gameserver
+  '/system-api/v2/gameserver/{gameserver_id}/broadcast':
+    post:
+      tags:
+        - 'Game Server'
+      summary: 'Broadcast message to game server'
+      description: 'Send broadcast message to game server.'
+      operationId: broadcastGameServer
+      parameters:
+        -
+          name: gameserver_id
+          in: path
+          required: true
+          schema:
+            type: integer
+          example: '57294'
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              required:
+                - message
+              properties:
+                message:
+                  type: string
+                  example: 'Hello world!'
+                type:
+                  type: string
+                  default: warning
+                  enum: [broadcast, success, warning, error]
+                  example: success
+              type: object
+      responses:
+        '200':
+          description: 'successful operation'
+          content:
+            application/json:
+              schema:
+                properties:
+                  data: { type: string, example: 'Broadcast sent to game server' }
+                type: object
+      security:
+        -
+          systemapi-passport:
+            - gameserver
+  '/system-api/v2/gameserver/{gameserver_id}/command':
+    post:
+      tags:
+        - 'Game Server'
+      summary: 'Run command on game server'
+      description: 'Send command to game server.'
+      operationId: commandGameServer
+      parameters:
+        -
+          name: gameserver_id
+          in: path
+          required: true
+          schema:
+            type: integer
+          example: '57294'
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              required:
+                - command
+              properties:
+                command:
+                  type: string
+                  example: SaveWorld
+              type: object
+      responses:
+        '200':
+          description: 'successful operation'
+          content:
+            application/json:
+              schema:
+                properties:
+                  data: { type: string, example: 'Command sent to game server' }
+                type: object
+      security:
+        -
+          systemapi-passport:
+            - gameserver
+  '/system-api/v2/gameserver/{gameserver_id}/start':
+    post:
+      tags:
+        - 'Game Server'
+      summary: 'Start game server'
+      description: 'Start game server.'
+      operationId: startGameServer
+      parameters:
+        -
+          name: gameserver_id
+          in: path
+          required: true
+          schema:
+            type: integer
+          example: '57294'
+      responses:
+        '200':
+          description: 'successful operation'
+          content:
+            application/json:
+              schema:
+                properties:
+                  data: { type: string, example: 'Start request sent to game server' }
+                type: object
+      security:
+        -
+          systemapi-passport:
+            - gameserver
+  '/system-api/v2/gameserver/{gameserver_id}/update':
+    post:
+      tags:
+        - 'Game Server'
+      summary: 'Update game server'
+      description: 'Schedule update for game server, with optional countdown and in-game broadcast.'
+      operationId: updateGameServer
+      parameters:
+        -
+          name: gameserver_id
+          in: path
+          required: true
+          schema:
+            type: integer
+          example: '57294'
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              properties:
+                countdown:
+                  type: integer
+                  default: '0'
+                  maximum: 90
+                  minimum: 0
+                  example: '0'
+                message:
+                  type: string
+                  example: 'We need to update the server folks!'
+              type: object
+      responses:
+        '200':
+          description: 'successful operation'
+          content:
+            application/json:
+              schema:
+                properties:
+                  data: { type: string, example: 'Update request sent to game server' }
+                type: object
+      security:
+        -
+          systemapi-passport:
+            - gameserver
+  '/system-api/v2/gameserver/{gameserver_id}/shutdown':
+    post:
+      tags:
+        - 'Game Server'
+      summary: 'Shutdown game server'
+      description: 'Shutdown update for game server, with optional countdown and in-game broadcast.'
+      operationId: shutdownGameServer
+      parameters:
+        -
+          name: gameserver_id
+          in: path
+          required: true
+          schema:
+            type: integer
+          example: '57294'
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              properties:
+                countdown:
+                  type: integer
+                  default: '0'
+                  maximum: 90
+                  minimum: 0
+                  example: '0'
+                message:
+                  type: string
+                  example: 'We need to shutdown the server folks!'
+              type: object
+      responses:
+        '200':
+          description: 'successful operation'
+          content:
+            application/json:
+              schema:
+                properties:
+                  data: { type: string, example: 'Shutdown request sent to game server' }
+                type: object
+      security:
+        -
+          systemapi-passport:
+            - gameserver
+  '/system-api/v2/gameserver/{gameserver_id}/restart':
+    post:
+      tags:
+        - 'Game Server'
+      summary: 'Restart game server'
+      description: 'Restart update for game server, with optional countdown and in-game broadcast.'
+      operationId: restartGameServer
+      parameters:
+        -
+          name: gameserver_id
+          in: path
+          required: true
+          schema:
+            type: integer
+          example: '57294'
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              properties:
+                countdown:
+                  type: integer
+                  default: '0'
+                  maximum: 90
+                  minimum: 0
+                  example: '0'
+                message:
+                  type: string
+                  example: 'We need to restart the server folks!'
+              type: object
+      responses:
+        '200':
+          description: 'successful operation'
+          content:
+            application/json:
+              schema:
+                properties:
+                  data: { type: string, example: 'Restart request sent to game server' }
+                type: object
+      security:
+        -
+          systemapi-passport:
+            - gameserver
+  '/system-api/v2/gameserver/{gameserver_id}/cancel':
+    post:
+      tags:
+        - 'Game Server'
+      summary: 'Cancel actions'
+      description: 'Cancel scheduled game server actions'
+      operationId: cancelGameServer
+      parameters:
+        -
+          name: gameserver_id
+          in: path
+          required: true
+          schema:
+            type: integer
+          example: '57294'
+      responses:
+        '200':
+          description: 'successful operation'
+          content:
+            application/json:
+              schema:
+                properties:
+                  data: { type: string, example: 'Cancelled scheduled actions for game server' }
+                type: object
+      security:
+        -
+          systemapi-passport:
+            - gameserver
   '/system-api/v2/task/{task_id}/execute':
     post:
       tags:
@@ -300,6 +614,41 @@ paths:
             - task
 components:
   schemas:
+    Cluster:
+      properties:
+        id:
+          type: integer
+          example: '583850'
+        uuid:
+          type: string
+          format: uuid
+          example: cb0440e7-d2e0-4eed-809c-16fa812ea928
+        name:
+          type: string
+          example: 'PVP cluster'
+        chat:
+          properties:
+            enabled:
+              type: boolean
+              example: 'true'
+            global:
+              type: boolean
+              example: 'true'
+            format:
+              type: string
+              example: '{charname} [{servername}]: {message}'
+          type: object
+        created_at:
+          title: 'Create date'
+          type: string
+          format: date-time
+          example: '2024-02-16T19:53:28.000000Z'
+        updated_at:
+          title: 'Last update date'
+          type: string
+          format: date-time
+          example: '2024-02-16T19:53:28.000000Z'
+      type: object
     Config:
       properties:
         id:
@@ -436,6 +785,91 @@ components:
                 type: string
                 example: partially
             type: object
+      type: object
+    GameServer:
+      properties:
+        id:
+          type: integer
+          example: '57294'
+        name:
+          type: string
+          example: '[EU] MyCommunity - SpecialMap / Wiped yesterday / no mods'
+        display_name:
+          type: string
+          example: specialmapPVP
+        blueprint_version_id:
+          type: integer
+          example: '395873'
+        config_template_id:
+          type: integer
+          example: '49284'
+        machine_id:
+          type: integer
+          example: '2958'
+        cluster_id:
+          type: string
+          format: uuid
+          example: cb0440e7-d2e0-4eed-809c-16fa812ea928
+        cluster_chat_name:
+          type: string
+          example: specialmapPVP
+        app_id:
+          type: integer
+          example: '376030'
+        discord:
+          properties:
+            name:
+              type: string
+              example: '[PVP] Special map'
+            tag:
+              type: string
+              example: smpvp
+          type: object
+        connection:
+          properties:
+            ip_address:
+              type: string
+              format: ipv4
+              example: 123.45.67.89
+            game_port:
+              type: integer
+              example: '7777'
+            query_port:
+              type: integer
+              example: '27015'
+            rcon_port:
+              type: integer
+              example: '37015'
+          type: object
+        backup:
+          properties:
+            backup_on_shutdown:
+              type: boolean
+              example: 'true'
+            backup_on_update:
+              type: boolean
+              example: 'true'
+          type: object
+        last_healthy_at:
+          title: 'Last healthy date'
+          type: string
+          format: date-time
+          example: '2024-02-16T19:53:28.000000Z'
+        last_error_at:
+          title: 'Last error date'
+          type: string
+          format: date-time
+          example: '2024-02-16T19:53:28.000000Z'
+        created_at:
+          title: 'Create date'
+          type: string
+          format: date-time
+          example: '2024-02-16T19:53:28.000000Z'
+        updated_at:
+          title: 'Last update date'
+          type: string
+          format: date-time
+          example: '2024-02-16T19:53:28.000000Z'
       type: object
   securitySchemes:
     systemapi-passport:
