@@ -6,6 +6,7 @@ sidebar_position: 1.1
 Requirements and tips for hosting reliable high performance game servers using DediConnect.
 
 ## Supported Operating Systems (OS)
+The Operating Systems listed below are supported for DediConnect. Make sure the language is set to English.
 
 - Debian 10
 - Debian 11
