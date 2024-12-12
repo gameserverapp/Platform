@@ -47,7 +47,7 @@ Make sure to check the downloaded item after downloading. Some items may require
 These steps explain how you can publish something to the marketplace. 
 
 :::info Blueprints
-For blueprints the publishing approach is different. See the [blueprint marketplace section >](/blueprints/how-to/publish_blueprint_on_marketplace)
+For blueprints the publishing approach is different. See the [blueprint marketplace section >](/dashboard/blueprints/how-to/publish_blueprint_on_marketplace)
 :::
 
 ### 1. Submit to marketplace
