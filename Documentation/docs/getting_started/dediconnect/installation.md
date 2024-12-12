@@ -165,6 +165,37 @@ Restart your machine by running `reboot` and wait for it to come back online. Wh
 
 ---
 
+### Windows change language to English
+
+#### 1. Login with RDP
+Use [Microsoft Remote Desktop](https://www.microsoft.com/en-us/p/microsoft-remote-desktop/9wzdncrfj3ps?activetab=pivot:overviewtab) to login on your dedicated machine using the `Administrator` account and the password you received from your hosting provider.
+
+:::info `Administrator` user required
+Did your machine come without a `Administrator` user account?
+
+[Learn how to activate it >](/getting_started/dediconnect/installation#activate-administrator-user-on-windows)
+:::
+
+#### 2. Open Powershell
+Type `Powershell` in the search bar. If you don't have a search bar, click the `Windows Start menu` button.
+
+![Windows change language 1](/img/getting_started/dediconnect/installation/windows_change_language_1.jpg)
+
+#### 3. Run commands
+Copy the commands below in Powershell and hit `enter`. These commands will change the language of Windows to English.
+
+```bash
+Set-WinSystemLocale -SystemLocale en-US
+Set-WinUILanguageOverride -Language en-US
+```
+
+![Windows change language 2](/img/getting_started/dediconnect/installation/windows_change_language_2.jpg)
+
+#### 3. Reboot machine
+Restart the machine and confirm that the language changed when it comes back online. You can now connect the machine with GSA DediConnect.
+
+---
+
 ### Update Windows
 You should update your Windows install before installing DediConnect. Do not do this while installing DediConnect.
 
