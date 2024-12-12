@@ -7,6 +7,10 @@ Sell perks for money using one-time or recurring payments.
 
 [Go to Supporter Tiers >](https://dash.gameserverapp.com/monetization/tiers)
 
+:::tip Browse the marketplace
+Find inspiration or get started with GSA's Supporter Tiers using the [Supporter Tier marketplace >](https://dash.gameserverapp.com/marketplace/market/supporter_tier_group)
+:::
+
 ![Monetization - Supporter Tier example](/img/dashboard/monetization/supporter_tiers/example_supporter_tier_overview.jpg)
 ![Monetization - Supporter Tier example detail](/img/dashboard/monetization/supporter_tiers/supporter_tier_example_detail.jpg)
 
@@ -50,6 +54,32 @@ The actions here are similar to Task actions. [Learn more about the available ac
 You can reorder Supporter Tiers by dragging them to the desired position. The dropdown menu also allows you to send a Supporter Tier to a player or clone and delete tiers.
 
 ![Monetization - Manage Supporter Tiers](/img/dashboard/monetization/supporter_tiers/manage_tiers.jpg)
+
+
+
+## Supporter Tier groups
+Supporter Tier groups help you organize your Supporter Tiers. This is particularly useful when you have a lot of Supporter Tiers.
+
+You can add existing Supporter Tiers to a group or change the group for a Supporter Tier.
+
+### Create Supporter Tier group
+Click <Icon icon="fa-solid fa-plus-square" size="lg" /> next to "Supporter Tiers" to create a new Supporter Tier group.
+
+![Monetization - Groups - Create Shop Pack group 1](/img/dashboard/monetization/supporter_tiers/create_supporter_tier_group_1.jpg)
+
+### Manage groups
+Reorder, rename or delete Supporter Tiers groups by clicking <Icon icon="fa-solid fa-pen-square" size="lg" />.
+
+![Monetization - Groups - Manage Shop Pack group 1](/img/dashboard/monetization/supporter_tiers/manage_supporter_tier_group_1.jpg)
+
+![Monetization - Groups - Manage Shop Pack group 2](/img/dashboard/monetization/supporter_tiers/manage_supporter_tier_group_2.jpg)
+
+### Submit to Marketplace
+Supporter Tier groups can be uploaded to the [marketplace](/dashboard/marketplace). This lets you share your creations with the GSA community.
+
+![Monetization - Groups - Publish Shop Pack group](/img/dashboard/monetization/supporter_tiers/publish_supporter_tier_group.jpg)
+
+
 
 ## Payment Information
 

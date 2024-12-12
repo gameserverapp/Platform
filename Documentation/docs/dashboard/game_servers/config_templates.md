@@ -196,7 +196,7 @@ In the popup you select which game servers should restart.
 
 
 ## Groups
-Config template groups help keep config templates organised and tidy.
+Config template groups help keep config templates organized and tidy.
 You can add existing templates to a group or change the group for a template.
 
 ### Create template group

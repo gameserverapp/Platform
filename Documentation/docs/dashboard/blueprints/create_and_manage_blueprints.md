@@ -32,13 +32,13 @@ When you need to update a blueprint, it's best to add a new version. This helps 
 
 GameServerApp will automatically assign a new version number for each version you create. If you prefer, you can set a custom version number—just make sure it follows the [Semantic Versioning 2.0.0](https://semver.org/) guidelines.
 
-After setting up the Linux or Windows blueprint fields, you can optionally describe what you changed in the changelog field. This is particularly useful if you plan to publish the version on the marketplace, as it helps others understand what’s new.
+After setting up the Linux or Windows blueprint fields, you can optionally describe what you changed in the changelog field. This is particularly useful if you plan to publish the version on the [marketplace](/dashboard/marketplace), as it helps others understand what’s new.
 
 ![Blueprint - Create a blueprint - Add version](/img/dashboard/blueprint/create_blueprint/create_blueprint_create_version_2.jpg)
 
 ### Blueprint Versions
 
-When viewing a blueprint on your dashboard or on the marketplace, you'll find a `Versions` menu on the right. This menu shows whether a version supports Linux, Windows, or both, and the `state` of each version.
+When viewing a blueprint on your dashboard or on the [marketplace](/dashboard/marketplace), you'll find a `Versions` menu on the right. This menu shows whether a version supports Linux, Windows, or both, and the `state` of each version.
 
 ![Blueprint - Create a blueprint - Manage versions](/img/dashboard/blueprint/create_blueprint/create_blueprint_versions.jpg)
 
@@ -52,9 +52,9 @@ For private blueprints, you can use `DEV mode` for all versions. Publishing is n
 
 ##### Marketplace Blueprint
 
-If you plan to publish the blueprint on the marketplace, note that `DEV mode` versions will not appear there. This mode lets you test changes before making them public.
+If you plan to publish the blueprint on the [marketplace](/dashboard/marketplace), note that `DEV mode` versions will not appear there. This mode lets you test changes before making them public.
 
-Only published versions will appear on the marketplace. You can identify a published version by the `P` or `Latest` label in the `Versions` menu. Versions with an `S` label are skipped because a newer version has already been published, so these versions are ignored.
+Only published versions will appear on the [marketplace](/dashboard/marketplace). You can identify a published version by the `P` or `Latest` label in the `Versions` menu. Versions with an `S` label are skipped because a newer version has already been published, so these versions are ignored.
 
 ## Blueprint Form
 

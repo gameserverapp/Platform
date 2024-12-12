@@ -2,7 +2,7 @@
 title: Publish on marketplace
 sidebar_position: 9
 ---
-Learn how to publish a blueprint on the marketplace and share it with the GSA community.
+Learn how to publish a blueprint on the [marketplace](/dashboard/marketplace) and share it with the GSA community.
 
 ## Intro
 

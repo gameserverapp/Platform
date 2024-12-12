@@ -10,8 +10,7 @@ Blueprints can also be used to host games and services that aren't officially su
 [Go to Blueprints >](https://dash.gameserverapp.com/server/blueprint)
 
 :::tip Blueprint Marketplace
-Not sure where to start?\
-Explore the [Blueprint marketplace](/dashboard/blueprints/getting_started#how-to-follow-a-blueprint) to find existing blueprints and launch a game server effortlessly.
+Find inspiration or get started with GSA's Blueprints using the [Blueprint marketplace >](https://dash.gameserverapp.com/marketplace/market/blueprint)
 :::
 
 ## What Are Blueprints?
@@ -56,7 +55,7 @@ Ensure that game servers are shut down before changing the blueprint.
 
 ![Blueprint - Using Blueprints - Blueprint Activate Version](/img/dashboard/blueprint/getting_started/blueprint_version_activate.jpg)
 
-The marketplace is a great place to get inspired and share with the community, offering both official and community-generated blueprints.
+The [marketplace](/dashboard/marketplace) is a great place to get inspired and share with the community, offering both official and community-generated blueprints.
 
 ### Follow a Marketplace Blueprint
 

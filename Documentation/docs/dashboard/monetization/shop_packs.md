@@ -7,6 +7,10 @@ Sell perks for tokens using Single or Collection packs. Shop packs come with var
 
 [Go to Shop Packs >](https://dash.gameserverapp.com/monetization/shop)
 
+:::tip Browse the marketplace
+Find inspiration or get started with GSA's Shop packs using the [Shop pack marketplace >](https://dash.gameserverapp.com/marketplace/market/shop_pack_group)
+:::
+
 ## Shop Pack Types
 
 There are two types of Shop packs:
@@ -187,6 +191,29 @@ Click the <Icon icon="fa-solid fa-caret-down" size="lg" /> icon on the right of 
 Use the `Visit shop` button at the top-right to preview how your changes affect the shop.
 
 ![Monetization - Manage Shop Pack](/img/dashboard/monetization/shop_packs/manage_shop_pack.jpg)
+
+## Shop pack groups
+Shop pack groups help you organize your Shop packs. This is particularly useful when you have a lot of Shop packs.
+
+You can add existing Shop packs to a group or change the group for a Shop pack.
+
+### Create Shop pack group
+Click <Icon icon="fa-solid fa-plus-square" size="lg" /> next to "Shop packs" to create a new Shop pack group.
+
+![Monetization - Groups - Create Shop Pack group 1](/img/dashboard/monetization/shop_packs/create_shop_pack_group_1.jpg)
+
+### Manage groups
+Reorder, rename or delete Shop packs groups by clicking <Icon icon="fa-solid fa-pen-square" size="lg" />.
+
+![Monetization - Groups - Manage Shop Pack group 1](/img/dashboard/monetization/shop_packs/manage_shop_pack_group_1.jpg)
+
+![Monetization - Groups - Manage Shop Pack group 2](/img/dashboard/monetization/shop_packs/manage_shop_pack_group_2.jpg)
+
+### Submit to Marketplace
+Shop pack groups can be uploaded to the [marketplace](/dashboard/marketplace). This lets you share your creations with the GSA community.
+
+![Monetization - Groups - Publish Shop Pack group](/img/dashboard/monetization/shop_packs/publish_shop_pack_group.jpg)
+
 
 ## Deliveries
 

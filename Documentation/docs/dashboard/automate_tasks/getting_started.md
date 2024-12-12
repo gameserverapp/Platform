@@ -7,6 +7,10 @@ Create custom tasks that execute actions based on player achievements, time sche
 
 [Go to Automations / Tasks >](https://dash.gameserverapp.com/task)
 
+:::tip Browse the marketplace
+Find inspiration or get started with GSA's Tasks using the [Task marketplace >](https://dash.gameserverapp.com/marketplace/market/task_group)
+:::
+
 ![Automations / Tasks - overview](/img/dashboard/automate_tasks/task_overview.jpg)
 
 
@@ -177,7 +181,7 @@ Deactivate a task to delete it.
 ![Automations / Tasks - manage task 1](/img/dashboard/automate_tasks/manage_task_1.jpg)
 
 ## Task groups
-Task groups help keep tasks organised and tidy.
+Task groups help keep tasks organized and tidy.
 You can add existing tasks to a group or change the group for a task.
 
 ### Create task group
@@ -186,8 +190,13 @@ Click <Icon icon="fa-solid fa-plus-square" size="lg" /> next to "Task groups" to
 ![Automations / Tasks - create task group 1](/img/dashboard/automate_tasks/create_task_group_1.jpg)
 
 ### Manage task groups
-Reorder, rename or delete template groups by clicking <Icon icon="fa-solid fa-pen-square" size="lg" />.
+Reorder, rename or delete task groups by clicking <Icon icon="fa-solid fa-pen-square" size="lg" />.
 
 ![Automations / Tasks - manage task group 1](/img/dashboard/automate_tasks/manage_task_group_1.jpg)
 
 ![Automations / Tasks - manage task group 2](/img/dashboard/automate_tasks/manage_task_group_2.jpg)
+
+### Submit to Marketplace
+Task groups can be uploaded to the [marketplace](/dashboard/marketplace). This lets you share your creations with the GSA community.
+
+![Automations / Tasks - Publish task group](/img/dashboard/automate_tasks/publish_task_group.jpg)
