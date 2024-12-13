@@ -91,6 +91,11 @@ Example: `7777`
 Returns the assigned raw port for the game server.<br />
 Example: `7778`
 
+#### `{gameserver.other_port}`
+Returns the assigned `other` port for the game server.<br />
+Example: `12345`
+
+
 #### `{gameserver.rcon_port}`
 Returns the assigned RCON / Telnet / Websocket port for the game server.<br />
 Example: `37015`
