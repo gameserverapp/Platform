@@ -256,6 +256,7 @@ paths:
                   username_accepted: { type: boolean, example: 'true' }
                   message: { type: string, example: 'You are not on the whitelist' }
                   teleport_xyz: { type: boolean, example: 'false' }
+                  custom_roles: { description: 'A list of custom roles with timestamps or an empty array', type: object, example: { '1': '2035-01-22T13:10:41.000000Z' } }
                 type: object
   '/api/v1/gameserver/{name}/mute':
     post:
