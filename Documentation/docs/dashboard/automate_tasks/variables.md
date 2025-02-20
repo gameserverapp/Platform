@@ -24,6 +24,7 @@ https://docs.gameserverapp.com/dashboard/monetization/deliveries#-troubleshootin
 `{player.token_count}` Shows the token amount for player.
 
 ### Custom role
+`{custom_role.1.minutes_remaining}` Shows the remaining time in minutes, for custom role ID.
 `{custom_role.1.hours_remaining}` Shows the remaining time in hours, for custom role ID.
 `{custom_role.1.days_remaining}` Shows the remaining time in days, for custom role ID.
 
