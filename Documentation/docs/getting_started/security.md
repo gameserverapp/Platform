@@ -21,6 +21,7 @@ Please note that these can change. Changes will be announced on Discord.
 - 159.69.121.201
 - 159.69.179.102
 - 162.55.164.94
+- 188.34.165.170
 
 If your firewall supports it, you can also use this hostname to whitelist all our IPs:
 `platform.gameserverapp.com`
