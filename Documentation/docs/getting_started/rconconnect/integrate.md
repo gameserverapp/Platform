@@ -11,7 +11,7 @@ When you aren't using DediConnect, make sure to [connect game server with RconCo
 When there is no `Integrate` tab you do not need to take any further steps. Your game server is fully integrated and ready to go!
 :::
 
-## Atlas & ARK
+## ARK
 
 Find the `Integrate` tab under [game server settings](/dashboard/game_servers/getting_started#settings) for RconConnect servers only.
 
@@ -26,14 +26,13 @@ Without these settings some of the important features may not work. We strongly 
 Install mod:
 - [ARK:Survival Ascended version](https://www.curseforge.com/members/gameserverapp/projects)
 - [ARK:Survival Evolved version](https://steamcommunity.com/sharedfiles/filedetails/?id=2107956699)
-- [Atlas version](https://steamcommunity.com/sharedfiles/filedetails/?id=2108685945)
 
 Navigate to the `Integrate` tab and follow the instructions in the __"GSA Integration mod"__ block.
 
 ![Integrate ARK: Survival Evolved game server - GSA integration mod](/img/getting_started/rconconnect/integrate/ark_atlas_integration_mod.jpg)
 
 ### Server game log
-Enable the `-servergamelog` setting for your ARK / Atlas server.
+Enable the `-servergamelog` setting for your ARK server.
 
 :::warning Required setting
 Without these settings some of the important features may not work. We strongly recommend you set these up for each individual game server.

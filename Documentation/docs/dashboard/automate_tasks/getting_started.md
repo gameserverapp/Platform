@@ -114,7 +114,7 @@ Trigger / Events tasks can be run based on the following criteria:
   - Character comes online
   - Character goes offline
   - New character created
-  - Character Wake up (ARK / ATLAS only)
+  - Character Wake up (ARK only)
 - Chat
   - Player chat contains [X] (one or multiple)
   - Player chat exactly matches [X] (one or multiple)

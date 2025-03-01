@@ -62,8 +62,6 @@ When you rent a machine from a datacenter, you never have to configure any ports
 - 37015 - 37215
 
 ### Optional
-- 5555 - 5700 `Atlas only`
-- 8080 - 8200 `Atlas only`
 - 8384 `Required for Syncthing`
 
 :::tip Firewall suggestion
