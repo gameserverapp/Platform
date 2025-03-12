@@ -48,6 +48,8 @@ Send an in-game Direct Message (DM) to the character.
 Send tokens to the player.
 Works with both a fixed amount and a random amount, where you can set the range.
 
+Also accepts negative numbers. When using negative numbers for the `random amount`, make sure you put the lowest number in `min` and the highest in `max`. For example: `Min -250` & `Max -5`.
+
 [Variables](/dashboard/automate_tasks/variables) are available with this action.
 
 ![Automations / Tasks - Action - Send tokens](/img/dashboard/automate_tasks/actions/action_send_tokens.jpg)
