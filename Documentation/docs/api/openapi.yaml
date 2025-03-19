@@ -1,7 +1,7 @@
 openapi: 3.0.0
 info:
   title: 'System API'
-  description: "Access and control game server, players, monetization, tasks via external applications.\n\n:::warning WORK IN PROGRESS\nThis API is work in progress. Things may change.\n:::\n## 3rd party Integration\nWhen you're developing a 3rd party app that connects with the System API, you need to include your GSA-ID header with all requests.\nIf you don't have a GSA-ID yet, please contact support@gameserverapp.com.\n\n## Rate limit\nYou are rate limited to 40 requests per minute."
+  description: "Access and control game server, players, monetization, tasks via external applications.\n\n:::warning WORK IN PROGRESS\nThis API is work in progress. Things may change.\n:::\n## 3rd party Integration\nWhen you're developing a 3rd party app that connects with the System API, you need to include your GSA-ID header with all requests.\nIf you don't have a GSA-ID yet, please contact support@gameserverapp.com.\n\n## Rate limit\nYou are rate limited to 100 requests per minute."
   contact:
     email: support@gameserverapp.com
   version: '2'
