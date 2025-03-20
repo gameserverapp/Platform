@@ -157,6 +157,7 @@ This Action block supports adding sub-Action blocks, which run when the conditio
   - Player is admin
   - Player account type
   - Player connected account(s)
+  - Player accepted rules
 - Character
   - Character name
   - Character level
