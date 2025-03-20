@@ -203,3 +203,7 @@ html[data-theme='dark'] {
 .hidden {
     display: none !important;
 }
+
+.navbar__items {
+    white-space: nowrap;
+}
