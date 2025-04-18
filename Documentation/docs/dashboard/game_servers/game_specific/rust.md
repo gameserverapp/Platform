@@ -17,7 +17,7 @@ After the setup is complete, install `BetterChat` and start the server. You can 
 After starting your server, connect via FTP using the [FTP Credentials](https://docs.gameserverapp.com/dashboard/game_servers/getting_started/#connect--ftp-info).  
 Navigate to the `/oxide/data` folder:
 
-![Rust- Getting DataFile](/img/dashboard/gameserver/game_specific/Rust-Getting_DataFile.png)
+![Rust- Getting DataFile](/img/dashboard/gameserver/game_specific/rust_getting_datafile.png)
 
 Save the `BetterChat.json` file to your PC in a location where you can easily find it later.
 
@@ -25,7 +25,7 @@ Save the `BetterChat.json` file to your PC in a location where you can easily fi
 
 Use a full-featured text editor like `Visual Studio` to open `BetterChat.json`. It should look something like this:
 
-![Rust- DataFile Visualcode](/img/dashboard/gameserver/game_specific/Rust-DataFile_VS.png)
+![Rust- DataFile Visualcode](/img/dashboard/gameserver/game_specific/rust_datafile_vs.png)
 
 Find this section:
 
@@ -60,12 +60,12 @@ Double-click the updated `BetterChat.json` file to upload it back to the server.
 A pop-up will appear warning you the file already exists.  
 Select **"Apply to current queue only"** and click **"OK"**, as shown here:
 
-![Rust- Target replacing](/img/dashboard/gameserver/game_specific/Rust-Target_replacing.png)
+![Rust- Target replacing](/img/dashboard/gameserver/game_specific/rust_target_replacing.png)
 
 Once the file is uploaded, go back to the `Overview` page of your GameServer on the GSA dashboard.  
 Scroll down to `Game server console`, type: `o.reload BetterChat` and make sure the dropdown next to the input is set to `Command`:
 
-![Rust- Reload Plugin](Documentation/static/img/dashboard/gameserver/game_specific/Rust-Reload_plugin.png)
+![Rust- Reload Plugin](/img/dashboard/gameserver/game_specific/rust_reload_plugin.png)
 
 Hit Enter, and you’re done!  
 Your messages should now appear in Discord if that integration has been set up.  
