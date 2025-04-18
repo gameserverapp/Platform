@@ -63,6 +63,9 @@ Here are some offset examples for different configurations:
 
 ### Windows
 
+Here is a video by Birdman, who walks you through all the steps.
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Wqop3OkRREI" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+
 #### 1. Install GSA script
 If you haven't already, ensure you [installed the GSA script on your Windows machine](/getting_started/dediconnect/installation#prepare-a-windows-machine).
 
