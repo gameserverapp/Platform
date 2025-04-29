@@ -5,11 +5,7 @@ You can help maintain the docs. Please try to keep your writing in simple plain 
 
 
 # Website
-This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
+This website is built using [Docusaurus 3](https://docusaurus.io/), a modern static website generator.
 
-# When using NVM
-
-
-[//]: # (TODO add instructions how to install NVM etc)
 
 `nvm install 20 && nvm use 20 && npm run start`

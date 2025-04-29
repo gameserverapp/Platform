@@ -5,6 +5,7 @@ sidebar_position: 999
 
 You can help improve the documentation by clicking the `Edit this page` button located at the bottom of every page.
 
+## Edit on Github
 
 ### 1. Click "Edit this page" button
 At the end of each page, on this documentation website, you can find a `Edit this page` button. Click the button to submit a change proposal.
@@ -55,3 +56,54 @@ Thank you for creating a pull request with your changes! 💙
 Someone will review your changes and merge them into the main documentation.
 
 ![Contribute 7](/img/getting_started/contribute/contribute_7.jpg)
+
+## Edit locally
+When working on the docs, you can run a fork of the docs locally. This lets you preview your changes as you make them.
+
+### 1. Fork the repository
+Fork the [documentation repository](https://github.com/gameserverapp/Documentation) on GitHub.
+
+### 2. Clone the fork on your computer
+Install Github Desktop, and clone your fork to your computer.
+
+
+![Run docs locally](/img/other/copy-fork-url.jpg)
+
+On Github Desktop, click `Add` and then `Clone repository`.
+
+![Run docs locally](/img/other/clone-repo-1.jpg)
+![Run docs locally](/img/other/clone-repo-2.jpg)
+
+### 3. Install NVM
+Find the easiest way to install NVM here: 
+[https://github.com/coreybutler/nvm-windows](https://github.com/coreybutler/nvm-windows/releases)\
+[Need a bit more help?](https://www.freecodecamp.org/news/node-version-manager-nvm-install-guide/)
+
+### 4. Install the right version
+After installing NVM, open a new terminal or Powershell and run the following command:
+
+```bash
+nvm install 20
+```
+
+Afterwards run:
+
+```bash
+nvm use 20
+```
+
+### 5. Install Docs dependencies
+Navigate to the folder where you cloned the repository and run the following command:
+
+```bash
+npm install
+```
+
+### 6. Run the docs locally
+Run the following command to start the docs locally:
+
+```bash
+npm run start
+```
+
+A new browser window will open with the documentation website. If that doesn't happen, try [http://localhost:3000/](http://localhost:3000/)
