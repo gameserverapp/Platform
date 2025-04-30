@@ -5,9 +5,9 @@ sidebar_position: 0
 
 ## Platform IPs
 
-Below is a list of IP addresses that GSA may use to communicate with your game server / machine. You can whitelist these for extra security.
+Here is a list of IP addresses that GameServerApp (GSA) may use to communicate with your game server or machine. For extra security, you can whitelist these IPs.
 
-Please note that these can change. Changes will be announced on Discord.
+Please keep in mind that these addresses may change. Any changes will be announced on our Discord.
 
 - 49.12.0.167
 - 49.12.13.25
@@ -23,12 +23,12 @@ Please note that these can change. Changes will be announced on Discord.
 - 162.55.164.94
 - 188.34.165.170
 
-If your firewall supports it, you can also use this hostname to whitelist all our IPs:
+If your firewall supports hostnames, you can whitelist all our IPs using:  
 `platform.gameserverapp.com`
 
-
 ## Public SSH key
-This is the public key GSA will use for DediConnect communication.
+
+This is the public SSH key used by GSA to establish secure communication for DediConnect.
 
 ```composer log
 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIC9BY5UGWpFTOHDRskIeide5oWYPSh97eJkTlQCzNi0S support@gameserverapp.com
@@ -36,4 +36,5 @@ ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIC9BY5UGWpFTOHDRskIeide5oWYPSh97eJkTlQCzNi0S
 
 ## Report security issue
 
-Found a security issues? Please always report to `support@gameserverapp.com`.
+If you discover a security issue, please report it immediately by emailing:  
+`support@gameserverapp.com`
