@@ -3,138 +3,144 @@ title: Requirements & tips
 sidebar_position: 1.1
 ---
 
-Requirements and tips for hosting reliable high performance game servers using DediConnect.
+Here are the key requirements and helpful tips for hosting reliable, high-performance game servers using DediConnect.
 
 ## Supported Operating Systems (OS)
-The Operating Systems listed below are supported for DediConnect. Make sure the language is set to English.
 
-- Debian 10
-- Debian 11
-- Debian 12
-- Ubuntu 22.04
-- Windows Server 2019 (Standard & Datacenter edition)
-- Windows Server 2022 (Standard & Datacenter edition)
+DediConnect supports the following operating systems. Make sure the language on the machine is set to English:
+
+- Debian 10  
+- Debian 11  
+- Debian 12  
+- Ubuntu 22.04  
+- Windows Server 2019 (Standard & Datacenter editions)  
+- Windows Server 2022 (Standard & Datacenter editions)  
 
 :::caution Windows machines
-Windows machine must [run the GSA install script](/getting_started/dediconnect/installation#prepare-a-windows-machine) before they can connect with DediConnect.
-
+Windows machines must [run the GSA install script](/getting_started/dediconnect/installation#prepare-a-windows-machine) before they can connect to DediConnect.
 :::
 
 ### Supported games
 
-[Visit the Connect DediConnect machine page](https://dash.gameserverapp.com/order/machine) for up-to-date information about Game support per Operating System. Games not on the list might be available through [custom blueprints](/dashboard/blueprints/getting_started) or via the marketplace.
+For up-to-date information about which games are supported per OS, visit the [Connect DediConnect machine page](https://dash.gameserverapp.com/order/machine).  
+If your game isn’t listed, it might still be available through [custom blueprints](/dashboard/blueprints/getting_started) or the [marketplace](https://dash.gameserverapp.com/marketplace).
 
 ![Connect machine 1](/img/getting_started/dediconnect/installation/game_support_os.jpg)
 
 ## Hardware specifications
 
-- Processor: 3.5GHz or more (AMD or Intel)
-- RAM: 64GB or more
-- DISK: 500GB or more (SSD or NVMe only!)
+- **Processor:** 3.5GHz or higher (AMD or Intel)  
+- **RAM:** 64GB or more  
+- **Disk:** 500GB or more (SSD or NVMe only, no HDDs!)
 
 :::caution Windows `C:` usage
-Game servers can be installed on alternative drives.
-Game file cache, Docker images and other software for hosting game servers currently only supports installing on the `C:` drive.
+While game servers can be installed on alternative drives, critical files like game cache, Docker images, and required software are only supported on the `C:` drive.
 :::
 
-
 ## Root / Administrator access
-DediConnect requires `Root` (Linux) or `Administrator` (Windows) access in order to optimise machines for hosting game servers. There currently is no work around for this.
+
+DediConnect needs full system access `Root` (Linux) or `Administrator` (Windows) to optimize the machine for game server hosting. There is currently no workaround for this.
 
 ## Network ports
 
-These are the ports GSA may use to run communicate with your machine and host game servers and service on the machine:
+These are the ports GSA may use to communicate with your machine and to host game servers and related services:
 
-:::danger 
-DO NOT add these port to your Windows / Linux firewall. GSA will take care of all that.\
-When you rent a machine from a datacenter, you never have to configure any ports.
+:::danger
+DO NOT manually open these ports on your Windows or Linux firewall. GSA handles all port management for you.  
+If you’ve rented a machine from a data center, there’s no need to configure ports at all.
 :::
 
 ### Required
-- 21 `FTP`
-- 22 `SSH`
-- 2456 - 2600
-- 7777 - 7900
-- 11000 - 12000 `Passive FTP`
-- 23000 - 23300
-- 27015 - 27300
-- 30000 - 30300
-- 37015 - 37215
+
+- 21 `FTP`  
+- 22 `SSH`  
+- 2456 - 2600  
+- 7777 - 7900  
+- 11000 - 12000 `Passive FTP`  
+- 23000 - 23300  
+- 27015 - 27300  
+- 30000 - 30300  
+- 37015 - 37215  
 
 ### Optional
+
 - 8384 `Required for Syncthing`
 
 :::tip Firewall suggestion
-Optionally you can allow access to specific ports (21, 22, 8384, 11000 - 12000) for [Platform IP's](/getting_started/security#platform-ips) only, for extra security.
+For extra security, consider allowing access to key ports (21, 22, 8384, 11000 - 12000) only for [Platform IPs](/getting_started/security#platform-ips).
 :::
 
 ## Finding the right hardware
 
 :::tip Need help?
-[Jump on our Discord](https://www.gameserverapp.com/join-discord) and talk to one of the many experts that are happy to help you.
+[Join our Discord](https://www.gameserverapp.com/join-discord) to speak with experienced users who can guide you.
 
-Include answers to the following questions in your Discord request:
-- What is your experience level?
-- Which game(s) do you host?
-- How many game servers?
-- How many players?
+When asking for help, include:
+- Your experience level  
+- The game(s) you host  
+- Number of game servers  
+- Estimated number of players  
 :::
 
 ### Processor / CPU
-Almost every game performs better when hosted on high GHz CPU's. Only a few games benefit from more cores / threads. Processors below 3.5GHz may experience rubberbanding and lag. Reserve at least 1 `thread` per game server.
 
-You can find the core / thread count for any processor on the internet.
+Most games benefit from higher clock speeds (GHz) rather than more cores. CPUs running below 3.5GHz may lead to lag or rubberbanding.  
+Reserve at least one `thread` per game server.
+
+You can look up your processor’s core and thread count online.
 
 :::info Example
-If you want to host 8 game servers, you need at least 8 `threads`. Preferably reserve 2 extra `threads` for system tasks.
+To host 8 game servers, you'll need at least 8 `threads`. Ideally, reserve 2 extra threads for system tasks.
 :::
-
 
 #### Popular hardware
-Below is a list of frequently used hardware, for DediConnect:
-- AMD Ryzen 5 3600
-- AMD Ryzen 7 7700
-- AMD Ryzen 9 7900
-- AMD Ryzen 9 7950X3D
-- AMD Ryzen Threadripper 2950X
-- Intel Core i7-6700
-- Intel Core i7-7700
-- Intel Core i9-9900K
+
+Here are some commonly used CPUs for DediConnect:
+
+- AMD Ryzen 5 3600  
+- AMD Ryzen 7 7700  
+- AMD Ryzen 9 7900  
+- AMD Ryzen 9 7950X3D  
+- AMD Ryzen Threadripper 2950X  
+- Intel Core i7-6700  
+- Intel Core i7-7700  
+- Intel Core i9-9900K  
 
 :::caution E-core CPU's
-For game server hosting we recommend using CPU's that only have P-cores (normal CPU's). You can technically use CPU's with E-cores, but we recommend you don't.
+We recommend using CPUs with only P-cores (performance cores). CPUs with E-cores (efficiency cores) are supported but not ideal for game server hosting.
 :::
 
-
 ### Memory / RAM
-Running game servers load the save files into memory, which causes increased memory usages. When memory runs out, the server crashes.
 
-For most games you should reserve between 4 - 10 GB RAM per game server (7GB on average).
+Game servers store save data in memory, increasing RAM usage. If memory runs out, servers crash.
+
+Most games require 4–10 GB of RAM per server (average is ~7 GB).
 
 :::info Example
-If you want to host 8 game servers, you need at least 56 GB (8 x 7 = 56GB). Preferably reserve 4GB extra for system tasks, totalling to 60GB.
+For 8 game servers, plan for at least 56GB of RAM (8 x 7 = 56GB). Add ~4GB for system tasks, totaling 60GB.
 :::
 
 ### Disk space
-Game servers benefit from high speed disks, like SSD and NVMe. Avoid HDDs!
 
-In most cases you should reserve 30GB disk space per game server.
+Fast storage is essential, use SSD or NVMe. Avoid HDDs entirely.
+
+Most game servers need around 30GB of disk space.
 
 :::info Example
-If you want to host 8 game servers, you need at least 240 GB (8 x 30 = 240GB). Preferably reserve 100GB extra for the system, totalling to 340GB.
+For 8 game servers, you'll need at least 240GB (8 x 30 = 240GB). Add 100GB for the system, totaling 340GB.
 :::
 
 ### DDoS protection
-Professional DDoS protection is recommended for popular communities. Small (PvE) communities or friend-only servers can easily do without.
 
-
+DDoS protection is a must for popular communities. Smaller or friend-only servers generally don’t need it.
 
 ## Practical tips
 
 ### Fresh install
-It's best to install DediConnect on a machine you recently installed, ideally without installing anything else. This avoids conflicts with software not managed by GSA.
+
+For best results, install DediConnect on a freshly installed system, without any additional software. This avoids conflicts with programs not managed by GSA.
 
 ### Spread across multiple machines
-In certain cases it may be cheaper to spread your game servers over multiple machines. Small machines are usually cheaper, without sacrificing performance.
 
-This also allows you to use different hardware for popular and less popular game servers, hosting the less popular maps on low spec hardware.
+In some cases, using several smaller machines is more cost-effective than one large one.  
+It also lets you match the right hardware to each game. Use high-performance machines for popular servers, and lower spec ones for smaller maps or less active servers.
