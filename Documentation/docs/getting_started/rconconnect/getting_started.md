@@ -77,3 +77,12 @@ Look at the `Remote site` field at the top of the window. Copy this path and pas
 If you're using a TCAdmin server, it must be properly configured for RconConnect to function. The following settings are based on instructions from TCAdmin support:
 
 ![TCAdmin fix 1](/img/getting_started/rconconnect/getting_started/tcadmin_fix_1.png)
+
+### No logs recieved error using nitrado
+
+If you are using nitrado and keep getting the following error:
+![Logs not received](/img/getting_started/rconconnect/getting_started/no_logs_nitrado.png)
+
+Make sure you have enabled the `ServerGameLog` setting on the nitrado dashboard.
+
+![Logs not received](/img/getting_started/rconconnect/getting_started/servergamelog_nitrado.png)
