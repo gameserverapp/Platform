@@ -211,7 +211,11 @@ This action is only available in Shop packs and Supporter Tiers.
 ## Manage items
 
 ### Task actions
-Enable or Disable a Task. Can be useful for events etc.
+
+Lets you perform various actions, like:
+- Enable or Disable a Task
+- Cancel current task run and all sub tasks
+- Cancel all scheduled runs for task
 
 ![Automations / Tasks - Action - Task control](/img/dashboard/automate_tasks/actions/action_task_control.png)
 
