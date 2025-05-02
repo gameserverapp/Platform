@@ -101,7 +101,7 @@ Once installation begins, DediConnect will install all the required software. Yo
 
 ### 4. Ready!
 
-You're all set! Start using your machine right away.
+Once the installation has finished you can start using your machine.
 
 [Install game servers and services >](/dashboard/machines/install_game-server_service#how-to-install-game-server)
 
