@@ -4,15 +4,18 @@ sidebar_position: 2
 ---
 
 :::warning RconConnect only
-These instructions are for RconConnect game servers only!
+These instructions apply only to **RconConnect** game servers!
 :::
 
-## 1. Download FileZilla server
-Download [FileZilla server](https://filezilla-project.org/download.php?type=server) on your dedicated machine.
+## 1. Download FileZilla Server
+
+Start by downloading [FileZilla Server](https://filezilla-project.org/download.php?type=server) on your dedicated machine.
 
 ![Setup FTP 1](/img/getting_started/rconconnect/getting_started/setup_ftp_1.jpeg)
 
-## 2. Install FileZilla server
+## 2. Install FileZilla Server
+
+Follow the installation prompts to install FileZilla Server.
 
 ![Setup FTP 2](/img/getting_started/rconconnect/getting_started/setup_ftp_2.jpeg)
 
@@ -23,7 +26,8 @@ Download [FileZilla server](https://filezilla-project.org/download.php?type=serv
 ![Setup FTP 5](/img/getting_started/rconconnect/getting_started/setup_ftp_5.jpeg)
 
 ### Enter a password
-This password is used to manage your FTP server. Pick a strong password and write it down somewhere.
+
+Set a strong password when prompted. This password will be used to manage the FTP server. Make sure to write it down or store it securely.
 
 ![Setup FTP 6](/img/getting_started/rconconnect/getting_started/setup_ftp_6.jpeg)
 
@@ -31,15 +35,17 @@ This password is used to manage your FTP server. Pick a strong password and writ
 
 ![Setup FTP 8](/img/getting_started/rconconnect/getting_started/setup_ftp_8.jpeg)
 
-## 3. Connect with FileZilla Server
-Hit the `Connect to FileZilla FTP server` button. Enter the FTP management password (the one you setup in the previous step).
+## 3. Connect to FileZilla Server
+
+Click the `Connect to FileZilla FTP server` button and enter the management password you just set.
 
 ![Setup FTP 9](/img/getting_started/rconconnect/getting_started/setup_ftp_9.jpeg)
 
 ![Setup FTP 10](/img/getting_started/rconconnect/getting_started/setup_ftp_10.jpeg)
 
-## 4. Create FTP user
-Bring up the management panel by clicking `Server` and then `Configure`.
+## 4. Create FTP User
+
+Open the management panel by clicking `Server` → `Configure`.
 
 ![Setup FTP 11](/img/getting_started/rconconnect/getting_started/setup_ftp_11.jpeg)
 
@@ -48,43 +54,52 @@ Bring up the management panel by clicking `Server` and then `Configure`.
 ![Setup FTP 13](/img/getting_started/rconconnect/getting_started/setup_ftp_13.jpeg)
 
 ### Set "Require a password to log in"
-Select "Require a password to log in" on the `Credentials` field and enter a new password.
-Make sure to write down this password. You need this for the RconConnect FTP form later.
+
+Enable the setting "Require a password to log in" under the `Credentials` field. Enter a new password for the FTP user. This password will be needed when setting up the RconConnect FTP form, so be sure to save it.
 
 ![Setup FTP 14](/img/getting_started/rconconnect/getting_started/setup_ftp_14.jpeg)
 
 ![Setup FTP 15](/img/getting_started/rconconnect/getting_started/setup_ftp_15.jpeg)
 
-## 5. Configure Passive FTP mode
+## 5. Configure Passive FTP Mode
+
+Set up passive FTP mode in the server settings to ensure proper connectivity.
 
 ![Setup FTP 16](/img/getting_started/rconconnect/getting_started/setup_ftp_16.jpeg)
 
-## 6. Update firewall
-We should now allow access to the FTP server by opening the ports in the Windows Defender Firewall. 
+## 6. Update Firewall Rules
+
+Now, you need to allow access through Windows Defender Firewall by opening the necessary ports.
 
 :::info Other firewalls
-If there are any other firewalls protecting your machine, you will also need to open / forward these ports manually: `21, 11000 - 12000`.
+If your machine has additional firewalls, make sure to also open or forward these ports: `21`, and the range `11000–12000`.
 :::
 
 :::caution
-Opening ports can be risky. You should always use strong passwords on your FTP server (and anywhere else). People on the internet might crack weak passwords and access your FTP server.
-You have been warned!
+Opening ports can expose your machine to security risks. Always use **strong, unique passwords** for your FTP server to protect against unauthorized access.
 :::
 
 ### 1. Open Windows Defender Firewall
-Click the `Windows Start` button and type `firewall` and hit `enter` to open it.
+
+Click the Windows Start button, type `firewall`, and press `Enter`.
 
 ![Setup FTP 17](/img/getting_started/rconconnect/getting_started/setup_ftp_17.jpeg)
 
-### 2. Advanced settings
-Click `Advanced settings`.
+### 2. Go to Advanced Settings
+
+Click `Advanced settings` in the sidebar.
+
 ![Setup FTP 18](/img/getting_started/rconconnect/getting_started/setup_ftp_18.jpeg)
 
-### 3. Create new rule
-First click `Inbound Rules` and then click `New Rule`.
+### 3. Create a New Inbound Rule
+
+Click `Inbound Rules`, then click `New Rule`.
+
 ![Setup FTP 19](/img/getting_started/rconconnect/getting_started/setup_ftp_19.jpeg)
 
-### 4. Enter new rule settings
+### 4. Set Rule Details
+
+Follow the prompts to create a rule that opens the necessary ports for FTP traffic.
 
 ![Setup FTP 20](/img/getting_started/rconconnect/getting_started/setup_ftp_20.jpeg)
 
@@ -96,5 +111,6 @@ First click `Inbound Rules` and then click `New Rule`.
 
 ![Setup FTP 24](/img/getting_started/rconconnect/getting_started/setup_ftp_24.jpeg)
 
-## 7. FTP server ready
-Your FTP server is now ready to use with RconConnect.
+## 7. FTP Server Ready
+
+Your FTP server is now set up and ready to be used with RconConnect. 
