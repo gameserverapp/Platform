@@ -3,22 +3,22 @@ title: A quick introduction
 sidebar_label: Quick start
 ---
 
-Connect GameServerApp (GSA) with your existing machine or game server. Have neither? We help [find the right machine](/getting_started/dediconnect/requirements#finding-the-right-hardware). 👍
+Connect GameServerApp (GSA) to your existing machine or game server. Don’t have one yet? Don't worry we can help you [find the right machine](/getting_started/dediconnect/requirements#finding-the-right-hardware). 👍
 
 [About the Dashboard >](/)
 
-
 ## Ways to connect with GSA
 
-There currently are two ways you can connect with GSA:
+You can currently connect with GSA in two ways:
 
 ### DediConnect
-The auto-pilot for dedicated root machines and game servers that is actually easy to set up and requires zero technical experience.
+
+DediConnect is the autopilot for dedicated root machines and game servers. It’s incredibly easy to set up and requires zero technical experience.
 
 [More about DediConnect >](/getting_started/dediconnect/getting_started)
 
-
 ### RconConnect
-Connect self-hosted / rented game servers to supervise and access most other tools.
+
+RconConnect is designed for self-hosted or rented game servers. It gives you control and visibility, while allowing access to most of GSA’s tools.
 
 [More about RconConnect >](/getting_started/rconconnect/getting_started)

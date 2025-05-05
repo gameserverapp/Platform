@@ -3,107 +3,116 @@ title: Help improve the docs
 sidebar_position: 999
 ---
 
-You can help improve the documentation by clicking the `Edit this page` button located at the bottom of every page.
+You can contribute to the documentation by clicking the `Edit this page` button located at the bottom of any page.
 
-## Edit on Github
+## Edit on GitHub
 
 ### 1. Click "Edit this page" button
-At the end of each page, on this documentation website, you can find a `Edit this page` button. Click the button to submit a change proposal.
+
+At the bottom of each page on this documentation site, you’ll find an `Edit this page` button. Click it to begin suggesting changes.
 
 ![Contribute 1](/img/getting_started/contribute/contribute_0.jpg)
 
-### 2. Click "Edit" button
+### 2. Click the "Edit" button
 
 :::warning Login on GitHub
-Make sure you are logged in on GitHub to see the `Edit` button.
+Make sure you're logged into GitHub to see the `Edit` button.
 :::
-After clicking `Edit this page` you are taken to the Github source page. Click the `Edit` button to continue.
+
+Once you've clicked `Edit this page`, you’ll be taken to the page’s source on GitHub. Click the `Edit` button to proceed.
 
 ![Contribute 1](/img/getting_started/contribute/contribute_1.jpg)
 
-
 ### 3. Fork the repository
-Hit the `For this repository` button. This only shows the first time you edit a page.
+
+Click the `Fork this repository` button. This only appears the first time you attempt to edit a page.
 
 ![Contribute 2](/img/getting_started/contribute/contribute_2.jpg)
 
-### 4. Make changes & commit changes
-After making changes to the document you should click `Commit changes` to submit your changes.
+### 4. Make and commit your changes
+
+Edit the content as needed. When you're done, click `Commit changes` to submit.
 
 :::info Docusaurus Markdown
-The documentation website uses Markdown.
-Learn how to style the content on the [Docusaurus Markdown docs](https://docusaurus.io/docs/markdown-features).
+This documentation uses Markdown formatting.\
+Read the [Docusaurus Markdown docs](https://docusaurus.io/docs/markdown-features) to learn how to properly style your edits.
 :::
 
 ![Contribute 3](/img/getting_started/contribute/contribute_3.jpg)
 
-### 5. Explain what you changed
-Before your changes are published they are first reviewed. Help reviewers understand what you changed by writing a clear description. Hit `Propose changes` when you're done.
+### 5. Describe your changes
+
+Before your edits can be published, they must be reviewed. Provide a clear and concise description of your changes to help the reviewers understand your submission. Then click `Propose changes`.
 
 ![Contribute 4](/img/getting_started/contribute/contribute_4.jpg)
 
-### 6. Review changes & Create pull request
-Before creating a pull request, double check your changes.
-Hit `Create pull request` when you're all set!
+### 6. Review and submit a pull request
+
+Double-check your changes, and when everything looks good, click `Create pull request`.
 
 ![Contribute 5](/img/getting_started/contribute/contribute_5.jpg)
-
 ![Contribute 6](/img/getting_started/contribute/contribute_6.jpg)
 
 ### 7. Done 🎉
-Thank you for creating a pull request with your changes! 💙
 
-Someone will review your changes and merge them into the main documentation.
+Thank you for submitting a pull request! 💙
+
+A maintainer will review your contribution and merge it into the documentation.
 
 ![Contribute 7](/img/getting_started/contribute/contribute_7.jpg)
 
 ## Edit locally
-When working on the docs, you can run a fork of the docs locally. This lets you preview your changes as you make them.
+
+If you prefer, you can run a local version of the docs to preview your changes as you make them.
 
 ### 1. Fork the repository
+
 Fork the [documentation repository](https://github.com/gameserverapp/Documentation) on GitHub.
 
-### 2. Clone the fork on your computer
-Install Github Desktop, and clone your fork to your computer.
+### 2. Clone the fork to your computer
 
+Install GitHub Desktop, then clone your fork locally.
 
 ![Run docs locally](/img/other/copy-fork-url.jpg)
 
-On Github Desktop, click `Add` and then `Clone repository`.
+In GitHub Desktop, click `Add` > `Clone repository`.
 
 ![Run docs locally](/img/other/clone-repo-1.jpg)
 ![Run docs locally](/img/other/clone-repo-2.jpg)
 
 ### 3. Install NVM
-Find the easiest way to install NVM here: 
-[https://github.com/coreybutler/nvm-windows](https://github.com/coreybutler/nvm-windows/releases)\
-[Need a bit more help?](https://www.freecodecamp.org/news/node-version-manager-nvm-install-guide/)
 
-### 4. Install the right version
-After installing NVM, open a new terminal or Powershell and run the following command:
+Follow the easiest installation method for your OS:
+
+- [NVM for Windows (GitHub)](https://github.com/coreybutler/nvm-windows/releases)
+- [FreeCodeCamp installation guide](https://www.freecodecamp.org/news/node-version-manager-nvm-install-guide/)
+
+### 4. Install the correct Node.js version
+
+Once NVM is installed, open a terminal or PowerShell window and run:
 
 ```bash
 nvm install 20
 ```
-
-Afterwards run:
+Then activate the version:
 
 ```bash
 nvm use 20
 ```
+### 5. Install documentation dependencies
 
-### 5. Install Docs dependencies
-Navigate to the folder where you cloned the repository and run the following command:
+Navigate to the folder where you cloned the repository, then run:
 
 ```bash
 npm install
 ```
 
-### 6. Run the docs locally
-Run the following command to start the docs locally:
+### 6. Run the documentation site locally
+
+Start the site with the following command:
 
 ```bash
 npm run start
 ```
 
-A new browser window will open with the documentation website. If that doesn't happen, try [http://localhost:3000/](http://localhost:3000/)
+This will open the documentation in your browser. If it doesn’t open automatically, visit http://localhost:3000/

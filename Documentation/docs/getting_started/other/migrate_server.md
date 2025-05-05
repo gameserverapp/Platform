@@ -3,62 +3,60 @@ title: Migrate game server
 sidebar_position: 1
 ---
 
-Learn how to migrate your old game server to a new game server with these simple steps.
+Learn how to migrate your old game server to a new one by following these straightforward steps.
 
 :::caution Turn off both game servers
-Before starting it is important that both game servers are turned off, to avoid data loss.
+Before beginning, make sure **both** the old and new game servers are turned off. This is critical to prevent data loss.
 :::
 
 :::info DediConnect FTP credentials
-You can find the FTP credentials for your DediConnect game servers on the `Connect` tab (Go to `Game server settings` -> `Connect`).
+You can find the FTP login details for your DediConnect servers under the `Connect` tab. Go to `Game server settings` → `Connect`.
 :::
 
 :::tip Migrating between DediConnect machines?
-[Learn how to migrate game servers between DediConnect machines >](/dashboard/game_servers/getting_started#migrate--move-to-another-machine)
+If you're moving a server between two DediConnect machines, [check out this guide instead >](/dashboard/game_servers/getting_started#migrate--move-to-another-machine)
 
 ![Game server - danger zone - migrate](/img/dashboard/gameserver/getting_started/gameserver_dangerzone_migrate.jpg)
 :::
 
-## 1. Download files from old game server
-Log in on the old game server using [FTP](https://filezilla-project.org/download.php?type=client) or [RDP](https://www.microsoft.com/en-us/p/microsoft-remote-desktop/9wzdncrfj3ps?activetab=pivot:overviewtab) and download all:
+## 1. Download files from the old game server
+
+Access your old server using either [FTP](https://filezilla-project.org/download.php?type=client) or [RDP](https://www.microsoft.com/en-us/p/microsoft-remote-desktop/9wzdncrfj3ps?activetab=pivot:overviewtab). Download all essential data, including:
+
 - Save files
-- Game config files *
-- Plugin / mod setting files*
+- Game configuration files *
+- Plugin or mod settings files *
 
-_\* = Skip these when migrating between DediConnect game servers or when the game server does not support it._
+_\* You can skip these if you're migrating between DediConnect servers, or if your game server does not use them._
 
-If you're not sure where to find the files, contact the hosting provider.
+If you’re unsure where to find these files, contact your hosting provider for assistance.
 
+## 2. Upload save files to the new game server
 
+Use [FTP](https://filezilla-project.org/download.php?type=client) or [RDP](https://www.microsoft.com/en-us/p/microsoft-remote-desktop/9wzdncrfj3ps?activetab=pivot:overviewtab) to connect to the new server. Upload the previously downloaded save files into the appropriate save directory.
 
-## 2. Upload save files to new game server
-
-Connect with the new game server using [FTP](https://filezilla-project.org/download.php?type=client) or [RDP](https://www.microsoft.com/en-us/p/microsoft-remote-desktop/9wzdncrfj3ps?activetab=pivot:overviewtab) and upload the old save files to the save files directory on the new game server.
-
-
-## 3. Add configs to the Config template
+## 3. Add config files to the Config template
 
 :::info DediConnect migration
-Skip this steps when migrating between DediConnect game servers.
+If you're migrating between DediConnect game servers, you can skip this step.
 
-Simply activate the existing Config template on the new game server to migrate the configs.
+Just activate the existing Config template on your new server to apply the necessary configs.
 :::
 
-GSA uses `Config templates` to manage config files. `Config templates` let you manage the config files via the dashboard and automatically deploy them to the game servers.
+GameServerApp uses `Config templates` to manage server configuration files. These templates allow you to edit and deploy config files directly from the dashboard.
 
 [Learn more about Config templates >](/dashboard/game_servers/config_templates)
 
-
 ### Game configs
 
-Upload the configs from the old game server to a Config template.
-
+Upload your configuration files from the old server to a new or existing Config template.
 
 ### Plugin / mod configs
-Upload the plugin & mod configs to a Config template. This is only supported for DediConnect game servers.
 
-## 4. Import ban list
-You can import your existing ban list to GSA via the [Import page >](https://dash.gameserverapp.com/configure/import).
+If supported, upload plugin and mod configuration files to the Config template. This feature is available only for DediConnect game servers.
 
+## 4. Import your ban list
+
+You can bring your existing ban list into GSA using the [Import page >](https://dash.gameserverapp.com/configure/import).
 
 ![Translate menu](/img/getting_started/other/import_banlist.jpg)

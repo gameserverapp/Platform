@@ -3,71 +3,77 @@ title: Getting started
 sidebar_position: 1
 ---
 
-RconConnect helps you supervise self-hosted & rented game servers and get a helicopter view.
+RconConnect helps you supervise both self-hosted and rented game servers, giving you a clear helicopter view of your server environment.
 
 :::info Limited features
-While we try to make most features available for RconConnect, managing game servers (start, stop, update etc.) is not available for RconConnect.
+While many features are available through RconConnect. Core server management actions  like starting, stopping, and updating game servers, are not supported.
 
-Use [DediConnect](/getting_started/dediconnect/getting_started) if you want an auto-pilot for game servers.
+If you need full automation and control of your game servers, consider using [DediConnect](/getting_started/dediconnect/getting_started).
 :::
-
-
 
 ## 1. Connect with RconConnect
 
 :::warning Incompatible providers
-RconConnect cannot be used with these providers, due to technical reasons: __Gportal, GTX Gaming & Host Havoc__
+RconConnect is not compatible with the following providers due to technical limitations: __Gportal, GTX Gaming, and Host Havoc__.
 :::
 
 ### 1. Select the game
-Open to the [connect RconConnect game server form](https://dash.gameserverapp.com/order/gameserver/rconconnect) and select the game your server is hosting.
+
+Go to the [RconConnect game server form](https://dash.gameserverapp.com/order/gameserver/rconconnect) and choose the game your server is hosting.
 
 ### 2. Enter details
-Follow instructions on the form and hit `Connect RconConnect server` at the bottom of the form to continue. The required info varies per game.
+
+Fill in the required fields on the form. These details vary depending on the game. Once completed, \
+click `Connect RconConnect server` at the bottom of the form.
 
 ![RconConnect connect 1](/img/getting_started/rconconnect/getting_started/connect_1.png)
 
 :::info FTP access
-For certain games RconConnect needs FTP access to support features like admin tools and the shop.
+For some games, RconConnect requires FTP access to enable features like admin tools and the in-game shop.
 
-[Learn how to install a FTP server on your machine >](/getting_started/other/setup_ftp_server)
+[How to install an FTP server on your machine >](/getting_started/other/setup_ftp_server)
 :::
 
 :::caution Find FTP path
-If you're unable to find the right path or the form keeps reporting an error about the FTP path you provided: [Learn how to find the right FTP path >](/getting_started/rconconnect/getting_started#find-the-savedarks-ftp-path)
+If you're encountering errors with your FTP path, or you're not sure what to enter, follow this guide: [How to find the correct FTP path >](/getting_started/rconconnect/getting_started#find-the-savedarks-ftp-path)
 :::
 
-### 3. Integrate game server
-After successfully connecting your game server with RconConnect you may need to configure a couple more things.
+### 3. Integrate your game server
 
-[Finish integrating the game server >](/getting_started/rconconnect/integrate)
+Once your server is connected, additional configuration may be required to complete the setup.
 
+[Continue with the integration process >](/getting_started/rconconnect/integrate)
 
 ## 💥 Troubleshooting 💥
 
 ### Find the "SavedArks" FTP path
 
-#### 1. Install FTP client on your personal computer
-[Download FileZilla's client version](https://filezilla-project.org/download.php?type=client) and install it on your personal computer.
+#### 1. Install an FTP client
 
-#### 2. Connect with FTP server
-Open the FileZilla client and enter the IP, username and password for your FTP server.
+Download and install [FileZilla Client](https://filezilla-project.org/download.php?type=client) on your personal computer.
+
+#### 2. Connect to your FTP server
+
+Launch FileZilla and connect to your server using its IP address, along with your FTP username and password.
 
 ![Find FTP 1](/img/getting_started/rconconnect/getting_started/find_ftp_1.jpeg)
 
-#### 3. Navigate to "SavedArks" folder
-In the right window, navigate to your `SavedArks` folder.
+#### 3. Locate the "SavedArks" folder
+
+In the right-hand panel of FileZilla, browse to your `SavedArks` directory.
 
 ![Find FTP 2](/img/getting_started/rconconnect/getting_started/find_ftp_2.jpeg)
 
-#### 4. Copy "Remote site" path
-Copy the path in `Remote site` path and paste it in the `SavedArks` field on the RconConnect form.
+#### 4. Copy the FTP path
+
+Look at the `Remote site` field at the top of the window. Copy this path and paste it into the `SavedArks` field in the RconConnect form.
 
 ![Find FTP 3](/img/getting_started/rconconnect/getting_started/find_ftp_3.jpeg)
 
 ---
 
 ### TCAdmin misconfigured
-In order for RconConnect to work with a TCAdmin server the TCAdmin server should be properly configured. As instructed by TCAdmin support:
+
+If you're using a TCAdmin server, it must be properly configured for RconConnect to function. The following settings are based on instructions from TCAdmin support:
 
 ![TCAdmin fix 1](/img/getting_started/rconconnect/getting_started/tcadmin_fix_1.png)

@@ -3,103 +3,104 @@ title: Self-hosted machine
 sidebar_position: 9999
 ---
 
-When using a dedicated server connected to a home / office network, there are a couple extra things you may need to configure.
+When using a dedicated server connected to a home or office network, there are a few extra configurations you may need to do.
 
-[Installation instructions>](/getting_started/dediconnect/installation)
-
+[Installation instructions >](/getting_started/dediconnect/installation)
 
 :::caution Check requirements
-Make sure your setup meets the [hardware requirements](/getting_started/dediconnect/requirements#hardware-specifications) and your machine runs a [supported Operating Systems (OS)](/getting_started/dediconnect/requirements#supported-operating-systems-os).
+Make sure your setup meets the [hardware requirements](/getting_started/dediconnect/requirements#hardware-specifications) and that your machine runs a [supported Operating System (OS)](/getting_started/dediconnect/requirements#supported-operating-systems-os).
 :::
 
 :::tip Update machine & drivers
-Make sure the machine is up-to-date after installing the OS. Outdated drivers can cause degraded performance and breaking issues.
+Ensure your machine is fully updated after installing the OS. Outdated drivers can lead to poor performance and system instability.
 :::
 
 ## Virtualization
-DediConnect uses containerization software (Docker) to isolate containers, thereby reducing the potential impact of viruses and hacking threats.
 
-In order to avoid performance penalties as much as possible is it recommended that you install DediConnect on a bare-metal machine directly. You can use software like KVM and Proxmox, but do note that this will have a slight performance impact on the hosted game servers.
+DediConnect uses containerization (via Docker) to isolate environments and enhance security against viruses and hacking threats.
 
-Installing DediConnect inside a Hyper-V or Docker container may cause breaking issues. We do not recommend this setup as it's causing nested containerization.
+For the best performance, install DediConnect directly on a bare-metal machine. While platforms like KVM or Proxmox are supported, they may introduce slight performance degradation for hosted game servers.
+
+Avoid installing DediConnect inside a Hyper-V or Docker container. Doing so can cause issues due to nested containerization, which is not supported.
 
 ## Dedicated IP
-In order for people and GSA to connect with your machine, you need to make sure that your internet connection has a dedicated IP (or a dynamic IP that never changes). Contact your Internet Service Provider for more information.
 
-## Port forwards
+To ensure connectivity between your machine, users, and GSA, your internet connection must have a dedicated IP address, or at least a dynamic IP that never changes. Reach out to your Internet Service Provider to verify or request this.
 
-Make sure you forward [all ports that GSA may use on your machine](/getting_started/dediconnect/requirements#network-ports).
+## Port Forwards
 
-Those ports should be forwarded to the internal IP of your machine. Forwarding is usually done on your router. For instructions about how to forward ports on your router, please use a search engine.
+You must forward [all the ports used by GSA](/getting_started/dediconnect/requirements#network-ports) to the internal IP address of your machine. This is usually configured via your router. If you're unsure how to do this, look up port forwarding instructions specific to your router model.
 
-:::caution forward all ports
-Missing any ports may cause problems.
-Make sure to forward TCP & UDP for all ports.
+:::caution Forward all ports
+Failure to forward all required ports may result in connection issues. Be sure to forward both TCP and UDP ports.
 :::
 
+## Multiple machines on a single IP
 
-## Multiple machines on single IP
-Learn what you can do when you only have a single IP (usually a home network) to host all your machines from.
+If you're running multiple machines on a single IP address (such as in a typical home network), you can still host with GSA. Each machine will use a unique port offset to avoid conflicts.
 
 :::caution Advanced stuff
-We do not recommend following the steps below unless an expert [on our discord](https://www.gameserverapp.com/join-discord) advised you to do so.
+Only proceed with the setup below if an expert from our [Discord community](https://www.gameserverapp.com/join-discord) has advised you to do so.
 :::
 
 #### How does it work?
-Each machine will install using a different port offset. It's basically raising [all the port numbers that GSA might use](/getting_started/dediconnect/requirements#network-ports) with the configured offset. 
+
+Each machine is assigned a port offset, which shifts all the ports GSA normally uses. This helps avoid overlap.
 
 :::info Example
-Here are some offset examples for different configurations:
+For 2 machines:
+- Machine A → offset `0`
+- Machine B → offset `1000`
 
-2 machines:
-- Machine A -> use offset `0`
-- Machine B -> use offset `1000`
-
-3 machines:
-- Machine A -> use offset `0`
-- Machine B -> use offset `1000`
-- Machine C -> use offset `2000`
+For 3 machines:
+- Machine A → offset `0`
+- Machine B → offset `1000`
+- Machine C → offset `2000`
 :::
 
 ### Windows
 
-Here is a video by Birdman, who walks you through all the steps.
+Watch this walkthrough by Birdman, covering all necessary steps:
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Wqop3OkRREI" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
 
 #### 1. Install GSA script
-If you haven't already, ensure you [installed the GSA script on your Windows machine](/getting_started/dediconnect/installation#prepare-a-windows-machine).
 
-#### 2. Open sshd_config in Notepad
-Navigate to `C:\ProgramData\ssh`and open `sshd_config` with Notepad.
+If you haven't already, [install the GSA script on your Windows machine](/getting_started/dediconnect/installation#prepare-a-windows-machine).
+
+#### 2. Open `sshd_config` in Notepad
+
+Go to `C:\ProgramData\ssh` and open the `sshd_config` file using Notepad.
 
 ![Locate sshd_config](/img/getting_started/dediconnect/self-hosted_machine/locate_ssh.png)
 
-#### 3. Change port
-Change `Port` to the offset number you want to use (see example [here](/getting_started/dediconnect/self-hosted_machine#how-does-it-work)).
+#### 3. Change the port
+
+In the file, find the line with `Port` and change it to the desired offset value. Refer to [this example](/getting_started/dediconnect/self-hosted_machine#how-does-it-work) for guidance.
 
 ![Change port](/img/getting_started/dediconnect/self-hosted_machine/change_port.png)
 
 #### 4. Restart SSH
-Open PowerShell and run `Restart-Service sshd -Force` to restart SSH.
+
+Open PowerShell and execute the following command to apply the new port setting: `Restart-Service sshd -Force`
 
 ![Restart SSH via Powershell](/img/getting_started/dediconnect/self-hosted_machine/restart_ssh.png)
 
 #### 5. Update firewall rule
-Open `Windows Defender Firewall` and click `Advanced settings`.
+
+Open `Windows Defender Firewall` and go to `Advanced settings`.
 
 ![Go to Advanced Settings in Windows Defender firewall](/img/getting_started/dediconnect/self-hosted_machine/open_firewall.png)
 
-Then click on `Inbound Rules` and locate the `OpenSSH Server (sshd)` firewall rule.
-Right click the `OpenSSH Server (sshd)` and click on `Properties` in the dropdown menu.
+Under `Inbound Rules`, find `OpenSSH Server (sshd)`. Right-click it and choose `Properties`.
 
 ![Find right firewall rule](/img/getting_started/dediconnect/self-hosted_machine/edit_firewall.png)
 
-Finally click on `Protocols and Ports` and change `Local port` to the offset number you want to use (see example [here](/getting_started/dediconnect/self-hosted_machine#how-does-it-work)).
+In the `Protocols and Ports` tab, update the `Local port` to match the offset you configured.
 
 ![Change port number](/img/getting_started/dediconnect/self-hosted_machine/update_firewall.png)
 
-Hit `OK` to save the port.
+Click `OK` to save your changes.
 
 :::info
-Make sure to use this link to enable the hidden `offset` field: [connect Dediconnect with special offset number >](https://dash.gameserverapp.com/order/machine?port_offset=1000)
+Use this link to access the special setup page with your offset: [Connect DediConnect with special offset number >](https://dash.gameserverapp.com/order/machine?port_offset=1000)
 :::
