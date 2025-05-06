@@ -3,76 +3,71 @@ title: Getting started
 sidebar_position: 0
 ---
 
-Learn how to control and set up your game servers.
+Learn how to set up and control your game servers.
 
 [Go to Game server overview >](https://dash.gameserverapp.com/cluster)
 
 ![Game server - overview](/img/dashboard/gameserver/getting_started/gameserver_overview.jpg)
 
 :::info Locating the `Game server ID`
-Please include the `game server ID` when you contact support about a game server or service. It's located in the __top-right corner__ on the game server settings page.
+When contacting support, always include the `game server ID`. You can find it in the __top-right corner__ on the game server settings page.
 
 ![Game server ID](/img/dashboard/gameserver/getting_started/gameserver_id.jpg)
-
 :::
 
 ## Controls
-You can control (start, stop, update etc) your game servers from multiple sections. This makes it really easy to update all game servers on a particular machine, for example.
+You can start, stop, and update your game servers from multiple sections. This makes it easy to manage all servers on a particular machine at once.
 
 ![Game server - update modal example](/img/dashboard/gameserver/getting_started/gameserver_control_modal.jpg)
 
 ### Game server settings
-Control (start, shutdown, restart & update) the individual game server via the game server settings pages.
+Manage individual servers directly from the settings page. You can start, shut down, restart, or update the game server.
 
 #### Perform manual index
-Manually index all players and groups on this game server. This can be useful when you added a new game server.
+This indexes all players and groups on the server. Use this when you've added a new game server and want to sync data.
 
 #### Clone game server
-Copies most of the settings to a new game server. After cloning the game server isn't installed on the machine yet. To do so, scroll down to the "Your old game servers" section on the [Cluster overview](/dashboard/game_servers/clusters) and hit `Install` for the cloned game server.
+Clone most settings to a new server. After cloning, the server isn't installed yet. Go to the "Your old game servers" section on the [Cluster overview](/dashboard/game_servers/clusters) and click `Install` for the cloned server.
 
 ![Game server - settings controls](/img/dashboard/gameserver/getting_started/gameserver_settings_controls.jpg)
 
 ### Cluster overview
-Control one or multiple game servers via any cluster overview page.
+Manage one or multiple servers through the cluster overview pages.
 
 ![Game server - cluster controls](/img/dashboard/gameserver/getting_started/gameserver_cluster_controls.jpg)
 
 ### Machine settings
-Control one or multiple game servers via the `Game servers & services` page for the selected DediConnect machine.
+Control servers via the `Game servers & services` page of a DediConnect machine.
 
 ![Game server - cluster controls](/img/dashboard/gameserver/getting_started/gameserver_machine_controls.jpg)
 
 ## Settings
-
-The game server settings page gives quick access to most settings, a performance summary, recent activity, console output and more.
+The server settings page gives you access to configuration, performance stats, logs, console, and recent activity.
 
 ![Game server - settings](/img/dashboard/gameserver/getting_started/gameserver_settings.jpg)
-
 
 ### Server names (website, Discord etc.)
 
 ![Game server - settings - names](/img/dashboard/gameserver/getting_started/gameserver_settings_names.jpg)
 
 #### Server list name
-This is the name that will show up on the in-game server list.
+This name appears in the in-game server list.
 
 #### Website name
-Setting the `website name` will make the game server appear on the [Community website](/dashboard/community/website).
-You can also upload an image to use as the game server block background, on the Community website.
-
+Set the `website name` to show the server on the [Community website](/dashboard/community/website). You can also upload a background image for the server block.
 
 :::info Hide on Community website
-Leave the `website name` field empty to hide the game server on the Community website.
+Leave the `website name` field empty to hide the server from the Community website.
 :::
 
 #### Cluster chat name
-Determines how the game server name is presented on [cluster chat](/dashboard/game_servers/clusters#cluster-chat) messages.
+This name will appear in messages from [cluster chat](/dashboard/game_servers/clusters#cluster-chat).
 
 #### Discord name
-This is the name that the [Discord Bot](/dashboard/discord-bot) will show when it posts information about this game server.
+This is the name used by the [Discord Bot](/dashboard/discord-bot) when referencing the server.
 
-:::info Hide on discord
-Leave the `Discord name` field empty to hide the game server on Discord.
+:::info Hide on Discord
+Leave the `Discord name` field empty to hide the server on Discord.
 :::
 
 ### General
@@ -80,219 +75,197 @@ Leave the `Discord name` field empty to hide the game server on Discord.
 ![Game server - settings - basic](/img/dashboard/gameserver/getting_started/gameserver_settings_basic.jpg)
 
 #### Config template
-Activate a different [Config template](/dashboard/game_servers/config_templates) on the game server. 
+Switch to a different [Config template](/dashboard/game_servers/config_templates) here.
 
 :::tip
-Tasks can [automatically change the Config template](/dashboard/automate_tasks/actions#game-server-actions) for a game server.
+You can [automate switching templates](/dashboard/automate_tasks/actions#game-server-actions) via Tasks.
 :::
 
 ##### Blueprint alert
-When the game server and Config template use different blueprints (versions) an alert icon may appear.\
-It is not required to use identical blueprints (versions), but it may cause issues when the blueprints (versions) have too many differences.
+If the server and template use different blueprints, you'll see a warning. It's not required to match them, but large differences may cause problems.
 
-![Game server - settings - Config template blueprint different alert](/img/dashboard/gameserver/getting_started/gameserver_settings_basic_blueprint_different.jpg)
+![Blueprint alert](/img/dashboard/gameserver/getting_started/gameserver_settings_basic_blueprint_different.jpg)
 
 #### Map
-Change the map to one of the preset options or enter a custom map by changing the map to `Custom map` (on the popup), which will bring up a field where you can add the custom map name.
+Choose a preset map or enter a custom map name by selecting `Custom map`.
 
 ![Game server - custom map](/img/dashboard/gameserver/getting_started/gameserver_custom_map.jpg)
 
 :::tip
-Tasks can [automatically change the map / seed](/dashboard/automate_tasks/actions#game-server-actions) for a game server.
+You can [automate map changes](/dashboard/automate_tasks/actions#game-server-actions) via Tasks.
 :::
 
 #### Cluster
-Switching the game server to a different [cluster](/dashboard/game_servers/clusters) is only possible when the game server is shutdown.
+You can only change clusters when the server is shut down.
 
 #### Slots
-You can change the slot limit to anything that is supported by the game.\
-Some games may experience issues when the number is too high.
+Change the player slot limit to a value supported by the game. Using too many slots may cause issues in some games.
 
 #### In-game admin password
-GameServerApp automatically assigns a unique `in-game admin password` for every game server.\
-This eliminates the need to include in-game passwords on Config templates, reducing the chance that admins can get access to passwords they should not have access too.
+Each server gets a unique password automatically. This removes the need to hardcode passwords in config templates, improving security.
 
 ### Automation
-Automation settings can be configured per game server or for all game servers collectively through [Config template settings](/dashboard/game_servers/config_templates#settings). Using a Config template can be useful when using the same automation settings for all game servers.
-
-When the settings are managed via a Config template it will show the `Inherited` label.
+Configure automation per server or globally via the [Config template settings](/dashboard/game_servers/config_templates#settings). Global settings are labeled `Inherited`.
 
 ![Game server - settings - automation](/img/dashboard/gameserver/getting_started/gameserver_settings_automation.jpg)
 
 #### Update on start
-This will update a game server when it's starting up. This is mainly useful for testing servers. 
+Automatically updates the server on startup. Best used on test servers.
 
 :::caution Test servers only
-We do not recommend using this for normal game servers as it increases startup times and doesn't add any benefits, unless you disabled auto-updates.
+Using this on live servers increases startup time and is not recommended unless auto-updates are disabled.
 :::
-
 
 #### Auto-update
-Configure whether the game server should automatically update and how long the countdown timer should run before updating.
+Set whether the server auto-updates and the countdown timer duration.
 
 #### Auto-restart
-Automatically restarts the game server at configured hours. This can help improve performance.
-
+Schedule automatic restarts to maintain performance.
 
 :::tip Scheduled task
-For more advanced restarting schedules you can [set up a scheduled Task](/dashboard/automate_tasks/getting_started#scheduled).
+For more advanced schedules, use a [scheduled Task](/dashboard/automate_tasks/getting_started#scheduled).
 :::
-
 
 ### Recent activity
-See the recent activity for the game server.
+View recent actions on the server.
 
-![Game server - settings - activity](/img/dashboard/gameserver/getting_started/gameserver_settings_activity.jpg)
+![Activity](/img/dashboard/gameserver/getting_started/gameserver_settings_activity.jpg)
 
 ### Console
-See the console output and send commands or chat to the game server.\
-Command responses are captured and displayed on the console window.
+See output, send commands, and chat directly through the console.
 
-![Game server - settings - consoles](/img/dashboard/gameserver/getting_started/gameserver_settings_console.jpg)
+![Console](/img/dashboard/gameserver/getting_started/gameserver_settings_console.jpg)
 
 ## Statistics
-Learn how the online player count affects the game server's performance, and avoid hick ups from becoming problems.
+Monitor how player count affects server performance to prevent issues.
 
-Monitor game server performance on various levels:
-- In-game FPS (Frames Per Second)
+Metrics include:
+- In-game FPS
 - Memory usage
-- Online players
+- Player count
 
-![Game server - statistics](/img/dashboard/gameserver/getting_started/gameserver_performance.jpg)
+![Statistics](/img/dashboard/gameserver/getting_started/gameserver_performance.jpg)
 
 ## Access control
-Every game will have different access control settings, but generally there are a few things present:
 
 ### Whitelist
-All whitelist players for the game server will show up on the `Access` tab, under `GSA Whitelist`. You can clear the whitelist from here if needed.
+View and clear the whitelist on the `Access` tab under `GSA Whitelist`.
 
 ### Twitch sub access
-Give Twitch subs access to exclusive game servers. This process works completely automatically and requires no human interaction from the streamer.
+Automatically grants access to Twitch subscribers, no manual action needed.
 
-:::info integration mod required
-This feature requires having the GameServerApp.com Integration mod installed on the game server.
+:::info Integration mod required
+Requires the GameServerApp.com Integration mod installed on the server.
 :::
 
-![Game server - statistics](/img/dashboard/gameserver/getting_started/gameserver_access_twitch.jpg)
+![Twitch access](/img/dashboard/gameserver/getting_started/gameserver_access_twitch.jpg)
 
 ## Logs
-Game server logs are directly accessible via the game server settings page, under the `Logs` tab.
-You can also access all (older) logs via [FTP](#connect--ftp-info).
+Find server logs under the `Logs` tab on the settings page. Older logs are accessible via [FTP](#connect--ftp-info).
 
-The Docker container console logs and STEAM install + updates logs are also accessible on the logs page (when applicable).
+Logs include:
+- Docker container logs
+- STEAM install/update logs
 
-
-![Game server - logs](/img/dashboard/gameserver/getting_started/gameserver_logs.jpg)
+![Logs](/img/dashboard/gameserver/getting_started/gameserver_logs.jpg)
 
 ## Activity
-See what happened with the game server. Any errors, user & system actions are logged on the Activity page.
+Check all server activity: errors, system events, and user actions.
 
-![Game server - activity](/img/dashboard/gameserver/getting_started/gameserver_activity.jpg)
+![Activity](/img/dashboard/gameserver/getting_started/gameserver_activity.jpg)
 
 ## Connect / FTP info
-Find information like FTP, game ports, IP's and any game server related connection info on the `Connect` tab, under game server settings. 
+View FTP credentials, ports, and connection info on the `Connect` tab.
 
-![Game server - connect](/img/dashboard/gameserver/getting_started/gameserver_connect.jpg)
+![Connect info](/img/dashboard/gameserver/getting_started/gameserver_connect.jpg)
 
 ### Unlock FTP
-In some occasions, where the game server changed or created new files, can you run into issues where you can't download a file via FTP due to permission issues. In those cases you can use `Unlock FTP` to fix the permissions issue.
-
+If you encounter permission errors while downloading files via FTP, use `Unlock FTP` to reset the file permissions.
 
 ## Danger zone
 
 :::warning Danger zone
-As the name implies: things you can do here are dangerous and can cause data loss!
+Actions here can result in data loss. Proceed with caution!
 :::
 
 ### Change game
-Install a different game on the game servers. Make sure to update your Config template and related settings, like the map.
+Install a different game on the server. Don’t forget to update related settings.
 
 :::info Operating system
-Not all games supported every Operating System (OS). See the [list of supported games per OS](https://dash.gameserverapp.com/order/machine).
+Not all games support every OS. Check the [supported games list](https://dash.gameserverapp.com/order/machine).
 :::
 
-![Game server - danger zone - change game 1](/img/dashboard/gameserver/getting_started/gameserver_dangerzone_change_game_1.jpg)
+![Change game](/img/dashboard/gameserver/getting_started/gameserver_dangerzone_change_game_1.jpg)
 
-While changing the game, it's also possible to select a specific [blueprint](/dashboard/blueprints/getting_started).\
-GameServerApp will reinstall the game server with the selected game and blueprint, when the game was changed.
+You can also select a specific [blueprint](/dashboard/blueprints/getting_started) during this process.
 
-![Game server - danger zone - change game 2](/img/dashboard/gameserver/getting_started/gameserver_dangerzone_change_game_2.jpg) 
-
+![Select blueprint](/img/dashboard/gameserver/getting_started/gameserver_dangerzone_change_game_2.jpg)
 
 ### Change blueprint
-In order to change the [blueprint](/dashboard/blueprints/getting_started), the game server must be shutdown.\
-After changing the blueprint you may need to [delete the container](/dashboard/game_servers/getting_started#delete-container) or even [reinstall the game server](/dashboard/game_servers/getting_started#re-install). This ensures all changes are properly applied.
+To change the [blueprint](/dashboard/blueprints/getting_started), shut down the server first. You may need to [delete the container](/dashboard/game_servers/getting_started#delete-container) or [reinstall the server](/dashboard/game_servers/getting_started#re-install) afterwards.
 
-![Game server - danger zone - change blueprint 1](/img/dashboard/gameserver/getting_started/gameserver_dangerzone_change_blueprint_1.jpg)
+![Change blueprint](/img/dashboard/gameserver/getting_started/gameserver_dangerzone_change_blueprint_1.jpg)
 
 ### Re-install
-Before re-install a backup is created that stores the save files and info about installed mods and plugins.\
-This process will remove all files from the disk and reinstall from previously downloaded game files.
+Backs up save files and mods/plugins before wiping all data and reinstalling the game.
 
-![Game server - danger zone - re-install](/img/dashboard/gameserver/getting_started/gameserver_dangerzone_reinstall.jpg)
+![Re-install](/img/dashboard/gameserver/getting_started/gameserver_dangerzone_reinstall.jpg)
 
 ### Wipe
-Wiping the game server will remove all save files from the game server. When you start the game server again it will launch with a fresh world.
+Removes all game save files. Restarting the server creates a fresh world.
 
-:::info clear data
-Make sure to also [delete the dashboard data / stats](#delete-dashboard-data--stats) to remove any old character info from the dashboard.
+:::info Clear data
+Also [delete the dashboard data/stats](#delete-dashboard-data--stats) to remove character info.
 :::
 
-![Game server - danger zone - wipe](/img/dashboard/gameserver/getting_started/gameserver_dangerzone_wipe.jpg)
+![Wipe](/img/dashboard/gameserver/getting_started/gameserver_dangerzone_wipe.jpg)
 
 ### Relocate
-Re-install the game server at a different location on the current machine.
+Move the server to a new folder on the same machine.
 
-![Game server - danger zone - relocate](/img/dashboard/gameserver/getting_started/gameserver_dangerzone_relocate.jpg)
+![Relocate](/img/dashboard/gameserver/getting_started/gameserver_dangerzone_relocate.jpg)
 
-![Game server - danger zone - relocate modal](/img/dashboard/gameserver/getting_started/gameserver_dangerzone_relocate_modal.jpg)
+![Relocate modal](/img/dashboard/gameserver/getting_started/gameserver_dangerzone_relocate_modal.jpg)
 
 ### Migrate / Move to another machine
-Move a game server to another DediConnect machine, fully automated.
-This requires [Syncthing being installed](/dashboard/machines/services#syncthing) on both machines.
+Automatically transfer the server to another DediConnect machine. [Syncthing must be installed](/dashboard/machines/services#syncthing) on both machines.
 
-![Game server - danger zone - migrate](/img/dashboard/gameserver/getting_started/gameserver_dangerzone_migrate.jpg)
+![Migrate](/img/dashboard/gameserver/getting_started/gameserver_dangerzone_migrate.jpg)
 
-![Game server - danger zone - migrate modal](/img/dashboard/gameserver/getting_started/gameserver_dangerzone_migrate_modal.jpg)
+![Migrate modal](/img/dashboard/gameserver/getting_started/gameserver_dangerzone_migrate_modal.jpg)
 
 ### Custom ports
-While the warnings on the `Custom ports` block are pretty clear are there occasions where game servers may need to use custom ports.
+Use this to set custom ports when needed.
 
 :::caution No conflict detection
-When using Custom ports you may cause issues with conflicting ports. GSA does not check for conflicting ports, so make sure you do.
+Port conflicts are not checked automatically. Make sure the ports are unique.
 :::
 
-![Game server - danger zone - custom ports](/img/dashboard/gameserver/getting_started/gameserver_dangerzone_custom_ports.jpg)
+![Custom ports](/img/dashboard/gameserver/getting_started/gameserver_dangerzone_custom_ports.jpg)
 
 ### Docker container settings
-Change how the Docker container behaves. Configure CPU & memory limits, add mounts and set other custom Docker parameters.
+Configure container behavior, including CPU/memory limits and mounts.
 
-
-
-![Game server - danger zone - docker settings](/img/dashboard/gameserver/getting_started/gameserver_dangerzone_container_settings.jpg)
-![Game server - danger zone - docker settings](/img/dashboard/gameserver/getting_started/gameserver_dangerzone_container_settings_modal.jpg)
+![Docker settings](/img/dashboard/gameserver/getting_started/gameserver_dangerzone_container_settings.jpg)
+![Docker modal](/img/dashboard/gameserver/getting_started/gameserver_dangerzone_container_settings_modal.jpg)
 
 ### Delete container
-This will delete the container, which generally won't cause any issues to existing game servers. A new container is automatically created when the game server is started again.
+Deletes the container. It will be recreated on next server start.
 
-Deleting the container may change the HWID and/or delete files that are stored <u>outside</u> folders created by GSA. Backup important files manually when unsure.
+Be aware: this may change the HWID and remove files outside GSA folders. Backup manually if unsure.
 
-![Game server - danger zone - delete container](/img/dashboard/gameserver/getting_started/gameserver_dangerzone_delete_container.jpg)
-
+![Delete container](/img/dashboard/gameserver/getting_started/gameserver_dangerzone_delete_container.jpg)
 
 ### Delete dashboard data / stats
-This process will remove all in-game data from the dashboard database, like characters, groups, chat etc. This action is irreversible.
+Permanently removes all in-game data from the dashboard.
 
-:::tip remove all
-Select a date in the future to remove all data for the game server.
+:::tip Remove all
+Select a future date to wipe all data for the server.
 :::
 
-![Game server - danger zone - wipe data](/img/dashboard/gameserver/getting_started/gameserver_dangerzone_wipe_data.jpg)
+![Delete dashboard data](/img/dashboard/gameserver/getting_started/gameserver_dangerzone_wipe_data.jpg)
 
 ### Delete game server
-This will delete all game server file, the Docker container for the game server and release the IP + ports combination.
+Deletes all server files, the Docker container, and releases IP/ports. A backup is made, but manually back up custom changes beforehand.
 
-While it will create a `pre-delete` backup, it might not back up manual changes. Make sure to manually back up anything that was added/changed without using the GSA dashboard.
-
-![Game server - danger zone - delete container](/img/dashboard/gameserver/getting_started/gameserver_dangerzone_delete_gameserver.jpg)
-
+![Delete game server](/img/dashboard/gameserver/getting_started/gameserver_dangerzone_delete_gameserver.jpg)
