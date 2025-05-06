@@ -4,9 +4,10 @@ title: "Conan Exiles"
 
 ## Enable whitelist
 
-To enable the RCON whitelist for Conan, add the following line to your `ServerSettings.ini`:
+To activate the RCON whitelist feature in Conan Exiles, open your `ServerSettings.ini` file and add the following line:
+
 ```ini
 EnableWhitelist=True
 ```
 
-After adding the setting you should restart the game server.
+Once you've added the setting, restart your game server to apply the change.
