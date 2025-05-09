@@ -252,7 +252,7 @@ Configure container behavior, including CPU/memory limits and mounts.
 ### Delete container
 Deletes the container. It will be recreated on next server start.
 
-Be aware: this may change the HWID and remove files outside GSA folders. Backup manually if unsure.
+Be aware: this may change the HWID and remove by GSA created folders. Backup manually if unsure.
 
 ![Delete container](/img/dashboard/gameserver/getting_started/gameserver_dangerzone_delete_container.jpg)
 
