@@ -10,7 +10,7 @@ sidebar_position: 3
 Below are the default directory paths available on DediConnect machines. These paths are specific to the host machine and differ from the paths used inside Docker containers.
 
 :::warning Be careful
-Modifying files directly inside the container environment can cause instability or break the system entirely. In some cases, a full reinstall may be required.
+Only change files if you know what your doing. Modifying files can cause instability or break the system entirely. In some cases, a full reinstall may be required.
 :::
 
 #### Linux
