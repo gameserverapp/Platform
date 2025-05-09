@@ -257,7 +257,7 @@ Be aware: this may change the HWID and remove files outside GSA folders. Backup 
 ![Delete container](/img/dashboard/gameserver/getting_started/gameserver_dangerzone_delete_container.jpg)
 
 ### Delete dashboard data / stats
-Permanently removes all in-game data from the dashboard.
+Permanently removes all in-game data from the dashboard database. like characters, groups, chat etc. This action can't be restored.
 
 :::tip Remove all
 Select a future date to wipe all data for the server.
