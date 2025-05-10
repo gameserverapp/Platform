@@ -3,40 +3,37 @@ title: Install game server / service
 sidebar_position: 0
 ---
 
-Navigate to the machine settings and click the `Actions` button in the __top-right corner__.
+To install a game server or service, first navigate to the machine settings. Then, click the `Actions` button located in the __top-right corner__ of the page.
 
 [Go to Machines >](https://dash.gameserverapp.com/machine)
 
 ![Install game server & services on machine](/img/dashboard/machines/getting_started/install_gameserver_service.jpg)
 
-
-### How to install game server
-Select the game, [Config template](/dashboard/game_servers/config_templates) and [Cluster](/dashboard/game_servers/clusters) for the new game server. From there you can select which machine the game server is installed on.
+### How to install a game server
+To install a game server, start by selecting the game you want to run, followed by a [Config template](/dashboard/game_servers/config_templates) and a [Cluster](/dashboard/game_servers/clusters). Afterward, choose the machine where the game server will be installed.
 
 :::info OS support
-Not all games are available on every Operating System (OS). You can see which OS's are supported per game.
+Not all games are compatible with every Operating System (OS). You can view the supported OS for each game before proceeding.
 
 ![OS support per game](/img/dashboard/machines/getting_started/game_os_support.jpg)
-
 :::
 
 ![Install game server on machine 1](/img/dashboard/machines/getting_started/install_gameserver_1.jpg)
 
-Click `Install game server now` to install the new game server on the selected machine.
+Once your selections are made, click `Install game server now` to begin installation on the chosen machine.
 
 ![Install game server on machine 2](/img/dashboard/machines/getting_started/install_gameserver_2.jpg)
 
 [Learn how to configure & manage game servers >](/dashboard/game_servers/getting_started)
 
-### How to install service
-Depending on the Operating System (OS) of the machine, you can install a variety of services.
-
+### How to install a service
+Depending on the Operating System of your machine, a variety of services are available for installation.
 
 ![Install game server & services on machine](/img/dashboard/machines/getting_started/install_gameserver_service.jpg)
 
 ![Install service on machine 1](/img/dashboard/machines/getting_started/install_service_1.jpg)
 
-After clicking a service, DediConnect will begin installing the service.
+Once you click on a service, DediConnect will automatically begin the installation process.
 
 ![Install service on machine 2](/img/dashboard/machines/getting_started/install_service_2.jpg)
 

@@ -6,81 +6,99 @@ sidebar_position: 999
 ## Game server not starting / crashing
 
 :::caution
-Please make sure you tested __all steps__ (1 - 9) before contacting support.
+Please make sure you’ve tested __all steps__ (1–9) before contacting support.
 :::
 
 ### 1. Check the logs
-- Check the [logs](/dashboard/game_servers/getting_started#logs). Look for crashes or errors that mention what is causing your server to crash / stop working.
-- Check [Activities](/dashboard/game_servers/getting_started#activity) for any recent changes and/or Docker startup errors.
-- Use Google to loop up a solution for any errors / crash logs you find.
-- Reach out to the game / mod / plugin developers for any errors you find. If there is an error with any of those GSA probably can't do anything about it.
 
+Check the [logs](/dashboard/game_servers/getting_started#logs) for any crashes or error messages that may indicate why your server is not starting.  
+Review the [Activities](/dashboard/game_servers/getting_started#activity) tab for recent changes or Docker startup errors.  
+Search online for solutions based on the error messages you find.  
+If the issue is related to a specific game, mod, or plugin, reach out to the relevant developer, as GameServerApp (GSA) may not be able to resolve those errors.
 
 ### 2. Check the system
-- Does the machine have enough memory available
-- Does the machine have enough disk space available
 
-### 3. Recently updated game / mod?
-Check [Activities](/dashboard/game_servers/getting_started#activity) for recent updates (game, mod, plugin etc.). When the game server was recently updated, check with the game, mod, plugin developer if there are any known issues with the latest release.
+Ensure your machine has enough available memory and disk space to run the server.
+
+### 3. Recently updated game or mod?
+
+Visit the [Activities](/dashboard/game_servers/getting_started#activity) section to see if any recent updates were applied (game, mod, plugin).  
+If an update occurred, check with the developers for any known issues with the latest version.
 
 ### 4. Create a backup
-Before you continue it's important to [create a backup](/dashboard/game_servers/backups#create-manual-backup).
+
+Before proceeding with any changes, [create a backup](/dashboard/game_servers/backups#create-manual-backup) of your game server.
 
 ### 5. Update game server
-[Run a game server update](/dashboard/game_servers/getting_started#controls) even when there is no update available for the game server. A manual update will validate the game server files.
+
+Run a [manual game server update](/dashboard/game_servers/getting_started#controls), even if no new version is available.  
+This process will validate and repair any damaged game server files.
 
 ### 6. Default config
-Activate a [Default config](/dashboard/game_servers/config_templates#default-config--template) on the game server and restart it.
+
+Activate the [Default config](/dashboard/game_servers/config_templates#default-config--template) on your server and restart it.
 
 :::tip Working now?
-When the game server does start with a `Default config` you should check your original config for issues.
+If the server works with the `Default config`, your original config likely contains issues.
 
-Create a new config template and slowly copy/paste sections from your old config. Test whether the server starts after adding new sections.
+Create a new config template and carefully copy sections from your old config, testing the server after each addition.
 :::
 
 ### 7. Default map
-Launch the game server with the default [map](/dashboard/game_servers/getting_started#settings).
+
+Try launching the server with the default [map](/dashboard/game_servers/getting_started#settings).
 
 :::tip Working now?
-The map you selected is either broken or you entered an incorrect custom map path.
+Your selected map may be broken or you may have entered an incorrect custom map path.
 :::
 
 ### 8. Remove all mods & plugins
-Ensure no [mods](/dashboard/game_servers/mods_plugins#update--delete) and [plugins](/dashboard/game_servers/mods_plugins#update--delete) are loaded in (check the logs!) and restart the game server.
+
+Ensure that no [mods](/dashboard/game_servers/mods_plugins#update--delete) or [plugins](/dashboard/game_servers/mods_plugins#update--delete) are being loaded (check the logs), then restart your server.
 
 :::tip Working now?
-A mod or plugin was causing the problem. Slowly enable mods / plugins one by one and restart the server every time you add a new one. When the server stops working again you know which mod / plugin caused it.
+One of the mods or plugins was likely causing the issue.  
+Re-enable them one at a time, restarting the server each time, until the problem reappears. This will help identify the cause.
 :::
 
 ### 9. Reinstall game server
-Occasionally something goes wrong with game servers. When none of the above suggestions solved the problems, please try [re-installing the game server](/dashboard/game_servers/getting_started#re-install)
 
+If none of the above steps help, try [re-installing the game server](/dashboard/game_servers/getting_started#re-install).  
+This can resolve deeper, less obvious issues.
 
 ## Increased memory usage
 
 ### What is causing increased usage
-Over time your game server will use more memory. This is normal behaviour. The game server has to store all the NPC's, players, items and buildings in its memory. Over time more will be created by players, thus increasing the memory that is used to store it all while running.
+
+It’s normal for game servers to consume more memory over time as they store NPCs, players, items, and buildings in active memory.  
+As more content is created, memory usage increases.
 
 ### Restarting the game server
-The first thing you might want to rule out is anything random. Try restarting your game server to see if the situation improves.
+
+To rule out temporary glitches, restart your game server and observe what happens to the memory usage.
 
 #### What to expect and what to do:
 
-- The memory usages is back at normal but slowly increases over the hours
-   - Rule out any memory leak issues with the game server (check with the game developer).
-   - Rule out any memory leak issues with mods / plugins (check with mod/plugin developer).
+- If memory usage returns to normal but increases again over time:  
+   - Check for memory leaks in the game server (contact the game developer).  
+   - Check for memory leaks in mods or plugins (contact mod/plugin developers).
 
-- The memory usages is very high immediately after starting.
-   - Upgrade the memory for your machine.
+- If memory usage is already high immediately after starting:  
+   - Consider upgrading your server’s memory.
 
 ### Memory leak
-If the memory goes up again after restarting the game server then you might be dealing with a memory leak. A memory leak can be in the game server software, mods or plugins.
-Memory leaks in the game server or mods are not uncommon. 
 
-Unfortunately is there no way for GSA to fix this. Please contact the game / mod / plugin developers responsible.
+If memory increases rapidly again after a restart, you may be dealing with a memory leak.  
+This could originate from the game server software, a mod, or a plugin.
+
+Unfortunately, GSA cannot resolve memory leaks.  
+Please report the issue to the developers responsible for the game or mod/plugin.
 
 ## Not showing on game server list
-Some games have known issues, like servers not showing up in the server list, which sadly is caused by an in-game bug: The in-game server browser has a limit of 5000 servers. This is an issue since there are more than 10.000 game servers and there is no guarantee that your game server will appear on the list.
 
-We strongly recommend registering your game server on a server listing websites, if you are interested in getting new players.
-You can also add the game server to your favourite server list via Steam or you can use the free Community website to get direct access to your game server.
+Some games suffer from a known issue where servers may not appear in the in-game browser.  
+This happens because the browser can only display a maximum of 5000 servers, a problem since there are over 10,000 servers available.  
+There’s no guarantee yours will appear.
+
+We recommend registering your server on external server listing websites to help new players find you.  
+You can also add your server to your favorites list via Steam, or use the free Community website for direct access to your server.

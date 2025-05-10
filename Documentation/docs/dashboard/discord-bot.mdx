@@ -3,246 +3,218 @@ title: Discord bot
 sidebar_position: 1.4
 ---
 
-The GSA Discord bot adds features like `!kickme` commands for players and game server management commands for the Admin team. Talk with in-game players from Discord and more.
+The GSA Discord bot adds features like `!kickme` commands for players and game server management tools for the Admin team. Chat with in-game players directly from Discord, manage your servers, and more.
 
 [Go to Discord bot settings >](https://dash.gameserverapp.com/configure/discord)
 
 ## Bot commands
-Discord users should first connect their Discord to GSA in order for the bot to recognize them.
 
+To use the bot, Discord users must first connect their Discord account to GSA so the bot can recognize them.
 
 ![Discord bot - bot commands](/img/dashboard/discord_bot/bot_commands.jpg)
 
 ### User commands
+
 <table>
-    <thead>
-        <tr>
-            <td>Command</td>
-            <td>Info</td>
-            <td>Role</td>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-                <strong>!help</strong>
-            </td>
-            <td>
-                Returns all available commands.
-            </td>
-            <td>
-                *
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <strong>!servers</strong>
-            </td>
-            <td>
-                Provides a list of available game server for the community
-            </td>
-            <td>
-                Player
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <strong>!vote</strong>
-            </td>
-            <td>
-                Provides a list of available voting site URLs.
-            </td>
-            <td>
-                Player
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <strong>!claim</strong>
-            </td>
-            <td>
-                Claim reward after player casted votes.
-            </td>
-            <td>
-                Player
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <strong>!kickme</strong>
-            </td>
-            <td>
-                Kicks player from the game server they are on.
-            </td>
-            <td>
-                Player
-            </td>
-        </tr>
-    </tbody>
+  <thead>
+    <tr>
+      <td>Command</td>
+      <td>Info</td>
+      <td>Role</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <strong>!help</strong>
+      </td>
+      <td>Returns all available commands.</td>
+      <td>*</td>
+    </tr>
+    <tr>
+      <td>
+        <strong>!servers</strong>
+      </td>
+      <td>Provides a list of available game server for the community</td>
+      <td>Player</td>
+    </tr>
+    <tr>
+      <td>
+        <strong>!vote</strong>
+      </td>
+      <td>Provides a list of available voting site URLs.</td>
+      <td>Player</td>
+    </tr>
+    <tr>
+      <td>
+        <strong>!claim</strong>
+      </td>
+      <td>Claim reward after player casted votes.</td>
+      <td>Player</td>
+    </tr>
+    <tr>
+      <td>
+        <strong>!kickme</strong>
+      </td>
+      <td>Kicks player from the game server they are on.</td>
+      <td>Player</td>
+    </tr>
+  </tbody>
 </table>
 
 ### Group commands
-Group commands are available on Discord servers that were connected via a Community website.
+
+Group commands are only available in Discord servers linked via a Community website.
 
 <table>
-    <thead>
-        <tr>
-            <td>Command</td>
-            <td>Info</td>
-        </tr>
-    </thead>
-
-    <tbody>
-        <tr>
-            <td>
-                <strong>!motd [message]</strong>
-            </td>
-            <td>
-                Sets the Message of the Day for your group.
-            </td>
-        </tr>
-    </tbody>
+  <thead>
+    <tr>
+      <td>Command</td>
+      <td>Info</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <strong>!motd [message]</strong>
+      </td>
+      <td>Sets the Message of the Day for your group.</td>
+    </tr>
+  </tbody>
 </table>
 
 ### Admin commands
-Bot commands use the [Admin Team permissions](/dashboard/admin_teams) to determine what an admin can do.
-Commands that control game servers are only working for DediConnect game servers.
+
+Admin commands follow [Admin Team permissions](/dashboard/admin_teams). Commands that control game servers only work on DediConnect-enabled servers.
 
 <table>
-    <thead>
-        <tr>
-            <td>Command</td>
-            <td>Info</td>
-        </tr>
-    </thead>
-
-    <tbody>
-        <tr>
-            <td>
-                <strong>!start</strong> [server ID or 'all']
-            </td>
-            <td>
-                Perform "start" action for game server(s).
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <strong>!stop</strong> [server ID or 'all'] [countdown: now,5,15,30 or 60]
-            </td>
-            <td>
-                Perform "stop" action for game server(s), with countdown (optional).
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <strong>!restart</strong> [server ID or 'all'] [countdown: now,5,15,30 or 60]
-            </td>
-            <td>
-                Perform "restart" action for game server(s), with countdown (optional).
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <strong>!update</strong> [server ID or 'all'] [countdown: now,5,15,30 or 60]
-            </td>
-            <td>
-                Perform "update" action for game server(s), with countdown (optional).
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <strong>!cancel</strong> [server ID or 'all']
-            </td>
-            <td>
-                Cancels current shutdown/stop, restart & update scheduled action for game server(s).
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <strong>!snapshot</strong> [server ID or 'all']  [snapshot name]
-            </td>
-            <td>
-                Perform "create back up" action for game server(s).
-            </td>
-        </tr>
-    </tbody>
+  <thead>
+    <tr>
+      <td>Command</td>
+      <td>Info</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <strong>!start</strong> [server ID or 'all']
+      </td>
+      <td>Starts the specified game server(s).</td>
+    </tr>
+    <tr>
+      <td>
+        <strong>!stop</strong> [server ID or 'all'] [countdown: now,5,15,30 or
+        60]
+      </td>
+      <td>Stops the specified server(s) with an optional countdown.</td>
+    </tr>
+    <tr>
+      <td>
+        <strong>!restart</strong> [server ID or 'all'] [countdown: now,5,15,30
+        or 60]
+      </td>
+      <td>Restarts the specified server(s) with an optional countdown.</td>
+    </tr>
+    <tr>
+      <td>
+        <strong>!update</strong> [server ID or 'all'] [countdown: now,5,15,30 or
+        60]
+      </td>
+      <td>Updates the specified server(s) with an optional countdown.</td>
+    </tr>
+    <tr>
+      <td>
+        <strong>!cancel</strong> [server ID or 'all']
+      </td>
+      <td>
+        Cancels scheduled stop, restart, or update actions for the specified
+        server(s).
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>!snapshot</strong> [server ID or 'all'] [snapshot name]
+      </td>
+      <td>Creates a backup snapshot for the specified server(s).</td>
+    </tr>
+  </tbody>
 </table>
 
 ## Features
 
 :::info Channel update delay
-It may take a few minutes for new Discord channels to show up in the dropdown lists.
+New Discord channels may take a few minutes to appear in dropdown lists.
 :::
 
 ### Discord + Cluster chat
-Talk directly with in-game players from Discord and visa versa. All games that [support Cluster chat](https://dash.gameserverapp.com/features-per-game) can use this feature.
+
+Chat directly with in-game players from Discord. Supported in all games that [support Cluster chat](https://dash.gameserverapp.com/features-per-game).
 
 ![Discord bot - Cluster chat + Discord](/img/dashboard/discord_bot/cluster_chat_discord_chat_example.jpg)
 
-Navigate to the [Discord page](https://dash.gameserverapp.com/configure/discord) and select a Discord channel for the `Discord + Cluster chat` field.
-
+Go to the [Discord page](https://dash.gameserverapp.com/configure/discord) and assign a channel to the **Discord + Cluster chat** setting.
 
 :::info
-After saving the Discord channel it may take a couple minutes for the Discord + Cluster chat to start working. Please be patient.
+It may take a few minutes for chat to activate after saving your channel. Please be patient.
 :::
 
 ![Discord bot - Enable Cluster chat + Discord](/img/dashboard/discord_bot/enable_discord_cluster_chat.jpg)
 
-
-
 ### Player join / leave
-Report join / leave messages to Discord and see when a new player joins a game server.
+
+Get real-time join/leave notifications in Discord when players enter or exit a game server.
 
 ![Discord bot - Player join / leave](/img/dashboard/discord_bot/player_join_leave.jpg)
 
-Navigate to the [Discord page](https://dash.gameserverapp.com/configure/discord) and select a Discord channel for the `Player join & leave` field.
+Set up the **Player join & leave** channel on the [Discord page](https://dash.gameserverapp.com/configure/discord).
 
 ![Discord bot - Player join / leave](/img/dashboard/discord_bot/discord_player_join_leave_setup.jpg)
 
-
 ### Game server status card
 
-Shows a status card that is automatically updated on events, like updates or scheduled restarts.
+Display a real-time server status card that updates on events like restarts or updates.
 
 ![Discord bot - Game server status card](/img/dashboard/discord_bot/discord_game_server_status_card.jpg)
 
-Navigate to the [Discord page](https://dash.gameserverapp.com/configure/discord) and select a Discord channel for the `Game server status card` field.
+Assign a channel for the **Game server status card** on the [Discord page](https://dash.gameserverapp.com/configure/discord).
 
 ![Discord bot - Player join / leave](/img/dashboard/discord_bot/discord_game_server_status_card_setup.jpg)
 
 ### Game server status log
 
-Shows detailed activity about game servers, like when a mod update was detect or the game server is starting up / shutting down.
+Track detailed server events such as startup, shutdown, or mod updates in Discord.
 
 ![Discord bot - Game server status log](/img/dashboard/discord_bot/discord_game_server_status_log.jpg)
 
-Navigate to the [Discord page](https://dash.gameserverapp.com/configure/discord) and select a Discord channel for the `Game server status log` field.
+Assign a channel for the **Game server status log** on the [Discord page](https://dash.gameserverapp.com/configure/discord).
 
 ![Discord bot - Player join / leave](/img/dashboard/discord_bot/discord_game_server_status_log_setup.jpg)
 
 ### Group logs to Discord
-Let players report their group logs to a private Discord server, so they can see what is happening in-game when they're offline.
 
-
+Allow players to view group logs in a private Discord server to stay informed about in-game activity even when offline.
 
 ## How-to
 
 ### Invite bot to your Discord
-In order to use the Discord bot, it should first be connected with the Discord server.
+
+To get started, you need to connect the bot to your Discord server.
 
 #### 1. Connect Discord
-Navigate to the [Discord page](https://dash.gameserverapp.com/configure/discord) and hit `Connect your Discord`.
+
+Go to the [Discord page](https://dash.gameserverapp.com/configure/discord) and click **Connect your Discord**.
 
 ![Discord bot - Connect discord 1](/img/dashboard/discord_bot/connect_discord_1.jpg)
 
 #### 2. Select Discord server
-Select the Discord server the bot should join and click `Continue`.
+
+Choose the Discord server where the bot should be installed and click **Continue**.
 
 ![Discord bot - Connect discord 2](/img/dashboard/discord_bot/connect_discord_2.jpg)
 
 #### 3. Confirm permissions
-Leave all listed permissions enabled as the bot will need all of them.
-Click `Authorize` to invite the bot.
+
+Keep all requested permissions enabled, the bot needs them to function properly. Click **Authorize**.
 
 ![Discord bot - Connect discord 3](/img/dashboard/discord_bot/connect_discord_3.jpg)
 
@@ -250,66 +222,72 @@ Click `Authorize` to invite the bot.
 
 ![Discord bot - Connect discord 4](/img/dashboard/discord_bot/connect_discord_4.jpg)
 
-
-
 ### Connect Discord for players
-Learn how to connect your Discord account with GSA as a player.
 
-#### 1. Click connect link
-Type `!help` in a channel on the community Discord (the one you're playing on) to bring up the connect link.
+Learn how players can connect their Discord account with GSA.
+
+#### 1. Get the connect link
+
+Type `!help` in a community Discord channel to get your personal connect link.
 
 ![Discord bot - Connect player 1](/img/dashboard/discord_bot/discord_connect_player_1.jpg)
 
 #### 2. Authorize Discord
-Click `Authorize` to give the bot your Discord ID and username to identify you on Discord.
+
+Click **Authorize** to link your Discord ID and username.
 
 ![Discord bot - Connect player 2](/img/dashboard/discord_bot/discord_connect_player_2.jpg)
 
-#### 2. Success!
-After successfully connecting your Discord it may take a few minutes for the bot to recognize you.
+#### 3. Success!
+
+After connecting, it may take a few minutes before the bot recognizes you.
 
 ![Discord bot - Connect player 3](/img/dashboard/discord_bot/discord_connect_player_3.jpg)
 
 ### Setup group logs for communities
-Learn how to setup Group logs so your group can access group logs on your private Discord.
+
+Group logs allow your community to receive in-game activity logs on a private Discord server.
 
 #### 1. Log in on Community website
-Group logs can be enabled per group, by the group admins. In order to do this the group admin should log in on your Community website.
+
+Group logs must be enabled by a group admin on the Community site.
 
 ![Discord bot - Group log setup 1](/img/dashboard/discord_bot/group_log_setup_1.jpg)
 
-Head over to `Group settings`.
+Go to **Group settings**.
 
 ![Discord bot - Group log setup 2](/img/dashboard/discord_bot/group_log_setup_2.jpg)
 
 #### 2. Connect group Discord
-On the Group settings page click `Connect Discord` to invite the bot to your private Discord server.
+
+On the settings page, click **Connect Discord** to invite the bot to your group's private server.
 
 ![Discord bot - Group log setup 3](/img/dashboard/discord_bot/group_log_setup_3.jpg)
 
-Select the Discord server that should have the group logs.
+Select the server where you want group logs to be posted.
 
 ![Discord bot - Group log setup 4](/img/dashboard/discord_bot/group_log_setup_4.jpg)
 
-Leave all listed permissions enabled as the bot will need all of them.
-Click `Authorize` to invite the bot.
+Keep all listed permissions enabled, then click **Authorize**.
 
 ![Discord bot - Group log setup 5](/img/dashboard/discord_bot/group_log_setup_5.jpg)
 
 #### 3. Select Discord channel
-Select the Discord channel where you want the group logs.
+
+Choose the channel where group logs should be posted.
 
 ![Discord bot - Group log setup 6](/img/dashboard/discord_bot/group_log_setup_6.jpg)
 
 #### 4. Done!
-New group logs are now automatically reported to the configured Discord channel. It may take up to 10 minutes for new group logs to post on your Discord.
+
+Group logs will now automatically appear in the selected Discord channel. It may take up to 10 minutes for new logs to show up.
 
 ![Discord bot - Group log setup 7](/img/dashboard/discord_bot/group_log_setup_7.jpg)
-
 
 ## 💥 Troubleshooting 💥
 
 ### The bot isn't posting messages
-If you just added the bot to your Discord, please wait a few minutes.
 
-Make sure the bot has permissions to talk in all channels. Check the bot roles and ensure it can send messages.
+If you’ve just added the bot, please wait a few minutes.
+
+Ensure the bot has the correct permissions to post in your channels. Check the bot's role settings and make sure it can send messages.
