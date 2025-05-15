@@ -1,10 +1,10 @@
 ---
 title: Add-ons
 sidebar_position: 800
-sidebar_class_name: 'add-on'
+sidebar_class_name: "add-on"
 ---
 
-Adjust your dashboard's features and resources based on the community's needs. You can choose a pre-made plan or create a custom one.
+Customize your dashboard's features and resources to match your community's needs. You can choose from pre-made plans or build your own custom setup.
 
 [Go to Add-ons >](https://dash.gameserverapp.com/configure/add-on)
 
@@ -12,45 +12,49 @@ Adjust your dashboard's features and resources based on the community's needs. Y
 
 ## Order or Change Add-on
 
-Only the dashboard owner can place orders or make changes to add-ons.
+Only the dashboard owner has permission to order or modify add-ons.
 
 ### 1. Enter Billing Information
 
-If you haven't already, ensure you [enter your billing information](/dashboard/account#billing-information). GSA requires this information to comply with tax laws.
+Before placing an order, make sure you [enter your billing information](/dashboard/account#billing-information). This is required to comply with tax regulations.
 
 ### 2. Select or Customize a Plan
 
-Choose from various pre-made plans or create a custom one. For details on each add-on feature, refer to the [add-on options](#add-on-options) section below.
+Pick from several pre-configured plans or create a custom setup that fits your needs. For an explanation of each feature, scroll down to the [Add-on Options](#add-on-options) section.
 
 :::tip
-**Upgrades and Downgrades:** You can adjust your add-on plan at any time. Changes are made on a pro-rata basis, and any outstanding balance upon cancellation will not be refunded.
+**Upgrades and Downgrades:** You can modify your add-on plan at any time. Changes are calculated on a pro-rata basis. Note that any outstanding balance will not be refunded if you cancel.
 :::
 
 ![Add-ons - customize](/img/dashboard/addon/addon_customize.jpg)
 
 ### 3. Choose Payment Method
 
-Select your preferred payment method and click `Update subscription`.
+Select your preferred payment method and click `Update subscription` to confirm your order.
 
 :::info
-The "Choose payment method" section appears only the first time you order an add-on. You can update your billing method later via the [billing information page](/dashboard/account#billing-information).
+The "Choose payment method" section only appears the first time you subscribe to an add-on. You can always update your payment method later via the [billing information page](/dashboard/account#billing-information).
 :::
 
 ![Add-ons - choose payment method](/img/dashboard/addon/addon_order_payment_method.jpg)
 
 ## Renewal Date and Cancel Add-on
 
-Check the renewal date of your add-on. To stop auto-renewal, click the `Cancel` button. The add-on will automatically terminate when it expires.
+You can view your add-on’s renewal date and choose to cancel auto-renewal. To stop it, simply click the `Cancel` button. The add-on will remain active until the end of the current period.
 
 :::info
-You can also find and cancel all active subscriptions on the [subscription overview page](/dashboard/account#your-subscriptions).
+You can also manage or cancel active subscriptions on the [subscription overview page](/dashboard/account#your-subscriptions).
 :::
 
 ![Add-ons - renewal date + cancel](/img/dashboard/addon/addon_cancel_renew_info.jpg)
 
 ## Dashboard Usage and Features
 
-View how many admin team members have access to your dashboard, the number of emails sent this month, and the connected servers.
+Easily monitor your dashboard’s usage, including:
+
+- Number of admin team members with access
+- Total emails sent this month
+- Connected servers
 
 ![Add-on usage](/img/dashboard/addon/addon_usage.jpg)
 
@@ -58,34 +62,36 @@ View how many admin team members have access to your dashboard, the number of em
 
 ### Log History
 
-Controls how long data, like chat logs, is stored on the dashboard.
+Defines how long logs, such as chat logs, are stored on your dashboard.
 
 ### Chat Processing
 
-Determines how frequently GSA checks for new chats on a game server.
+Controls how often GSA checks your game server for new chat messages.
 
 ### Community Website+
 
-Gives you access to:
-- All paid Community website themes
-- Ability to use a custom domain on the Community website
+Unlocks the full potential of your community website:
+
+- Access to all premium themes
+- Ability to use a custom domain
 
 ### Monetization+
 
-Enables monetization features:
+Gives you access to advanced monetization tools:
+
 - CSV tools ([Shop pack](/dashboard/monetization/shop_packs#csv-tools))
-- PayPal subscriptions
-- Use Stripe as a payment processor
-- Use Patreon as a payment processor
+- Support for PayPal subscriptions
+- Integration with Stripe
+- Integration with Patreon
 
 ### Admin Team Members
 
-Invite admin team members to help manage the community on your dashboard.
+Allows you to invite other users to help manage your dashboard and community.
 
 ### Actions per Task / Delivery
 
-Sets the number of actions allowed per Task, Shop pack, Supporter Tier, and Vote reward.
+Sets the number of allowed actions per Task, Shop pack, Supporter Tier, and Vote reward.
 
 ### RconConnect & DediConnect
 
-Indicates the total number of instances that can connect to or be installed on the dashboard.
+Displays the total number of RconConnect or DediConnect instances that your plan supports.
