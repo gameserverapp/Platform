@@ -4,34 +4,32 @@ sidebar_position: 999
 ---
 
 :::info Good to know
-GSA staff will __never__ ask for your password or API keys. Do not share them with anyone.
+GSA staff will **never** ask for your password or API keys. Do not share them with anyone.
 :::
 
 ## Manage Dashboards
 
-View and manage dashboards you own or have been invited to.
+Easily view and manage all dashboards you own or have been invited to.
 
 ![Account - Manage dashboard](/img/dashboard/account/account_manage_dashboard.jpg)
 
 ### Default Dashboard
 
-When you log into the dashboard, GSA will automatically switch to your default dashboard.
+When you log in, GSA will automatically open your default dashboard for quicker access.
 
 ### Create Dashboard
 
-Create new dashboards for testing or starting new communities. You can also create demo dashboards.
-
-Demo dashboards contain dummy data and will automatically be deleted after a set time.
+You can create new dashboards for starting a fresh community or testing features. Demo dashboards are also available, these include dummy data and are automatically deleted after a limited time.
 
 ### Leave Dashboard
 
-You can leave any dashboard you were invited to. However, dashboards you created yourself cannot currently be left.
+If you’ve been invited to a dashboard, you can leave it at any time. Dashboards that you personally created cannot be left.
 
 ## Personalize
 
 ### Nickname & Timezone
 
-Your nickname is visible to other admin team members and is shown in places like the activity log. Set your correct timezone so all times and dates on the dashboard are shown accurately.
+Your nickname appears to other admin team members and is visible in areas like the activity log. Setting the correct timezone ensures that all times and dates across the dashboard are shown accurately.
 
 [Change nickname & timezone >](https://dash.gameserverapp.com/account)
 
@@ -41,7 +39,7 @@ Your nickname is visible to other admin team members and is shown in places like
 
 ### Billing Information
 
-We are required to collect billing details to comply with international tax laws.
+GSA collects billing details to stay compliant with international tax regulations.
 
 [Billing information page >](https://dash.gameserverapp.com/account/billing)
 
@@ -49,7 +47,7 @@ We are required to collect billing details to comply with international tax laws
 
 ### Invoices
 
-All your invoices are available in one place for easy access.
+All your invoices are stored in one place for quick and easy access whenever you need them.
 
 [Invoices page >](https://dash.gameserverapp.com/account/invoices)
 
@@ -57,7 +55,7 @@ All your invoices are available in one place for easy access.
 
 ### Your Subscriptions
 
-View all active subscriptions linked to your account. You can cancel any of them from this page.
+View and manage all active subscriptions linked to your account. If needed, you can cancel any subscription directly from this page.
 
 [Subscriptions page >](https://dash.gameserverapp.com/account/subscriptions)
 
@@ -67,7 +65,7 @@ View all active subscriptions linked to your account. You can cancel any of them
 
 ### Change Password
 
-Update your password at any time for better security.
+It's good practice to regularly update your password to keep your account secure.
 
 [Change your password >](https://dash.gameserverapp.com/account)
 
@@ -75,7 +73,7 @@ Update your password at any time for better security.
 
 ### Log Out Everywhere
 
-If you forgot to log out from a public or shared device, you can log out from all sessions at once.
+If you forgot to log out from a public or shared device, you can end all active sessions at once for peace of mind.
 
 [Settings page >](https://dash.gameserverapp.com/account)
 
@@ -83,6 +81,6 @@ If you forgot to log out from a public or shared device, you can log out from al
 
 ## Delete Account
 
-If you no longer need your GSA account, you can permanently delete it. We're sorry to see you go! Please consider leaving feedback so we can continue improving.
+If you no longer need your GSA account, you can permanently delete it. We’re sorry to see you go. If possible, please leave feedback to help us improve.
 
 [Delete account >](https://dash.gameserverapp.com/account/remove-account)
