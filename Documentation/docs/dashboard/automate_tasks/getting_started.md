@@ -67,18 +67,20 @@ Trigger actions when players reach specific achievements, such as playing for a 
 
 ![Automations / Tasks - type - achievement](/img/dashboard/automate_tasks/task_type_achievement.jpg)
 
-Examples of achievement criteria:
-- **Player**
-  - Played [X] total hours
-  - Account created over [X] ago
-  - Was banned or muted
-  - Is whitelisted for [X]
-  - Has over [X] tokens
-  - Voted or Voted [X] times [since]
-  - Connected another account(any or specific type)
-- **Character**
-  - Reached level [X]
-  - Online for more than [X] minutes
+Achievement tasks can be triggered based on the following criteria:
+- Player
+  - Player played [X] hours in total
+  - Player created more than [X] ago
+  - Player was banned
+  - Player was muted
+  - Player is whitelisted for [X]
+  - Player has over [X] tokens
+  - Player voted [X] times [since]
+  - Player voted
+  - Player connected other account (any or specific type)
+- Character
+  - Character reached level [X]
+  - Character minutes online above [X]
 
 ### Scheduled
 
