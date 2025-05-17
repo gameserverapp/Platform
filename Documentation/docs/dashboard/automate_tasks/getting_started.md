@@ -88,13 +88,21 @@ Run tasks on a defined schedule such as specific times, days, or intervals.
 
 ![Automations / Tasks - type - scheduled](/img/dashboard/automate_tasks/task_type_scheduled.jpg)
 
-Supported schedules:
-- Once: On a specific [date & time] (runs once)
-- Repeating: Every [X] minutes
-- Hourly: Every hour at minute [X], or every [X] hours at minute [Y]
-- Daily: Every day at a set hour
-- Weekly: At a set weekday and time
-- Monthly: On specific day/time or [X]nth day/time
+Scheduled tasks can be run based on the following criteria:
+- Once
+  - At specific moment [date & time] (runs once)
+- Repeating
+  - Every [X] minutes
+- Hourly
+  - Every hour at minute [X]
+  - Every [X] hours at minute [Y]
+- Daily
+  - Every day at [hour]
+- Weekly
+  - Weekly at specific day and time
+- Monthly
+  - Monthly at specific day and time
+  - Monthly at [X]nth day and time
 
 ### Trigger / event
 
