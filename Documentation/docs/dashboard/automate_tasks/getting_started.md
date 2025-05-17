@@ -110,21 +110,22 @@ Run actions based on real-time in-game triggers like player logins or votes.
 
 ![Automations / Tasks - type - Trigger / event](/img/dashboard/automate_tasks/task_type_trigger_event.jpg)
 
-Supported events:
-- **Character**
-  - Comes online/goes offline
-  - New character created
-  - Wakes up (ARK only)
-- **Chat**
-  - Contains or exactly matches certain text
-- **Vote / Review**
-  - Player voted
-  - Voted [X] times [since]
-  - New review posted
-- **Report**
-  - Created or closed (any/specific type)
-- **Game server**
-  - Server comes online
+
+Trigger / Events tasks can be run based on the following criteria:
+- Character
+  - Character comes online
+  - Character goes offline
+  - Character Wake up (ARK only)
+- Chat
+  - Player chat contains [X] (one or multiple)
+  - Player chat exactly matches [X] (one or multiple)
+- Vote / Review
+  - Player voted [X] times [since]
+  - Report
+  - New report created (any or specific type)
+  - Report closed (any or specific type)
+- Game server
+  - Game server comes online
 
 ### Webhook
 
