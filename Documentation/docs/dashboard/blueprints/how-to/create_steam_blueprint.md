@@ -3,17 +3,16 @@ title: Create GSA + STEAM blueprint
 sidebar_position: 3
 ---
 
-
 Learn how to create a blueprint for STEAM games.
 
-In this guide, we'll walk you through creating a blueprint for [Myth of Empires](https://store.steampowered.com/app/1371580/Myth_of_Empires/). While this example focuses on setting up a Windows blueprint, the same principles apply to Linux.
+This guide walks you through creating a blueprint for [Myth of Empires](https://store.steampowered.com/app/1371580/Myth_of_Empires/). Although we use a Windows example, the same steps apply to Linux.
 
 ## Intro
 
-For this guide, we assume you've already [created a blueprint](/dashboard/blueprints/create_and_manage_blueprints#create-a-blueprint) and are now on [the `Add version` page](/dashboard/blueprints/create_and_manage_blueprints#add-version).
+We assume you've already [created a blueprint](/dashboard/blueprints/create_and_manage_blueprints#create-a-blueprint) and are now on [the `Add version` page](/dashboard/blueprints/create_and_manage_blueprints#add-version).
 
 :::caution Use the `GSA + Steam` Template
-We used the `GSA + Steam (Windows only)` blueprint template for this guide. Using a template is recommended as it ensures most fields are pre-filled.
+We used the `GSA + Steam (Windows only)` blueprint template for this guide. Templates are recommended because they pre-fill most fields correctly.
 
 ![Blueprint - Create a blueprint - Add blueprint modal](/img/dashboard/blueprint/create_blueprint/create_blueprint_modal.jpg)
 :::
@@ -22,9 +21,9 @@ We used the `GSA + Steam (Windows only)` blueprint template for this guide. Usin
 
 ### Steam Client & Server ID
 
-Enter the STEAM Client & Server ID for the game server in the appropriate fields ([Learn how to find STEAM IDs](/dashboard/blueprints/create_and_manage_blueprints#finding-steam-ids)).
+Fill in the STEAM Client and Server IDs in the appropriate fields ([Learn how to find STEAM IDs](/dashboard/blueprints/create_and_manage_blueprints#finding-steam-ids)).
 
-For this example, we used:
+For this example:
 - Client ID: `1371580`
 - Server ID: `1794810`
 
@@ -32,10 +31,9 @@ For this example, we used:
 
 ### Executable Path
 
-Enter the executable path in the `Executable` field and click save ([Learn how to find the executable path](/dashboard/blueprints/how-to/create_steam_blueprint#finding-executable-path)).
+Enter the executable path in the `Executable` field, then click save ([Learn how to find the executable path](/dashboard/blueprints/how-to/create_steam_blueprint#finding-executable-path)).
 
-For this example, we used:\
-`C:\Users\ContainerUser\serverfiles\MOE/Binaries/Win64/MOEServer.exe`
+Example: `C:\Users\ContainerUser\serverfiles\MOE/Binaries/Win64/MOEServer.exe`
 
 ![Blueprint - Create STEAM blueprint - Find executable path](/img/dashboard/blueprint/create_steam_blueprint/enter_executable.jpg)
 
@@ -43,105 +41,99 @@ For this example, we used:\
 
 ### 2.1 Create a New Server
 
-Go to the [Install new game server page](https://dash.gameserverapp.com/order/gameserver/machine) and start a new game server using the blueprint we just created.
+Go to the [Install new game server page](https://dash.gameserverapp.com/order/gameserver/machine) and launch a new game server using your blueprint.
 
 ![Blueprint - Create STEAM blueprint - Launch new game server](/img/dashboard/blueprint/create_steam_blueprint/launch_server.jpg)
 
-Click `Install game server now` and wait for the installation process to finish.
+Click `Install game server now` and allow the installation process to complete.
 
 :::caution
-Before moving to the next step, please give the game server 2 to 5 minutes to boot up and initialize.
+Wait 2 to 5 minutes after installation to allow the game server to boot up fully before proceeding.
 :::
 
 ### 2.2 Test if It Starts
 
-Now, let's test whether the game server shows any signs of activity. This will help confirm that the IDs and executable path are correct.
+Let’s check if the game server starts correctly. This helps confirm that the IDs and executable path are set up properly.
 
 #### Check Memory Usage
 
-If the memory usage indicator hovers above `0.5GB`, it's a good sign that the game server is launching properly.
+If memory usage exceeds `0.5GB`, it's a good sign the game server is running.
 
 ![Blueprint - Create STEAM blueprint - Check server memory](/img/dashboard/blueprint/create_steam_blueprint/check_server_memory.jpg)
 
 #### Check Docker Container Logs
 
-If logs start appearing in the [Docker container logs](/dashboard/game_servers/getting_started#logs), it’s usually a good sign that the game server is launching. However, logs may also indicate issues preventing the server from starting.
+Look at the [Docker container logs](/dashboard/game_servers/getting_started#logs) to verify activity. If logs are present, even with some errors, they typically indicate that the server has started.
 
-In our example (image below), you'll see multiple lines with the text `MOE` ([from our executable path](/dashboard/blueprints/how-to/create_steam_blueprint#executable-path)).\
-The logs might show errors, but in this case, they confirm that the game server is starting up.
-
+In this example, you'll see multiple lines referencing `MOE` (from our executable path):
 ![Blueprint - Create STEAM blueprint - Check server logs](/img/dashboard/blueprint/create_steam_blueprint/check_server_logs.jpg)
 
 ## 4. Configure Settings
 
-Now that we've confirmed the game server is booting up, it's important to configure the remaining settings. These settings will likely vary depending on the game.
+Once confirmed the server is running, configure the remaining settings. These will depend on the specific game you're hosting.
 
-In most cases, this involves adding `Launch parameters` and/or `Config files` with the correct values for your game server.
+This usually involves setting up `Launch parameters` and/or `Config files` with the correct values.
 
-The easiest way to determine what your game needs is to use your favorite search engine or search the game's wiki page.
+Search online or check the game’s wiki for the required configuration.
 
 ### 4.1 Launch Parameters
 
-The preferred method is to use `launch parameters` for settings like game ports, slot limits, server name, cluster ID, etc. If your game server supports `launch parameters`, we recommend using them.
+If your game server supports `launch parameters`, use them for options like ports, server name, slot limits, or cluster ID.
 
-For Myth of Empires, we referred to [IceWarden's guide](https://steamcommunity.com/sharedfiles/filedetails/?id=3169663150#6901124), which explains the `launch parameters` you can use. We selected the following parameters and replaced some values (ports, server name, IDs, etc.) with [variables](/dashboard/blueprints/variables):
-
-
-```bash
+We used [IceWarden's guide](https://steamcommunity.com/sharedfiles/filedetails/?id=3169663150#6901124) for Myth of Empires, selecting the following parameters and replacing specific values with [variables](/dashboard/blueprints/variables): 
+```
 LargeTerrain_Central_Main -game -server -DataLocalFile -NotCheckServerSteamAuth -PrivateServer -MultiHome=0.0.0.0 -OutAddress={machine.ip}
 -SessionName={gameserver.list_name} -MaxPlayers={gameserver.slot_limit} -ClusterId={cluster.id} -Port={gameserver.game_port} -QueryPort={gameserver.query_port}
 ```
+
 :::caution Use Variables
-Since GSA automatically assigns ports for each game server, it's crucial to use [variables](/dashboard/blueprints/variables). This prevents your game server from attempting to launch with hardcoded ports when GSA has assigned different ones.
+GSA automatically assigns ports per game server. Always use [variables](/dashboard/blueprints/variables) to avoid port conflicts caused by hardcoded values.
 :::
 
-**Add New Blueprint Version**\
-[Create a new version for your blueprint](/dashboard/blueprints/create_and_manage_blueprints#add-version), enter the launch parameters in the `Launch parameters` field, and save the form.
+**Add New Blueprint Version**  
+[Create a new version](/dashboard/blueprints/create_and_manage_blueprints#add-version), paste the parameters into the `Launch parameters` field, and save.
 
 ![Blueprint - Create STEAM blueprint - Edit launch params](/img/dashboard/blueprint/create_steam_blueprint/edit_launch_params.jpg)
 
 ### 4.2 Config Files
 
-[Learn how to find and register config files for most games, using FTP >](/dashboard/blueprints/create_and_manage_blueprints#find--register-config-files)
+[Learn how to find and register config files](/dashboard/blueprints/create_and_manage_blueprints#find--register-config-files) using FTP access.
 
-**Test & Repeat**\
-You can now [activate the new version on the game server](/dashboard/blueprints/getting_started#activate-blueprint-version) and restart the game server.\
-Give it some time (2 - 10 minutes) to boot up. Afterward, check if it came up and try joining the game server.
+**Test & Repeat**  
+[Activate the new version](/dashboard/blueprints/getting_started#activate-blueprint-version) and restart the server. Allow 2–10 minutes for it to boot. Once done, check if the server is up and join the game.
 
 ## 5. Hooray!
-If you're lucky, like us, the game server will show up, and you'll be able to join.
+
+If all went well, your game server should be visible and joinable.
 
 :::tip Finalize Blueprint Settings
-Learn how to configure settings like uptime monitoring, RCON, backups, and more in the [blueprint form section >](/dashboard/blueprints/create_and_manage_blueprints#blueprint-form).
+To enable features like uptime monitoring, RCON, and backups, visit the [blueprint form section](/dashboard/blueprints/create_and_manage_blueprints#blueprint-form).
 :::
 
 ![Blueprint - Create STEAM blueprint - working server](/img/dashboard/blueprint/create_steam_blueprint/working_server.jpg)
 
 ## Help
 
-
 ### Finding Executable Path
-[Search SteamDB for the dedicated server files](/dashboard/blueprints/how-to/create_steam_blueprint#search-steamdb) and click on the Dedicated server. Then go to the `Configuration` page, and look for `Executable`.
+
+To locate the executable path, [search SteamDB for dedicated server files](/dashboard/blueprints/how-to/create_steam_blueprint#search-steamdb), click on the dedicated server, and go to the `Configuration` page. Look for `Executable`.
 
 :::caution
-It's important to ensure that the executable path is for the correct operating system, either Linux or Windows. In our case, since only Windows is supported, there should only be one executable path.
+Make sure the executable path matches the correct OS (Linux or Windows). Since this example uses Windows, there should only be one path.
 :::
 
 ![Blueprint - Create STEAM blueprint - Find executable path](/img/dashboard/blueprint/create_steam_blueprint/steamdb_executable.jpg)
 
-In the example above, you see that `MOE/Binaries/Win64/MOEServer.exe` is the executable path.
+In our example, the executable is: `MOE/Binaries/Win64/MOEServer.exe`
 
 :::caution Fix Paths
-The executable path from SteamDB won't work out of the box.\
-You need to add the correct container path, as explained below:
+The SteamDB executable path won't work as-is. You'll need to prepend the correct container path:
 
 #### Windows
-For Windows, prepend the following path: `C:\Users\ContainerUser\serverfiles\`\
-Combined, it should look like this:\
-`C:\Users\ContainerUser\serverfiles\MOE/Binaries/Win64/MOEServer.exe`
+Use this prefix: `C:\Users\ContainerUser\serverfiles\` \
+Full path: `C:\Users\ContainerUser\serverfiles\MOE/Binaries/Win64/MOEServer.exe`
 
 #### Linux
-For Linux, prepend the following path: `/home/containeruser/serverfiles/`\
-Combined, it should look like this:\
-`/home/containeruser/serverfiles/MOE/Binaries/Win64/MOEServer.exe`
+Use this prefix: `/home/containeruser/serverfiles/` \
+Full path: `/home/containeruser/serverfiles/MOE/Binaries/Win64/MOEServer.exe`
 :::

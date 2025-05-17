@@ -3,10 +3,11 @@ title: "ARK: Survival Evolved"
 ---
 
 ## Dynamic configs / Live Tuning
-Manage ARK's `DynamicConfig` and `DefaultOverloads.json` through [Config templates](/dashboard/game_servers/config_templates#game-config). 
+
+Easily manage ARK’s `DynamicConfig` and `DefaultOverloads.json` using [Config templates](/dashboard/game_servers/config_templates#game-config). This allows for live tuning without needing to manually upload files.
 
 :::info 15 minute refresh timer
-After making changes to the Config template it may take up to 15 minutes for the ARK game server to pick up the changes. This is normal.
+After saving changes in the config template, it can take up to 15 minutes for your ARK server to apply them. This is expected behavior.
 :::
 
 ![ARK: Survival Evolved - Live Tuning / DynamicConfigs](/img/dashboard/gameserver/game_specific/ark_dynamicconfigs_live_tuning.jpg)
@@ -14,17 +15,22 @@ After making changes to the Config template it may take up to 15 minutes for the
 ## Banlist URL
 
 ### DediConnect
-Add or replace in the `GameUserSettings.ini` underneath `[ServerSettings]`:
+
+To configure your server’s ban list, open `GameUserSettings.ini` and add or update the line under `[ServerSettings]` as follows:
+
 ```ini
 BanListURL="%%BANLIST%%"
 ```
 
 ### RconConnect
-[See BanlistURL instructions for RconConnect >](/getting_started/rconconnect/integrate#banlisturl)
 
+If you're using RconConnect, follow the specific guide for [BanListURL instructions >](/getting_started/rconconnect/integrate#banlisturl)
 
 ## Settings
 
 ### Wipe dinos on start
-Wipe all the dinos on each start by adding `-ForceRespawnDinos` to the "end" section, in your active config template.
-This does not affect tamed / sleeping dinos.
+To wipe all wild dinos on every server start, add the following to the end section of your active config template:
+```ini
+-ForceRespawnDinos
+```
+This command only affects wild dinos—it does not impact tamed or sleeping creatures.

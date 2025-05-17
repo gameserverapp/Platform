@@ -2,7 +2,8 @@
 title: Config templates
 sidebar_position: 2
 ---
-Config templates are a set of configurations, that can attach to one or more game servers. This lets you customize multiple servers at once.
+
+Config templates are a set of configurations that can be attached to one or more game servers. This allows you to manage and customize multiple servers at once, saving time and ensuring consistency.
 
 [Go to Config templates >](https://dash.gameserverapp.com/config-template)
 
@@ -11,96 +12,102 @@ Config templates are a set of configurations, that can attach to one or more gam
 ## Create template
 
 ### Blank template
-To create a new config template that is empty click `+ Add Config template` on the Config template page.
+
+To create a new, empty config template, click `+ Add Config template` on the Config template page.
 
 ![Config template - create new 1](/img/dashboard/gameserver/config_template/config_template_create_new_1.jpg)
 
-Enter a `name` and select which `game` the config template is for.\
-Optionally can you change the blueprint. When unsure, it's best to go with the `Default blueprint`.
+Enter a `name` and select the `game` the template is for. \
+You can optionally change the blueprint, but if unsure, stick with the `Default blueprint`.
 
-Click `Create` to create a new Config template.
+Click `Create` to finish creating your new Config template.
 
 ![Config template - create new 2](/img/dashboard/gameserver/config_template/config_template_create_new_2.jpg)
 
 ### Default config / template
-For every game we created a `Default config`, which is a good starting point for new game servers. The `Default config` can also be used [during troubleshooting](/dashboard/game_servers/troubleshooting#game-server-not-starting--crashing), to rule out any issues with your configs.
+
+Each supported game has a pre-made `Default config`, a great starting point for setting up new servers. These defaults are also useful when [troubleshooting server issues](/dashboard/game_servers/troubleshooting#game-server-not-starting--crashing). \
+The default configs can been found under the arrow as shown in the picture and then clicking `Add new using template`
 
 ![Config template - default config](/img/dashboard/gameserver/config_template/config_template_default_configs.jpg)
 
-Some games have multiple examples. Click a `Default config` to add it to your dashboard.
+Some games have multiple examples. Click on any `Default config` to add it to your dashboard.
 
 ![Config template - default config](/img/dashboard/gameserver/config_template/select_default_config.jpg)
-
 
 ## Config templates
 
 ### Game config
-Each game comes with different configuration files and settings on the `Game` tab. You can manage all relevant files and settings from there.
 
-Use [Config variables](#game-config-variables) for added flexibility.
+Every game includes specific config files and settings, accessible under the `Game` tab. From here, you can manage everything the game requires.
+
+Use [Config variables](#game-config-variables) to make your templates even more flexible.
 
 :::tip Shortcut navigation
-Use the `Shortcut navigation` on the right to quickly navigate to the right file / setting.
+Use the `Shortcut navigation` on the right to jump quickly to specific files or settings.
 :::
 
 ![Config template - edit](/img/dashboard/gameserver/config_template/config_template_edit.jpg)
 
 #### Easy & Advanced-mode
-While all games support `Advanced-mode`, some games support `Easy-mode`. With `Easy-mode` the settings are converted into a form with switches for easy management. 
 
-Switch between modes using the <Icon icon="fa-solid fa-caret-down" size="lg" /> icon in the __top-right corner__ and clicking `Switch to Advanced-mode` or `Switch to Easy-mode`.
+All games support `Advanced-mode`, and some also support `Easy-mode`. Easy-mode displays a simplified interface using switches and input fields.
+
+Switch between modes using the <Icon icon="fa-solid fa-caret-down" size="lg" /> icon in the **top-right corner**, then select `Switch to Advanced-mode` or `Switch to Easy-mode`.
 
 ##### Easy-mode example
-Easy-mode presents a form with switches and input fields where you can manage a select group of settings.
+
+In Easy-mode, settings are shown as a user-friendly form.
 
 ![Config template - easy mode](/img/dashboard/gameserver/config_template/config_easy_mode.jpg)
 
 ##### Advanced-mode example
-Advanced-mode shows all relevant files and settings that you may want to change for game servers.
+
+Advanced-mode gives access to all config files and settings for full control.
 
 ![Config template - advanced mode](/img/dashboard/gameserver/config_template/config_advanced_mode.jpg)
-
 
 ### Mod / Plugin configs
 
 #### General / Framework configs
-Some frameworks have general settings that determine how the framework functions, like PaperMC.\
-For frameworks with general settings you can, in most cases, manage the framework settings from the `Mod / Plugin` tab too.
+
+Some mod frameworks, like PaperMC, have general settings that determine how the framework behaves. These can usually be managed from the `Mod / Plugin` tab.
 
 ![Config template - framework settings](/img/dashboard/gameserver/config_template/framework_settings_papermc.jpg)
 
 #### Configs for specific mods / plugins
-Manage configs for individual mods / plugins from the Config template.
+
+You can manage the configuration for each installed mod or plugin through the Config template.
 
 :::info Installed mods / plugins only
-You can only manage configs for mods / plugins that were installed via the dashboard. Manually installed mods / plugins won't have their configs updated by Config templates.
+Only mods and plugins installed via the dashboard can be configured through templates. Manually installed ones won’t be updated.
 :::
 
-Use [Config variables](#game-config-variables) for added flexibility.
+Use [Config variables](#game-config-variables) here as well for dynamic content.
 
 ![Config template - plugin specific configs](/img/dashboard/gameserver/config_template/plugin_specific_configs.jpg)
 
-Click `+ Add mod / plugin` in the sidebar (right) to add more mods / plugins to your Config template. 
+Click `+ Add mod / plugin` in the right sidebar to add more mods or plugins to your template.
 
 ![Config template - add plugin to configs](/img/dashboard/gameserver/config_template/add_plugin_to_configs.jpg)
 
-Besides adding the config to your config template is it also possible to install mods / plugins on game servers from here.
+You can also install the mod/plugin on servers directly from this section.
 
 ![Config template - add plugin config and install on game server](/img/dashboard/gameserver/config_template/add_config_or_add_and_install.jpg)
 
-
 ### Settings
-Edit the Config template name, change the blueprint, manage Admin ID's, configure automations and more advanced settings.
+
+Here you can rename your template, switch its blueprint, assign Admin IDs, set up automations, and manage other advanced settings.
 
 ![Config template - settings](/img/dashboard/gameserver/config_template/config_template_settings.jpg)
 
 #### Blueprint
 
-With blueprints, you can change which config files are listed on the config template.\
-This is useful for games that aren't officially supported on GameServerApp, but also for existing games that miss certain config files.
+Blueprints determine which config files are shown in your template. This is especially helpful for unsupported games or when expected files are missing.
 
 ##### Change blueprint for Config template
-On the "Change blueprint for Config template" popup you can (optionally) also update the blueprint for all connected game servers. So the Config template and all connected game servers use the same blueprint.
+
+You can update the blueprint just for the template or also for all connected servers.
 
 ![Config template - settings - blueprint](/img/dashboard/gameserver/config_template/config_template_settings_blueprint.jpg)
 
@@ -109,114 +116,125 @@ On the "Change blueprint for Config template" popup you can (optionally) also up
 ![Config template - settings - access](/img/dashboard/gameserver/config_template/config_template_settings_access.jpg)
 
 ##### Admin ID's
-Grant admin privileges to all ID's listed in the field. This automatically deploys to all connected game servers.
+
+Any ID listed here will receive admin privileges across all servers using the template.
 
 #### Automation
-The automation settings in a Config template can be used to automate game servers.\
-See the [Game server automation section](/dashboard/game_servers/getting_started#automation) for more details.
+
+Automate server behavior through Config template automation settings.\
+Visit the [Game server automation section](/dashboard/game_servers/getting_started#automation) for more info.
 
 ![Config template - settings - automation](/img/dashboard/gameserver/config_template/config_template_settings_automation.jpg)
 
 #### Special settings
 
 :::caution Advanced users only
-Settings under `Special settings` are potentially breaking and should not be used unless you understand what you are doing. This might break your game server when used irresponsibly.
+Use the settings under `Special settings` only if you understand the risks. Incorrect use may break your server.
 :::
 
 ##### SteamCMD branch
-Load any public SteamCMD branch.
+
+Specify a public SteamCMD branch to load.
+
 ![Config template - special settings - steamcmd branch](/img/dashboard/gameserver/config_template/config_template_special_settings_steamcmd_branch.jpg)
 
 ##### Custom launch script
-Add custom scripts to the `gsa-control.ps1` and `gsa-control.sh` files.
+
+Add custom scripts to run via `gsa-control.ps1` and `gsa-control.sh`.
+
 ![Config template - special settings - launch script](/img/dashboard/gameserver/config_template/config_template_special_settings_launch_script.jpg)
-
-
-
 
 ## General
 
 ### Config variables
-Adds extra flexibility to Config templates. Can be used to automatically load in installed mods, for example.
+
+These add flexibility by auto-populating values like mod lists or admin URLs.
 
 #### Game config variables
-- `%%BANLIST%%` replaced with ban list URL for game server
-- `%%MODIDS%%` replaced with id's of all installed mods
-- `%%ADMINLISTURL%%` replaced with the admin list URL for game server
+
+- `%%BANLIST%%` → replaced with the ban list URL for the server
+- `%%MODIDS%%` → replaced with all installed mod IDs
+- `%%ADMINLISTURL%%` → replaced with the admin list URL
 
 #### Blueprint variables
-The more advanced variables listed on the [blueprint variables section](/dashboard/blueprints/variables) are also available in Config templates. These will replace the variables above entirely in the future.
 
+Advanced variables from the [blueprint variables section](/dashboard/blueprints/variables) are also supported and will eventually replace the above.
 
 ### Keep notes
-Help everyone on the team stay updated about what changed for each Config template.
 
-When editing a config, click `Notes` in the __top-right corner__.
+Keep your team informed by leaving notes on config changes.
+
+Click `Notes` in the **top-right corner** when editing.
 
 ![Config template - notes 1](/img/dashboard/gameserver/config_template/config_notes_1.jpg)
 
-In the popup you can write text using [Markdown styling](https://simplemde.com/markdown-guide). Hit `Save` to save your changes.
+Use [Markdown styling](https://simplemde.com/markdown-guide) to write your notes. Click `Save` to store them.
 
 ![Config template - notes 2](/img/dashboard/gameserver/config_template/config_notes_2.jpg)
 
-Configs with notes show a little <Icon icon="fa-solid fa-sticky-note" size="lg" /> icon at the Config template overview. Hover over the icon to see a summary.
+A <Icon icon="fa-solid fa-sticky-note" size="lg" /> icon shows up for configs with notes. Hover to preview the note.
 
 ![Config template - notes 3](/img/dashboard/gameserver/config_template/config_notes_3.jpg)
 
 ### Cloning
+
+By clicking this button you can clone a config template.
 ![Config template - clone](/img/dashboard/gameserver/config_template/config_template_clone.jpg)
 
 ### Archive
+
+By clicking this button you can archive a config template.
 ![Config template - archive](/img/dashboard/gameserver/config_template/config_template_archive.jpg)
 
 ### Game server actions
 
 #### Activate on game servers
-Besides [choosing a Config template from the game server settings](/dashboard/game_servers/getting_started#settings) can you also activate a config template on game servers from a Config template.
 
-Click the <Icon icon="fa-solid fa-caret-down" size="lg" /> icon in the __top-right corner__ and click `Activate on servers`.
+You can activate a Config template from within the template itself.
+
+Click the <Icon icon="fa-solid fa-caret-down" size="lg" /> icon in the **top-right corner** and select `Activate on servers`.
 
 ![Config template - activate on servers 1](/img/dashboard/gameserver/config_template/config_template_activate_on_servers_1.jpg)
 
-In the popup you can see which servers already have the Config template activated and select other servers (for the game) to activate it on.
+Select which servers you want to apply the template to.
 
 ![Config template - activate on servers 2](/img/dashboard/gameserver/config_template/config_template_activate_on_servers_2.jpg)
 
-
 #### Restart game servers
-Apply changes directly from the Config template.
 
-Click the <Icon icon="fa-solid fa-caret-down" size="lg" /> icon in the __top-right corner__ and click `Restart servers`.
+Push changes by restarting game servers directly from the template.
+
+Click the <Icon icon="fa-solid fa-caret-down" size="lg" /> icon in the **top-right corner** and select `Restart servers`.
 
 ![Config template - restart servers 1](/img/dashboard/gameserver/config_template/config_template_restart_servers_1.jpg)
 
-In the popup you select which game servers should restart.
+Choose which servers to restart in the popup.
 
 ![Config template - restart servers 2](/img/dashboard/gameserver/config_template/config_template_restart_servers_2.jpg)
 
-
 ## Groups
-Config template groups help keep config templates organized and tidy.
-You can add existing templates to a group or change the group for a template.
+
+Groups help organize your Config templates.
 
 ### Create template group
-Click <Icon icon="fa-solid fa-plus-square" size="lg" /> next to "Config templates" to create a new group.
+
+Click <Icon icon="fa-solid fa-plus-square" size="lg" /> next to "Config templates" to start a new group.
 
 ![Config template group - create 1](/img/dashboard/gameserver/config_template/config_template_group_add_1.jpg)
 
-Enter a name for the new group and hit `Create`.
+Enter a group name and click `Create`.
 
 ![Config template group - create 2](/img/dashboard/gameserver/config_template/config_template_group_add_2.jpg)
 
 ### Change group for template
-Add existing templates to a group or change the group for a template by selecting the desired group in the dropdown.
+
+To reassign a template to a different group, select the new group from the dropdown.
 
 ![Config template group - Change group for template](/img/dashboard/gameserver/config_template/config_template_group_change_group.jpg)
 
-
 ### Manage template groups
 
-Reorder, rename or delete template groups by clicking <Icon icon="fa-solid fa-pen-square" size="lg" />.
+Reorder, rename, or delete groups by clicking <Icon icon="fa-solid fa-pen-square" size="lg" />.
 
 ![Config template group - manage groups 1](/img/dashboard/gameserver/config_template/config_template_group_manage_1.jpg)
 
@@ -225,7 +243,8 @@ Reorder, rename or delete template groups by clicking <Icon icon="fa-solid fa-pe
 ## Third party apps
 
 ### Beacon
-For ARK: Survival Evolved & ARK: Survival Ascended you can use Beacon to manage your config template. Check out the video below to learn how to set it up.
+
+For ARK: Survival Evolved & ARK: Survival Ascended, you can manage your Config templates using Beacon. Watch the video below to learn how.
 
 [How to import configs on Beacon >](https://usebeacon.app/help/importing_existing_config)
 

@@ -154,4 +154,3 @@ Learn how to configure settings like uptime monitoring, RCON, backups, and more 
 :::
 
 ![Blueprint - Create existing Docker container blueprint - working server](/img/dashboard/blueprint/create_docker_blueprint/working_custom_docker_server.jpg)
-

@@ -3,11 +3,11 @@ title: Services
 sidebar_position: 1
 ---
 
-DediConnect can install various services on your machine. These services are optional and are usually required by game servers, like needing a MySQL database to store data.
+DediConnect allows you to install various services on your machine. These services are optional, but often required for certain game servers, such as needing a MySQL database to store persistent data.
 
 ## How to install a service
 
-Navigate to the machine settings and click the `Actions` button in the __top-right corner__ and then click `Install service`.
+To get started, go to the machine settings, click the `Actions` button in the __top-right corner__, and select `Install service`.
 
 [Go to Machines >](https://dash.gameserverapp.com/machine)
 
@@ -16,81 +16,84 @@ Navigate to the machine settings and click the `Actions` button in the __top-rig
 ## Available services
 
 ### MySQL / MariaDB
-DediConnect installs MariaDB, which is a MySQL drop-in replacement with generally better performance and support.
 
-Beside the general connection information for the main database can you also find the `root` account information + examples for plugin settings.
+DediConnect installs MariaDB, a drop-in replacement for MySQL that offers better performance and broader support in most cases.
+
+Alongside the general connection details for the main database, you'll also find the `root` account credentials and example plugin configurations.
 
 ![MySQL service settings](/img/dashboard/machines/services/mysql_service_settings.jpg)
 
 ### Syncthing
-With Syncthing you can synchronize [`cluster` data](/dashboard/machines/practical_info#directories--folders), which is required for games like [ARK: Survival Evolved to support Cross ARK travel](/dashboard/game_servers/game_specific/ark_survival_evolved).
 
-For optimal performance we recommend each machine is connected with every other machine. In the example below we sync 2 machines. Repeat the steps if you have more machines.
+Syncthing enables you to synchronize [`cluster` data](/dashboard/machines/practical_info#directories--folders), which is essential for features like [Cross ARK travel in ARK: Survival Evolved](/dashboard/game_servers/game_specific/ark_survival_evolved).
 
-#### 1. Install Syncthing & open settings url
-Install Syncthing on all machines that need to be synchronized. When the service finished installing, head over to the `Settings` page and open the Syncthing URL for all Syncthing services you installed.
+For optimal synchronization, we recommend connecting each machine to every other machine. The steps below demonstrate how to sync two machines. Repeat these steps to add more machines.
+
+#### 1. Install Syncthing & open the settings URL
+
+Install Syncthing on every machine that needs to sync. Once installed, go to the `Settings` page and open the Syncthing URL for each of the installed services.
 
 ![Syncthing syncing setup 1](/img/dashboard/machines/services/syncthing_settings_1.jpg)
 
-#### 2. Find & copy Syncthing ID for machine A
-In the Syncthing interface, hit `Actions` and `Show ID`.
+#### 2. Find & copy Syncthing ID from Machine A
+
+In the Syncthing interface, click `Actions` and then `Show ID` to reveal the machine’s unique identifier.
 
 ![Syncthing syncing setup 2](/img/dashboard/machines/services/syncthing_settings_2.jpg)
 
 ![Syncthing syncing setup 3](/img/dashboard/machines/services/syncthing_settings_3.jpg)
 
-#### 3. Add Syncthing ID to machine B
+#### 3. Add Syncthing ID to Machine B
 
-On Machine B click "Add remote device" and paste the ID (the one you copied from machine A) in here. __Do NOT click Save yet.__
+On Machine B, click "Add remote device" and paste the ID from Machine A. __Do not click Save yet.__
 
 ![Syncthing syncing setup 4](/img/dashboard/machines/services/syncthing_settings_4.jpg)
 
-Navigate to the `Sharing` tab and activate `backup` and `cluster`. Then hit `Save`.
+Next, navigate to the `Sharing` tab and activate both `backup` and `cluster`, then click `Save`.
 
 ![Syncthing syncing setup 5](/img/dashboard/machines/services/syncthing_settings_5.jpg)
 
-#### 4. Confirm on machine A
-Now go back to the Syncthing interface on Machine A. After a short while a confirmation window will show up. This will ask you to confirm that you want to connect with Machine B.
-__Do not add any device that you do not recognise__.
+#### 4. Confirm connection on Machine A
+
+Return to Machine A’s Syncthing interface. After a short wait, a prompt will appear asking to confirm the connection with Machine B.  
+__Only confirm devices you recognize and trust.__
 
 ![Syncthing syncing setup 6](/img/dashboard/machines/services/syncthing_settings_6.jpg)
 
 ![Syncthing syncing setup 7](/img/dashboard/machines/services/syncthing_settings_7.jpg)
 
-#### 5. Confirm sharing folders
-After confirming to connect with Machine B, Syncthing will ask to confirm sharing the "backup" and "cluster" folder. Click "Share" for both.
+#### 5. Confirm folder sharing
+
+Once the connection is confirmed, Syncthing will prompt you to approve sharing the "backup" and "cluster" folders. Click "Share" for both.
 
 ![Syncthing syncing setup 8](/img/dashboard/machines/services/syncthing_settings_8.jpg)
 
+#### 6. All done!
 
-#### 6. Ready!
-Verify all `Remote devices` are connected.
+Make sure all `Remote devices` show as connected.
 
 ![Syncthing syncing setup 9](/img/dashboard/machines/services/syncthing_settings_9.jpg)
 
-
-
-
-
 ## Management
-Like with game servers can you reinstall a service or delete it. Activity logs are also available for services.
+
+As with game servers, you can reinstall or delete services. Activity logs for each service are also available.
 
 ![Service settings 1](/img/dashboard/machines/services/service_settings_1.jpg)
 
 ### Settings
-Rename services or move them to a different cluster.
 
-Settings specific to services are also listed on the `Settings` page. See [available services](#available-services) for more information.
+You can rename services or assign them to a different cluster.
+
+Service-specific settings can be found on the `Settings` page. See the [Available services](#available-services) section above for more details.
 
 ![Service settings 2](/img/dashboard/machines/services/service_settings_2.jpg)
 
-
-
 ### Activity
-All activity for a service, either initiated by an admin or the DediConnect system is reported to the activity page. Issues are also reported here.
+
+All service activity, whether initiated by an admin or by DediConnect, is logged on the activity page. Any issues will also be displayed here.
 
 :::tip Dashboard widget
-Bring activity logs to your dashboard panels using the "Events & activity" [dashboard widget](/dashboard/dashboard_panel_widgets).
+You can display service activity logs in your dashboard panels using the "Events & activity" [dashboard widget](/dashboard/dashboard_panel_widgets).
 :::
 
 ![Service activity](/img/dashboard/machines/services/service_activity.jpg)
@@ -98,9 +101,9 @@ Bring activity logs to your dashboard panels using the "Events & activity" [dash
 ### Danger zone
 
 :::warning Danger zone
-As the name implies: things you can do here are dangerous and can cause data loss!
+As the name suggests: actions in this section are potentially destructive and can lead to data loss!
 :::
 
-Restart, re-install or delete a service via the Danger zone section.
+You can restart, reinstall, or delete a service via the Danger zone.
 
 ![Service activity](/img/dashboard/machines/services/service_danger_zone.jpg)
