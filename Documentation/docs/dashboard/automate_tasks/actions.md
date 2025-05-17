@@ -164,31 +164,31 @@ Add if/else logic using Conditional blocks. Sub-actions can be added and will ex
 #### Available conditions:
 
 - Player
-  - name
-  - tokens
-  - custom role
-  - status
-  - admin status
-  - account type
-  - connected accounts
-  - accepted rules
+  - Player name
+  - Player token amount
+  - Player Custom role
+  - Player Status
+  - Player is admin
+  - Player account type
+  - Player connected account(s)
+  - Player accepted rules
 - Character
-  - name
-  - level
-  - gender
-  - minutes online
-  - active in last 30 days-
-  - created today
-  - has group
+  - Character name
+  - Character level
+  - Character gender
+  - Character minutes online
+  - Character was online past 30 days
+  - Character was created today
+  - Character has group
 - Game server
-  - name
-  - online player count
-  - scheduled
-  - update available
-  - config template
+  - Game server name
+  - Game server online player count
+  - Game server is scheduled
+  - Game server has update available
+  - Game server active Config template
 - Date
-  - current date/time
-  - day of the week
+  - Date & time
+  - Day of the week
 
 ![Automations / Tasks - Action - Conditional 2](/img/dashboard/automate_tasks/actions/action_conditional_2.jpg)
 
