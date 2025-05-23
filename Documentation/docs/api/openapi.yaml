@@ -1,7 +1,7 @@
 openapi: 3.0.0
 info:
   title: 'System API'
-  description: "Access and control game server, players, monetization, tasks via external applications.\n\n:::warning WORK IN PROGRESS\nThis API is work in progress. Things may change.\n:::\n## 3rd party Integration\nWhen you're developing a 3rd party app that connects with the System API, you need to include your GSA-ID header with all requests.\nIf you don't have a GSA-ID yet, please contact support@gameserverapp.com.\n\n## Rate limit\nYou are rate limited to 100 requests per minute."
+  description: "Access and control game server, players, monetization, tasks via external applications.\n\n:::warning WORK IN PROGRESS\nThis API is work in progress. Things may change.\n:::\n## 3rd party Integration\n**Third-party apps** (publicly distributed or shared tools, plugins, or integrations for multiple users): include your `GSA-ID` header on every System API request. Don’t have one yet? Email support@gameserverapp.com to request yours.\n\n**Private/custom integrations** (one-off scripts or tools you build just for yourself or your organization): use your `Custom Integration` API key—no GSA-ID required.\n\n## OpenAPI file for AI\nWhen using AI tools, use the [OpenAPI file](https://api.gameserverapp.com/.well-known/openapi.yaml) to make it understand the System API.\n\n## Rate limit\nYou are rate limited to 100 requests per minute, per API key."
   contact:
     email: support@gameserverapp.com
   version: '2'
@@ -39,6 +39,22 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Config'
+        '404':
+          description: 'Config template not found'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'Config template not found' }
+                type: object
+        '400':
+          description: 'Invalid location'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'Invalid location' }
+                type: object
       security:
         -
           systemapi-passport:
@@ -82,6 +98,22 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Config'
+        '404':
+          description: 'Config template not found'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'Config template not found' }
+                type: object
+        '400':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'This config template can not be changed.' }
+                type: object
       security:
         -
           systemapi-passport:
@@ -91,7 +123,7 @@ paths:
       tags:
         - 'Config Template'
       summary: 'All Config templates'
-      description: 'Lists all Config template for the dashboard.'
+      description: 'Lists all Config templates for the dashboard.'
       operationId: AllConfigTemplates
       responses:
         '200':
@@ -216,6 +248,18 @@ paths:
           schema:
             type: integer
           example: '39581'
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              properties:
+                countdown_minutes:
+                  type: integer
+                  example: 15
+                broadcast:
+                  type: string
+                  example: 'Server restart scheduled'
+              type: object
       responses:
         '200':
           description: 'successful operation'
@@ -232,6 +276,14 @@ paths:
               schema:
                 properties:
                   message: { type: string, example: 'No servers connected' }
+                type: object
+        '404':
+          description: 'Config template not found'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'Config template not found' }
                 type: object
       security:
         -
@@ -260,15 +312,35 @@ paths:
       summary: 'All game servers'
       description: 'Lists all active/installed game servers for the dashboard.'
       operationId: AllGameServers
+      parameters:
+        -
+          name: page
+          in: query
+          description: 'Page number'
+          required: false
+          schema:
+            type: integer
+            default: 1
+        -
+          name: per_page
+          in: query
+          description: 'Items per page'
+          required: false
+          schema:
+            type: integer
+            default: 20
+            maximum: 100
+            minimum: 1
       responses:
         '200':
           description: 'successful operation'
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/GameServer'
+                properties:
+                  data: { type: array, items: { $ref: '#/components/schemas/GameServer' } }
+                  meta: { properties: { current_page: { type: integer, example: 1 }, from: { type: integer, example: 1 }, last_page: { type: integer, example: 5 }, path: { type: string, example: 'https://api.gameserverapp.com/system-api/v2/gameservers' }, per_page: { type: integer, example: 20 }, to: { type: integer, example: 20 }, total: { type: integer, example: 100 } }, type: object }
+                type: object
       security:
         -
           systemapi-passport:
@@ -277,8 +349,8 @@ paths:
     get:
       tags:
         - 'Game Server'
-      summary: 'Get game server'
-      description: 'Get the game server for the provided ID.'
+      summary: 'Get game server details'
+      description: 'Retrieve detailed information about a specific game server.'
       operationId: getGameServer
       parameters:
         -
@@ -295,6 +367,14 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/GameServer'
+        '404':
+          description: 'Game server not found'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'Game server not found' }
+                type: object
       security:
         -
           systemapi-passport:
@@ -339,6 +419,30 @@ paths:
                 properties:
                   data: { type: string, example: 'Broadcast sent to game server' }
                 type: object
+        '404':
+          description: 'Game server not found'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'Game server not found' }
+                type: object
+        '400':
+          description: 'Invalid request or server offline'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'Game server needs to be online to do this.' }
+                type: object
+        '429':
+          description: 'Rate limited'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'You cannot do this yet. Please wait 60 second(s) between calls for the same game server.' }
+                type: object
       security:
         -
           systemapi-passport:
@@ -378,6 +482,30 @@ paths:
                 properties:
                   data: { type: string, example: 'Command sent to game server' }
                 type: object
+        '404':
+          description: 'Game server not found'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'Game server not found' }
+                type: object
+        '400':
+          description: 'Invalid request or server offline'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'Game server needs to be online to do this.' }
+                type: object
+        '429':
+          description: 'Rate limited'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'You cannot do this yet. Please wait 60 second(s) between calls for the same game server.' }
+                type: object
       security:
         -
           systemapi-passport:
@@ -405,6 +533,30 @@ paths:
               schema:
                 properties:
                   data: { type: string, example: 'Start request sent to game server' }
+                type: object
+        '404':
+          description: 'Game server not found'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'Game server not found' }
+                type: object
+        '400':
+          description: 'Failed to perform action'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'Failed to perform action. Try again later or contact support.' }
+                type: object
+        '429':
+          description: 'Rate limited'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'You cannot do this yet. Please wait 60 second(s) between calls for the same game server.' }
                 type: object
       security:
         -
@@ -438,7 +590,7 @@ paths:
                   example: '0'
                 message:
                   type: string
-                  example: 'We need to update the server folks!'
+                  example: 'Server update scheduled'
               type: object
       responses:
         '200':
@@ -449,6 +601,30 @@ paths:
                 properties:
                   data: { type: string, example: 'Update request sent to game server' }
                 type: object
+        '404':
+          description: 'Game server not found'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'Game server not found' }
+                type: object
+        '400':
+          description: 'Failed to perform action'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'Failed to perform action. Try again later or contact support.' }
+                type: object
+        '429':
+          description: 'Rate limited'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'You cannot do this yet. Please wait 60 second(s) between calls for the same game server.' }
+                type: object
       security:
         -
           systemapi-passport:
@@ -458,7 +634,7 @@ paths:
       tags:
         - 'Game Server'
       summary: 'Shutdown game server'
-      description: 'Shutdown update for game server, with optional countdown and in-game broadcast.'
+      description: 'Schedule shutdown for game server, with optional countdown and in-game broadcast.'
       operationId: shutdownGameServer
       parameters:
         -
@@ -481,7 +657,7 @@ paths:
                   example: '0'
                 message:
                   type: string
-                  example: 'We need to shutdown the server folks!'
+                  example: 'Server shutdown scheduled'
               type: object
       responses:
         '200':
@@ -492,6 +668,30 @@ paths:
                 properties:
                   data: { type: string, example: 'Shutdown request sent to game server' }
                 type: object
+        '404':
+          description: 'Game server not found'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'Game server not found' }
+                type: object
+        '400':
+          description: 'Failed to perform action'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'Failed to perform action. Try again later or contact support.' }
+                type: object
+        '429':
+          description: 'Rate limited'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'You cannot do this yet. Please wait 60 second(s) between calls for the same game server.' }
+                type: object
       security:
         -
           systemapi-passport:
@@ -501,7 +701,7 @@ paths:
       tags:
         - 'Game Server'
       summary: 'Restart game server'
-      description: 'Restart update for game server, with optional countdown and in-game broadcast.'
+      description: 'Schedule restart for game server, with optional countdown and in-game broadcast.'
       operationId: restartGameServer
       parameters:
         -
@@ -524,7 +724,7 @@ paths:
                   example: '0'
                 message:
                   type: string
-                  example: 'We need to restart the server folks!'
+                  example: 'Server restart scheduled'
               type: object
       responses:
         '200':
@@ -535,6 +735,30 @@ paths:
                 properties:
                   data: { type: string, example: 'Restart request sent to game server' }
                 type: object
+        '404':
+          description: 'Game server not found'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'Game server not found' }
+                type: object
+        '400':
+          description: 'Failed to perform action'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'Failed to perform action. Try again later or contact support.' }
+                type: object
+        '429':
+          description: 'Rate limited'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'You cannot do this yet. Please wait 60 second(s) between calls for the same game server.' }
+                type: object
       security:
         -
           systemapi-passport:
@@ -543,9 +767,9 @@ paths:
     post:
       tags:
         - 'Game Server'
-      summary: 'Cancel actions'
-      description: 'Cancel scheduled game server actions'
-      operationId: cancelGameServer
+      summary: 'Cancel game server actions'
+      description: 'Cancel any pending actions (update, restart, shutdown) for the game server.'
+      operationId: cancelGameServerActions
       parameters:
         -
           name: gameserver_id
@@ -561,12 +785,480 @@ paths:
             application/json:
               schema:
                 properties:
-                  data: { type: string, example: 'Cancelled scheduled actions for game server' }
+                  data: { type: string, example: 'Cancel request sent to game server' }
+                type: object
+        '404':
+          description: 'Game server not found'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'Game server not found' }
+                type: object
+        '400':
+          description: 'Failed to perform action'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'Failed to perform action. Try again later or contact support.' }
+                type: object
+        '429':
+          description: 'Rate limited'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'You cannot do this yet. Please wait 60 second(s) between calls for the same game server.' }
                 type: object
       security:
         -
           systemapi-passport:
             - gameserver
+  /system-api/v2/players:
+    get:
+      tags:
+        - Player
+      summary: 'List players'
+      description: 'Get a paginated list of players for the current domain.'
+      operationId: listPlayers
+      parameters:
+        -
+          name: per_page
+          in: query
+          description: 'Number of results per page'
+          required: false
+          schema:
+            type: integer
+            default: 20
+            maximum: 100
+            minimum: 1
+        -
+          name: page
+          in: query
+          description: 'Page number'
+          required: false
+          schema:
+            type: integer
+            default: 1
+            minimum: 1
+      responses:
+        '200':
+          description: 'successful operation'
+          content:
+            application/json:
+              schema:
+                properties:
+                  data: { type: array, items: { $ref: '#/components/schemas/Player' } }
+                  links: { properties: { first: { type: string, example: 'https://api.gameserverapp.com/system-api/v2/players?page=1' }, last: { type: string, example: 'https://api.gameserverapp.com/system-api/v2/players?page=5' }, prev: { type: string, example: null, nullable: true }, next: { type: string, example: 'https://api.gameserverapp.com/system-api/v2/players?page=2' } }, type: object }
+                  meta: { properties: { current_page: { type: integer, example: 1 }, from: { type: integer, example: 1 }, last_page: { type: integer, example: 5 }, links: { type: array, items: { properties: { url: { type: string, example: 'https://api.gameserverapp.com/system-api/v2/players?page=1', nullable: true }, label: { type: string, example: '1' }, active: { type: boolean, example: true } }, type: object } }, path: { type: string, example: 'https://api.gameserverapp.com/system-api/v2/players' }, per_page: { type: integer, example: 20 }, to: { type: integer, example: 20 }, total: { type: integer, example: 100 } }, type: object }
+                type: object
+      security:
+        -
+          systemapi-passport:
+            - player
+  /system-api/v2/players/find:
+    post:
+      tags:
+        - Player
+      summary: 'Find players by service ID'
+      description: 'Find players by their service ID (e.g., Steam ID).'
+      operationId: findPlayersByServiceId
+      parameters:
+        -
+          name: per_page
+          in: query
+          description: 'Number of results per page'
+          required: false
+          schema:
+            type: integer
+            default: 20
+            maximum: 100
+            minimum: 1
+        -
+          name: page
+          in: query
+          description: 'Page number'
+          required: false
+          schema:
+            type: integer
+            default: 1
+            minimum: 1
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              properties:
+                service_id:
+                  description: 'Service ID to search for'
+                  type: string
+                  example: '76561198023513722'
+              type: object
+      responses:
+        '200':
+          description: 'successful operation'
+          content:
+            application/json:
+              schema:
+                properties:
+                  data: { type: array, items: { $ref: '#/components/schemas/Player' } }
+                  links: { properties: { first: { type: string, example: 'https://api.gameserverapp.com/system-api/v2/players/find?page=1' }, last: { type: string, example: 'https://api.gameserverapp.com/system-api/v2/players/find?page=1' }, prev: { type: string, example: null, nullable: true }, next: { type: string, example: null, nullable: true } }, type: object }
+                  meta: { properties: { current_page: { type: integer, example: 1 }, from: { type: integer, example: 1 }, last_page: { type: integer, example: 1 }, links: { type: array, items: { properties: { url: { type: string, example: 'https://api.gameserverapp.com/system-api/v2/players/find?page=1', nullable: true }, label: { type: string, example: '1' }, active: { type: boolean, example: true } }, type: object } }, path: { type: string, example: 'https://api.gameserverapp.com/system-api/v2/players/find' }, per_page: { type: integer, example: 20 }, to: { type: integer, example: 1 }, total: { type: integer, example: 1 } }, type: object }
+                type: object
+        '400':
+          description: 'Bad request'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'At least one search parameter is required' }
+                type: object
+        '404':
+          description: 'Not found'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'No players found matching the criteria' }
+                type: object
+      security:
+        -
+          systemapi-passport:
+            - admin-tools
+  '/system-api/v2/player/{uuid}':
+    get:
+      tags:
+        - Player
+      summary: 'Get player details'
+      description: 'Retrieve detailed information about a specific player.'
+      operationId: getPlayerDetails
+      parameters:
+        -
+          name: uuid
+          in: path
+          description: 'UUID of the player'
+          required: true
+          schema:
+            type: string
+            format: uuid
+            example: f47ac10b-58cc-4372-a567-0e02b2c3d479
+      responses:
+        '200':
+          description: 'successful operation'
+          content:
+            application/json:
+              schema:
+                properties:
+                  data: { $ref: '#/components/schemas/Player' }
+                type: object
+        '404':
+          description: 'Player not found'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'Player not found' }
+                type: object
+      security:
+        -
+          systemapi-passport:
+            - player
+  '/system-api/v2/player/{uuid}/characters':
+    get:
+      tags:
+        - Player
+      summary: 'Get player characters'
+      description: 'Retrieve all characters associated with a specific player.'
+      operationId: getPlayerCharacters
+      parameters:
+        -
+          name: uuid
+          in: path
+          description: 'UUID of the player'
+          required: true
+          schema:
+            type: string
+            format: uuid
+            example: f47ac10b-58cc-4372-a567-0e02b2c3d479
+        -
+          name: per_page
+          in: query
+          description: 'Number of results per page'
+          required: false
+          schema:
+            type: integer
+            default: 20
+            maximum: 100
+            minimum: 1
+        -
+          name: page
+          in: query
+          description: 'Page number'
+          required: false
+          schema:
+            type: integer
+            default: 1
+            minimum: 1
+      responses:
+        '200':
+          description: 'successful operation'
+          content:
+            application/json:
+              schema:
+                properties:
+                  data: { type: array, items: { $ref: '#/components/schemas/Character' } }
+                  links: { properties: { first: { type: string, example: 'https://api.gameserverapp.com/system-api/v2/player/f47ac10b-58cc-4372-a567-0e02b2c3d479/characters?page=1' }, last: { type: string, example: 'https://api.gameserverapp.com/system-api/v2/player/f47ac10b-58cc-4372-a567-0e02b2c3d479/characters?page=1' }, prev: { type: string, example: null, nullable: true }, next: { type: string, example: null, nullable: true } }, type: object }
+                  meta: { properties: { current_page: { type: integer, example: 1 }, from: { type: integer, example: 1 }, last_page: { type: integer, example: 1 }, links: { type: array, items: { properties: { url: { type: string, example: 'https://api.gameserverapp.com/system-api/v2/player/f47ac10b-58cc-4372-a567-0e02b2c3d479/characters?page=1', nullable: true }, label: { type: string, example: '1' }, active: { type: boolean, example: true } }, type: object } }, path: { type: string, example: 'https://api.gameserverapp.com/system-api/v2/player/f47ac10b-58cc-4372-a567-0e02b2c3d479/characters' }, per_page: { type: integer, example: 20 }, to: { type: integer, example: 3 }, total: { type: integer, example: 3 } }, type: object }
+                type: object
+        '404':
+          description: 'Player not found'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'Player not found' }
+                type: object
+      security:
+        -
+          systemapi-passport:
+            - player
+  '/system-api/v2/player/{uuid}/token-transactions':
+    get:
+      tags:
+        - Player
+      summary: 'Get player token transactions'
+      description: 'Retrieve all token transactions associated with a specific player.'
+      operationId: getPlayerTokenTransactions
+      parameters:
+        -
+          name: uuid
+          in: path
+          description: 'UUID of the player'
+          required: true
+          schema:
+            type: string
+            format: uuid
+            example: f47ac10b-58cc-4372-a567-0e02b2c3d479
+        -
+          name: per_page
+          in: query
+          description: 'Number of results per page'
+          required: false
+          schema:
+            type: integer
+            default: 20
+            maximum: 100
+            minimum: 1
+        -
+          name: page
+          in: query
+          description: 'Page number'
+          required: false
+          schema:
+            type: integer
+            default: 1
+            minimum: 1
+      responses:
+        '200':
+          description: 'successful operation'
+          content:
+            application/json:
+              schema:
+                properties:
+                  data: { type: array, items: { $ref: '#/components/schemas/TokenTransaction' } }
+                  links: { properties: { first: { type: string, example: 'https://api.gameserverapp.com/system-api/v2/player/f47ac10b-58cc-4372-a567-0e02b2c3d479/token-transactions?page=1' }, last: { type: string, example: 'https://api.gameserverapp.com/system-api/v2/player/f47ac10b-58cc-4372-a567-0e02b2c3d479/token-transactions?page=1' }, prev: { type: string, example: null, nullable: true }, next: { type: string, example: null, nullable: true } }, type: object }
+                  meta: { properties: { current_page: { type: integer, example: 1 }, from: { type: integer, example: 1 }, last_page: { type: integer, example: 1 }, links: { type: array, items: { properties: { url: { type: string, example: 'https://api.gameserverapp.com/system-api/v2/player/f47ac10b-58cc-4372-a567-0e02b2c3d479/token-transactions?page=1', nullable: true }, label: { type: string, example: '1' }, active: { type: boolean, example: true } }, type: object } }, path: { type: string, example: 'https://api.gameserverapp.com/system-api/v2/player/f47ac10b-58cc-4372-a567-0e02b2c3d479/token-transactions' }, per_page: { type: integer, example: 20 }, to: { type: integer, example: 3 }, total: { type: integer, example: 3 } }, type: object }
+                type: object
+        '404':
+          description: 'Player not found'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'Player not found' }
+                type: object
+      security:
+        -
+          systemapi-passport:
+            - admin-tools
+  '/system-api/v2/player/{uuid}/votes':
+    get:
+      tags:
+        - Player
+      summary: 'Get player votes'
+      description: 'Retrieve all votes cast by a specific player.'
+      operationId: getPlayerVotes
+      parameters:
+        -
+          name: uuid
+          in: path
+          description: 'UUID of the player'
+          required: true
+          schema:
+            type: string
+            format: uuid
+            example: f47ac10b-58cc-4372-a567-0e02b2c3d479
+        -
+          name: per_page
+          in: query
+          description: 'Number of results per page'
+          required: false
+          schema:
+            type: integer
+            default: 20
+            maximum: 100
+            minimum: 1
+        -
+          name: page
+          in: query
+          description: 'Page number'
+          required: false
+          schema:
+            type: integer
+            default: 1
+            minimum: 1
+      responses:
+        '200':
+          description: 'successful operation'
+          content:
+            application/json:
+              schema:
+                properties:
+                  data: { type: array, items: { $ref: '#/components/schemas/Vote' } }
+                  links: { properties: { first: { type: string, example: 'https://api.gameserverapp.com/system-api/v2/player/f47ac10b-58cc-4372-a567-0e02b2c3d479/votes?page=1' }, last: { type: string, example: 'https://api.gameserverapp.com/system-api/v2/player/f47ac10b-58cc-4372-a567-0e02b2c3d479/votes?page=1' }, prev: { type: string, example: null, nullable: true }, next: { type: string, example: null, nullable: true } }, type: object }
+                  meta: { properties: { current_page: { type: integer, example: 1 }, from: { type: integer, example: 1 }, last_page: { type: integer, example: 1 }, links: { type: array, items: { properties: { url: { type: string, example: 'https://api.gameserverapp.com/system-api/v2/player/f47ac10b-58cc-4372-a567-0e02b2c3d479/votes?page=1', nullable: true }, label: { type: string, example: '1' }, active: { type: boolean, example: true } }, type: object } }, path: { type: string, example: 'https://api.gameserverapp.com/system-api/v2/player/f47ac10b-58cc-4372-a567-0e02b2c3d479/votes' }, per_page: { type: integer, example: 20 }, to: { type: integer, example: 3 }, total: { type: integer, example: 3 } }, type: object }
+                type: object
+        '404':
+          description: 'Player not found'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'Player not found' }
+                type: object
+      security:
+        -
+          systemapi-passport:
+            - admin-tools
+  '/system-api/v2/player/{uuid}/achievements':
+    get:
+      tags:
+        - Player
+      summary: 'Get player achievements'
+      description: 'Retrieve all achievements earned by a specific player and their characters.'
+      operationId: getPlayerAchievements
+      parameters:
+        -
+          name: uuid
+          in: path
+          description: 'UUID of the player'
+          required: true
+          schema:
+            type: string
+            format: uuid
+            example: f47ac10b-58cc-4372-a567-0e02b2c3d479
+        -
+          name: per_page
+          in: query
+          description: 'Number of results per page'
+          required: false
+          schema:
+            type: integer
+            default: 20
+            maximum: 100
+            minimum: 1
+        -
+          name: page
+          in: query
+          description: 'Page number'
+          required: false
+          schema:
+            type: integer
+            default: 1
+            minimum: 1
+      responses:
+        '200':
+          description: 'successful operation'
+          content:
+            application/json:
+              schema:
+                properties:
+                  data: { type: array, items: { $ref: '#/components/schemas/Achievement' } }
+                  links: { properties: { first: { type: string, example: 'https://api.gameserverapp.com/system-api/v2/player/f47ac10b-58cc-4372-a567-0e02b2c3d479/achievements?page=1' }, last: { type: string, example: 'https://api.gameserverapp.com/system-api/v2/player/f47ac10b-58cc-4372-a567-0e02b2c3d479/achievements?page=1' }, prev: { type: string, example: null, nullable: true }, next: { type: string, example: null, nullable: true } }, type: object }
+                  meta: { properties: { current_page: { type: integer, example: 1 }, from: { type: integer, example: 1 }, last_page: { type: integer, example: 1 }, links: { type: array, items: { properties: { url: { type: string, example: 'https://api.gameserverapp.com/system-api/v2/player/f47ac10b-58cc-4372-a567-0e02b2c3d479/achievements?page=1', nullable: true }, label: { type: string, example: '1' }, active: { type: boolean, example: true } }, type: object } }, path: { type: string, example: 'https://api.gameserverapp.com/system-api/v2/player/f47ac10b-58cc-4372-a567-0e02b2c3d479/achievements' }, per_page: { type: integer, example: 20 }, to: { type: integer, example: 3 }, total: { type: integer, example: 3 } }, type: object }
+                type: object
+        '404':
+          description: 'Player not found'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'Player not found' }
+                type: object
+      security:
+        -
+          systemapi-passport:
+            - admin-tools
+  '/system-api/v2/player/{uuid}/moderation-log':
+    get:
+      tags:
+        - Player
+      summary: 'Get player moderation log'
+      description: 'Retrieve the moderation log for a specific player, including bans, mutes, and other administrative actions.'
+      operationId: getPlayerModerationLog
+      parameters:
+        -
+          name: uuid
+          in: path
+          description: 'UUID of the player'
+          required: true
+          schema:
+            type: string
+            format: uuid
+            example: f47ac10b-58cc-4372-a567-0e02b2c3d479
+        -
+          name: per_page
+          in: query
+          description: 'Number of results per page'
+          required: false
+          schema:
+            type: integer
+            default: 20
+            maximum: 100
+            minimum: 1
+        -
+          name: page
+          in: query
+          description: 'Page number'
+          required: false
+          schema:
+            type: integer
+            default: 1
+            minimum: 1
+      responses:
+        '200':
+          description: 'successful operation'
+          content:
+            application/json:
+              schema:
+                properties:
+                  data: { type: array, items: { $ref: '#/components/schemas/PlayerLog' } }
+                  links: { properties: { first: { type: string, example: 'https://api.gameserverapp.com/system-api/v2/player/f47ac10b-58cc-4372-a567-0e02b2c3d479/moderation-log?page=1' }, last: { type: string, example: 'https://api.gameserverapp.com/system-api/v2/player/f47ac10b-58cc-4372-a567-0e02b2c3d479/moderation-log?page=1' }, prev: { type: string, example: null, nullable: true }, next: { type: string, example: null, nullable: true } }, type: object }
+                  meta: { properties: { current_page: { type: integer, example: 1 }, from: { type: integer, example: 1 }, last_page: { type: integer, example: 1 }, links: { type: array, items: { properties: { url: { type: string, example: 'https://api.gameserverapp.com/system-api/v2/player/f47ac10b-58cc-4372-a567-0e02b2c3d479/moderation-log?page=1', nullable: true }, label: { type: string, example: '1' }, active: { type: boolean, example: true } }, type: object } }, path: { type: string, example: 'https://api.gameserverapp.com/system-api/v2/player/f47ac10b-58cc-4372-a567-0e02b2c3d479/moderation-log' }, per_page: { type: integer, example: 20 }, to: { type: integer, example: 3 }, total: { type: integer, example: 3 } }, type: object }
+                type: object
+        '404':
+          description: 'Player not found'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'Player not found' }
+                type: object
+      security:
+        -
+          systemapi-passport:
+            - admin-tools
   '/system-api/v2/task/{task_id}/execute':
     post:
       tags:
@@ -607,13 +1299,170 @@ paths:
         '200':
           description: 'Webhook triggered'
           content:
-            application/json: {  }
+            application/json:
+              schema:
+                properties:
+                  data: { type: string, example: 'Webhook triggered' }
+                type: object
+        '403':
+          description: 'Feature not available'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'This feature is only available for dashboards with add-ons.' }
+                type: object
+        '404':
+          description: 'Task not found'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'Task does not exist or not active.' }
+                type: object
+        '429':
+          description: 'Rate limited'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'You cannot do that yet.' }
+                type: object
       security:
         -
           systemapi-passport:
             - task
 components:
   schemas:
+    Achievement:
+      title: Achievement
+      description: 'Achievement resource representation'
+      properties:
+        task:
+          description: 'The task associated with this achievement'
+          properties:
+            id:
+              type: integer
+              example: 789
+            name:
+              type: string
+              example: 'Master Explorer'
+          type: object
+        score:
+          description: 'Points awarded for this achievement'
+          type: integer
+          example: 50
+        created_at:
+          description: 'Date and time when the achievement was earned'
+          type: string
+          format: date-time
+          example: '2023-05-15T14:30:00.000000Z'
+        expires_at:
+          description: 'Date and time when the achievement expires (null if permanent)'
+          type: string
+          format: date-time
+          example: '2023-06-15T14:30:00.000000Z'
+          nullable: true
+        status:
+          description: 'Current status of the achievement'
+          type: string
+          enum:
+            - active
+            - expired
+            - permanent
+            - end_of_session
+          example: active
+      type: object
+    Character:
+      title: Character
+      description: 'Character resource representation'
+      properties:
+        uuid:
+          description: 'Unique identifier for the character'
+          type: string
+          format: uuid
+          example: f47ac10b-58cc-4372-a567-0e02b2c3d479
+        game_id:
+          description: 'Game-specific identifier for the character'
+          type: string
+          example: '76561198023513722'
+        alternate_game_id:
+          description: 'Alternative game-specific identifier (e.g., EOS ID for ASA)'
+          type: string
+          example: EOS_12345678901234567890
+          nullable: true
+        name:
+          description: 'Character''s display name'
+          type: string
+          example: SurvivalHero
+        avatar:
+          description: 'URL to the character''s avatar image'
+          type: string
+          format: uri
+          example: 'https://example.com/images/avatars/character-123.jpg'
+          nullable: true
+        level:
+          description: 'Character''s level in the game'
+          type: integer
+          example: 85
+          nullable: true
+        gender:
+          description: 'Character''s gender'
+          type: string
+          enum:
+            - male
+            - female
+          example: male
+          nullable: true
+        groups:
+          description: 'Groups/tribes the character belongs to'
+          type: array
+          items:
+            $ref: '#/components/schemas/Group'
+          nullable: true
+        game_server_id:
+          description: 'ID of the game server the character is associated with'
+          type: integer
+          example: 12345
+          nullable: true
+        activity:
+          description: 'Character activity information'
+          properties:
+            status:
+              description: 'Whether the character is currently online'
+              type: boolean
+              example: true
+            status_since:
+              description: 'When the character''s current status began'
+              type: string
+              format: date-time
+              example: '2023-05-20T18:45:12.000000Z'
+              nullable: true
+            minutes_online_streak:
+              description: 'Current online streak in minutes'
+              type: integer
+              example: 120
+          type: object
+        stats:
+          description: 'Character statistics'
+          properties:
+            hours_played:
+              description: 'Total hours played'
+              type: number
+              format: float
+              example: 156.5
+          type: object
+        achievements:
+          description: 'Achievements earned by the character'
+          type: array
+          items:
+            $ref: '#/components/schemas/Achievement'
+        created_at:
+          description: 'Date and time when the character was created'
+          type: string
+          format: date-time
+          example: '2023-01-01T12:00:00.000000Z'
+      type: object
     Cluster:
       properties:
         id:
@@ -730,6 +1579,33 @@ components:
           type: string
           format: date-time
           example: '2024-02-16T19:53:28.000000Z'
+      type: object
+    PlayerLog:
+      properties:
+        type:
+          type: integer
+          example: 1
+        type_name:
+          type: string
+          example: Ban
+        details:
+          type: string
+          example: 'Player banned for breaking server rules'
+        source:
+          type: string
+          example: Admin123
+        source_type:
+          type: string
+          example: admin
+        expires_at:
+          type: string
+          format: date-time
+          example: '2023-12-31T23:59:59.000000Z'
+          nullable: true
+        created_at:
+          type: string
+          format: date-time
+          example: '2023-06-15T14:30:00.000000Z'
       type: object
     Game:
       properties:
@@ -871,6 +1747,440 @@ components:
           format: date-time
           example: '2024-02-16T19:53:28.000000Z'
       type: object
+    Group:
+      title: Group
+      description: 'Group/Tribe resource representation'
+      properties:
+        uuid:
+          description: 'Unique identifier for the group'
+          type: string
+          format: uuid
+          example: f47ac10b-58cc-4372-a567-0e02b2c3d479
+        name:
+          description: 'Group''s display name'
+          type: string
+          example: 'Alpha Tribe'
+        about:
+          description: 'Group description'
+          type: string
+          example: 'The strongest tribe on the server'
+          nullable: true
+        motd:
+          description: 'Message of the day'
+          type: string
+          example: 'Raid planned for tonight at 8PM'
+          nullable: true
+        game_server_id:
+          description: 'ID of the game server the group is associated with'
+          type: integer
+          example: 12345
+          nullable: true
+        cluster_id:
+          description: 'ID of the cluster the group is associated with'
+          type: string
+          format: uuid
+          example: cb0440e7-d2e0-4eed-809c-16fa812ea928
+          nullable: true
+        images:
+          description: 'Group images'
+          properties:
+            logo:
+              description: 'URL to the group''s logo image'
+              type: string
+              format: uri
+              example: 'https://example.com/images/tribe-logo.png'
+            background:
+              description: 'URL to the group''s background image'
+              type: string
+              format: uri
+              example: 'https://example.com/images/tribe-background.jpg'
+              nullable: true
+          type: object
+        participants:
+          description: 'Group participants information'
+          properties:
+            total_count:
+              description: 'Total number of members in the group'
+              type: integer
+              example: 15
+            members:
+              description: 'Members of this group'
+              type: array
+              items:
+                $ref: '#/components/schemas/Character'
+              nullable: true
+            admins:
+              description: 'Admin members of this group'
+              type: array
+              items:
+                $ref: '#/components/schemas/Character'
+              nullable: true
+            owners:
+              description: 'Owner members of this group'
+              type: array
+              items:
+                $ref: '#/components/schemas/Character'
+              nullable: true
+          type: object
+        activity:
+          description: 'Group activity information'
+          properties:
+            status:
+              description: 'Whether the group has any online members'
+              type: boolean
+              example: true
+            last_active_at:
+              description: 'When the group was last active'
+              type: string
+              format: date-time
+              example: '2023-05-20T18:45:12.000000Z'
+            discord_connected:
+              description: 'Whether the group has Discord integration set up'
+              type: boolean
+              example: true
+              nullable: true
+          type: object
+        moderation:
+          description: 'Moderation information'
+          properties:
+            note:
+              description: 'Administrative note about this group'
+              type: string
+              example: 'Admin note about this tribe'
+              nullable: true
+          type: object
+        created_at:
+          description: 'Date and time when the group was created'
+          type: string
+          format: date-time
+          example: '2023-01-01T12:00:00.000000Z'
+      type: object
+    'Player Custom Role':
+      title: 'Player Custom Role'
+      description: 'Role assigned to a player with optional expiration'
+      properties:
+        id:
+          description: 'Role ID'
+          type: integer
+          example: 123
+        name:
+          description: 'Role name'
+          type: string
+          example: 'VIP Member'
+        expires_at:
+          description: 'When this role assignment expires'
+          type: string
+          format: date-time
+          example: '2023-12-31T23:59:59.000000Z'
+          nullable: true
+      type: object
+    Player:
+      title: Player
+      description: 'Player resource representation'
+      properties:
+        uuid:
+          description: 'Unique identifier for the player'
+          type: string
+          format: uuid
+          example: f47ac10b-58cc-4372-a567-0e02b2c3d479
+        username:
+          description: 'Player''s display name'
+          type: string
+          example: SurvivalGamer123
+        service_users:
+          description: 'Connected service accounts (Steam, Discord, etc.)'
+          type: array
+          items:
+            $ref: '#/components/schemas/PlayerServiceUser'
+        custom_roles:
+          description: 'Custom roles assigned to the player'
+          type: array
+          items:
+            $ref: '#/components/schemas/Player Custom Role'
+        characters:
+          description: 'Number of characters associated with this player'
+          type: integer
+          example: 3
+        activity:
+          description: 'Player activity information'
+          properties:
+            status:
+              description: 'Whether the player is currently online'
+              type: boolean
+              example: false
+            last_online_at:
+              description: 'When the player was last online'
+              type: string
+              format: date-time
+              example: '2023-05-20T18:45:12.000000Z'
+              nullable: true
+          type: object
+        stats:
+          description: 'Player statistics'
+          properties:
+            votes:
+              description: 'Number of votes cast by the player'
+              type: integer
+              example: 15
+            donated_amount:
+              description: 'Total amount donated by the player'
+              type: number
+              format: float
+              example: 25.5
+              nullable: true
+            token_balance:
+              description: 'Current token balance'
+              type: integer
+              example: 500
+              nullable: true
+          type: object
+        moderation:
+          description: 'Moderation status information'
+          properties:
+            rules:
+              description: 'Rules acceptance status'
+              properties:
+                accepted:
+                  description: 'Whether the player has accepted the rules'
+                  type: boolean
+                  example: true
+                accepted_at:
+                  description: 'When the player accepted the rules'
+                  type: string
+                  format: date-time
+                  example: '2023-01-15T14:30:00.000000Z'
+                  nullable: true
+              type: object
+            banned:
+              description: 'Ban status'
+              properties:
+                is_banned:
+                  description: 'Whether the player is currently banned'
+                  type: boolean
+                  example: false
+                until:
+                  description: 'When the ban expires (null if permanent or not banned)'
+                  type: string
+                  format: date-time
+                  example: null
+                  nullable: true
+              type: object
+            muted:
+              description: 'Mute status'
+              properties:
+                is_muted:
+                  description: 'Whether the player is currently muted'
+                  type: boolean
+                  example: false
+                until:
+                  description: 'When the mute expires (null if permanent or not muted)'
+                  type: string
+                  format: date-time
+                  example: null
+                  nullable: true
+              type: object
+            email:
+              description: 'Email verification status'
+              properties:
+                setup:
+                  description: 'Whether the player has set up an email address'
+                  type: boolean
+                  example: true
+                confirmed:
+                  description: 'Whether the player''s email address is confirmed'
+                  type: boolean
+                  example: true
+              type: object
+          type: object
+        created_at:
+          description: 'Date and time when the player account was created'
+          type: string
+          format: date-time
+          example: '2023-01-01T12:00:00.000000Z'
+      type: object
+    PlayerServiceUser:
+      title: 'Player Service User'
+      description: 'User account linked to an external service like Steam, Epic, Discord, etc.'
+      properties:
+        uuid:
+          description: 'Unique identifier for the player''s service user'
+          type: string
+          format: uuid
+          example: 550e8400-e29b-41d4-a716-446655440000
+        service_id:
+          description: 'External ID from the service provider (Steam ID, Discord ID, etc.)'
+          type: string
+          example: '76561198023513722'
+        username:
+          description: 'Username from the service provider'
+          type: string
+          example: SteamUsername
+        type:
+          description: 'Service type identifier. Mapping to numeric IDs: steam=0, mojang=1, epic=2, eos=3, discord=4, twitch=5, patreon=6, microsoft=7, google=8'
+          type: string
+          enum:
+            - steam
+            - mojang
+            - epic
+            - eos
+            - discord
+            - twitch
+            - patreon
+            - microsoft
+            - google
+          example: steam
+      type: object
+    Subscription:
+      properties:
+        uuid:
+          type: string
+          example: 550e8400-e29b-41d4-a716-446655440000
+        currency:
+          description: 'Currency symbol'
+          type: string
+          example: $
+        amount:
+          type: number
+          format: float
+          example: 9.99
+        status:
+          description: 'Subscription status (Active, Pending, Cancelled, Expired)'
+          type: string
+          example: Active
+        gateway:
+          description: 'Payment gateway used for the subscription'
+          type: string
+          example: PayPal
+        gateway_ref_id:
+          description: 'Reference ID from the payment gateway'
+          type: string
+          example: I-BW452GLLEP1G
+        requires_character:
+          description: 'Whether this subscription requires a character'
+          type: boolean
+          example: true
+        character:
+          oneOf:
+            -
+              $ref: '#/components/schemas/Character'
+          nullable: true
+          type: object
+        relatable:
+          properties:
+            id:
+              type: string
+              example: 550e8400-e29b-41d4-a716-446655440000
+            name:
+              type: string
+              example: 'Premium Supporter'
+            type:
+              type: string
+              example: supporter_tier
+          type: object
+        created_at:
+          type: string
+          format: date-time
+          example: '2023-01-15T14:30:00.000000Z'
+        expires_at:
+          description: 'When the subscription expires (if cancelled)'
+          type: string
+          format: date-time
+          example: '2023-12-15T14:30:00.000000Z'
+          nullable: true
+        can_cancel:
+          description: 'Whether the subscription can be cancelled'
+          type: boolean
+          example: true
+      type: object
+    TokenTransaction:
+      title: 'Token Transaction'
+      description: 'Token transaction resource representation'
+      properties:
+        transaction_value:
+          description: 'Amount of tokens involved in the transaction (positive for received, negative for spent)'
+          type: integer
+          example: 500
+        description:
+          description: 'Description of the transaction'
+          type: string
+          example: 'New tokens! Payment ID: PAY-123456789'
+        sender:
+          description: 'Sender of the tokens (null for system transactions)'
+          nullable: true
+          oneOf:
+            -
+              $ref: '#/components/schemas/PlayerServiceUser'
+            -
+              type: 'null'
+        receiver:
+          description: 'Receiver of the tokens (null for system transactions)'
+          nullable: true
+          oneOf:
+            -
+              $ref: '#/components/schemas/PlayerServiceUser'
+            -
+              type: 'null'
+        discount:
+          description: 'Discount applied to the transaction (if any)'
+          nullable: true
+          oneOf:
+            -
+              properties:
+                code:
+                  type: string
+                  example: SUMMER25
+                amount:
+                  type: integer
+                  example: 25
+                type:
+                  type: string
+                  enum: [percentage, fixed]
+                  example: percentage
+              type: object
+            -
+              type: 'null'
+        date:
+          description: 'Date and time when the transaction occurred'
+          type: string
+          format: date-time
+          example: '2023-01-01T12:00:00.000000Z'
+      type: object
+    Vote:
+      title: 'Player Vote'
+      description: 'Record of a player''s vote for a game server'
+      properties:
+        claimed_at:
+          description: 'When the vote was claimed'
+          type: string
+          format: date-time
+          example: '2023-01-15T14:30:00.000000Z'
+        player:
+          description: 'Player who cast the vote'
+          properties:
+            uuid:
+              description: 'UUID of the player'
+              type: string
+              format: uuid
+              example: 550e8400-e29b-41d4-a716-446655440000
+            username:
+              description: 'Username of the player'
+              type: string
+              example: SurvivalGamer123
+          type: object
+        gameserver:
+          description: 'Game server that was voted for'
+          properties:
+            id:
+              description: 'ID of the game server'
+              type: integer
+              example: 42
+            name:
+              description: 'Name of the game server'
+              type: string
+              example: 'PVE Island'
+          type: object
+          nullable: true
+      type: object
   securitySchemes:
     systemapi-passport:
       type: http
@@ -878,3 +2188,7 @@ components:
 security:
   -
     systemapi-passport: []
+tags:
+  -
+    name: Task
+    description: 'API endpoints for managing tasks and webhooks'
