@@ -10,6 +10,336 @@ servers:
     url: 'https://api.gameserverapp.com'
     description: api.gameserverapp.com
 paths:
+  /system-api/v2/characters:
+    get:
+      tags:
+        - Character
+      summary: 'List all characters'
+      description: 'Retrieve a paginated list of all characters in the domain.'
+      operationId: listCharacters
+      parameters:
+        -
+          name: per_page
+          in: query
+          description: 'Number of results per page'
+          required: false
+          schema:
+            type: integer
+            default: 20
+            maximum: 100
+            minimum: 1
+        -
+          name: page
+          in: query
+          description: 'Page number'
+          required: false
+          schema:
+            type: integer
+            default: 1
+            minimum: 1
+      responses:
+        '200':
+          description: 'successful operation'
+          content:
+            application/json:
+              schema:
+                properties:
+                  data: { type: array, items: { $ref: '#/components/schemas/Character' } }
+                  links: { properties: { first: { type: string, example: 'https://api.gameserverapp.com/system-api/v2/characters?page=1' }, last: { type: string, example: 'https://api.gameserverapp.com/system-api/v2/characters?page=5' }, prev: { type: string, example: null, nullable: true }, next: { type: string, example: 'https://api.gameserverapp.com/system-api/v2/characters?page=2' } }, type: object }
+                  meta: { properties: { current_page: { type: integer, example: 1 }, from: { type: integer, example: 1 }, last_page: { type: integer, example: 5 }, links: { type: array, items: { properties: { url: { type: string, example: 'https://api.gameserverapp.com/system-api/v2/characters?page=1', nullable: true }, label: { type: string, example: '1' }, active: { type: boolean, example: true } }, type: object } }, path: { type: string, example: 'https://api.gameserverapp.com/system-api/v2/characters' }, per_page: { type: integer, example: 20 }, to: { type: integer, example: 20 }, total: { type: integer, example: 100 } }, type: object }
+                type: object
+      security:
+        -
+          systemapi-passport:
+            - admin-tools
+  /system-api/v2/characters/find:
+    post:
+      tags:
+        - Character
+      summary: 'Find characters by game ID'
+      description: 'Find characters by their game ID or alternate game ID.'
+      operationId: findCharactersByGameId
+      parameters:
+        -
+          name: per_page
+          in: query
+          description: 'Number of results per page'
+          required: false
+          schema:
+            type: integer
+            default: 20
+            maximum: 100
+            minimum: 1
+        -
+          name: page
+          in: query
+          description: 'Page number'
+          required: false
+          schema:
+            type: integer
+            default: 1
+            minimum: 1
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              properties:
+                game_id:
+                  description: 'Game-specific identifier'
+                  type: string
+                  example: '76561198023513722'
+                alternate_game_id:
+                  description: 'Alternative game-specific identifier (e.g., EOS ID for ASA)'
+                  type: string
+                  example: EOS_12345678901234567890
+              type: object
+      responses:
+        '200':
+          description: 'successful operation'
+          content:
+            application/json:
+              schema:
+                properties:
+                  data: { type: array, items: { $ref: '#/components/schemas/Character' } }
+                  links: { properties: { first: { type: string, example: 'https://api.gameserverapp.com/system-api/v2/characters/find?page=1' }, last: { type: string, example: 'https://api.gameserverapp.com/system-api/v2/characters/find?page=1' }, prev: { type: string, example: null, nullable: true }, next: { type: string, example: null, nullable: true } }, type: object }
+                  meta: { properties: { current_page: { type: integer, example: 1 }, from: { type: integer, example: 1 }, last_page: { type: integer, example: 1 }, links: { type: array, items: { properties: { url: { type: string, example: 'https://api.gameserverapp.com/system-api/v2/characters/find?page=1', nullable: true }, label: { type: string, example: '1' }, active: { type: boolean, example: true } }, type: object } }, path: { type: string, example: 'https://api.gameserverapp.com/system-api/v2/characters/find' }, per_page: { type: integer, example: 20 }, to: { type: integer, example: 1 }, total: { type: integer, example: 1 } }, type: object }
+                type: object
+        '400':
+          description: 'Bad request'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'At least one search parameter is required' }
+                type: object
+        '404':
+          description: 'Not found'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'No characters found matching the criteria' }
+                type: object
+      security:
+        -
+          systemapi-passport:
+            - admin-tools
+  '/system-api/v2/character/{uuid}':
+    get:
+      tags:
+        - Character
+      summary: 'Get character details'
+      description: 'Retrieve detailed information about a specific character.'
+      operationId: getCharacterDetails
+      parameters:
+        -
+          name: uuid
+          in: path
+          description: 'UUID of the character'
+          required: true
+          schema:
+            type: string
+            format: uuid
+            example: f47ac10b-58cc-4372-a567-0e02b2c3d479
+      responses:
+        '200':
+          description: 'successful operation'
+          content:
+            application/json:
+              schema:
+                properties:
+                  data: { $ref: '#/components/schemas/Character' }
+                type: object
+        '404':
+          description: 'Character not found'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'Character not found' }
+                type: object
+      security:
+        -
+          systemapi-passport:
+            - admin-tools
+  '/system-api/v2/character/{uuid}/groups':
+    get:
+      tags:
+        - Character
+      summary: 'Get character groups'
+      description: 'Retrieve all groups/tribes that a character belongs to.'
+      operationId: getCharacterGroups
+      parameters:
+        -
+          name: uuid
+          in: path
+          description: 'UUID of the character'
+          required: true
+          schema:
+            type: string
+            format: uuid
+            example: f47ac10b-58cc-4372-a567-0e02b2c3d479
+        -
+          name: per_page
+          in: query
+          description: 'Number of results per page'
+          required: false
+          schema:
+            type: integer
+            default: 20
+            maximum: 100
+            minimum: 1
+        -
+          name: page
+          in: query
+          description: 'Page number'
+          required: false
+          schema:
+            type: integer
+            default: 1
+            minimum: 1
+      responses:
+        '200':
+          description: 'successful operation'
+          content:
+            application/json:
+              schema:
+                properties:
+                  data: { type: array, items: { $ref: '#/components/schemas/Group' } }
+                  links: { properties: { first: { type: string, example: 'https://api.gameserverapp.com/system-api/v2/character/f47ac10b-58cc-4372-a567-0e02b2c3d479/groups?page=1' }, last: { type: string, example: 'https://api.gameserverapp.com/system-api/v2/character/f47ac10b-58cc-4372-a567-0e02b2c3d479/groups?page=1' }, prev: { type: string, example: null, nullable: true }, next: { type: string, example: null, nullable: true } }, type: object }
+                  meta: { properties: { current_page: { type: integer, example: 1 }, from: { type: integer, example: 1 }, last_page: { type: integer, example: 1 }, links: { type: array, items: { properties: { url: { type: string, example: 'https://api.gameserverapp.com/system-api/v2/character/f47ac10b-58cc-4372-a567-0e02b2c3d479/groups?page=1', nullable: true }, label: { type: string, example: '1' }, active: { type: boolean, example: true } }, type: object } }, path: { type: string, example: 'https://api.gameserverapp.com/system-api/v2/character/f47ac10b-58cc-4372-a567-0e02b2c3d479/groups' }, per_page: { type: integer, example: 20 }, to: { type: integer, example: 1 }, total: { type: integer, example: 1 } }, type: object }
+                type: object
+        '404':
+          description: 'Character not found'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'Character not found' }
+                type: object
+      security:
+        -
+          systemapi-passport:
+            - admin-tools
+  '/system-api/v2/character/{uuid}/activity':
+    get:
+      tags:
+        - Character
+      summary: 'Get character activity'
+      description: 'Retrieve the online/offline activity history for a specific character.'
+      operationId: getCharacterActivity
+      parameters:
+        -
+          name: uuid
+          in: path
+          description: 'UUID of the character'
+          required: true
+          schema:
+            type: string
+            format: uuid
+            example: f47ac10b-58cc-4372-a567-0e02b2c3d479
+        -
+          name: per_page
+          in: query
+          description: 'Number of results per page'
+          required: false
+          schema:
+            type: integer
+            default: 20
+            maximum: 100
+            minimum: 1
+        -
+          name: page
+          in: query
+          description: 'Page number'
+          required: false
+          schema:
+            type: integer
+            default: 1
+            minimum: 1
+      responses:
+        '200':
+          description: 'successful operation'
+          content:
+            application/json:
+              schema:
+                properties:
+                  data: { type: array, items: { $ref: '#/components/schemas/CharacterStatus' } }
+                  links: { properties: { first: { type: string, example: 'https://api.gameserverapp.com/system-api/v2/character/f47ac10b-58cc-4372-a567-0e02b2c3d479/activity?page=1' }, last: { type: string, example: 'https://api.gameserverapp.com/system-api/v2/character/f47ac10b-58cc-4372-a567-0e02b2c3d479/activity?page=5' }, prev: { type: string, example: null, nullable: true }, next: { type: string, example: 'https://api.gameserverapp.com/system-api/v2/character/f47ac10b-58cc-4372-a567-0e02b2c3d479/activity?page=2' } }, type: object }
+                  meta: { properties: { current_page: { type: integer, example: 1 }, from: { type: integer, example: 1 }, last_page: { type: integer, example: 5 }, links: { type: array, items: { properties: { url: { type: string, example: 'https://api.gameserverapp.com/system-api/v2/character/f47ac10b-58cc-4372-a567-0e02b2c3d479/activity?page=1', nullable: true }, label: { type: string, example: '1' }, active: { type: boolean, example: true } }, type: object } }, path: { type: string, example: 'https://api.gameserverapp.com/system-api/v2/character/f47ac10b-58cc-4372-a567-0e02b2c3d479/activity' }, per_page: { type: integer, example: 20 }, to: { type: integer, example: 20 }, total: { type: integer, example: 100 } }, type: object }
+                type: object
+        '404':
+          description: 'Character not found'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'Character not found' }
+                type: object
+      security:
+        -
+          systemapi-passport:
+            - admin-tools
+  '/system-api/v2/character/{uuid}/achievements':
+    get:
+      tags:
+        - Character
+      summary: 'Get character achievements'
+      description: 'Retrieve all achievements earned by a specific character.'
+      operationId: getCharacterAchievements
+      parameters:
+        -
+          name: uuid
+          in: path
+          description: 'UUID of the character'
+          required: true
+          schema:
+            type: string
+            format: uuid
+            example: f47ac10b-58cc-4372-a567-0e02b2c3d479
+        -
+          name: per_page
+          in: query
+          description: 'Number of results per page'
+          required: false
+          schema:
+            type: integer
+            default: 20
+            maximum: 100
+            minimum: 1
+        -
+          name: page
+          in: query
+          description: 'Page number'
+          required: false
+          schema:
+            type: integer
+            default: 1
+            minimum: 1
+      responses:
+        '200':
+          description: 'successful operation'
+          content:
+            application/json:
+              schema:
+                properties:
+                  data: { type: array, items: { $ref: '#/components/schemas/Achievement' } }
+                  links: { properties: { first: { type: string, example: 'https://api.gameserverapp.com/system-api/v2/character/f47ac10b-58cc-4372-a567-0e02b2c3d479/achievements?page=1' }, last: { type: string, example: 'https://api.gameserverapp.com/system-api/v2/character/f47ac10b-58cc-4372-a567-0e02b2c3d479/achievements?page=5' }, prev: { type: string, example: null, nullable: true }, next: { type: string, example: 'https://api.gameserverapp.com/system-api/v2/character/f47ac10b-58cc-4372-a567-0e02b2c3d479/achievements?page=2' } }, type: object }
+                  meta: { properties: { current_page: { type: integer, example: 1 }, from: { type: integer, example: 1 }, last_page: { type: integer, example: 5 }, links: { type: array, items: { properties: { url: { type: string, example: 'https://api.gameserverapp.com/system-api/v2/character/f47ac10b-58cc-4372-a567-0e02b2c3d479/achievements?page=1', nullable: true }, label: { type: string, example: '1' }, active: { type: boolean, example: true } }, type: object } }, path: { type: string, example: 'https://api.gameserverapp.com/system-api/v2/character/f47ac10b-58cc-4372-a567-0e02b2c3d479/achievements' }, per_page: { type: integer, example: 20 }, to: { type: integer, example: 20 }, total: { type: integer, example: 100 } }, type: object }
+                type: object
+        '404':
+          description: 'Character not found'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'Character not found' }
+                type: object
+      security:
+        -
+          systemapi-passport:
+            - admin-tools
   '/system-api/v2/config-template/{configtemplate_id}/config/{location}':
     get:
       tags:
@@ -815,6 +1145,214 @@ paths:
         -
           systemapi-passport:
             - gameserver
+  /system-api/v2/groups:
+    get:
+      tags:
+        - Group
+      summary: 'List all groups'
+      description: 'Retrieve a paginated list of all groups/tribes in the domain.'
+      operationId: listGroups
+      parameters:
+        -
+          name: per_page
+          in: query
+          description: 'Number of results per page'
+          required: false
+          schema:
+            type: integer
+            default: 20
+            maximum: 100
+            minimum: 1
+        -
+          name: page
+          in: query
+          description: 'Page number'
+          required: false
+          schema:
+            type: integer
+            default: 1
+            minimum: 1
+      responses:
+        '200':
+          description: 'successful operation'
+          content:
+            application/json:
+              schema:
+                properties:
+                  data: { type: array, items: { $ref: '#/components/schemas/Group' } }
+                  links: { properties: { first: { type: string, example: 'https://api.gameserverapp.com/system-api/v2/groups?page=1' }, last: { type: string, example: 'https://api.gameserverapp.com/system-api/v2/groups?page=5' }, prev: { type: string, example: null, nullable: true }, next: { type: string, example: 'https://api.gameserverapp.com/system-api/v2/groups?page=2', nullable: true } }, type: object }
+                  meta: { properties: { current_page: { type: integer, example: 1 }, from: { type: integer, example: 1 }, last_page: { type: integer, example: 5 }, links: { type: array, items: { properties: { url: { type: string, example: 'https://api.gameserverapp.com/system-api/v2/groups?page=1', nullable: true }, label: { type: string, example: '1' }, active: { type: boolean, example: true } }, type: object } }, path: { type: string, example: 'https://api.gameserverapp.com/system-api/v2/groups' }, per_page: { type: integer, example: 20 }, to: { type: integer, example: 20 }, total: { type: integer, example: 100 } }, type: object }
+                type: object
+      security:
+        -
+          systemapi-passport:
+            - admin-tools
+  /system-api/v2/groups/find:
+    post:
+      tags:
+        - Group
+      summary: 'Find groups by game ID'
+      description: 'Find groups by their game ID.'
+      operationId: findGroupsByGameId
+      parameters:
+        -
+          name: per_page
+          in: query
+          description: 'Number of results per page'
+          required: false
+          schema:
+            type: integer
+            default: 20
+            maximum: 100
+            minimum: 1
+        -
+          name: page
+          in: query
+          description: 'Page number'
+          required: false
+          schema:
+            type: integer
+            default: 1
+            minimum: 1
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              properties:
+                game_id:
+                  description: 'Game-specific identifier'
+                  type: string
+                  example: '12345'
+              type: object
+      responses:
+        '200':
+          description: 'successful operation'
+          content:
+            application/json:
+              schema:
+                properties:
+                  data: { type: array, items: { $ref: '#/components/schemas/Group' } }
+                  links: { properties: { first: { type: string, example: 'https://api.gameserverapp.com/system-api/v2/groups/find?page=1' }, last: { type: string, example: 'https://api.gameserverapp.com/system-api/v2/groups/find?page=1' }, prev: { type: string, example: null, nullable: true }, next: { type: string, example: null, nullable: true } }, type: object }
+                  meta: { properties: { current_page: { type: integer, example: 1 }, from: { type: integer, example: 1 }, last_page: { type: integer, example: 1 }, links: { type: array, items: { properties: { url: { type: string, example: 'https://api.gameserverapp.com/system-api/v2/groups/find?page=1', nullable: true }, label: { type: string, example: '1' }, active: { type: boolean, example: true } }, type: object } }, path: { type: string, example: 'https://api.gameserverapp.com/system-api/v2/groups/find' }, per_page: { type: integer, example: 20 }, to: { type: integer, example: 1 }, total: { type: integer, example: 1 } }, type: object }
+                type: object
+        '400':
+          description: 'Bad request'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'At least one search parameter is required' }
+                type: object
+        '404':
+          description: 'Not found'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'No groups found matching the criteria' }
+                type: object
+      security:
+        -
+          systemapi-passport:
+            - admin-tools
+  '/system-api/v2/group/{uuid}':
+    get:
+      tags:
+        - Group
+      summary: 'Get group details'
+      description: 'Retrieve detailed information about a specific group/tribe.'
+      operationId: getGroupDetails
+      parameters:
+        -
+          name: uuid
+          in: path
+          description: 'UUID of the group'
+          required: true
+          schema:
+            type: string
+            format: uuid
+            example: f47ac10b-58cc-4372-a567-0e02b2c3d479
+      responses:
+        '200':
+          description: 'successful operation'
+          content:
+            application/json:
+              schema:
+                properties:
+                  data: { $ref: '#/components/schemas/Group' }
+                type: object
+        '404':
+          description: 'Group not found'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'Group not found' }
+                type: object
+      security:
+        -
+          systemapi-passport:
+            - admin-tools
+  '/system-api/v2/group/{uuid}/logs':
+    get:
+      tags:
+        - Group
+      summary: 'Get group logs'
+      description: 'Retrieve logs for a specific group/tribe.'
+      operationId: getGroupLogs
+      parameters:
+        -
+          name: uuid
+          in: path
+          description: 'UUID of the group'
+          required: true
+          schema:
+            type: string
+            format: uuid
+            example: f47ac10b-58cc-4372-a567-0e02b2c3d479
+        -
+          name: per_page
+          in: query
+          description: 'Number of results per page'
+          required: false
+          schema:
+            type: integer
+            default: 20
+            maximum: 100
+            minimum: 1
+        -
+          name: page
+          in: query
+          description: 'Page number'
+          required: false
+          schema:
+            type: integer
+            default: 1
+            minimum: 1
+      responses:
+        '200':
+          description: 'successful operation'
+          content:
+            application/json:
+              schema:
+                properties:
+                  data: { type: array, items: { $ref: '#/components/schemas/GroupLog' } }
+                  links: { properties: { first: { type: string, example: 'https://api.gameserverapp.com/system-api/v2/group/f47ac10b-58cc-4372-a567-0e02b2c3d479/logs?page=1' }, last: { type: string, example: 'https://api.gameserverapp.com/system-api/v2/group/f47ac10b-58cc-4372-a567-0e02b2c3d479/logs?page=5' }, prev: { type: string, example: null, nullable: true }, next: { type: string, example: 'https://api.gameserverapp.com/system-api/v2/group/f47ac10b-58cc-4372-a567-0e02b2c3d479/logs?page=2', nullable: true } }, type: object }
+                  meta: { properties: { current_page: { type: integer, example: 1 }, from: { type: integer, example: 1 }, last_page: { type: integer, example: 5 }, links: { type: array, items: { properties: { url: { type: string, example: 'https://api.gameserverapp.com/system-api/v2/group/f47ac10b-58cc-4372-a567-0e02b2c3d479/logs?page=1', nullable: true }, label: { type: string, example: '1' }, active: { type: boolean, example: true } }, type: object } }, path: { type: string, example: 'https://api.gameserverapp.com/system-api/v2/group/f47ac10b-58cc-4372-a567-0e02b2c3d479/logs' }, per_page: { type: integer, example: 20 }, to: { type: integer, example: 20 }, total: { type: integer, example: 100 } }, type: object }
+                type: object
+        '404':
+          description: 'Group not found'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'Group not found' }
+                type: object
+      security:
+        -
+          systemapi-passport:
+            - admin-tools
   /system-api/v2/players:
     get:
       tags:
@@ -1205,7 +1743,7 @@ paths:
       tags:
         - Player
       summary: 'Get player moderation log'
-      description: 'Retrieve the moderation log for a specific player, including bans, mutes, and other administrative actions.'
+      description: "Retrieve the moderation log for a specific player, including bans, mutes, and other\n     *     administrative actions."
       operationId: getPlayerModerationLog
       parameters:
         -
@@ -1377,6 +1915,12 @@ components:
       title: Character
       description: 'Character resource representation'
       properties:
+        player_uuid:
+          description: 'UUID of the player who owns this character'
+          type: string
+          format: uuid
+          example: a47ac10b-58cc-4372-a567-0e02b2c3d479
+          nullable: true
         uuid:
           description: 'Unique identifier for the character'
           type: string
@@ -1420,11 +1964,31 @@ components:
           items:
             $ref: '#/components/schemas/Group'
           nullable: true
-        game_server_id:
-          description: 'ID of the game server the character is associated with'
-          type: integer
-          example: 12345
-          nullable: true
+        game_server:
+          description: 'Game server information'
+          properties:
+            id:
+              description: 'ID of the game server the character is associated with'
+              type: integer
+              example: 12345
+              nullable: true
+            serverlist_name:
+              description: 'Full server name as shown in server lists'
+              type: string
+              example: '[EU] MyCommunity - SpecialMap / Wiped yesterday / no mods'
+            website_name:
+              description: 'Short server name used on the website'
+              type: string
+              example: specialmapPVP
+            discord_name:
+              description: 'Server name used in Discord integrations'
+              type: string
+              example: specialmapPVP
+            cluster_chat_name:
+              description: 'Server name used in cluster chat'
+              type: string
+              example: specialmapPVP
+          type: object
         activity:
           description: 'Character activity information'
           properties:
@@ -1462,6 +2026,35 @@ components:
           type: string
           format: date-time
           example: '2023-01-01T12:00:00.000000Z'
+      type: object
+    CharacterStatus:
+      title: 'Character Status'
+      description: 'Character online/offline status session information'
+      properties:
+        online_at:
+          description: 'When the character came online'
+          type: string
+          format: date-time
+          example: '2023-05-20T18:45:12.000000Z'
+        offline_at:
+          description: 'When the character went offline (null if still online)'
+          type: string
+          format: date-time
+          example: '2023-05-20T20:15:30.000000Z'
+          nullable: true
+        minutes_online:
+          description: 'Duration of the session in minutes'
+          type: integer
+          example: 90
+        streak_id:
+          description: 'Identifier for tracking consecutive sessions'
+          type: string
+          example: abc123
+          nullable: true
+        game_server_id:
+          description: 'ID of the game server where the session occurred'
+          type: integer
+          example: 42
       type: object
     Cluster:
       properties:
@@ -1747,6 +2340,28 @@ components:
           format: date-time
           example: '2024-02-16T19:53:28.000000Z'
       type: object
+    GroupLog:
+      title: 'Group Log'
+      description: 'Group/Tribe log entry resource representation'
+      properties:
+        message:
+          description: 'Log message content'
+          type: string
+          example: 'Player1 has joined the tribe'
+        game_date:
+          description: 'Date of the event in game time'
+          type: string
+          example: 'Day 460, 08:59:37'
+        rgba_color:
+          description: 'RGBA color value for the log entry'
+          type: string
+          example: '255,0,0,1'
+        created_at:
+          description: 'Date and time when the log entry was created'
+          type: string
+          format: date-time
+          example: '2023-05-20T18:45:12.000000Z'
+      type: object
     Group:
       title: Group
       description: 'Group/Tribe resource representation'
@@ -1769,11 +2384,6 @@ components:
           description: 'Message of the day'
           type: string
           example: 'Raid planned for tonight at 8PM'
-          nullable: true
-        game_server_id:
-          description: 'ID of the game server the group is associated with'
-          type: integer
-          example: 12345
           nullable: true
         cluster_id:
           description: 'ID of the cluster the group is associated with'
@@ -1822,6 +2432,30 @@ components:
                 $ref: '#/components/schemas/Character'
               nullable: true
           type: object
+        game_server:
+          description: 'Game server information'
+          properties:
+            id:
+              description: 'ID of the game server the group is associated with'
+              type: integer
+              example: 12345
+            serverlist_name:
+              description: 'Full server name as shown in server lists'
+              type: string
+              example: '[EU] MyCommunity - SpecialMap / Wiped yesterday / no mods'
+            website_name:
+              description: 'Short server name used on the website'
+              type: string
+              example: specialmapPVP
+            discord_name:
+              description: 'Server name used in Discord integrations'
+              type: string
+              example: specialmapPVP
+            cluster_chat_name:
+              description: 'Server name used in cluster chat'
+              type: string
+              example: specialmapPVP
+          type: object
         activity:
           description: 'Group activity information'
           properties:
@@ -1838,7 +2472,6 @@ components:
               description: 'Whether the group has Discord integration set up'
               type: boolean
               example: true
-              nullable: true
           type: object
         moderation:
           description: 'Moderation information'
@@ -2029,68 +2662,6 @@ components:
             - microsoft
             - google
           example: steam
-      type: object
-    Subscription:
-      properties:
-        uuid:
-          type: string
-          example: 550e8400-e29b-41d4-a716-446655440000
-        currency:
-          description: 'Currency symbol'
-          type: string
-          example: $
-        amount:
-          type: number
-          format: float
-          example: 9.99
-        status:
-          description: 'Subscription status (Active, Pending, Cancelled, Expired)'
-          type: string
-          example: Active
-        gateway:
-          description: 'Payment gateway used for the subscription'
-          type: string
-          example: PayPal
-        gateway_ref_id:
-          description: 'Reference ID from the payment gateway'
-          type: string
-          example: I-BW452GLLEP1G
-        requires_character:
-          description: 'Whether this subscription requires a character'
-          type: boolean
-          example: true
-        character:
-          oneOf:
-            -
-              $ref: '#/components/schemas/Character'
-          nullable: true
-          type: object
-        relatable:
-          properties:
-            id:
-              type: string
-              example: 550e8400-e29b-41d4-a716-446655440000
-            name:
-              type: string
-              example: 'Premium Supporter'
-            type:
-              type: string
-              example: supporter_tier
-          type: object
-        created_at:
-          type: string
-          format: date-time
-          example: '2023-01-15T14:30:00.000000Z'
-        expires_at:
-          description: 'When the subscription expires (if cancelled)'
-          type: string
-          format: date-time
-          example: '2023-12-15T14:30:00.000000Z'
-          nullable: true
-        can_cancel:
-          description: 'Whether the subscription can be cancelled'
-          type: boolean
-          example: true
       type: object
     TokenTransaction:
       title: 'Token Transaction'
