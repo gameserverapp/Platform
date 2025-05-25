@@ -117,7 +117,7 @@ Example: `37015`
 
 #### `{gameserver.rcon_password}`
 
-Returns the RCON / Telnet / WebSocket password.  
+Returns the RCON / Telnet / WebSocket password, which is configured in the Admin Password field of your server settings.  
 Example: `CLzvR035`
 
 #### `{gameserver.banlist_url}`
