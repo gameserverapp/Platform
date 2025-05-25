@@ -100,9 +100,9 @@ Example: `27015`
 Returns the primary game port.  
 Example: `7777`
 
-#### `{gameserver.other_port}`
+#### `{gameserver.raw_port}`
 
-Returns the assigned `other` port.  
+Returns the assigned `raw` port.  
 Example: `7778`
 
 #### `{gameserver.other_port}`
