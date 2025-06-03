@@ -635,6 +635,10 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Game'
+      security:
+        -
+          systemapi-passport:
+            - game
   /system-api/v2/gameservers:
     get:
       tags:
@@ -1132,6 +1136,70 @@ paths:
               schema:
                 properties:
                   error: { type: string, example: 'Failed to perform action. Try again later or contact support.' }
+                type: object
+        '429':
+          description: 'Rate limited'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'You cannot do this yet. Please wait 60 second(s) between calls for the same game server.' }
+                type: object
+      security:
+        -
+          systemapi-passport:
+            - gameserver
+  '/system-api/v2/gameserver/{gameserver_id}/backup':
+    post:
+      tags:
+        - 'Game Server'
+      summary: 'Create game server backup'
+      description: 'Create a manual backup/snapshot of the game server.'
+      operationId: backupGameServer
+      parameters:
+        -
+          name: gameserver_id
+          in: path
+          required: true
+          schema:
+            type: integer
+          example: '57294'
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              required:
+                - name
+              properties:
+                name:
+                  description: 'Name for the backup'
+                  type: string
+                  example: 'Pre-wipe backup'
+              type: object
+      responses:
+        '200':
+          description: 'successful operation'
+          content:
+            application/json:
+              schema:
+                properties:
+                  data: { type: string, example: 'Backup request sent to game server' }
+                type: object
+        '404':
+          description: 'Game server not found'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'Game server not found' }
+                type: object
+        '400':
+          description: 'Invalid request or server issues'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'You have reached the manual backup limit. Please remove a manual backup first.' }
                 type: object
         '429':
           description: 'Rate limited'
@@ -1797,6 +1865,595 @@ paths:
         -
           systemapi-passport:
             - admin-tools
+  '/system-api/v2/player/{uuid}/kick':
+    post:
+      tags:
+        - Player
+      summary: 'Kick player'
+      description: 'Kick a player from the game server.'
+      operationId: kickPlayer
+      parameters:
+        -
+          name: uuid
+          in: path
+          description: 'UUID of the player'
+          required: true
+          schema:
+            type: string
+            format: uuid
+            example: f47ac10b-58cc-4372-a567-0e02b2c3d479
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                note:
+                  description: "Optional\n     *                                           note about the reason for kicking"
+                  type: string
+                  example: 'Disruptive behavior'
+              type: object
+      responses:
+        '200':
+          description: 'successful operation'
+          content:
+            application/json:
+              schema:
+                properties:
+                  data: { type: string, example: 'Player will be kicked shortly.' }
+                type: object
+        '404':
+          description: 'Player not found'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'Player not found' }
+                type: object
+        '429':
+          description: 'Too many requests'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: "You cannot do this yet. Please wait 60\n     *                                            second(s) between calls for the same player." }
+                type: object
+      security:
+        -
+          systemapi-passport:
+            - admin-tools
+  '/system-api/v2/player/{uuid}/ban':
+    post:
+      tags:
+        - Player
+      summary: 'Ban player'
+      description: 'Ban a player from the game server and community. ⚠️ This action has a cooldown of 120 seconds, per player.'
+      operationId: banPlayer
+      parameters:
+        -
+          name: uuid
+          in: path
+          description: 'UUID of the player'
+          required: true
+          schema:
+            type: string
+            format: uuid
+            example: f47ac10b-58cc-4372-a567-0e02b2c3d479
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              required:
+                - type
+              properties:
+                note:
+                  description: "Optional note about\n     *                                           the reason for banning"
+                  type: string
+                  example: Cheating
+                type:
+                  description: 'Type of ban duration'
+                  type: string
+                  enum: [permanent, period, date]
+                  example: period
+                period:
+                  description: "Duration period (required if type is 'period'). Available options include:\n- **Minute-based**: `15m` (15 minutes), `30m` (30 minutes), `45m` (45 minutes)\n- **Hour-based**: `1h` (1 hour), `2h` (2 hours), `3h` (3 hours), `4h` (4 hours), `5h` (5 hours), `6h` (6 hours), `12h` (12 hours)\n- **Day-based**: `1d` (1 day), `2d` (2 days), `3d` (3 days), `4d` (4 days), `5d` (5 days), `6d` (6 days)\n- **Week-based**: `1w` (1 week), `2w` (2 weeks), `3w` (3 weeks)\n- **Month-based**: `1m` (1 month), `2m` (2 months), `3m` (3 months), `4m` (4 months), `5m` (5 months), `6m` (6 months), `7m` (7 months), `8m` (8 months), `9m` (9 months), `10m` (10 months), `11m` (11 months)\n- **Year-based**: `1y` (1 year)\n- **Special**: `0` (forever), `eod` (end of day), `eow` (end of week), `eom` (end of month), `eoy` (end of year)"
+                  type: string
+                  example: 7d
+                date:
+                  description: "End date\n     *                               (required if type is 'date')"
+                  type: string
+                  format: date
+                  example: '2023-12-31'
+              type: object
+      responses:
+        '200':
+          description: 'successful operation'
+          content:
+            application/json:
+              schema:
+                properties:
+                  data: { type: string, example: 'Player will be banned shortly.' }
+                type: object
+        '400':
+          description: 'Invalid input'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'Invalid period or date.' }
+                type: object
+        '404':
+          description: 'Player not found'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'Player not found' }
+                type: object
+        '429':
+          description: 'Too many requests'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: "You cannot do this yet. Please wait 120\n     *                                            second(s) between calls for the same player." }
+                type: object
+      security:
+        -
+          systemapi-passport:
+            - admin-tools
+  '/system-api/v2/player/{uuid}/unban':
+    post:
+      tags:
+        - Player
+      summary: 'Unban player'
+      description: 'Remove a ban from a player. ⚠️ This action has a cooldown of 120 seconds, per player.'
+      operationId: unbanPlayer
+      parameters:
+        -
+          name: uuid
+          in: path
+          description: 'UUID of the player'
+          required: true
+          schema:
+            type: string
+            format: uuid
+            example: f47ac10b-58cc-4372-a567-0e02b2c3d479
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                note:
+                  description: "Optional note\n     *                                           about the reason for unbanning"
+                  type: string
+                  example: 'Good behavior'
+              type: object
+      responses:
+        '200':
+          description: 'successful operation'
+          content:
+            application/json:
+              schema:
+                properties:
+                  data: { type: string, example: 'Player will be unbanned shortly.' }
+                type: object
+        '404':
+          description: 'Player not found'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'Player not found' }
+                type: object
+        '429':
+          description: 'Too many requests'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: "You cannot do this yet. Please wait 120\n     *                                            second(s) between calls for the same player." }
+                type: object
+      security:
+        -
+          systemapi-passport:
+            - admin-tools
+  '/system-api/v2/player/{uuid}/mute':
+    post:
+      tags:
+        - Player
+      summary: 'Mute player'
+      description: 'Mute a player on the game server. ⚠️ This action has a cooldown of 120 seconds, per player.'
+      operationId: mutePlayer
+      parameters:
+        -
+          name: uuid
+          in: path
+          description: 'UUID of the player'
+          required: true
+          schema:
+            type: string
+            format: uuid
+            example: f47ac10b-58cc-4372-a567-0e02b2c3d479
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              required:
+                - type
+              properties:
+                note:
+                  description: "Optional\n     *                                           note about the reason for muting"
+                  type: string
+                  example: 'Inappropriate language'
+                type:
+                  description: 'Type of mute duration'
+                  type: string
+                  enum: [permanent, period, date]
+                  example: period
+                period:
+                  description: "Duration period (required if type is 'period'). Available options include:\n- **Minute-based**: `15m` (15 minutes), `30m` (30 minutes), `45m` (45 minutes)\n- **Hour-based**: `1h` (1 hour), `2h` (2 hours), `3h` (3 hours), `4h` (4 hours), `5h` (5 hours), `6h` (6 hours), `12h` (12 hours)\n- **Day-based**: `1d` (1 day), `2d` (2 days), `3d` (3 days), `4d` (4 days), `5d` (5 days), `6d` (6 days)\n- **Week-based**: `1w` (1 week), `2w` (2 weeks), `3w` (3 weeks)\n- **Month-based**: `1m` (1 month), `2m` (2 months), `3m` (3 months), `4m` (4 months), `5m` (5 months), `6m` (6 months), `7m` (7 months), `8m` (8 months), `9m` (9 months), `10m` (10 months), `11m` (11 months)\n- **Year-based**: `1y` (1 year)\n- **Special**: `0` (forever), `eod` (end of day), `eow` (end of week), `eom` (end of month), `eoy` (end of year)"
+                  type: string
+                  example: 7d
+                date:
+                  description: "End date\n     *                               (required if type is 'date')"
+                  type: string
+                  format: date
+                  example: '2023-12-31'
+              type: object
+      responses:
+        '200':
+          description: 'successful operation'
+          content:
+            application/json:
+              schema:
+                properties:
+                  data: { type: string, example: 'Player will be muted shortly.' }
+                type: object
+        '400':
+          description: 'Invalid input'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'Invalid period or date.' }
+                type: object
+        '404':
+          description: 'Player not found'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'Player not found' }
+                type: object
+        '429':
+          description: 'Too many requests'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: "You cannot do this yet. Please wait 120\n     *                                            second(s) between calls for the same player." }
+                type: object
+      security:
+        -
+          systemapi-passport:
+            - admin-tools
+  '/system-api/v2/player/{uuid}/unmute':
+    post:
+      tags:
+        - Player
+      summary: 'Unmute player'
+      description: 'Remove a mute from a player. ⚠️ This action has a cooldown of 120 seconds, per player.'
+      operationId: unmutePlayer
+      parameters:
+        -
+          name: uuid
+          in: path
+          description: 'UUID of the player'
+          required: true
+          schema:
+            type: string
+            format: uuid
+            example: f47ac10b-58cc-4372-a567-0e02b2c3d479
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                note:
+                  description: "Optional note\n     *                                           about the reason for unmuting"
+                  type: string
+                  example: 'Good behavior'
+              type: object
+      responses:
+        '200':
+          description: 'successful operation'
+          content:
+            application/json:
+              schema:
+                properties:
+                  data: { type: string, example: 'Player will be unmuted shortly.' }
+                type: object
+        '404':
+          description: 'Player not found'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'Player not found' }
+                type: object
+        '429':
+          description: 'Too many requests'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: "You cannot do this yet. Please wait 120\n     *                                            second(s) between calls for the same player." }
+                type: object
+      security:
+        -
+          systemapi-passport:
+            - admin-tools
+  '/system-api/v2/player/{uuid}/add-note':
+    post:
+      tags:
+        - Player
+      summary: 'Add note to player'
+      description: 'Add an administrative note to a player''s record. ⚠️ This action has a cooldown of 5 seconds, per player.'
+      operationId: addNoteToPlayer
+      parameters:
+        -
+          name: uuid
+          in: path
+          description: 'UUID of the player'
+          required: true
+          schema:
+            type: string
+            format: uuid
+            example: f47ac10b-58cc-4372-a567-0e02b2c3d479
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              required:
+                - note
+              properties:
+                note:
+                  description: 'Note content to add to player record'
+                  type: string
+                  example: 'Player was warned about behavior'
+              type: object
+      responses:
+        '200':
+          description: 'successful operation'
+          content:
+            application/json:
+              schema:
+                properties:
+                  data: { type: string, example: 'Note was added to player.' }
+                type: object
+        '404':
+          description: 'Player not found'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'Player not found' }
+                type: object
+        '429':
+          description: 'Too many requests'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: "You cannot do this yet. Please wait 5\n     *                                            second(s) between calls for the same player." }
+                type: object
+      security:
+        -
+          systemapi-passport:
+            - admin-tools
+  '/system-api/v2/player/{uuid}/mutate-tokens':
+    post:
+      tags:
+        - Player
+      summary: 'Mutate player tokens'
+      description: 'Add or remove tokens from a player''s balance. ⚠️ This action has a cooldown of 5 seconds, per player.'
+      operationId: mutatePlayerTokens
+      parameters:
+        -
+          name: uuid
+          in: path
+          description: 'UUID of the player'
+          required: true
+          schema:
+            type: string
+            format: uuid
+            example: f47ac10b-58cc-4372-a567-0e02b2c3d479
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              required:
+                - amount
+              properties:
+                amount:
+                  description: "Amount of tokens to add or\n     *                                             remove"
+                  type: integer
+                  example: 100
+                description:
+                  description: 'Description of the token transaction'
+                  type: string
+                  example: 'Refund for purchase'
+              type: object
+      responses:
+        '200':
+          description: 'successful operation'
+          content:
+            application/json:
+              schema:
+                properties:
+                  data: { type: string, example: 'Tokens were mutated.' }
+                type: object
+        '400':
+          description: 'Invalid input'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'Invalid amount or description.' }
+                type: object
+        '404':
+          description: 'Player not found'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'Player not found' }
+                type: object
+        '429':
+          description: 'Too many requests'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: "You cannot do this yet. Please wait 5\n     *                                            second(s) between calls for the same player." }
+                type: object
+      security:
+        -
+          systemapi-passport:
+            - admin-tools
+  '/system-api/v2/player/{uuid}/custom-role/{roleId}/add':
+    post:
+      tags:
+        - Player
+      summary: 'Add custom role to player'
+      description: 'Add a custom role to a player with a specified duration. ⚠️ This action has a cooldown of 5 seconds, per player.'
+      operationId: addCustomRoleToPlayer
+      parameters:
+        -
+          name: uuid
+          in: path
+          description: 'UUID of the player'
+          required: true
+          schema:
+            type: string
+            format: uuid
+            example: f47ac10b-58cc-4372-a567-0e02b2c3d479
+        -
+          name: roleId
+          in: path
+          description: 'ID of the custom role to add'
+          required: true
+          schema:
+            type: integer
+            example: 1
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              required:
+                - period
+              properties:
+                period:
+                  description: "Duration period (required if type is 'period'). Available options include:\n- **Minute-based**: `15m` (15 minutes), `30m` (30 minutes), `45m` (45 minutes)\n- **Hour-based**: `1h` (1 hour), `2h` (2 hours), `3h` (3 hours), `4h` (4 hours), `5h` (5 hours), `6h` (6 hours), `12h` (12 hours)\n- **Day-based**: `1d` (1 day), `2d` (2 days), `3d` (3 days), `4d` (4 days), `5d` (5 days), `6d` (6 days)\n- **Week-based**: `1w` (1 week), `2w` (2 weeks), `3w` (3 weeks)\n- **Month-based**: `1m` (1 month), `2m` (2 months), `3m` (3 months), `4m` (4 months), `5m` (5 months), `6m` (6 months), `7m` (7 months), `8m` (8 months), `9m` (9 months), `10m` (10 months), `11m` (11 months)\n- **Year-based**: `1y` (1 year)\n- **Special**: `0` (forever), `eod` (end of day), `eow` (end of week), `eom` (end of month), `eoy` (end of year)"
+                  type: string
+                  example: 7d
+              type: object
+      responses:
+        '200':
+          description: 'successful operation'
+          content:
+            application/json:
+              schema:
+                properties:
+                  data: { type: string, example: 'Custom Role was added to player.' }
+                type: object
+        '400':
+          description: 'Invalid input'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'Invalid period or date.' }
+                type: object
+        '404':
+          description: 'Player or role not found'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'Invalid role_id.' }
+                type: object
+        '429':
+          description: 'Too many requests'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: "You cannot do this yet. Please wait 5\n     *                                            second(s) between calls for the same player." }
+                type: object
+      security:
+        -
+          systemapi-passport:
+            - admin-tools
+  '/system-api/v2/player/{uuid}/custom-role/{roleId}/remove':
+    post:
+      tags:
+        - Player
+      summary: 'Remove custom role from player'
+      description: 'Remove a custom role from a player. ⚠️ This action has a cooldown of 5 seconds, per player.'
+      operationId: removeCustomRoleFromPlayer
+      parameters:
+        -
+          name: uuid
+          in: path
+          description: 'UUID of the player'
+          required: true
+          schema:
+            type: string
+            format: uuid
+            example: f47ac10b-58cc-4372-a567-0e02b2c3d479
+        -
+          name: roleId
+          in: path
+          description: 'ID of the custom role to remove'
+          required: true
+          schema:
+            type: integer
+            example: 1
+      responses:
+        '200':
+          description: 'successful operation'
+          content:
+            application/json:
+              schema:
+                properties:
+                  data: { type: string, example: 'Custom Role was removed from player.' }
+                type: object
+        '404':
+          description: 'Player or role not found'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'Invalid role_id.' }
+                type: object
+        '429':
+          description: 'Too many requests'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: "You cannot do this yet. Please wait 5\n     *                                            second(s) between calls for the same player." }
+                type: object
+      security:
+        -
+          systemapi-passport:
+            - admin-tools
   '/system-api/v2/task/{task_id}/execute':
     post:
       tags:
@@ -2309,6 +2966,17 @@ components:
             rcon_port:
               type: integer
               example: '37015'
+          type: object
+        activity:
+          properties:
+            status:
+              description: 'Whether the server is healthy/online'
+              type: boolean
+              example: 'true'
+            online_characters_count:
+              description: 'Number of players currently online'
+              type: integer
+              example: '25'
           type: object
         backup:
           properties:
