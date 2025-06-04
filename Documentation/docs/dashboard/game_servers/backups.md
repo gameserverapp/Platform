@@ -22,10 +22,13 @@ Once the backup is complete, the page will refresh automatically.
 
 ![Game server - create manual backup 3](/img/dashboard/gameserver/backups/create_manual_backup_3.jpg)
 
-## Restore / delete
+## Restore, convert & delete
 
 You can restore any backup, as long as it was created for the same game. \
 Note that only `manual` backups can be deleted.
+
+In certain cases you may want to prevent automatic backups from being deleted. \
+By converting them to manual backups, they will no longer be automatically deleted.
 
 :::info clean up
 Automatic daily backups are automatically removed after 7 days.
@@ -62,6 +65,11 @@ To avoid unnecessary backups, this will be skipped if the server has been online
 
 GameServerApp creates automatic backups twice per day, ensuring you always have a recent working backup. \
 These daily backups run at fixed times and cannot be changed. Use Tasks for full control over scheduling.
+
+:::tip Convert automatic backups to manual backups
+In certain cases you may want to prevent automatic backups from being deleted, like `pre-update` backups. \
+By converting them to manual backups, they will no longer be automatically deleted.
+:::
 
 ## Custom backup schedule (task)
 
