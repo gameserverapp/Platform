@@ -31,7 +31,7 @@ For optimal synchronization, we recommend connecting each machine to every other
 
 #### 1. Install Syncthing & open the settings URL
 
-Install Syncthing on every machine that needs to sync. Once installed, go to the `Settings` page and open the Syncthing URL for each of the installed services.
+Install Syncthing ([how to](/dashboard/machines/services/#how-to-install-a-service)) on every machine that needs to sync. Once installed, go to the `Settings` page and open the Syncthing URL for each of the installed services.
 
 ![Syncthing syncing setup 1](/img/dashboard/machines/services/syncthing_settings_1.jpg)
 
