@@ -3365,16 +3365,9 @@ components:
           oneOf:
             -
               properties:
-                code:
-                  type: string
-                  example: SUMMER25
-                amount:
+                percentage:
                   type: integer
                   example: 25
-                type:
-                  type: string
-                  enum: [percentage, fixed]
-                  example: percentage
               type: object
             -
               type: 'null'
