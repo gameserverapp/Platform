@@ -2459,7 +2459,7 @@ paths:
       tags:
         - Task
       summary: 'Execute task'
-      description: 'Executes any `webhook` tasks.'
+      description: 'Executes any `webhook` tasks. After executing a webhook, you need to wait 3 seconds before executing the same webhook again.'
       operationId: executeTask
       parameters:
         -
