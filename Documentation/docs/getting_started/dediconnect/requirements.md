@@ -9,7 +9,6 @@ Here are the key requirements and helpful tips for hosting reliable, high-perfor
 
 DediConnect supports the following operating systems. Make sure the language on the machine is set to English:
 
-- Debian 10  
 - Debian 11  
 - Debian 12  
 - Ubuntu 22.04  
