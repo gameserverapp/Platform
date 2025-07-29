@@ -39,7 +39,7 @@ If the delivery includes any sub-packages, they’ll be listed as well.
 These logs are especially useful for troubleshooting failed deliveries.
 
 :::tip Log details
-Click the `<Icon icon="fa-solid fa-chevron-down" size="lg" />` icon in the logs section to view more information.
+Click the <Icon icon="fa-solid fa-chevron-down" size="lg" /> icon in the logs section to view more information.
 :::
 
 :::caution Solve command issues
