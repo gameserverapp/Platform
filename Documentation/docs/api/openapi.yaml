@@ -3441,6 +3441,11 @@ components:
                   example: true
               type: object
           type: object
+        access_groups:
+          description: 'Access groups the player belongs to'
+          type: array
+          items:
+            $ref: '#/components/schemas/PlayerAccessGroup'
         created_at:
           description: 'Date and time when the player account was created'
           type: string
