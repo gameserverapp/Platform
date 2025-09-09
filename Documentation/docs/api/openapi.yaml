@@ -2454,6 +2454,149 @@ paths:
         -
           systemapi-passport:
             - admin-tools
+  '/system-api/v2/player/{uuid}/access-group/{groupId}/add':
+    post:
+      tags:
+        - Player
+      summary: 'Add player to access group'
+      description: 'Add a player to an access group with specified membership type and duration. ⚠️ This action has a cooldown of 5 seconds, per player.'
+      operationId: addPlayerToAccessGroup
+      parameters:
+        -
+          name: uuid
+          in: path
+          description: 'UUID of the player'
+          required: true
+          schema:
+            type: string
+            format: uuid
+            example: f47ac10b-58cc-4372-a567-0e02b2c3d479
+        -
+          name: groupId
+          in: path
+          description: 'ID of the access group'
+          required: true
+          schema:
+            type: integer
+            example: 1
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              required:
+                - period
+                - membership_type
+              properties:
+                period:
+                  description: "Duration period. Available options include:\n- **Minute-based**: `15m` (15 minutes), `30m` (30 minutes), `45m` (45 minutes)\n- **Hour-based**: `1h` (1 hour), `2h` (2 hours), `3h` (3 hours), `4h` (4 hours), `5h` (5 hours), `6h` (6 hours), `12h` (12 hours)\n- **Day-based**: `1d` (1 day), `2d` (2 days), `3d` (3 days), `4d` (4 days), `5d` (5 days), `6d` (6 days)\n- **Week-based**: `1w` (1 week), `2w` (2 weeks), `3w` (3 weeks)\n- **Month-based**: `1m` (1 month), `2m` (2 months), `3m` (3 months), `4m` (4 months), `5m` (5 months), `6m` (6 months), `7m` (7 months), `8m` (8 months), `9m` (9 months), `10m` (10 months), `11m` (11 months)\n- **Year-based**: `1y` (1 year)\n- **Special**: `0` (forever), `eod` (end of day), `eow` (end of week), `eom` (end of month), `eoy` (end of year)"
+                  type: string
+                  example: 7d
+                membership_type:
+                  description: 'Membership type: 0=Member, 1=Trial, 2=Priority'
+                  type: integer
+                  enum: [0, 1, 2]
+                  example: 0
+              type: object
+      responses:
+        '200':
+          description: 'successful operation'
+          content:
+            application/json:
+              schema:
+                properties:
+                  data: { type: string, example: 'Player was added to access group.' }
+                type: object
+        '400':
+          description: 'Invalid input'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'Invalid group_id.' }
+                type: object
+        '404':
+          description: 'Player or access group not found'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'Player not found' }
+                type: object
+        '429':
+          description: 'Too many requests'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'You cannot do this yet. Please wait 5 second(s) between calls for the same player.' }
+                type: object
+      security:
+        -
+          systemapi-passport:
+            - admin-tools
+  '/system-api/v2/player/{uuid}/access-group/{groupId}/remove':
+    post:
+      tags:
+        - Player
+      summary: 'Remove player from access group'
+      description: 'Remove a player from an access group. ⚠️ This action has a cooldown of 5 seconds, per player.'
+      operationId: removePlayerFromAccessGroup
+      parameters:
+        -
+          name: uuid
+          in: path
+          description: 'UUID of the player'
+          required: true
+          schema:
+            type: string
+            format: uuid
+            example: f47ac10b-58cc-4372-a567-0e02b2c3d479
+        -
+          name: groupId
+          in: path
+          description: 'ID of the access group to remove player from'
+          required: true
+          schema:
+            type: integer
+            example: 1
+      responses:
+        '200':
+          description: 'successful operation'
+          content:
+            application/json:
+              schema:
+                properties:
+                  data: { type: string, example: 'Player was removed from access group.' }
+                type: object
+        '400':
+          description: 'Invalid input'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'Invalid group_id.' }
+                type: object
+        '404':
+          description: 'Player or access group not found'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'Player not found' }
+                type: object
+        '429':
+          description: 'Too many requests'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'You cannot do this yet. Please wait 5 second(s) between calls for the same player.' }
+                type: object
+      security:
+        -
+          systemapi-passport:
+            - admin-tools
   '/system-api/v2/task/{task_id}/execute':
     post:
       tags:
@@ -3156,6 +3299,25 @@ components:
           format: date-time
           example: '2023-01-01T12:00:00.000000Z'
       type: object
+    PlayerAccessGroup:
+      title: 'Player Access Group'
+      description: 'Access group membership for a player'
+      properties:
+        name:
+          description: 'Access group name'
+          type: string
+          example: 'RP Season 1'
+        type:
+          description: 'Membership type'
+          type: string
+          example: Member
+        expires_at:
+          description: 'When this membership expires'
+          type: string
+          format: date-time
+          example: '2023-12-31T23:59:59.000000Z'
+          nullable: true
+      type: object
     'Player Custom Role':
       title: 'Player Custom Role'
       description: 'Role assigned to a player with optional expiration'
@@ -3238,20 +3400,6 @@ components:
         moderation:
           description: 'Moderation status information'
           properties:
-            rules:
-              description: 'Rules acceptance status'
-              properties:
-                accepted:
-                  description: 'Whether the player has accepted the rules'
-                  type: boolean
-                  example: true
-                accepted_at:
-                  description: 'When the player accepted the rules'
-                  type: string
-                  format: date-time
-                  example: '2023-01-15T14:30:00.000000Z'
-                  nullable: true
-              type: object
             banned:
               description: 'Ban status'
               properties:
