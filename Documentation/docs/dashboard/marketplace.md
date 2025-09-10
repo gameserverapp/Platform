@@ -1,6 +1,6 @@
 ---
 title: Marketplace
-sidebar_position: 4.4
+sidebar_position: 9.1
 ---
 
 Share your creations with others or find inspiration in the marketplace categories.

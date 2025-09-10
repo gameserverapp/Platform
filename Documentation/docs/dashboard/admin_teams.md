@@ -1,6 +1,6 @@
 ---
 title: Admin teams
-sidebar_position: 1
+sidebar_position: 8
 ---
 
 Collaborate with your entire team securely, no need to share sensitive credentials like RDP passwords.

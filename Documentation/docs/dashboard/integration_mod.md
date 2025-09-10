@@ -1,6 +1,6 @@
 ---
 title: Integration Mod
-sidebar_position: 2.3
+sidebar_position: 9
 ---
 
 The Integration Mod improves the in-game experience by seamlessly connecting the game world with the dashboard.
