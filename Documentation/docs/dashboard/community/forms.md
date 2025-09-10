@@ -3,65 +3,12 @@ title: Forms
 sidebar_position: 7
 ---
 
-Add application, whitelist, or staff recruitment forms to your Community website, no coding required.
+Let players submit applications, vote on polls, or complete surveys.
+Add custom forms to your Community website, no coding required.
 
 [Go to Forms >](https://dash.gameserverapp.com/community/form)
 
 ![Community - Forms - Form example](/img/dashboard/community/form/form_example.jpg)
-
-## Whitelist applications
-
-[Admin team members](/dashboard/admin_teams) with the right permissions can review applications / submissions.
-
-### Review applications
-
-#### 1. Go to `Unprocessed`
-
-Click the number in the `Unprocessed` column or click the <Icon icon="fa-solid fa-clipboard-check" size="lg" /> icon next to the form you want to review.
-
-![Community - Forms - Review applications 1](/img/dashboard/community/form/review_form_1.jpg)
-
-#### 2. Find application
-
-Use the search feature on the right to locate a specific application. Click `Review` to open it.
-
-![Community - Forms - Review applications 2](/img/dashboard/community/form/review_form_2.jpg)
-
-#### 3. Approve / Reject
-
-Carefully review the form submission and, if needed, add a note for the player. This note will be included in the email response to them.
-
-:::tip Delete application
-Use the `Delete` option to remove any invalid or rule-breaking submissions. This also allows the player to try again if [submission restrictions](#restrictions) are in place.
-:::
-
-Click `Approve` or `Reject` to complete the review. Approved players are added to the whitelist automatically.
-
-![Community - Forms - Review applications 3](/img/dashboard/community/form/review_form_3.jpg)
-
-#### Player email example
-
-Here is what players will see in their email. You can [customize the email messages](#email-messages).
-
-![Community - Forms - Review applications 4](/img/dashboard/community/form/review_form_4.jpg)
-
-### Processed applications
-
-See a complete list of processed applications, who handled them, notes, and final decisions.
-
-![Community - Forms - Processed applications 1](/img/dashboard/community/form/processed_applications_1.jpg)
-
-![Community - Forms - Processed applications 2](/img/dashboard/community/form/processed_applications_2.jpg)
-
-### Email messages
-
-Customize the emails that are sent to players when their applications are approved or rejected.
-
-:::tip
-Use the `{note}` variable to insert the admin's note at a specific point in the email.
-:::
-
-![Community - Forms - Email settings](/img/dashboard/community/form/email_settings.jpg)
 
 ## Create a form
 
@@ -143,7 +90,7 @@ Adjust the form's name, type, closing date, and more.
 ### Form types
 
 - **Default** – Use for general purposes like ban appeals or recruitment.
-- **Whitelist application** – Ideal for roleplay or private servers.
+- **Application** – Collect player information for all kinds of applications.
 - **Poll** – Let users vote on events, mods, etc.
 
 ### Restrictions
@@ -160,14 +107,6 @@ You can also set submission limits:
 
 ![Community - Forms - Form settings - restrictions](/img/dashboard/community/form/settings_restrictions.jpg)
 
-### Whitelist
-
-Assign whitelist approval to a specific server or cluster.
-
-You can choose to manually review all applications before players are whitelisted.
-
-![Community - Forms - Form settings - whitelist](/img/dashboard/community/form/settings_whitelist.jpg)
-
 ### Players
 
 Require players to link their Discord and/or email before submitting.
@@ -178,8 +117,64 @@ By default, banned players can't submit forms. You can override this for special
 
 ### Discord
 
-Automatically send form activity updates to Discord, this includes new submissions and whitelist approvals or rejections.
+Automatically send form activity updates to Discord, this includes new submissions and approvals or rejections.
 
 You can configure specific approval and rejection messages sent by the bot.
 
 ![Community - Forms - Form settings - discord](/img/dashboard/community/form/settings_discord.jpg)
+
+
+[//]: # (todo move to admin tools)
+## Applications
+
+[Admin team members](/dashboard/admin_teams) with the right permissions can review applications / submissions.
+
+### Review applications
+
+#### 1. Go to `Unprocessed`
+
+Click the number in the `Unprocessed` column or click the <Icon icon="fa-solid fa-clipboard-check" size="lg" /> icon next to the form you want to review.
+
+![Community - Forms - Review applications 1](/img/dashboard/community/form/review_form_1.jpg)
+
+#### 2. Find application
+
+Use the search feature on the right to locate a specific application. Click `Review` to open it.
+
+![Community - Forms - Review applications 2](/img/dashboard/community/form/review_form_2.jpg)
+
+#### 3. Approve / Reject
+
+Carefully review the form submission and, if needed, add a note for the player. This note will be included in the email response to them.
+
+:::tip Delete application
+Use the `Delete` option to remove any invalid or rule-breaking submissions. This also allows the player to try again if [submission restrictions](#restrictions) are in place.
+:::
+
+Click `Approve` or `Reject` to complete the review.
+
+![Community - Forms - Review applications 3](/img/dashboard/community/form/review_form_3.jpg)
+
+#### Player email example
+
+Here is what players will see in their email. You can [customize the email messages](#email-messages).
+
+![Community - Forms - Review applications 4](/img/dashboard/community/form/review_form_4.jpg)
+
+### Processed applications
+
+See a complete list of processed applications, who handled them, notes, and final decisions.
+
+![Community - Forms - Processed applications 1](/img/dashboard/community/form/processed_applications_1.jpg)
+
+![Community - Forms - Processed applications 2](/img/dashboard/community/form/processed_applications_2.jpg)
+
+### Email messages
+
+Customize the emails that are sent to players when their applications are approved or rejected.
+
+:::tip
+Use the `{note}` variable to insert the admin's note at a specific point in the email.
+:::
+
+![Community - Forms - Email settings](/img/dashboard/community/form/email_settings.jpg)
