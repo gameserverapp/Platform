@@ -146,20 +146,6 @@ Metrics include:
 
 ![Statistics](/img/dashboard/gameserver/getting_started/gameserver_performance.jpg)
 
-## Access control
-
-### Whitelist
-View and clear the whitelist on the `Access` tab under `GSA Whitelist`.
-
-### Twitch sub access
-Automatically grants access to Twitch subscribers, no manual action needed.
-
-:::info Integration mod required
-Requires the GameServerApp.com Integration mod installed on the server.
-:::
-
-![Twitch access](/img/dashboard/gameserver/getting_started/gameserver_access_twitch.jpg)
-
 ## Logs
 Find server logs under the `Logs` tab on the settings page. Older logs are accessible via [FTP](#connect--ftp-info).
 
