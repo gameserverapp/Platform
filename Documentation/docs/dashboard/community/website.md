@@ -3,7 +3,7 @@ title: Website
 sidebar_position: 1
 ---
 
-Set up a website for online whitelist application forms and more. No coding experience required, it's all easy drag-and-drop.
+Set up a website for online (whitelist) application forms and more. No coding experience required, it's all easy drag-and-drop.
 
 [Go to Website >](https://dash.gameserverapp.com/community/page)
 

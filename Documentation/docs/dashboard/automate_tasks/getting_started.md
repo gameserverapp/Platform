@@ -73,7 +73,6 @@ Achievement tasks can be triggered based on the following criteria:
   - Player created more than [X] ago
   - Player was banned
   - Player was muted
-  - Player is whitelisted for [X]
   - Player has over [X] tokens
   - Player voted [X] times [since]
   - Player voted
