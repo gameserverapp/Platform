@@ -1,5 +1,5 @@
 ---
-title: Custom roles
+title: Custom Roles
 sidebar_position: 1
 ---
 
@@ -20,9 +20,21 @@ Enter a name for the new Custom Role and click `Create role`.
 
 ![Admin tools - Create Custom Role 2](/img/dashboard/admin_tools/custom_roles/create_custom_role_2.jpg)
 
-
-
 ## Discounts
 Give special [Supporter Tier](/dashboard/monetization/supporter_tiers) and [Shop pack](/dashboard/monetization/shop_packs) discounts for players with a Custom Role. Useful for VIP rewards where the VIP gets a discount on the in-game shop.
 
 ![Admin tools - Custom Role discount](/img/dashboard/admin_tools/custom_roles/custom_role_discount.jpg)
+
+## Manage members
+On the Custom Role detail page you can see all members and their expiration dates.
+
+### Drop all members
+Click `Drop all members` to remove all members from the Custom Role.
+
+![Admin tools - Custom Role = drop all members](/img/dashboard/admin_tools/custom_roles/custom_role_drop_all_members.jpg)
+
+### Delete specific member
+Click the `[X]` button to remove a specific member.
+
+![Admin tools - Custom Role = drop all members](/img/dashboard/admin_tools/custom_roles/custom_role_drop_specific_member.jpg)
+

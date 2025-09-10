@@ -26,7 +26,7 @@ https://docs.gameserverapp.com/dashboard/monetization/deliveries#-troubleshootin
 
 `{player.token_count}` Displays the player's current token balance.
 
-### Custom role
+### Custom Role
 
 `{custom_role.1.minutes_remaining}` shows the remaining time in **minutes**.  
 `{custom_role.1.hours_remaining}` shows the remaining time in **hours**.  

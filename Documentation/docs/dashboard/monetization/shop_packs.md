@@ -379,9 +379,9 @@ A good approach is to configure the actions via the dashboard, export the file, 
 
 #### Restrict to Custom Role ID
 
-Use this column to restrict the Shop pack to players with a specific `Custom role`.
+Use this column to restrict the Shop pack to players with a specific `Custom Role`.
 
-You can find the role ID on the Custom role page.
+You can find the role ID on the [Custom Role page](/dashboard/admin_tools/custom_roles).
 
 ![Monetization - CSV tools - Details - Restrict Custom Role ID field 1](/img/dashboard/monetization/shop_packs/csv_tool_file_details_restrict_custom_role_1.jpg)  
 ![Monetization - CSV tools - Details - Restrict Custom Role ID field 2](/img/dashboard/monetization/shop_packs/csv_tool_file_details_restrict_custom_role_2.jpg)

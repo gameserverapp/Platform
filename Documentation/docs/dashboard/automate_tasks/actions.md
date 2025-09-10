@@ -167,7 +167,7 @@ Add if/else logic using Conditional blocks. Sub-actions can be added and will ex
 - Player
   - Player name
   - Player token amount
-  - Player Custom role
+  - Player Custom Role
   - Player Access group
   - Player Access group (specific membership type)
   - Player Status

@@ -67,7 +67,7 @@ In the `Settings` tab, click `+ Add condition` to define when the reward should 
 
 ![Automations / Tasks - Create vote reward 3](/img/dashboard/automate_tasks/vote_reward/create_vote_reward_3.jpg)
 
-Use Custom role requirements to offer enhanced rewards for players with specific roles, such as VIPs.
+Use Custom Role requirements to offer enhanced rewards for players with specific roles, such as VIPs.
 
 Click `Add condition` to save your changes.
 
