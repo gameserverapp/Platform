@@ -90,12 +90,13 @@ Activate special features from the GSA Integration mod, such as:
 
 ![Automations / Tasks - Action - Integration mod](/img/dashboard/automate_tasks/actions/action_integration_mod.png)
 
-### Whitelist
+### Access control
 
-Add or remove a player from the whitelist for a specific cluster, game server, or all.
+Add or remove a player from a specific Access group.
+You can also set a membership type and duration.
 
-![Automations / Tasks - Action - whitelist 1](/img/dashboard/automate_tasks/actions/action_whitelist_1.png)
-![Automations / Tasks - Action - whitelist 2](/img/dashboard/automate_tasks/actions/action_whitelist_2.png)
+![Automations / Tasks - Action - Access group 1](/img/dashboard/automate_tasks/actions/action_access-control_1.png)
+![Automations / Tasks - Action - Access group 2](/img/dashboard/automate_tasks/actions/action_access-control_2.png)
 
 ### Custom Role
 
