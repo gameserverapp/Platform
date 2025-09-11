@@ -1,6 +1,6 @@
 ---
 title: Custom Roles
-sidebar_position: 1
+sidebar_position: 3
 ---
 
 Custom Roles can be used in a variety of features across the dashboard. Most communities use Custom Roles to grant VIPs extra perks, but Custom Roles can also be used to create advanced tasks.
@@ -29,12 +29,12 @@ Give special [Supporter Tier](/dashboard/monetization/supporter_tiers) and [Shop
 On the Custom Role detail page you can see all members and their expiration dates.
 
 ### Drop all members
-Click `Drop all members` to remove all members from the Custom Role.
+Click `Drop all members` to remove the Custom Role for all members.
 
 ![Admin tools - Custom Role = drop all members](/img/dashboard/admin_tools/custom_roles/custom_role_drop_all_members.jpg)
 
 ### Delete specific member
-Click the `[X]` button to remove a specific member.
+Click the `[X]` button to remove the Custom Role for a specific member.
 
 ![Admin tools - Custom Role = drop all members](/img/dashboard/admin_tools/custom_roles/custom_role_drop_specific_member.jpg)
 
