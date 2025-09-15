@@ -3,7 +3,7 @@ title: Access control
 sidebar_position: 2
 ---
 
-Manage access to game servers, using groups. For example for VIP-only servers or RP communities. 
+Manage access to game servers using groups. For example, restrict access to VIP-only servers or RP communities.  
 Customize the rules, settings, and requirements for each group.
 
 [Go to Access control >](https://dash.gameserverapp.com/admintools_v2/access-control)
@@ -11,313 +11,343 @@ Customize the rules, settings, and requirements for each group.
 ![Admin tools - Access control - overview](/img/dashboard/admin_tools/access_control/access_control_overview.jpg)
 
 ## Access groups
-In the Access control section you can create groups that can be used to manage access to game servers.
 
-Access groups can be used for a variety of purposes, such as (but not limited to):
-- Rule gated servers
+In the Access Control section, you can create groups to manage access to game servers.
+
+Access groups can be used for purposes such as:
+- Rule-gated servers
 - VIP-only servers
 - RP communities
 - Invite-only servers
 
-There are no limits to the number of groups you can create. So you can create multiple groups for different purposes, such as a "VIP-only" group while also having a group that acts as a Rule gate.
+There is no limit to the number of groups you can create. For example, you can have a "VIP-only" group alongside a group that acts as a rule gate.
 
-Community with clusters that have different rules, you can create a group for each cluster and apply different [Rule gate](#rule-gate) to each group.
-
+If your community has clusters with different rules, you can create a group per cluster and assign each a different [Rule gate](#rule-gate).
 
 ### Create group
-Click `+ Add group` in the top-right corner on the [Access control overview page](https://dash.gameserverapp.com/admintools_v2/access-control).
 
-![Admin tools - Access control - Create group 1](/img/dashboard/admin_tools/access_control/create_group_1.jpg)
+Click `+ Add group` in the top-right corner of the [Access control overview page](https://dash.gameserverapp.com/admintools_v2/access-control).
 
-Enter a name for the new group and click `Create`.
+![Create group 1](/img/dashboard/admin_tools/access_control/create_group_1.jpg)
 
-![Admin tools - Access control - Create group 2](/img/dashboard/admin_tools/access_control/create_group_2.jpg)
+Enter a name for the group and click `Create`.
 
+![Create group 2](/img/dashboard/admin_tools/access_control/create_group_2.jpg)
 
 ### Group matching priority
-The order in which the groups are listed on the [Access control overview](https://dash.gameserverapp.com/admintools_v2/access-control) determines the priority. Therefor it is recommended to put the `Members only` groups at the top.
 
-When there are multiple groups, GSA will check each group using the priority order. The first group that matches the player is used.
-In cases where the player matches no groups, the [default policy](#default-settings) is used.
+The order of groups in the [Access control overview](https://dash.gameserverapp.com/admintools_v2/access-control) determines their priority.  
+It's recommended to place `Members only` groups at the top.
 
-![Admin tools - Access control - Sorting](/img/dashboard/admin_tools/access_control/access_control_sorting.jpg)
+If multiple groups are configured, GSA will check them in order. The first group that matches a player is used.  
+If no group matches, the [default policy](#default-settings) is applied.
 
-
+![Sorting](/img/dashboard/admin_tools/access_control/access_control_sorting.jpg)
 
 ### Archive group
-You can archive a group by clicking the `Archive` button, under the dropdown. Archived groups are not visible on the `Active` overview, but can be found on the `Archived` tab.
 
-![Admin tools - Access control - Archive](/img/dashboard/admin_tools/access_control/access_group_archive.jpg)
+Click the `Archive` button under the dropdown menu to archive a group.  
+Archived groups are hidden from the `Active` view but can be found under the `Archived` tab.
+
+![Archive group](/img/dashboard/admin_tools/access_control/access_group_archive.jpg)
 
 ### Default settings
-With the default settings you can configure the default Policy and Kick message.
 
-Click the <Icon icon="fa-solid fa-pencil-alt" size="lg" /> icon to edit any of the default settings.
+The default settings define the fallback policy and kick message.
 
-![Admin tools - Access control - Default settings](/img/dashboard/admin_tools/access_control/access_control_default_settings.jpg)
+Click the <Icon icon="fa-solid fa-pencil-alt" size="lg" /> icon to edit them.
+
+![Default settings](/img/dashboard/admin_tools/access_control/access_control_default_settings.jpg)
 
 #### Policy
-There are 2 options for the default policy:
-- `Everyone can join` = Allows anyone, that is not banned, to join the servers.
-- `Members only` = Only members of Access groups can join the servers.
 
-This policy applies to all game servers that do not have a specific access group assigned, and access groups that use the `Use dashboard default` policy.
+Two options are available:
+
+- `Everyone can join`: Allows anyone (not banned) to join.
+- `Members only`: Only members of an Access group may join.
+
+This applies to:
+- Servers without a specific Access group
+- Groups using the `Use dashboard default` policy
 
 #### Kick message
-Change the default kick message that is shown to players when they are kicked from a server. When an Access group has a custom kick message configured, that one is used instead.
 
-![Admin tools - Access control - Default kick message](/img/dashboard/admin_tools/access_control/access_control_default_kick_message.jpg)
+Customize the default kick message shown when a player is removed from a server.  
+If a group has its own message, that message takes precedence.
 
+![Kick message](/img/dashboard/admin_tools/access_control/access_control_default_kick_message.jpg)
 
 ## Members
-Players can be added to an Access group manually, or automatically through Tasks, Shop packs, Supporter Tiers, Application forms, or by being a Twitch subscriber.
 
-All players in an Access group are considered `Members`.
+Players can be added to an Access group manually or automatically via Tasks, Shop packs, Supporter Tiers, Application forms, or Twitch subscriptions.
 
-#### Search &filters
-You can search for specific players and filter members by membership type and [Custom Roles](/dashboard/admin_tools/custom_roles).
+All players in a group are considered `Members`.
 
-![Admin tools - Access control - Members](/img/dashboard/admin_tools/access_control/access_group_members.jpg)
+#### Search & filters
+
+Search for players and filter members by membership type or [Custom Roles](/dashboard/admin_tools/custom_roles).
+
+![Members](/img/dashboard/admin_tools/access_control/access_group_members.jpg)
 
 ### Add member
 
-Click `+ Add member` to manually add a player to the group.
+Click `+ Add member` to add a player manually.
 
-![Admin tools - Access control - Add member 1](/img/dashboard/admin_tools/access_control/access_group_add_member_1.jpg)
+![Add member 1](/img/dashboard/admin_tools/access_control/access_group_add_member_1.jpg)
 
-You can search for players by name and select one or multiple players.
-Set the membership type and duration, then click `Submit`.
+Search for players by name, select one or more, set the membership type and duration, and click `Submit`.
 
-![Admin tools - Access control - Add member 2](/img/dashboard/admin_tools/access_control/access_group_add_member_2.jpg)
-
+![Add member 2](/img/dashboard/admin_tools/access_control/access_group_add_member_2.jpg)
 
 ### Edit membership
-You can edit the membership type and duration per member, by clicking the `Actions` dropdown menu and selecting `Edit`.
 
-![Admin tools - Access control - Edit member 1](/img/dashboard/admin_tools/access_control/access_group_edit_member_1.jpg)
+To change a member's type or duration, use the `Actions` dropdown and select `Edit`.
 
-Change the membership type and/or duration, then click `Save`.
+![Edit member 1](/img/dashboard/admin_tools/access_control/access_group_edit_member_1.jpg)
 
-![Admin tools - Access control - Edit member 2](/img/dashboard/admin_tools/access_control/access_group_edit_member_2.jpg)
+Update the details and click `Save`.
 
+![Edit member 2](/img/dashboard/admin_tools/access_control/access_group_edit_member_2.jpg)
 
 ### Delete member
-You can delete a player from the group by clicking the `Actions` dropdown menu and selecting `Delete`.
+
+Use the `Actions` dropdown and select `Delete` to remove a player from the group.
 
 :::info
-Deleting a player from an Access group does not remove them from the game server or the dashboard. It only removes them from the Access group.
+Removing a player from a group does **not** remove them from the game server or dashboard — only from the Access group.
 :::
 
-![Admin tools - Access control - Delete member](/img/dashboard/admin_tools/access_control/access_group_delete_member.jpg)
+![Delete member](/img/dashboard/admin_tools/access_control/access_group_delete_member.jpg)
 
 #### Bulk actions
-You can perform bulk actions on multiple members at once, by selecting them and clicking the `Bulk actions` button at the top.
 
-![Admin tools - Access control - Bulk delete members](/img/dashboard/admin_tools/access_control/access_group_bulk_delete_member.jpg)
+Select multiple members and click `Bulk actions` to apply changes to all of them at once.
 
+![Bulk delete](/img/dashboard/admin_tools/access_control/access_group_bulk_delete_member.jpg)
 
 ### Membership types
 
-**Trial**\
-When a new player joins a game server linked to a group with a Rule gate, they are automatically added as a trial member. During the trial period the player is reminded to visit the Community website and accept the rules. When the trial expires the player is kicked from the server.
+**Trial**  
+Players are automatically added as a trial member when joining a Rule-gated server.  
+During the trial, they're prompted to accept the rules. If they don't, they're kicked when their trial expires.
 
-**Member**\
-Regular memberships are for players that have been approved to join a group. For example, a player that has applied to join an RP community.
+**Member**  
+Approved players with standard access. Ideal for RP communities or similar setups.
 
-**Priority Member**\
-This is currently the same as a regular member. In the future this may be used for priority queuing.
+**Priority Member**  
+Functions the same as `Member` for now. May be used for priority queueing later.
 
-**Twitch subscribers**\
-Twitch subscribers are automatically added to the group when they subscribe to your channel. They are removed when their subscription expires. See [Twitch subs](#twitch-subs) for more info.
+**Twitch subscribers**  
+Subscribers are automatically added to the group and removed when the sub expires. See [Twitch subs](#twitch-subs) for more details.
 
 ### Membership duration
-The membership can have a specific duration, after which the player is automatically removed from the group. It is also possible to set the duration to `Never`, which means the player will never be removed from the group.
 
+Set how long a membership lasts. After the set time, the player is removed from the group.  
+Set to `Never` to make it permanent.
 
 ## Rule gate
-Tired of players claiming they didn't know the rules?\
-With the Rule gate you can require players to accept the rules, if they want to keep playing.
 
-![Admin tools - Access control - Rule gate](/img/dashboard/admin_tools/access_control/access_group_rule_gate.jpg)
+Tired of players ignoring your rules?  
+Rule gate requires them to accept the rules before continuing.
+
+![Rule gate](/img/dashboard/admin_tools/access_control/access_group_rule_gate.jpg)
 
 ### Rule page
-The Rule page is the page on the Community website that contains the rules. You can configure which page is used for the Rule gate.
 
-Pages that are configured as the Rule page will automatically have a `Accept rules` button added to the page.
+Choose a page on your Community site that contains your rules.  
+This page will automatically include an `Accept rules` button.
 
-After accepting the rules the player's membership is automatically converted from `trial` to `member`.
+Once accepted, the membership type changes from `trial` to `member`.
 
-![Admin tools - Settings - Rule page example](/img/dashboard/admin_tools/access_control/rule_page_example.jpg)
-
+![Rule page example](/img/dashboard/admin_tools/access_control/rule_page_example.jpg)
 
 ### Trial period
-New players are automatically added as a trial member when they join a game server linked to a group with a Rule gate. You can set a custom trial period for each group.
 
-During the trial period the player is reminded to visit the Community website and accept the rules.
-You can configure the reminder message and use variables to include the remaining time and the website URL.
+New players are added as trial members when joining a Rule-gated server.  
+Set a custom trial period per group.
 
-**Variables**
-- `%%TIME%%` shows the remaining time in **minutes**.  
-- `%%WEBSITE_URL%%` shows the URL of the Community website.
+During the trial, players are reminded to visit your website and accept the rules.  
+You can configure the reminder message using variables:
+
+**Variables:**
+- `%%TIME%%` — remaining time in minutes
+- `%%WEBSITE_URL%%` — your website URL
 
 :::info
-The trial period is only applied to players that join a game server linked to a group with a Rule gate. Players that join a server not linked to a group are not affected.
+Only applies to servers linked to a Rule-gated group. Other servers are unaffected.
 :::
 
-
-![Admin tools - Access control - Rule gate example](/img/dashboard/admin_tools/access_control/access_group_rule_gate_message_example.jpg)
-
+![Rule gate message example](/img/dashboard/admin_tools/access_control/access_group_rule_gate_message_example.jpg)
 
 ## Form
-For situations where you want players to apply before they can join a game server, you can use the Access group form. 
 
-On the form page you can configure the form that players need to fill in before they are added to the group. Per group, you can have a different form and form settings.
+Use Access group forms when players need to apply before joining.
+
+Each group can have its own form and settings.
 
 ### Form builder
-If you are familiar with the [Forms](/dashboard/community/forms) feature, then you already know [how to use the Form builder](/dashboard/community/forms#form-builder). 
+
+If you're familiar with [Forms](/dashboard/community/forms), you already know how to use the [Form builder](/dashboard/community/forms#form-builder).
 
 :::info
-After creating a form, you should add it to a page on the Community website. Use the `Create new form page` button in the form settings to automatically create a new page and select the form.
+After creating a form, use `Create new form page` in the form settings to automatically add it to your Community website.
 
-
-![Admin tools - Access control - Add form to page](/img/dashboard/admin_tools/access_control/access_group_form_add_page.jpg)
+![Add form to page](/img/dashboard/admin_tools/access_control/access_group_form_add_page.jpg)
 :::
 
 ### Form settings
 
-![Admin tools - Access control - Form settings](/img/dashboard/admin_tools/access_control/access_group_form_settings.jpg)
+![Form settings](/img/dashboard/admin_tools/access_control/access_group_form_settings.jpg)
 
 #### Who can submit
-Determine who can submit the form. You can choose between:
-- `Everyone` = Everyone can submit the form.
-- `Only accounts with characters` = Players must have a character on any game server to submit the form.
+
+Choose who can submit the form:
+- `Everyone`
+- `Only accounts with characters`
 
 #### Submission limits
-Determine how many times a player can submit the form. You can choose between:
-- `Unlimited` = Players can submit the form multiple times.
-- `1 submission per account` = Players can submit the form only once per account.
+
+Set how many times a player can submit:
+- `Unlimited`
+- `1 submission per account`
 
 #### Application handling
-Determine how applications are handled. You can choose between:
-- `Manually approve applications` = Applications need to be reviewed before players are added to the group.
-- `Automatically approval` = Applications are automatically accepted and players are added to the group.
+
+Choose how applications are handled:
+- `Manually approve applications`
+- `Automatic approval`
 
 #### Close date
-Set a date after which the form is no longer available.
+
+Set a date to disable the form.
 
 #### Form submit message
-Message that is shown to players when they submit the form.
+
+Message shown after form submission.
 
 ### Form requirements
 
-You can require players to meet certain requirements before they can submit the form. For example, you can require players to have their Discord linked to their account or an email address.
+Require players to meet certain conditions before submitting.  
+For example, linking their Discord or email address.
 
-When players have an email address linked to their account, they will receive an email when their application is approved or rejected. You can customize the email messages on the [Access group settings page](#email--discord-reporting).
+Players with an email address receive notifications when their application is approved or rejected.  
+Customize these messages in [Access group settings](#email--discord-reporting).
 
-![Admin tools - Access control - Form requirements](/img/dashboard/admin_tools/access_control/access_group_form_requirements.jpg)
-
+![Form requirements](/img/dashboard/admin_tools/access_control/access_group_form_requirements.jpg)
 
 ### Example
 
-![Admin tools - Access control - Example form builder](/img/dashboard/admin_tools/access_control/access_group_form_example_1.jpg)
+![Form example 1](/img/dashboard/admin_tools/access_control/access_group_form_example_1.jpg)
 
-![Admin tools - Access control - Example form on website](/img/dashboard/admin_tools/access_control/access_group_form_example_2.jpg)
-
+![Form example 2](/img/dashboard/admin_tools/access_control/access_group_form_example_2.jpg)
 
 ## Applications
-After players have submitted the form, you can review the applications.\
-All applications are listed on the `Applications` tab, where you can filter for the application status or search for a specific player.
 
-![Admin tools - Access control - Applications](/img/dashboard/admin_tools/access_control/access_group_applications.jpg)
+After submission, you can review applications on the `Applications` tab.  
+Filter by status or search for players.
+
+![Applications](/img/dashboard/admin_tools/access_control/access_group_applications.jpg)
 
 ### Review applications
 
-Click the `Review` button to open the application.
+Click `Review` to open an application.
 
-![Admin tools - Access control - Review application 1](/img/dashboard/admin_tools/access_control/access_group_review_application_1.jpg)
+![Review 1](/img/dashboard/admin_tools/access_control/access_group_review_application_1.jpg)
 
-You can add a note to the application, which will be included in the email sent to the player.
-Choose `Approve` or `Reject` to complete the review.
+Add a note (included in the email), then click `Approve` or `Reject`.
 
 :::tip
-Use the `Delete` option to remove any invalid or rule-breaking submissions. This also allows the player to try again if [submission restrictions](#form-settings) are in place.
+Use `Delete` to remove invalid submissions. This also lets the player resubmit if restrictions apply.
 :::
 
-![Admin tools - Access control - Review application 2](/img/dashboard/admin_tools/access_control/access_group_review_application_2.jpg)
+![Review 2](/img/dashboard/admin_tools/access_control/access_group_review_application_2.jpg)
 
 ### Processed applications
-Reviewed applications are still listed on the `Applications` tab, but are marked as `Approved` or `Rejected`. You can filter for the application status or search for a specific player.
 
-![Admin tools - Access control - Processed application 1](/img/dashboard/admin_tools/access_control/access_group_processed_application_1.jpg)
+Reviewed applications are labeled `Approved` or `Rejected`.  
+You can filter by status or search by player.
 
-You can see who reviewed the application, and their note and decision.
+![Processed 1](/img/dashboard/admin_tools/access_control/access_group_processed_application_1.jpg)
 
-![Admin tools - Access control - Processed application 2](/img/dashboard/admin_tools/access_control/access_group_processed_application_2.jpg)
+You can also view who reviewed it and their decision/note.
 
+![Processed 2](/img/dashboard/admin_tools/access_control/access_group_processed_application_2.jpg)
 
 ## Resources
-You can apply an Access group to specific game servers and/or clusters. These are considered `Resources`.
 
-A game server / cluster can be linked to multiple Access groups. The [sorting of the groups](#sorting--priority) determines which one takes priority.
+Access groups can be applied to specific game servers or clusters. These are called `Resources`.
 
-Resources can be managed on the `Settings` tab.
+A server/cluster can be linked to multiple groups. The [group order](#sorting--priority) determines which one applies first.
 
-![Admin tools - Access control - Resources](/img/dashboard/admin_tools/access_control/access_group_resources.jpg)
+Manage Resources in the `Settings` tab.
+
+![Resources](/img/dashboard/admin_tools/access_control/access_group_resources.jpg)
 
 ## Settings
 
-![Admin tools - Access control - Settings](/img/dashboard/admin_tools/access_control/access_group_settings.jpg)
+![Settings](/img/dashboard/admin_tools/access_control/access_group_settings.jpg)
 
 ### Status
-The status determines whether the group is active or not. You can disable a group to temporarily stop using it.
+
+Enable or disable the group.
 
 ### Policy
-The policy determines who can join the servers linked to the group. There are 3 options:
-- `Use dashboard default` = Uses the default policy set in the [Default settings](#default-settings).
-- `Everyone can join` = Allows anyone, that is not banned, to join the servers.
-- `Members only` = Only members of this Access group can join the servers.
 
-**Members only**\
-Players that are not members of the group are kicked from the server immediately.\
-This feature is game-dependent, and only works for games that have `kick` (or similar) commands available. GSA is unable to kick players from games that do not support this feature.
+Controls who can join servers linked to the group:
+- `Use dashboard default`
+- `Everyone can join`
+- `Members only`
+
+**Members only**  
+Non-members are kicked immediately.  
+This requires games that support `kick` (or similar) commands.
 
 ### Whitelist
-For games that support whitelisting, you can automatically add members to the whitelist. This is done by using the `whitelist` command in the game server's RCON (or similar) console.
 
-For games that do not support whitelisting, but do support Kick & ban commands, you can still use this feature. It will then use the ban command to keep players out of the server. This means the player will be able to join the server, but will be kicked immediately.
+For supported games, members can be added to the server’s whitelist via RCON (or similar).
+
+If a game doesn't support whitelisting but supports Kick/Ban commands, the feature will still work by kicking non-members.
 
 #### Existing members
-Changing the whitelist setting will automatically add or remove all existing members from the whitelist. Because this can take a while, is there a timeout of 6 hours before you can change the setting again.
 
-![Admin tools - Access control - Settings - Whitelist](/img/dashboard/admin_tools/access_control/access_group_settings_whitelist.jpg)
+Changing this setting will update the whitelist for all current members.  
+This may take time; the setting has a 6-hour cooldown.
+
+![Whitelist](/img/dashboard/admin_tools/access_control/access_group_settings_whitelist.jpg)
 
 ### Discord role
-This setting automatically assigns a Discord role of your choice to members of the group. The role is assigned to the player's linked Discord account.
 
-When a player is removed from the group, the role is automatically removed.
+Assign a specific Discord role to group members automatically.  
+Roles are removed when the player leaves the group.
 
-![Admin tools - Access control - Settings - Discord role](/img/dashboard/admin_tools/access_control/access_group_settings_discord_role.jpg)
+![Discord role](/img/dashboard/admin_tools/access_control/access_group_settings_discord_role.jpg)
 
 ### Twitch subs
-Automatically add / remove Twitch subscribers to the group.
-You can add one or more Twitch channels. Players that subscribe to any of the channels are added to the group.
+
+Automatically add/remove Twitch subscribers from the group.  
+You can add multiple Twitch channels.
 
 :::info
-Players must connect their Twitch account before they can use this feature.
+Players must link their Twitch account to use this.
 :::
 
 #### Sync
-You can manually sync the Twitch subscriptions by clicking the `Sync` button. This will check all subscriptions and add / remove players from the group accordingly. This can only be done once every 30 minutes, for the entire dashboard.
 
-![Admin tools - Access control - Settings - Twitch](/img/dashboard/admin_tools/access_control/access_group_settings_twitch.jpg)
+Click `Sync` to manually update the subscriber list.  
+Can only be done once every 30 minutes across the dashboard.
+
+![Twitch settings](/img/dashboard/admin_tools/access_control/access_group_settings_twitch.jpg)
 
 ### Kick message
-Change the kick message that is shown to players when they are kicked from a server.
 
-![Admin tools - Access control - Settings - Kick message](/img/dashboard/admin_tools/access_control/access_group_settings_kick_message.jpg)
+Customize the message shown when kicking players.
+
+![Kick message](/img/dashboard/admin_tools/access_control/access_group_settings_kick_message.jpg)
 
 ### Email & Discord reporting
-At the bottom of the settings page you can configure reporting. This lets you customize the messages sent to players when their application is approved or rejected. You can also enable Discord reporting to receive updates in a specific channel.
 
-![Admin tools - Access control - Settings - Discord reporting](/img/dashboard/admin_tools/access_control/access_group_settings_discord_reporting.jpg)
-![Admin tools - Access control - Settings - Email reporting](/img/dashboard/admin_tools/access_control/access_group_settings_email_reporting.jpg)
+Set up messages for accepted or rejected applications.  
+You can also enable Discord reporting for updates in a chosen channel.
+
+![Discord reporting](/img/dashboard/admin_tools/access_control/access_group_settings_discord_reporting.jpg)
+![Email reporting](/img/dashboard/admin_tools/access_control/access_group_settings_email_reporting.jpg)
