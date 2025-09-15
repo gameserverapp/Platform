@@ -74,7 +74,8 @@ Players can be added to an Access group manually, or automatically through Tasks
 
 All players in an Access group are considered `Members`.
 
-[//]: # (todo mention filters)
+#### Search &filters
+You can search for specific players and filter members by membership type and [Custom Roles](/dashboard/admin_tools/custom_roles).
 
 ![Admin tools - Access control - Members](/img/dashboard/admin_tools/access_control/access_group_members.jpg)
 
