@@ -74,8 +74,6 @@ On the "General" tab you find a quick overview of all information about the play
 
 ![Player - detail page](/img/dashboard/admin_tools/players_groups/player_detail_page.jpg)
 
-
-
 ### Subaccounts
 Players can add additional accounts to their profile, for example a Discord or Twitch account.
 
@@ -91,6 +89,11 @@ It is not possible to connect accounts for players on the dashboard, as this is 
 
 ![Player - Connected accounts](/img/dashboard/admin_tools/players_groups/player_connected_accounts.jpg)
 
+
+### Quick ID list
+You can access all player IDs from the overview page too. Click the `[+]` on the left of the username to unfold the ID list.
+
+![Players - ID list](/img/dashboard/admin_tools/players_groups/player_overview_id_list.jpg)
 
 ### Admin actions
 The `Admin actions` dropdown menu is available on the player detail page and on the player overview page.

@@ -3,111 +3,120 @@ title: General
 sidebar_position: 0
 ---
 
+Admin tools provide comprehensive community management capabilities, including real-time [activity monitoring](/dashboard/admin_tools/general#activity), [player moderation](/dashboard/admin_tools/general#moderation-tools), [access control](/dashboard/admin_tools/access_control), and [reporting systems](/dashboard/admin_tools/reports). Manage players, characters, and groups with powerful tools for bans, mutes, role assignments, and automated workflows.
+
+## Activity
+The activity page gives you a quick overview of what is going on with your game servers right now. This includes moderation logs, player activity and game server chat (realtime).
+
+[Go to Activity >](https://dash.gameserverapp.com/admintools/activity)
+
+
+![Admin tools - Activity](/img/dashboard/admin_tools/general/admin_tools_activity.jpg)
+
 ## Chat / console log
-See what players talk about on the game servers, what logs each game server generates and all admin commands.
+On the `Chat / console log` page you can find all chat messages, game server logs and admin commands.
+
+You can search for specific messages and filter for specific game servers, clusters and date ranges.
 
 [Go to Chat / console >](https://dash.gameserverapp.com/admintools/chatconsole)
 
-![Admin tools - Chat log](/img/dashboard/admin_tools/general/chat_console_logs_overview.jpg)
+![Admin tools - Chat / console log](/img/dashboard/admin_tools/general/admin_tools_chatlog.jpg)
 
-Use filters and search to help find what you're looking for.
 
-![Admin tools - Chat log](/img/dashboard/admin_tools/general/chatlog_search_filter.jpg)
 
-## Controls
-The [Player](#players) and [Character](#characters) section have a special `Admin actions` dropdown menu. The [Group](#groups) section comes with an action menu on the right.
+## Moderation tools
+The moderation tools are available for [players](/dashboard/admin_tools/players_and_groups#players), [characters](/dashboard/admin_tools/players_and_groups#characters) and [groups](/dashboard/admin_tools/players_and_groups#groups).
 
-While not all options displayed on the image below will be available on all sections, in general they are the same controls.
+You can access the moderation tools from:
+- [Admin actions](/dashboard/admin_tools/players_and_groups#admin-actions) dropdown on the detail page
+- [Admin actions](/dashboard/admin_tools/players_and_groups#overview-page-1) dropdown on the overview page
+- [Bulk actions](/dashboard/admin_tools/players_and_groups#bulk-actions) on the overview page
 
-![Admin tools - Controls button](/img/dashboard/admin_tools/general/control_button.jpg)
 
-### Ban, Kick & Mute
-Use the controls in the sidebar (right) on every Player page to ban, kick or mute a player.
-For bans and mutes you can specify a duration.
+### Note
+Notes help you keep track of important information about a player. They are visible to all admins and are stored indefinitely.
 
-![Admin tools - Ban duration](/img/dashboard/admin_tools/general/controls_ban_duration.jpg)
+![Note](/img/dashboard/admin_tools/general/moderation_tool_notes_1.jpg)
 
-### Whitelist
-See where the player / character is whitelisted for and delete if needed.
-Manually add players to a specific whitelist for a specified duration.
+#### How the note shows up
+![Note](/img/dashboard/admin_tools/general/moderation_tool_notes_2.jpg)
+![Note](/img/dashboard/admin_tools/general/moderation_tool_notes_3.jpg)
 
-![Admin tools - Controls whitelist](/img/dashboard/admin_tools/general/controls_whitelist.jpg)
+### Kick from servers
+Kick a player from all game servers, with an optional note.
 
-### Custom Roles
-See all Custom Roles for the player / character. Manually assign Custom Roles for a specified duration.
+![Kick](/img/dashboard/admin_tools/general/moderation_tool_kick_1.jpg)
 
-![Admin tools - Controls Custom Role](/img/dashboard/admin_tools/general/controls_customrole.jpg)
+#### How the kick shows up
+![Kick](/img/dashboard/admin_tools/general/moderation_tool_kick_2.jpg)
 
-### Send to player
-Send tokens (or take them away) and manually send deliveries to the player / character.
+### Ban / Unban
+Ban a player from all game servers, with an optional note.
 
-![Admin tools - Controls send tokens](/img/dashboard/admin_tools/general/controls_send_tokens.jpg)
-![Admin tools - Controls send delivery](/img/dashboard/admin_tools/general/controls_send_delivery.jpg)
+You can choose between a permanent ban or a temporary ban.  
+Temporary bans can be set for a specific duration or until a specific date.
 
-### Notes
-Keep notes per player. Useful to keep the entire admin team updated on warnings and events.
+![Ban](/img/dashboard/admin_tools/general/moderation_tool_ban_1.jpg)
 
-![Admin tools - Notes](/img/dashboard/admin_tools/general/controls_notes.jpg)
+#### How the ban shows up
+![Ban](/img/dashboard/admin_tools/general/moderation_tool_ban_2.jpg)
+![Ban](/img/dashboard/admin_tools/general/moderation_tool_ban_3.jpg)
 
-## Players
-Find players across all game servers. Use search and filters to filter accounts that are banned, have a note, specific account types like Steam, Epic, Mojang or EOS accounts.
+Unban a player to remove the ban.
 
-[Go to Players >](https://dash.gameserverapp.com/admintools/accounts)
+![Unban](/img/dashboard/admin_tools/general/moderation_tool_unban_1.jpg)
 
-![Admin tools - Players - overview](/img/dashboard/admin_tools/general/players_overview.jpg)
+#### How the unban shows up
+![Unban](/img/dashboard/admin_tools/general/moderation_tool_unban_2.jpg)
 
-### Multi account
-Players can "merge" their Epic, EOS, Steam, Mojang etc. accounts into 1 `Multi` account. The `Multi` label makes it easy to recognize which players on the dashboard represent multiple social accounts.
+### Mute / Unmute
+Mute a player on all game servers, with an optional note.
 
-Players can log in on your Community website -> navigate to `Settings` -> scroll down to "Connected accounts" to manage their connected accounts. [Learn how to connect accounts that don't have a login method >](/dashboard/community/website#connect-sub-accounts-on-community-website)
+You can choose between a permanent mute or a temporary mute.  
+Temporary mutes can be set for a specific duration or until a specific date.
 
-![Admin tools - Players - multi account](/img/dashboard/admin_tools/general/players_overview_multi_account.jpg)
+![Mute](/img/dashboard/admin_tools/general/moderation_tool_mute_1.jpg)
 
-### Player details
-See all information about the player and all connected accounts like their characters, sales, deliveries, Custom Roles and more.
+#### How the mute shows up
+![Mute](/img/dashboard/admin_tools/general/moderation_tool_mute_2.jpg)
+![Mute](/img/dashboard/admin_tools/general/moderation_tool_mute_3.jpg)
 
-![Admin tools - Player detail - info](/img/dashboard/admin_tools/general/player_detail_info.jpg)
+Unmute a player to remove the mute.
 
-### Rename player
-In specific cases is it possible to rename the player. This is mainly for fixing issues where chat is not being picked up for the player, due to the use of special characters in the name or some other reason.
+![Unmute](/img/dashboard/admin_tools/general/moderation_tool_unmute.jpg)
 
-Keep in mind that changing the name can cause problems for the player, like cluster chat no longer working. Only use this to fix mentioned issues above.
+### Send delivery
+Manually send a [Shop pack](/dashboard/monetization/shop_packs), [Supporter Tier](/dashboard/monetization/supporter_tiers), or [Vote reward](/dashboard/automate_tasks/vote_rewards) to a player. 
 
-#### 1. Click the <Icon icon="fa-solid fa-pencil-alt" /> icon
-Only specific players can have their name changed. The <Icon icon="fa-solid fa-pencil-alt" /> icon is visible when this is supported.
+![Send delivery](/img/dashboard/admin_tools/general/moderation_tool_send_delivery_1.jpg)
 
-![Admin tools - Player detail - Rename player 1](/img/dashboard/admin_tools/general/rename_player_1.jpg)
+Select the player(s) that should receive the delivery.
 
-#### 2. Enter alternative name
-Enter the new name in the popup. Make sure this name corresponds with the name you see in the chat log, if you're trying to fix chat issues.
+![Send delivery](/img/dashboard/admin_tools/general/moderation_tool_send_delivery_2.jpg)
 
-![Admin tools - Player detail - Rename player 2](/img/dashboard/admin_tools/general/rename_player_2.jpg)
+Select the right character(s) and click `Send now`.
 
-## Characters
-Find characters across all game servers. Use search and filters to help find what you're looking for.
+![Send delivery](/img/dashboard/admin_tools/general/moderation_tool_send_delivery_3.jpg)
 
-[Go to Characters >](https://dash.gameserverapp.com/admintools/characters)
+### Manage tokens
+Give or take away tokens from a player, with an optional message that is visible on the transaction page for the player too.
 
-![Admin tools - Characters - overview](/img/dashboard/admin_tools/general/characters_overview.jpg)
+Send negative numbers to deduct tokens.
 
-### Character details
-See all information per character like when they were online, which groups they are in, chat log, deliveries and more.
+![Manage tokens](/img/dashboard/admin_tools/general/moderation_tool_manage_tokens.jpg)
 
-![Admin tools - Character detail - info](/img/dashboard/admin_tools/general/character_detail_info.jpg)
+### Manage roles
+Add or remove [Custom Roles](/dashboard/admin_tools/custom_roles) from a player.
+While adding a role, you can also set a duration for the role.
 
-## Groups
-Find groups across all game servers. Use search and filters to help find what you're looking for.
+![Manage roles](/img/dashboard/admin_tools/general/moderation_tool_manage_roles_2.jpg)
+![Manage roles](/img/dashboard/admin_tools/general/moderation_tool_manage_roles_1.jpg)
 
-[Go to Groups >](https://dash.gameserverapp.com/admintools/groups)
+### Access control
+Add or remove a player from an [Access group](/dashboard/admin_tools/access_control). You can also set a membership type and duration.
 
-![Admin tools - Groups - overview](/img/dashboard/admin_tools/general/groups_overview.jpg)
-
-### Members & logs
-See who the group members are and search the group logs from the dashboard.
-
-![Admin tools - Group detail - members](/img/dashboard/admin_tools/general/group_detail_characters.jpg)
-
-![Admin tools - Group detail - logs](/img/dashboard/admin_tools/general/group_detail_log.jpg)
+![Access control](/img/dashboard/admin_tools/general/moderation_tool_access_control_1.jpg)
+![Access control](/img/dashboard/admin_tools/general/moderation_tool_access_control_2.jpg)
 
 
 ## Settings
@@ -115,24 +124,8 @@ See who the group members are and search the group logs from the dashboard.
 [Go to Admin tools settings >](https://dash.gameserverapp.com/admintools/settings)
 
 ### Player greetings
-Automatically welcomes players when they join a game server. GSA randomly picks one welcome line each time a players joins the server.
+Automatically welcomes players when they join a game server. One of the lines is randomly picked each time a players joins the server.
+
 
 ![Admin tools - Settings - Player greetings](/img/dashboard/admin_tools/general/settings_greetings.jpg)
 ![Admin tools - Settings - Player greeting example](/img/dashboard/admin_tools/general/player_greeting_example.jpg)
-
-### Rule gate
-The Rule gate eliminates the "I didnt know the rules" discussion once and for all.
-
-Set a trial period during which players can play on your servers before they are required to accept the rules. During the trial they are reminded to visit the Community website and accept the rules.
-
-When the trial expires the player receives a final reminder and is kicked when they fail to comply.
-
-![Admin tools - Settings - Rule gate](/img/dashboard/admin_tools/general/settings_rulegate.jpg)
-
-#### In-game reminders example
-![Admin tools - Settings - Rule gate example](/img/dashboard/admin_tools/general/rule_gate_example.jpg)
-
-#### Rule page example
-After configuring which page contains the rules GSA will automatically add a button to the page so people can accept the rules.
-
-![Admin tools - Settings - Rule page example](/img/dashboard/admin_tools/general/rule_page_example.jpg)
