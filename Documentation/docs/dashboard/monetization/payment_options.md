@@ -90,7 +90,10 @@ Then, save the webhook.
 
 #### 5.4 Confirm
 
-Double-check that only `Payment sale completed` is tracked.
+Double-check that only the following options are checked:
+- `Billing subscription cancelled`
+- `Billing subscription expired`
+- `Payment sale completed`
 
 ![Monetization - Payment Service Provider - Set up PayPal webhook 5](/img/dashboard/monetization/psp/setup_paypal_webhook_5.jpg)
 
