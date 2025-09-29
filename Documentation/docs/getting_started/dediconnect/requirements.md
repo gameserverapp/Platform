@@ -55,7 +55,7 @@ If you’ve rented a machine from a data center, there’s no need to configure 
 - 22 `SSH`  
 - 2456 - 2600  
 - 7777 - 7900  
-- 11000 - 12000 `Passive FTP`  
+- 11000 - 11999 `Passive FTP`  
 - 23000 - 23300  
 - 27015 - 27300  
 - 30000 - 30300  
@@ -66,7 +66,7 @@ If you’ve rented a machine from a data center, there’s no need to configure 
 - 8384 `Required for Syncthing`
 
 :::tip Firewall suggestion
-For extra security, consider allowing access to key ports (21, 22, 8384, 11000 - 12000) only for [Platform IPs](/getting_started/security#platform-ips).
+For extra security, consider allowing access to key ports (21, 22, 8384, 11000 - 11999) only for [Platform IPs](/getting_started/security#platform-ips).
 :::
 
 ## Finding the right hardware
