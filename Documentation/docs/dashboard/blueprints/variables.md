@@ -72,6 +72,10 @@ Example: `/home/GameServerApp/containers/sd03kdwd`
 
 Returns the path to the container's temporary backup directory, which is created during the backup process.
 
+#### `{container.rest_basic_auth_admin_user}`
+
+Returns the Base64 encoded Auth header for a REST API call, using `admin` as username.
+
 ### Game server
 
 #### `{gameserver.list_name}`
