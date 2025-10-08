@@ -119,11 +119,14 @@ Make sure your account has completed [Stripe’s onboarding process](https://das
 
 ### 2. Click `Create restricted key`
 
-Visit the [API keys page](https://dashboard.stripe.com/account/apikeys) under the Developers section.
-
-Click `Create restricted key`.
+Click the `Search` field and type `API`. Then click `API keys` in the search results.
+On the `API keys` page, click `Create restricted key`.
 
 ![Monetization - Payment Service Provider - Set up Stripe 1](/img/dashboard/monetization/psp/setup_stripe_1.jpg)
+
+Then select `Building your own integration` and click `Continue`.
+
+![Monetization - Payment Service Provider - Set up Stripe 1.1](/img/dashboard/monetization/psp/setup_stripe_1_1.jpg)
 
 ### 3. Setup name
 
@@ -135,11 +138,11 @@ Name the key `GameServerApp`.
 
 Enable the following:
 
-- All Checkout resources: `Write`
-- All Billing resources:
+- Checkout: `Write`
+- Billing:
   - Prices: `Write`
   - Subscriptions: `Write`
-- All Webhook resources: `Write`
+- All Webhook: `Write`
 
 ![Monetization - Payment Service Provider - Set up Stripe 3](/img/dashboard/monetization/psp/setup_stripe_3.jpg)
 ![Monetization - Payment Service Provider - Set up Stripe 4](/img/dashboard/monetization/psp/setup_stripe_4.jpg)
