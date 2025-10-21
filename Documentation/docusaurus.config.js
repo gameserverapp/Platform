@@ -34,6 +34,14 @@ const config = {
                 path: './docs/api/community-api.yaml',
                 routeBasePath: '/developers/community-api'
             }
+        ],
+        [
+            "docusaurus-plugin-openapi",
+            {
+                id: 'mod-api',
+                path: './docs/api/mod-api.yaml',
+                routeBasePath: '/developers/mod-api'
+            }
         ]
     ],
 
@@ -135,6 +143,10 @@ const config = {
                             {
                                 to: "/developers/community-api",
                                 label: "Community API"
+                            },
+                            {
+                                to: "/developers/mod-api",
+                                label: "Mod API"
                             },
                         ],
                     },
