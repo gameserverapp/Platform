@@ -235,35 +235,3 @@ Set-WinUILanguageOverride -Language en-US
 #### 4. Reboot
 
 Restart the machine. After reboot, the system should be in English and ready to connect.
-
----
-
-### Update Windows
-
-Update Windows **before** installing DediConnect, but **not during** installation.
-
-#### 1. Login with RDP
-
-Use the credentials from your hosting provider.
-
-#### 2. Search for updates
-
-Click `Start`, type `update`, and press `Enter`.
-
-![Windows update 1](/img/getting_started/dediconnect/installation/windows_update_1.jpeg)
-
-#### 3. Check/install updates
-
-Click `Check for updates` and install everything listed.
-
-![Windows update 2](/img/getting_started/dediconnect/installation/windows_update_2.jpeg)
-
-#### 4. Reboot if required
-
-Reboot your machine if needed to apply updates.
-
-![Windows update 3](/img/getting_started/dediconnect/installation/windows_update_3.jpeg)
-
-:::caution
-Ensure your machine is fully operational before connecting to DediConnect.
-:::
