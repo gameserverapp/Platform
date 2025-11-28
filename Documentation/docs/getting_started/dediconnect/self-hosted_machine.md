@@ -11,10 +11,6 @@ When using a dedicated server connected to a home or office network, there are a
 Make sure your setup meets the [hardware requirements](/getting_started/dediconnect/requirements#hardware-specifications) and that your machine runs a [supported Operating System (OS)](/getting_started/dediconnect/requirements#supported-operating-systems-os).
 :::
 
-:::tip Update machine & drivers
-Ensure your machine is fully updated after installing the OS. Outdated drivers can lead to poor performance and system instability.
-:::
-
 ## Virtualization
 
 DediConnect uses containerization (via Docker) to isolate environments and enhance security against viruses and hacking threats.
