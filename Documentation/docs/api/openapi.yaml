@@ -37,6 +37,29 @@ paths:
             type: integer
             default: 1
             minimum: 1
+        -
+          name: status
+          in: query
+          description: 'Filter characters by online status'
+          required: false
+          schema:
+            type: string
+            enum:
+              - online
+              - offline
+        -
+          name: gameserver_ids
+          in: query
+          description: 'Filter characters by game server IDs'
+          required: false
+          schema:
+            type: array
+            items:
+              type: integer
+            example:
+              - 1
+              - 2
+              - 3
       responses:
         '200':
           description: 'successful operation'
@@ -1448,6 +1471,16 @@ paths:
             type: integer
             default: 1
             minimum: 1
+        -
+          name: status
+          in: query
+          description: 'Filter players by online status'
+          required: false
+          schema:
+            type: string
+            enum:
+              - online
+              - offline
       responses:
         '200':
           description: 'successful operation'
