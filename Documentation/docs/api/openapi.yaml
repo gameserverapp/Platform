@@ -3215,6 +3215,10 @@ components:
           type: string
           format: uuid
           example: f47ac10b-58cc-4372-a567-0e02b2c3d479
+        game_id:
+          description: 'Game-specific identifier for the group. This ID is used in-game.'
+          type: string
+          example: '12345'
         name:
           description: 'Group''s display name'
           type: string
