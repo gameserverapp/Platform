@@ -50,6 +50,9 @@ The server settings page gives you access to configuration, performance stats, l
 
 ![Game server - settings - names](/img/dashboard/gameserver/getting_started/gameserver_settings_names.jpg)
 
+#### Short name
+This name is used throughout the dashboard.
+
 #### Server list name
 This name appears in the in-game server list.
 
@@ -61,14 +64,10 @@ Leave the `website name` field empty to hide the server from the Community websi
 :::
 
 #### Cluster chat name
-This name will appear in messages from [cluster chat](/dashboard/game_servers/clusters#cluster-chat).
+This name will appear in messages from [cluster chat](/dashboard/game_servers/clusters#cluster-chat). The `Short name` is used by default, but you can use a different name here.
 
 #### Discord name
-This is the name used by the [Discord Bot](/dashboard/discord-bot) when referencing the server.
-
-:::info Hide on Discord
-Leave the `Discord name` field empty to hide the server on Discord.
-:::
+This is the name used by the [Discord Bot](/dashboard/discord-bot) when referencing the server. The `Short name` is used by default, but you can use a different name here.
 
 ### General
 
