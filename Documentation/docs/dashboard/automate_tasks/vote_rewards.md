@@ -76,20 +76,21 @@ Click `Add condition` to save your changes.
 
 #### 3. Add actions
 
-Define what GSA should do once a player claims a vote by adding actions to the Vote reward. These are similar to Task actions. [Learn more about the available actions](/dashboard/automate_tasks/actions).
+Define what GSA should do once a player claims a vote by adding actions to the Vote reward. These are similar to Task actions. [Learn more about the available actions](/dashboard/delivery_builder/actions).
 
 ![Automations / Tasks - Create vote reward 6](/img/dashboard/automate_tasks/vote_reward/create_vote_reward_6.jpg)
 
 ## Claiming votes
 
-To claim a vote, players must first vote for your registered game server through one of the connected vote sites. They can find links to these sites on your Community website or on Discord via `!vote`.
+[//]: # (todo update for slash commands)
+
+To claim a vote, players must first vote for your registered game server through one of the connected vote sites. They can find links to these sites on your Community website or on Discord via [Slash commands](/dashboard/discord-bot#slash-commands).
 
 ### 1. Locate vote site links
 
-Players can visit the Community website and click `Vote` in the game server section, or use the `!vote` command on Discord.
+Players can visit the Community website and click `Vote` in the game server section, or use a [Slash command on Discord](/dashboard/discord-bot#slash-commands).
 
 ![Automations / Tasks - Vote for server 1](/img/dashboard/automate_tasks/vote_reward/vote_for_server_1.jpg)
-![Automations / Tasks - Vote for server 2](/img/dashboard/automate_tasks/vote_reward/vote_for_server_2.jpg)
 
 ### 2. Vote with Steam
 
@@ -99,14 +100,13 @@ On the vote site, players should complete the vote process using their Steam acc
 
 ### 3. Claim the vote
 
-After voting, players can claim their vote by clicking `Claim` on the game server block on your Community website or typing `!claim` in Discord.
+After voting, players can claim their vote by clicking `Claim` on the game server block on your Community website or using a [claim command in Discord](/dashboard/discord-bot#slash-commands).
 
 :::tip
 You can also create a [Trigger task](/dashboard/automate_tasks/getting_started#trigger--event) that allows players to claim votes directly from in-game chat.
 :::
 
 ![Automations / Tasks - Vote for server 4](/img/dashboard/automate_tasks/vote_reward/vote_for_server_4.jpg)
-![Automations / Tasks - Vote for server 5](/img/dashboard/automate_tasks/vote_reward/vote_for_server_5.jpg)
 
 ### 4. Voting log
 

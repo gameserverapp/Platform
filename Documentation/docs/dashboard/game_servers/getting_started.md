@@ -78,7 +78,7 @@ Leave the `Discord name` field empty to hide the server on Discord.
 Switch to a different [Config template](/dashboard/game_servers/config_templates) here.
 
 :::tip
-You can [automate switching templates](/dashboard/automate_tasks/actions#game-server-actions) via Tasks.
+You can [automate switching templates](/dashboard/delivery_builder/actions#game-server-actions) via Tasks.
 :::
 
 ##### Blueprint alert
@@ -92,7 +92,7 @@ Choose a preset map or enter a custom map name by selecting `Custom map`.
 ![Game server - custom map](/img/dashboard/gameserver/getting_started/gameserver_custom_map.jpg)
 
 :::tip
-You can [automate map changes](/dashboard/automate_tasks/actions#game-server-actions) via Tasks.
+You can [automate map changes](/dashboard/delivery_builder/actions#game-server-actions) via Tasks.
 :::
 
 #### Cluster

@@ -128,7 +128,7 @@ Like any other consumable item, Token Gems can be exchanged or stolen.
 ![Token Gems](/img/dashboard/integration_mod/token_gems.jpg)
 
 :::info
-The following codes are prepared for use in Shop Packs with [In-game Commands](/dashboard/automate_tasks/actions#in-game-command).
+The following codes are prepared for use in Shop Packs with [In-game Commands](/dashboard/delivery_builder/actions#in-game-command).
 To use these outside of Shop Packs, replace `{character.id}` with the actual in-game character ID (not the Steam ID).
 :::
 

@@ -9,7 +9,7 @@ Variables are helpful when you need to insert specific values such as machine di
 You can use the following variables in both blueprints and Config templates.
 
 :::tip More variables
-You can find more variables in the [Automate tasks variables](/dashboard/automate_tasks/variables) section. These can be used to target specific player ID's etc.
+You can find more variables on the [general variables](/dashboard/variables) page. These can be used to target specific player ID's etc.
 :::
 
 ### Dashboard

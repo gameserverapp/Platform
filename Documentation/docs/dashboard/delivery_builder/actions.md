@@ -13,7 +13,7 @@ Most actions listed on this page are available for Tasks, Shop packs, Supporter 
 
 Execute in-game RCON / Websocket / Telnet commands using variables. You can enter an unlimited number of commands. In Shop packs, the Game selector is hidden.
 
-[Variables](/dashboard/automate_tasks/variables) are supported in this action.
+[Variables](/dashboard/variables) are supported in this action.
 
 ![Automations / Tasks - Action - in-game command](/img/dashboard/automate_tasks/actions/action_ingame_command.png)
 
@@ -21,7 +21,7 @@ Execute in-game RCON / Websocket / Telnet commands using variables. You can ente
 
 Send a global message in-game to the server.
 
-This action also supports [Variables](/dashboard/automate_tasks/variables).
+This action also supports [Variables](/dashboard/variables).
 
 ![Automations / Tasks - Action - in-game broadcast](/img/dashboard/automate_tasks/actions/action_ingame_broadcast.png)
 
@@ -44,7 +44,7 @@ Easily duplicate actions, including sub actions using the clipboard. Clipboard c
 
 Send a Direct Message (DM) to a character in-game.
 
-This action supports [Variables](/dashboard/automate_tasks/variables).
+This action supports [Variables](/dashboard/variables).
 
 ![Automations / Tasks - Action - in-game dm](/img/dashboard/automate_tasks/actions/action_ingame_dm.png)
 
@@ -54,7 +54,7 @@ Send tokens to a player, either a fixed amount or a random amount within a defin
 
 You can use negative numbers to deduct tokens. When using negative nubers for the `random amount`, always set `Min` to the lowest number (e.g. `-250`) and `Max` to the highest (e.g. `-5`).
 
-This action supports [Variables](/dashboard/automate_tasks/variables).
+This action supports [Variables](/dashboard/variables).
 
 ![Automations / Tasks - Action - Send tokens](/img/dashboard/automate_tasks/actions/action_send_tokens.jpg)
 
@@ -142,7 +142,7 @@ Assign or remove a Discord role for a linked Discord user.
 
 Post a custom message to a selected Discord channel.
 
-[Variables](/dashboard/automate_tasks/variables) are supported in this action.
+[Variables](/dashboard/variables) are supported in this action.
 
 ![Automations / Tasks - Action - discord message](/img/dashboard/automate_tasks/actions/action_discord_message.png)
 
@@ -150,7 +150,7 @@ Post a custom message to a selected Discord channel.
 
 Post a custom embed to a Discord channel. Accepts raw JSON format.
 
-[Variables](/dashboard/automate_tasks/variables) are supported in this action.
+[Variables](/dashboard/variables) are supported in this action.
 
 ![Automations / Tasks - Action - discord embed](/img/dashboard/automate_tasks/actions/action_discord_embed.jpg)
 

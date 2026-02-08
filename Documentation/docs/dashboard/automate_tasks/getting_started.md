@@ -39,7 +39,7 @@ Set when the task should run.
 ### 3. Add actions
 
 Click `Add action` to open the action menu.  
-[See all available task actions >](/dashboard/automate_tasks/actions)
+[See all available task actions >](/dashboard/delivery_builder/actions)
 
 You can add various actions to a task. Each action performs a different function and can be configured to suit your task.
 

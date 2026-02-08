@@ -52,7 +52,7 @@ If the game supports an in-game shop, you can upload an in-game image as well. L
 
 ### 3. Add Actions
 
-Actions work like Task actions, but differ slightly between Shop pack types and are triggered when a Shop pack is purchased. [Learn more about available actions >](/dashboard/automate_tasks/actions)
+Actions work like Task actions, but differ slightly between Shop pack types and are triggered when a Shop pack is purchased. [Learn more about available actions >](/dashboard/delivery_builder/actions)
 
 #### Single
 

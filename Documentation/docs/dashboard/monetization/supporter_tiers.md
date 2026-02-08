@@ -38,7 +38,7 @@ Set the currency, price, and whether it's a one-time or recurring payment. Click
 Switch to the `Delivery content` tab to define actions that are triggered when a player purchases the tier.  
 For recurring subscriptions, these actions will run each time the subscription is renewed.
 
-Actions work similarly to Task actions. [Learn more about available actions >](/dashboard/automate_tasks/actions)
+Actions work similarly to Task actions. [Learn more about available actions >](/dashboard/delivery_builder/actions)
 
 ![Monetization - Create Supporter Tier 4](/img/dashboard/monetization/supporter_tiers/create_tier_4.jpg)
 
@@ -50,7 +50,7 @@ This step applies only to recurring subscriptions.
 
 When a recurring subscription ends, the actions in the `Expired actions` tab are triggered. This lets you revoke roles, remove access, or disable perks.
 
-These actions also function like Task actions. [Learn more about available actions >](/dashboard/automate_tasks/actions)
+These actions also function like Task actions. [Learn more about available actions >](/dashboard/delivery_builder/actions)
 
 ![Monetization - Create Supporter Tier 5](/img/dashboard/monetization/supporter_tiers/create_tier_5.jpg)
 
