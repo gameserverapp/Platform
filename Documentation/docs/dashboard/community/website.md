@@ -43,7 +43,7 @@ Enter a page title and publishing date. GSA will publish the page automatically 
 
 ### Manage pages
 
-Clone or delete pages from the [Page overview](https://dash.gameserverapp.com/community/page). Click the `<Icon icon="fa-solid fa-eye" size="lg" />` to preview the page on the Community website.
+Clone or delete pages from the [Page overview](https://dash.gameserverapp.com/community/page). Click the <Icon icon="fa-solid fa-eye" size="lg" /> to preview the page on the Community website.
 
 ![Community - Website - Manage page 3](/img/dashboard/community/website/manage_page_1.jpg)
 
@@ -63,7 +63,7 @@ Choose the type of row you want to add.
 
 ![Community - Website - Page builder 6](/img/dashboard/community/website/pagebuilder_6.jpg)
 
-Use the `<Icon icon="fa-solid fa-arrows-alt" size="lg" />` icon to drag rows up or down to reorder. To remove a row, click `<Icon icon="fa-solid fa-trash" size="lg" />`.
+Use the <Icon icon="fa-solid fa-arrows-alt" size="lg" /> icon to drag rows up or down to reorder. To remove a row, click <Icon icon="fa-solid fa-trash" size="lg" />.
 
 #### Change layout
 
@@ -89,7 +89,7 @@ Choose a content block from the options provided.
 
 ### Manage content block
 
-Content blocks offer specific settings, such as text alignment. Remove a content block by clicking `<Icon icon="fa-solid fa-trash" size="lg" />`.
+Content blocks offer specific settings, such as text alignment. Remove a content block by clicking <Icon icon="fa-solid fa-trash" size="lg" />.
 
 ![Community - Website - Page builder 5](/img/dashboard/community/website/pagebuilder_5.jpg)
 
