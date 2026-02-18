@@ -235,3 +235,7 @@ Set-WinUILanguageOverride -Language en-US
 #### 4. Reboot
 
 Restart the machine. After reboot, the system should be in English and ready to connect.
+
+:::danger
+Keep the language on English. Changing the language again will break the installation.
+:::

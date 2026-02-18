@@ -59,7 +59,8 @@ If you’ve rented a machine from a data center, there’s no need to configure 
 - 23000 - 23300  
 - 27015 - 27300  
 - 30000 - 30300  
-- 37015 - 37215  
+- 37015 - 37215
+- 40000 - 40400
 
 ### Optional
 
