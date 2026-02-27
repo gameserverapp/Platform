@@ -138,6 +138,14 @@ Assign or remove a Discord role for a linked Discord user.
 ![Automations / Tasks - Action - discord role](/img/dashboard/delivery_builder/actions/action_discord_role_1.png)
 ![Automations / Tasks - Action - discord role](/img/dashboard/delivery_builder/actions/action_discord_role_2.png)
 
+### Discord private message
+
+Send a private message on Discord to a linked Discord user.
+
+Please consider that many Discord users disabled DMs from bots. There is no guarantee that the message will be delivered.
+
+![Automations / Tasks - Action - discord private message](/img/dashboard/delivery_builder/actions/action_discord_private_message.jpg)
+
 ### Discord message
 
 Post a custom message to a selected Discord channel.
@@ -198,7 +206,7 @@ Add if/else logic using Conditional blocks. Sub-actions can be added and will ex
   - Player is admin
   - Player account type
   - Player connected account(s)
-  - Player accepted rules
+  - Player Discord roles *(not available in Scheduled tasks)*
 - Character
   - Character name
   - Character level
