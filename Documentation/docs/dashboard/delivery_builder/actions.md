@@ -186,6 +186,14 @@ This action is only available for Discord Slash commands.
 
 ![Automations / Tasks - Action - Player list](/img/dashboard/delivery_builder/actions/action_discord_player_list.jpg)
 
+
+### Discord Vote list
+
+Choose from different lists that show vote sites for your game servers.
+This action is only available for Discord Slash commands.
+
+![Automations / Tasks - Action - Vote list](/img/dashboard/delivery_builder/actions/action_discord_vote_list.jpg)
+
 ## Logic
 
 ### Conditional
