@@ -186,6 +186,10 @@ Display a real-time server status card that updates on events like restarts or u
 
 ![Discord bot - Game server status card](/img/dashboard/discord_bot/discord_game_server_status_card.jpg)
 
+:::tip Customize the text
+You can [customize the status card text](/dashboard/discord-bot#customize-status-card) on the settings page.
+:::
+
 Assign a channel for the **Game server status card** on the [Discord page](https://dash.gameserverapp.com/community/discord).
 
 ![Discord bot - Player join / leave](/img/dashboard/discord_bot/discord_game_server_status_card_setup.jpg)
@@ -196,13 +200,43 @@ Track detailed server events such as startup, shutdown, or mod updates in Discor
 
 ![Discord bot - Game server status log](/img/dashboard/discord_bot/discord_game_server_status_log.jpg)
 
+:::tip Customize the text
+You can [customize the status log text](/dashboard/discord-bot#customize-status-log) on the settings page.
+:::
+
 Assign a channel for the **Game server status log** on the [Discord page](https://dash.gameserverapp.com/community/discord).
 
 ![Discord bot - Player join / leave](/img/dashboard/discord_bot/discord_game_server_status_log_setup.jpg)
 
 
+## Stats channels
+Stats channels are used to display server statistics in Discord.
+
+![Discord bot - Stats channels](/img/dashboard/discord_bot/discord_stats_channel_example.jpg)
+
+### Add stats channel
+Add a channel for server statistics on the [Discord page](https://dash.gameserverapp.com/community/discord).
+
+![Discord bot - Add stats channel 1](/img/dashboard/discord_bot/add_stats_channel_1.jpg)
+
+Select a channel and click `Create`. For the best result, use voice channels.
+
+![Discord bot - Add stats channel 2](/img/dashboard/discord_bot/add_stats_channel_2.jpg)
+
+### Stats channel settings
+You can customize the stats channels using a text field and variables. This gives you full control over the stats channel and how you want to display the statistics.
+
+You can use [Cluster variables](/dashboard/delivery_builder/variables#online-player-count-1) and [Dashboard variables](/dashboard/delivery_builder/variables#dashboard) in the text field.
+
+![Discord bot - Stats channel settings](/img/dashboard/discord_bot/stats_channel_settings.jpg)
 
 ## History
+All Discord Slash commands and emoji reactions are logged in the **History** channel. For each run you can see what happened and whether there were any errors.
+
+This part is identical to [Task run logs](/dashboard/automate_tasks/history) and [Delivery history](/dashboard/monetization/deliveries#delivery-details).
+
+
+![Discord bot - History](/img/dashboard/discord_bot/discord_history.jpg)
 
 ## Settings
 
@@ -241,6 +275,22 @@ It's recommended to leave roles with administrator & moderator permissions __dis
 
 ![Discord bot - Settings - roles](/img/dashboard/discord_bot/roles_settings.jpg)
 
+### Custom bot avatar
+Upload a bot avatar and banner to customize the bot's appearance.
+
+![Discord bot - Settings - Custom bot avatar](/img/dashboard/discord_bot/discord_custom_avatar.jpg)
+
+
+### Customize status log
+You can customize the [Discord status log](/dashboard/discord-bot#game-server-status-log) on the [Discord settings page](https://dash.gameserverapp.com/community/discord/settings). Empty fields will use the default text.
+
+
+![Discord bot - Settings - Customize status log](/img/dashboard/discord_bot/discord_settings_customize_status_log.jpg)
+
+### Customize status card
+You can customize the [Discord status card](/dashboard/discord-bot#game-server-status-card) on the [Discord settings page](https://dash.gameserverapp.com/community/discord/settings). Empty fields will use the default text.
+
+![Discord bot - Settings - Customize status card](/img/dashboard/discord_bot/discord_settings_customize_status_card.jpg)
 
 ## Set up the bot
 

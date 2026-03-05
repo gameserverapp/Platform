@@ -82,6 +82,44 @@ https://docs.gameserverapp.com/dashboard/monetization/deliveries#-troubleshootin
 
 `{cluster.name}` Displays the name of the cluster.
 
+### Online player count
+`{cluster.123.online_player_count}` Displays the number of currently online players.
+
+:::info Cluster ID
+You can find the complete variable, with the right ID, for each cluster on the cluster page (bottom right).
+:::
+
+### Online servers count
+`{cluster.123.online_servers_count}` Displays the number of currently online servers.
+
+:::info Cluster ID
+You can find the complete variable, with the right ID, for each cluster on the cluster page (bottom right).
+:::
+
+### Online slots count
+`{cluster.123.online_slots_count}` Displays the number of currently online slots. 
+
+:::info Cluster ID
+You can find the complete variable, with the right ID, for each cluster on the cluster page (bottom right).
+:::
+
+## Dashboard
+
+All dashboard count variables are cached for 4 minutes.
+
+### Online player count
+`{dashboard.online_player_count}` Displays the number of currently online players.
+
+### Online servers count
+`{dashboard.online_servers_count}` Displays the number of currently online servers.
+
+### Online slots count
+`{dashboard.online_slots_count}` Displays the number of currently online slots.
+
+## Variables for specific actions
+
+### Send tokens
+- `{variable.send_tokens.amount}` Displays the amount of tokens that were sent.
 
 ## Delivery
 
@@ -94,8 +132,51 @@ Delivery variables are used to dynamically include details about the delivery.
 `{delivery.status}` Displays the delivery's current status.
 
 
-### Other delivery variables
-The variables below are only available in specific cases, for example when using a [Discord slash command](/dashboard/discord-bot#slash-commands).
+### Shop pack variables
+The variables below are only available for [Shop pack](/dashboard/monetization/shop_packs) deliveries.
+
+#### Purchase date
+`{variable.purchase_date}` Displays the purchase date.
+
+#### Purchase amount
+`{variable.purchase_amount}` Displays the purchase amount.
+
+#### Purchase currency
+`{variable.purchase_currency}` Displays the purchase currency.
+
+#### Transaction description
+`{variable.transaction_description}` Displays the transaction description.
+
+#### Item name
+`{variable.item_name}` Displays the item name.
+
+
+### Supporter tier variables
+The variables below are only available for [Supporter tier](/dashboard/monetization/supporter_tiers) deliveries.
+
+#### Purchase date
+`{variable.purchase_date}` Displays the purchase date.
+
+#### Purchase amount
+`{variable.purchase_amount}` Displays the purchase amount.
+
+#### Purchase currency
+`{variable.purchase_currency}` Displays the purchase currency.
+
+#### Purchase type
+`{variable.purchase_type}` Displays the purchase type.
+
+#### Gateway
+`{variable.gateway}` Displays the gateway.
+
+#### Gateway reference ID
+`{variable.gateway_refid}` Displays the gateway reference ID.
+
+#### Item name
+`{variable.item_name}` Displays the item name.
+
+### Slash command variables
+The variables below are only available for [Discord slash command](/dashboard/discord-bot#slash-commands) deliveries.
 
 #### Access group ID
 `{variable.access_group_id}` Displays the delivery's access group ID.

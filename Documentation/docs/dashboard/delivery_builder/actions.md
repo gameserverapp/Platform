@@ -52,9 +52,9 @@ This action supports [Variables](/dashboard/delivery_builder/variables).
 
 Send tokens to a player, either a fixed amount or a random amount within a defined range.
 
-You can use negative numbers to deduct tokens. When using negative nubers for the `random amount`, always set `Min` to the lowest number (e.g. `-250`) and `Max` to the highest (e.g. `-5`).
+You can use negative numbers to deduct tokens. When using negative numbers for the `random amount`, always set `Min` to the lowest number (e.g. `-250`) and `Max` to the highest (e.g. `-5`).
 
-This action supports [Variables](/dashboard/delivery_builder/variables).
+This action supports [Variables](/dashboard/delivery_builder/variables) and has [special variables](/dashboard/delivery_builder/variables#send-tokens).
 
 ![Automations / Tasks - Action - Send tokens](/img/dashboard/delivery_builder/actions/action_send_tokens.jpg)
 
