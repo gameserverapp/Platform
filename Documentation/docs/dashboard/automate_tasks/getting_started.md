@@ -103,6 +103,10 @@ Scheduled tasks can be run based on the following criteria:
   - Monthly at specific day and time
   - Monthly at [X]nth day and time
 
+:::tip Scheduled task variables
+There are variables available that you can use to display, on Discord for example, when the task is scheduled to run or when it was last run.
+:::
+
 ### Trigger / event
 
 Run actions based on real-time in-game triggers like player logins or votes.

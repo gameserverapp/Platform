@@ -116,10 +116,52 @@ All dashboard count variables are cached for 4 minutes.
 ### Online slots count
 `{dashboard.online_slots_count}` Displays the number of currently online slots.
 
-## Variables for specific actions
 
-### Send tokens
-- `{variable.send_tokens.amount}` Displays the amount of tokens that were sent.
+## Task
+The variables below are only available for [Tasks](/dashboard/automate_tasks/getting_started).
+
+
+### Last run datetime
+`{task.123.last_run_datetime}` Displays the last run date and time.
+
+:::info Scheduled task only
+This variable is only available for scheduled tasks, you can find the complete variable for each task on the task page (bottom right).
+:::
+
+### Next run datetime
+`{task.123.next_run_datetime}` Displays the next run date and time.
+
+:::info Scheduled task only
+This variable is only available for scheduled tasks, you can find the complete variable for each task on the task page (bottom right).
+:::
+
+### Minutes until run
+`{task.123.minutes_until_run}` Displays the number of minutes until the next run.
+
+:::info Scheduled task only
+This variable is only available for scheduled tasks, you can find the complete variable for each task on the task page (bottom right).
+:::
+
+### Hours until run
+`{task.123.hours_until_run}` Displays the number of hours until the next run.
+
+:::info Scheduled task only
+This variable is only available for scheduled tasks, you can find the complete variable for each task on the task page (bottom right).
+:::
+
+### Days until run
+`{task.123.days_until_run}` Displays the number of days until the next run.
+
+:::info Scheduled task only
+This variable is only available for scheduled tasks, you can find the complete variable for each task on the task page (bottom right).
+:::
+
+### Diff for humans
+`{task.123.diff_for_humans}` Displays the time difference until the next run in a human-readable format.
+
+:::info Scheduled task only
+This variable is only available for scheduled tasks, you can find the complete variable for each task on the task page (bottom right).
+:::
 
 ## Delivery
 
@@ -201,3 +243,9 @@ The variables below are only available for [Discord slash command](/dashboard/di
 
 #### Reason
 `{variable.reason}` Displays the reason.
+
+
+## Variables for specific actions
+
+### Send tokens
+- `{variable.send_tokens.amount}` Displays the amount of tokens that were sent.
