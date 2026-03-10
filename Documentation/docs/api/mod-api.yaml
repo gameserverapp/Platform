@@ -174,6 +174,71 @@ paths:
         -
           mod-api-key: []
           mod-api-secret: []
+  '/mod-api/v2/gameserver/{name}/group/{game_id}':
+    post:
+      tags:
+        - Groups
+      summary: 'Create or update group'
+      description: 'Call to sync group data from the game to the dashboard'
+      operationId: createOrUpdateGroup
+      parameters:
+        -
+          name: name
+          in: path
+          description: 'Gameserver name identifier'
+          required: true
+          schema:
+            type: string
+          example: ovddykvbs
+        -
+          name: game_id
+          in: path
+          description: 'Group ID from the game'
+          required: true
+          schema:
+            type: string
+          example: '123456789'
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              required:
+                - name
+              properties:
+                name:
+                  description: 'Group name'
+                  type: string
+                  example: 'Group of Bob'
+                owner_id:
+                  description: 'Character ID of the group owner'
+                  type: integer
+                  example: 12345
+                  nullable: true
+                admin_ids:
+                  description: 'Array of character IDs for group admins'
+                  type: array
+                  items: { type: integer }
+                  example: [123, 456]
+                member_ids:
+                  description: 'Array of character IDs for group members'
+                  type: array
+                  items: { type: integer }
+                  example: [789, 1011]
+              type: object
+      responses:
+        '200':
+          description: 'successful operation'
+          content:
+            application/json:
+              schema:
+                properties:
+                  success: { type: boolean, example: true }
+                  message: { type: string, example: 'Processed successfully' }
+                type: object
+      security:
+        -
+          mod-api-key: []
+          mod-api-secret: []
   '/mod-api/v2/gameserver/{name}/integration-mod':
     post:
       tags:
@@ -407,7 +472,7 @@ paths:
               properties:
                 comment:
                   type: string
-                  example: 'This is what I''m reporting'
+                  example: "This is what I'm reporting"
                 character_id:
                   description: 'Provide the in-game character id of the player that IS DOING the reporting'
                   type: integer

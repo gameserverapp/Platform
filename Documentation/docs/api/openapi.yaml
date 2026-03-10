@@ -2233,7 +2233,7 @@ paths:
       tags:
         - Player
       summary: 'Add note to player'
-      description: 'Add an administrative note to a player''s record. ⚠️ This action has a cooldown of 5 seconds, per player.'
+      description: "Add an administrative note to a player's record. ⚠️ This action has a cooldown of 5 seconds, per player."
       operationId: addNoteToPlayer
       parameters:
         -
@@ -2292,7 +2292,7 @@ paths:
       tags:
         - Player
       summary: 'Mutate player tokens'
-      description: 'Add or remove tokens from a player''s balance. ⚠️ This action has a cooldown of 5 seconds, per player.'
+      description: "Add or remove tokens from a player's balance. ⚠️ This action has a cooldown of 5 seconds, per player."
       operationId: mutatePlayerTokens
       parameters:
         -
@@ -2769,22 +2769,22 @@ components:
           example: EOS_12345678901234567890
           nullable: true
         name:
-          description: 'Character''s display name'
+          description: "Character's display name"
           type: string
           example: SurvivalHero
         avatar:
-          description: 'URL to the character''s avatar image'
+          description: "URL to the character's avatar image"
           type: string
           format: uri
           example: 'https://example.com/images/avatars/character-123.jpg'
           nullable: true
         level:
-          description: 'Character''s level in the game'
+          description: "Character's level in the game"
           type: integer
           example: 85
           nullable: true
         gender:
-          description: 'Character''s gender'
+          description: "Character's gender"
           type: string
           enum:
             - male
@@ -2813,7 +2813,7 @@ components:
               description: 'Short server name used on the website'
               type: string
               example: specialmapPVP
-            discord_name:
+            short_name:
               description: 'Server name used in Discord integrations'
               type: string
               example: specialmapPVP
@@ -2830,7 +2830,7 @@ components:
               type: boolean
               example: true
             status_since:
-              description: 'When the character''s current status began'
+              description: "When the character's current status began"
               type: string
               format: date-time
               example: '2023-05-20T18:45:12.000000Z'
@@ -3099,6 +3099,9 @@ components:
         display_name:
           type: string
           example: specialmapPVP
+        short_name:
+          type: string
+          example: smpvp
         blueprint_version_id:
           type: integer
           example: '395873'
@@ -3123,9 +3126,6 @@ components:
             name:
               type: string
               example: '[PVP] Special map'
-            tag:
-              type: string
-              example: smpvp
           type: object
         connection:
           properties:
@@ -3220,7 +3220,7 @@ components:
           type: string
           example: '12345'
         name:
-          description: 'Group''s display name'
+          description: "Group's display name"
           type: string
           example: 'Alpha Tribe'
         about:
@@ -3243,12 +3243,12 @@ components:
           description: 'Group images'
           properties:
             logo:
-              description: 'URL to the group''s logo image'
+              description: "URL to the group's logo image"
               type: string
               format: uri
               example: 'https://example.com/images/tribe-logo.png'
             background:
-              description: 'URL to the group''s background image'
+              description: "URL to the group's background image"
               type: string
               format: uri
               example: 'https://example.com/images/tribe-background.jpg'
@@ -3295,7 +3295,7 @@ components:
               description: 'Short server name used on the website'
               type: string
               example: specialmapPVP
-            discord_name:
+            short_name:
               description: 'Server name used in Discord integrations'
               type: string
               example: specialmapPVP
@@ -3384,7 +3384,7 @@ components:
           format: uuid
           example: f47ac10b-58cc-4372-a567-0e02b2c3d479
         username:
-          description: 'Player''s display name'
+          description: "Player's display name"
           type: string
           example: SurvivalGamer123
         service_users:
@@ -3473,7 +3473,7 @@ components:
                   type: boolean
                   example: true
                 confirmed:
-                  description: 'Whether the player''s email address is confirmed'
+                  description: "Whether the player's email address is confirmed"
                   type: boolean
                   example: true
               type: object
@@ -3494,7 +3494,7 @@ components:
       description: 'User account linked to an external service like Steam, Epic, Discord, etc.'
       properties:
         uuid:
-          description: 'Unique identifier for the player''s service user'
+          description: "Unique identifier for the player's service user"
           type: string
           format: uuid
           example: 550e8400-e29b-41d4-a716-446655440000
@@ -3569,7 +3569,7 @@ components:
       type: object
     Vote:
       title: 'Player Vote'
-      description: 'Record of a player''s vote for a game server'
+      description: "Record of a player's vote for a game server"
       properties:
         claimed_at:
           description: 'When the vote was claimed'
