@@ -12,8 +12,8 @@ DediConnect supports the following operating systems. Make sure the language on 
 - Debian 11  
 - Debian 12  
 - Ubuntu 22.04  
-- Windows Server 2019 (Standard & Datacenter editions)  
-- Windows Server 2022 (Standard & Datacenter editions)  
+- Windows Server 2022 (Standard & Datacenter editions)
+- Windows Server 2025 (Standard & Datacenter editions)
 
 :::caution Windows machines
 Windows machines must [run the GSA install script](/getting_started/dediconnect/installation#prepare-a-windows-machine) before they can connect to DediConnect.
