@@ -3422,6 +3422,12 @@ components:
               description: 'Number of votes cast by the player'
               type: integer
               example: 15
+            hours_played:
+              description: 'Total hours played by the player'
+              type: number
+              format: float
+              example: 400.5
+              nullable: true
             donated_amount:
               description: 'Total amount donated by the player'
               type: number
