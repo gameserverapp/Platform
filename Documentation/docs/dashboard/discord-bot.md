@@ -230,6 +230,64 @@ You can use [Cluster variables](/dashboard/delivery_builder/variables#online-pla
 
 ![Discord bot - Stats channel settings](/img/dashboard/discord_bot/stats_channel_settings.jpg)
 
+## Dynamic cards
+Dynamic cards are used to display server statistics in Discord. Each embed is automatically updated every 5 minutes.
+
+### Card types
+There are various types of dynamic cards available. Some have different variations:
+
+- Online player list
+  - Character | Group
+  - Character | Level | Server
+  - Character | Player | Level
+- Fresh player list
+  - Character | Level | Server
+  - Character | Player | Level
+  - Character | Joined at
+  - Character | Level | Joined at
+- Top 20 characters by level
+  - Character | Level | Server
+  - Character | Player | Level
+  - Character | Level | Joined at
+- Top 20 voters
+- Top 20 donors
+- Top 20 token holders
+- Top 20 hours played
+- Top 20 achievement score (global)
+
+### Filters
+Filters are used to limit the data displayed in the dynamic card. You can use the following filters:
+- **Game server** - This will only display data for the selected game server.
+- **Cluster** - This will only display data for the selected cluster.
+- **Dashboard** - This will display data for the entire dashboard.
+
+
+### Add dynamic card
+Add a dynamic card on the [Discord page](https://dash.gameserverapp.com/community/discord/dynamic_card).
+
+![Discord bot - Add dynamic card 1](/img/dashboard/discord_bot/add_dynamic_card_1.jpg)
+
+Enter a title for the card, select what [kind of card type](/dashboard/discord-bot#card-types) you want to use, determine a [filter](/dashboard/discord-bot#filters), and select a channel. Click `Create` to add the card.
+
+![Discord bot - Add dynamic card 2](/img/dashboard/discord_bot/add_dynamic_card_2.jpg)
+
+### Dynamic card settings
+For each dynamic card, you can customize the title, description, and color. These are used for the Discord embed.
+
+![Discord bot - Dynamic card settings 1](/img/dashboard/discord_bot/dynamic_card_settings_1.jpg)
+
+### Change card type
+You can change the type of the dynamic card at any time.
+
+Click `Change type` on the card settings.
+
+![Discord bot - Dynamic card change card type 1](/img/dashboard/discord_bot/change_dynamic_card_type_1.jpg)
+
+Select a new card type and click `Save`.
+
+![Discord bot - Dynamic card change card type 2](/img/dashboard/discord_bot/change_dynamic_card_type_2.jpg)
+
+
 ## History
 All Discord Slash commands and emoji reactions are logged in the **History** channel. For each run you can see what happened and whether there were any errors.
 
