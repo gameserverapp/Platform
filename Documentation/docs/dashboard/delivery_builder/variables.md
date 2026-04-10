@@ -220,6 +220,9 @@ The variables below are only available for [Supporter tier](/dashboard/monetizat
 ### Slash command variables
 The variables below are only available for [Discord slash command](/dashboard/discord-bot#slash-commands) deliveries.
 
+#### Discord user ID
+`{variable.discord_user_id}` Displays the delivery's Discord user ID. This is only available for commands where you select a Discord user.
+
 #### Access group ID
 `{variable.access_group_id}` Displays the delivery's access group ID.
 

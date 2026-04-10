@@ -48,6 +48,11 @@ Example: `/home/GameServerApp/nas/backup`
 
 ### Container
 
+#### `{container.id}`
+
+Returns the ID of the container.  
+Example: `12345`
+
 #### `{container.name}`
 
 Returns the name of the container.  
