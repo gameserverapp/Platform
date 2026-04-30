@@ -8,3 +8,9 @@ In order for GSA to pickup Bedrock players, you must configure the following set
 ```yaml
 username-prefix: "."
 ```
+
+### Bedrock chat
+Add the following to `server.properties` so Bedrock players can chat:
+```yaml
+enforce-secure-profile=false
+```
