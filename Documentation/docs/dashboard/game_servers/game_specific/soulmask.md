@@ -43,4 +43,4 @@ The following settings must be present on the `END` section for your slave serve
 -serverid={container.id} -clientserverconnect=xxx.xxx.xxx.xxx:pppp
 ```
 
-Replace `xxx.xxx.xxx.xxx` with the IP address of your master server and `pppp` with the `Raw UDP port` you found on the `Connect` page.
+Replace `xxx.xxx.xxx.xxx` with the IP address of your master server and `pppp` with the `Raw UDP port` you found on the `Connect` page. If the external IP address does not work, use the container name of the master server instead.
