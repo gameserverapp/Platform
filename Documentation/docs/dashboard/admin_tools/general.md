@@ -129,3 +129,14 @@ Automatically welcomes players when they join a game server. One of the lines is
 
 ![Admin tools - Settings - Player greetings](/img/dashboard/admin_tools/general/settings_greetings.jpg)
 ![Admin tools - Settings - Player greeting example](/img/dashboard/admin_tools/general/player_greeting_example.jpg)
+
+
+### Player token transfer limit
+Restrict how many tokens a player can transfer to another player for a given period. The limit can be set on a daily and weekly basis. 0 means no limit.
+
+When the player tries to transfer more tokens than the limit, they will see an error.
+
+The limit applies to the Community website "transfer tokens to player" feature and "Discord player transfer tokens" action for Discord commands.
+
+
+![Admin tools - Settings - Player token transfer limit](/img/dashboard/admin_tools/general/settings_token_transfer_limit.jpg)
