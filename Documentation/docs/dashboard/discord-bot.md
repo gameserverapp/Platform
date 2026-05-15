@@ -339,6 +339,12 @@ Upload a bot avatar and banner to customize the bot's appearance.
 ![Discord bot - Settings - Custom bot avatar](/img/dashboard/discord_bot/discord_custom_avatar.jpg)
 
 
+### Discord two-way-chat prefix
+You can customize the prefix used for two-way-chat. This prefix helps in-game players identify the message as coming from Discord. The default prefix is `[Discord]`.
+
+
+![Discord bot - Settings - Two-way-chat prefix](/img/dashboard/discord_bot/two-way-chat-prefix.jpg)
+
 ### Customize status log
 You can customize the [Discord status log](/dashboard/discord-bot#game-server-status-log) on the [Discord settings page](https://dash.gameserverapp.com/community/discord/settings). Empty fields will use the default text.
 
