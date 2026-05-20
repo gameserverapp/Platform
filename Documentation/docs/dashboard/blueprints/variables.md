@@ -141,6 +141,21 @@ Returns the banlist URL for the game server.
 
 Returns the adminlist URL for the game server.
 
+#### `{gameserver.plugin_ids framework=""}`
+
+Returns the IDs of the plugins / mods installed to the game server, for the given framework.
+Output example: `12345,67890` 
+
+Usage example: `{gameserver.plugin_ids framework="ArkCurseForgeFramework"}`
+
+Framework options:
+- `ArkCurseForgeFramework`
+- `ArkSAServerApiFramework`
+- `ArkServerApiFramework`
+- `AtlasServerApiFramework`
+- `MinecraftPaperFramework`
+- `RustUmodFramework`
+
 ### Cluster
 
 #### `{cluster.id}`
