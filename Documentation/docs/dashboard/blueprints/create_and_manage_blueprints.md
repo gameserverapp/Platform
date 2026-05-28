@@ -361,6 +361,10 @@ Use the `{dynamic-os-tag}` tag to allow GSA to automatically grab the correct ve
 **Unreal Engine Support**:
 - **Image**: `gameserverapp/dediconnect-windows`
 - **Version**: `{dynamic-os-tag}-ue5`
+- 
+  **Unreal Engine + DOTNET8 Support**:
+- **Image**: `gameserverapp/dediconnect-windows`
+- **Version**: `{dynamic-os-tag}-dotnet8`
 
 **Basic Support**:
 - **Image**: `gameserverapp/dediconnect-windows`
