@@ -3,7 +3,7 @@ title: Gift cards
 sidebar_position: 4.5
 ---
 
-Gift card can be used to buy [Supporter Tiers](/dashboard/monetization/supporter_tiers) and can be used in a variety of ways.
+Gift card can be used to buy [Supporter Tiers](/dashboard/monetization/supporter_tiers), in a variety of ways.
 For example, to compensate players or let players buy gift cards for other players.
 
 [Go to Gift cards >](https://dash.gameserverapp.com/monetization/gift-cards)
