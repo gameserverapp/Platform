@@ -59,6 +59,12 @@ Set the exact percentage of the discount buyers will receive.
 
 ![Monetization - Discount settings - Discount percentage](/img/dashboard/monetization/discount/settings_discount_percentage.jpg)
 
+### Discount amount
+
+Set the fixed amount of the discount buyers will receive.
+
+![Monetization - Discount settings - Discount amount](/img/dashboard/monetization/discount/settings_discount_amount.jpg)
+
 ### Code
 
 Players must enter this code on the Community website to redeem the discount.

@@ -27,6 +27,7 @@ https://docs.gameserverapp.com/dashboard/monetization/deliveries#-troubleshootin
 ### Username
 
 `{player.username}` Displays the player's username.
+Alternatively, use `{player.name}`.
 
 ### Token count
 
