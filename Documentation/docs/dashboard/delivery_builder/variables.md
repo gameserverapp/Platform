@@ -178,6 +178,9 @@ Delivery variables are used to dynamically include details about the delivery.
 ### Shop pack variables
 The variables below are only available for [Shop pack](/dashboard/monetization/shop_packs) deliveries.
 
+#### Purchase quantity
+`{variable.purchase_quantity}` Displays the purchase quantity, when applicable.
+
 #### Purchase date
 `{variable.purchase_date}` Displays the purchase date.
 
