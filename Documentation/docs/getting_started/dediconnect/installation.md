@@ -6,14 +6,10 @@ sidebar_position: 2
 DediConnect automatically installs everything required for hosting game servers.  
 This guide helps you connect your dedicated root machine with DediConnect.
 
-[Connect machine >](https://dash.gameserverapp.com/order/machine)
-
-![Connect machine 1](/img/getting_started/dediconnect/installation/connect_machine_page.jpg)
-
 ## Prepare a Windows machine
 
 :::warning WINDOWS ONLY
-These steps are for Windows only. For Linux machines, [continue here](#connect-with-dediconnect).
+These steps are for Windows only. __For Linux machines__, [continue here >](#connect-with-dediconnect).
 :::
 
 Before a Windows machine can connect with DediConnect, it must run a script to update the system and prepare it for hosting game servers. If you're using a non-Windows machine, skip ahead to the "Connect with DediConnect" section.
@@ -66,7 +62,13 @@ Windows machines must first [run the GSA install script](/getting_started/dedico
 
 You can add a new machine from the [machine overview page](https://dash.gameserverapp.com/machine) or by clicking the <Icon icon="fa-solid fa-plus-square" size="lg" /> next to `Machines`.
 
+
+Or use the direct link: [Connect machine page >](https://dash.gameserverapp.com/order/machine)
+
 ![Connect machine 1](/img/getting_started/dediconnect/installation/connect_machine_1.jpg)
+
+Connect machine page:
+![Connect machine 1](/img/getting_started/dediconnect/installation/connect_machine_page.jpg)
 
 ### 1. Enter machine IP
 
@@ -103,7 +105,11 @@ Once installation begins, DediConnect will install all the required software. Yo
 
 Once the installation has finished you can start using your machine.
 
-[Install game servers and services >](/dashboard/machines/install_game-server_service#how-to-install-game-server)
+:::success All ready to go!
+Continue with [installing game servers and services >](/dashboard/machines/install_game-server_service#how-to-install-game-server)
+:::
+
+
 
 ![Connect machine 5](/img/getting_started/dediconnect/installation/connect_machine_5.jpg)
 
