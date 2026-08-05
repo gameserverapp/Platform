@@ -39,6 +39,7 @@ C:\ProgramData\chocolatey\bin\choco.exe install -y nssm
 Install-WindowsFeature -Name Web-Mgmt-Tools
 Install-WindowsFeature Web-FTP-Server -IncludeAllSubFeature
 Install-WindowsFeature WAS
+Install-WindowsFeature -Name Hyper-V
 
 Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
 
