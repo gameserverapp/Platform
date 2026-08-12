@@ -330,7 +330,7 @@ For the parent item, only plain text is allowed and limited to 245 characters.
 
 #### Label
 
-The `Label` field is an optional field for assigning a label used for filtering in the Shop. Only one label is allowed, with a max length of 25 characters.
+The `Label` field is an optional field for assigning a label used for filtering in the Shop.
 
 ![Monetization - CSV tools - Details - Label field](/img/dashboard/monetization/shop_packs/csv_tool_file_details_label_1.jpg)
 
