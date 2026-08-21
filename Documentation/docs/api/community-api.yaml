@@ -1,7 +1,7 @@
 openapi: 3.0.0
 info:
   title: 'Community API'
-  description: "External sources can tap into the Community website API to retrieve data about online players and much more.\n\n:::warning WORK IN PROGRESS\nThis API is work in progress. Things may change.\n:::\nThe OAuth API automatically redirects users to authenticate with Steam. This lets GameServerApp verify in-game players on the website, enabling features like in-game purchases and direct messaging.\n\n## API key\nFind the OAuth API keys & redirect URL here: https://dash.gameserverapp.com/configure/api\n\n## Request headers\nAll requests require to have one the following HTTP headers, except for MOD api calls:\n\n```composer log\nX-AUTH-GSA-CLIENT-ID: {your Client ID}\nAuthorization: Bearer {refresh_token}\n```\n\n## Libraries\nYou can find the [Official PHP API wrapper on GitHub](https://github.com/GameserverApp/PHP-API-Wrapper)."
+  description: "External sources can tap into the Community website API to retrieve data about online players and much more.\n\n:::warning WORK IN PROGRESS\nThis API is work in progress. Things may change.\n:::\nThe OAuth API automatically redirects users to authenticate with Steam. This lets GameServerApp verify in-game players on the website, enabling features like in-game purchases and direct messaging.\n\n## API key\nFind the OAuth API keys & redirect URL here: https://dash.gameserverapp.com/configure/api/community-api\n\n## Request headers\nAll requests require to have one the following HTTP headers, except for MOD api calls:\n\n```composer log\nX-AUTH-GSA-CLIENT-ID: {your Client ID}\nAuthorization: Bearer {refresh_token}\n```\n\n## Libraries\nYou can find the [Official PHP API wrapper on GitHub](https://github.com/GameserverApp/PHP-API-Wrapper)."
   contact:
     email: support@gameserverapp.com
   version: '1'
@@ -39,4 +39,4 @@ components:
         authorizationCode:
           authorizationUrl: 'https://dash.gameserverapp.com/api/v1/oauth/authorize'
           tokenUrl: 'https://dash.gameserverapp.com/api/v1/oauth/token'
-          scopes: {  }
+          scopes: {}

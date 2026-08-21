@@ -1,7 +1,7 @@
 openapi: 3.0.0
 info:
   title: 'Mod API'
-  description: "This api is used by game server mods to interact with the platform.\n\n## API key\nFind the OAuth API keys here: https://dash.gameserverapp.com/configure/api\n\n## Request headers\nAll requests require to have the following HTTP headers:\n\n```composer log\nx-client-id: {your Client ID}\nx-client-secret: {your Client Secret}\n```"
+  description: "This api is used by game server mods to interact with the platform.\n\n## API key\nFind the OAuth API keys here: https://dash.gameserverapp.com/configure/api/community-api\n\n## Request headers\nAll requests require to have the following HTTP headers:\n\n```composer log\nx-client-id: {your Client ID}\nx-client-secret: {your Client Secret}\n```"
   contact:
     email: support@gameserverapp.com
   version: '2'
