@@ -240,12 +240,3 @@ Reorder, rename, or delete groups by clicking <Icon icon="fa-solid fa-pen-square
 
 ![Config template group - manage groups 2](/img/dashboard/gameserver/config_template/config_template_group_manage_2.jpg)
 
-## Third party apps
-
-### Beacon
-
-For ARK: Survival Evolved & ARK: Survival Ascended, you can manage your Config templates using Beacon. Watch the video below to learn how.
-
-[How to import configs on Beacon >](https://usebeacon.app/help/importing_existing_config)
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/N35NyETlY6w" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
