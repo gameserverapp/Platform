@@ -40,15 +40,17 @@ Install-WindowsFeature -Name Web-Mgmt-Tools
 Install-WindowsFeature Web-FTP-Server -IncludeAllSubFeature
 Install-WindowsFeature WAS
 Install-WindowsFeature -Name Hyper-V
+Install-WindowsFeature -Name Containers
 
 Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
 
+# Docker Engine en CLI installeren via Chocolatey
+C:\ProgramData\chocolatey\bin\choco.exe install -y docker-engine
+C:\ProgramData\chocolatey\bin\choco.exe install -y docker-cli
+Set-Service docker -StartupType Automatic
+
 Install-Module PSWindowsUpdate -confirm:$false -force
 Get-WindowsUpdate -Install -acceptall -IgnoreReboot
-
-Invoke-WebRequest -UseBasicParsing "https://raw.githubusercontent.com/microsoft/Windows-Containers/Main/helpful_tools/Install-DockerCE/install-docker-ce.ps1" -o install-docker-ce.ps1
-
-.\install-docker-ce.ps1 -NoRestart
 
 echo "" >> C:\Users\Administrator\.gsa-script-installed
 
