@@ -22,6 +22,29 @@ if(-not (Test-Administrator))
     exit 1;
 }
 
+Write-Host "Checking for available Windows Updates..." -ForegroundColor Cyan
+
+Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force -ErrorAction SilentlyContinue
+if (-not (Get-Module -ListAvailable -Name PSWindowsUpdate)) {
+    Install-Module PSWindowsUpdate -Confirm:$false -Force -ErrorAction Stop
+}
+
+$pendingUpdates = Get-WindowsUpdate -ErrorAction SilentlyContinue
+
+if ($pendingUpdates.Count -gt 0) {
+    Write-Host ""
+    Write-Host "=========================================================================" -ForegroundColor Red
+    Write-Host "ERROR: There are $($pendingUpdates.Count) pending Windows Update(s) available!" -ForegroundColor Red
+    Write-Host "Please update the server and restart before running this script." -ForegroundColor Red
+    Write-Host "=========================================================================" -ForegroundColor Red
+    Write-Host ""
+    pause
+    exit 1
+}
+
+Write-Host "No pending Windows Updates found. Continuing script execution..." -ForegroundColor Green
+# ---------------------------------------------------
+
 Add-WindowsCapability -Online -Name OpenSSH.Server~~~~
 
 Set-Service -Name sshd -StartupType Automatic
@@ -42,15 +65,9 @@ Install-WindowsFeature WAS
 Install-WindowsFeature -Name Hyper-V
 Install-WindowsFeature -Name Containers
 
-Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
-
-# Docker Engine + CLI via Chocolatey
 C:\ProgramData\chocolatey\bin\choco.exe install -y docker-engine
 C:\ProgramData\chocolatey\bin\choco.exe install -y docker-cli
 Set-Service docker -StartupType Automatic
-
-Install-Module PSWindowsUpdate -confirm:$false -force
-Get-WindowsUpdate -Install -acceptall -IgnoreReboot
 
 echo "" >> C:\Users\Administrator\.gsa-script-installed
 
