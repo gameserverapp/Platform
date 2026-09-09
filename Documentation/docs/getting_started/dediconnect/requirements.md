@@ -14,7 +14,6 @@ DediConnect supports the following operating systems. Make sure the language on 
 - Debian 13
 - Ubuntu 22.04
 - Ubuntu 24.04
-- Windows Server 2022 (Standard & Datacenter editions)
 - Windows Server 2025 (Standard & Datacenter editions)
 
 :::caution Windows machines

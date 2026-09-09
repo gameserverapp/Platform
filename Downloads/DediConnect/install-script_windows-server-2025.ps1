@@ -44,7 +44,7 @@ Install-WindowsFeature -Name Containers
 
 Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
 
-# Docker Engine en CLI installeren via Chocolatey
+# Docker Engine + CLI via Chocolatey
 C:\ProgramData\chocolatey\bin\choco.exe install -y docker-engine
 C:\ProgramData\chocolatey\bin\choco.exe install -y docker-cli
 Set-Service docker -StartupType Automatic
