@@ -67,7 +67,7 @@ Leave the `website name` field empty to hide the server from the Community websi
 This name will appear in messages from [cluster chat](/dashboard/game_servers/clusters#cluster-chat). The `Short name` is used by default, but you can use a different name here.
 
 #### Discord name
-This is the name used by the [Discord Bot](/dashboard/discord-bot) when referencing the server. The `Short name` is used by default, but you can use a different name here.
+This is the name used by the [Discord Bot](/dashboard/community/discord) when referencing the server. The `Short name` is used by default, but you can use a different name here.
 
 ### General
 

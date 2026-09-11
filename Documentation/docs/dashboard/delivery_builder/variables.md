@@ -3,7 +3,7 @@ title: Variables
 sidebar_position: 1.2
 ---
 
-Variables can be used in various parts of GSA, like [Tasks](/dashboard/automate_tasks/getting_started), [Shop packs](/dashboard/monetization/shop_packs), [Supporter Tiers](/dashboard/monetization/supporter_tiers), [Blueprints](/dashboard/blueprints/getting_started) [Discord Slash commands](/dashboard/discord-bot#slash-commands) and [Discord Emoji reactions](/dashboard/discord-bot#emoji-reactions).
+Variables can be used in various parts of GSA, like [Tasks](/dashboard/automate_tasks/getting_started), [Shop packs](/dashboard/monetization/shop_packs), [Supporter Tiers](/dashboard/monetization/supporter_tiers), [Blueprints](/dashboard/blueprints/getting_started) [Discord Slash commands](/dashboard/community/discord#slash-commands) and [Discord Emoji reactions](/dashboard/community/discord#emoji-reactions).
 
 Variables are used to dynamically include details such as a character name, username, ID, and more.
 
@@ -222,7 +222,7 @@ The variables below are only available for [Supporter tier](/dashboard/monetizat
 `{variable.item_name}` Displays the item name.
 
 ### Slash command variables
-The variables below are only available for [Discord slash command](/dashboard/discord-bot#slash-commands) deliveries.
+The variables below are only available for [Discord slash command](/dashboard/community/discord#slash-commands) deliveries.
 
 #### Discord user ID
 `{variable.discord_user_id}` Displays the delivery's Discord user ID. This is only available for commands where you select a Discord user.

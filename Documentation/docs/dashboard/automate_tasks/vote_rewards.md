@@ -84,11 +84,11 @@ Define what GSA should do once a player claims a vote by adding actions to the V
 
 [//]: # (todo update for slash commands)
 
-To claim a vote, players must first vote for your registered game server through one of the connected vote sites. They can find links to these sites on your Community website or on Discord via [Slash commands](/dashboard/discord-bot#slash-commands).
+To claim a vote, players must first vote for your registered game server through one of the connected vote sites. They can find links to these sites on your Community website or on Discord via [Slash commands](/dashboard/community/discord#slash-commands).
 
 ### 1. Locate vote site links
 
-Players can visit the Community website and click `Vote` in the game server section, or use a [Slash command on Discord](/dashboard/discord-bot#slash-commands).
+Players can visit the Community website and click `Vote` in the game server section, or use a [Slash command on Discord](/dashboard/community/discord#slash-commands).
 
 ![Automations / Tasks - Vote for server 1](/img/dashboard/automate_tasks/vote_reward/vote_for_server_1.jpg)
 
@@ -100,7 +100,7 @@ On the vote site, players should complete the vote process using their Steam acc
 
 ### 3. Claim the vote
 
-After voting, players can claim their vote by clicking `Claim` on the game server block on your Community website or using a [claim command in Discord](/dashboard/discord-bot#slash-commands).
+After voting, players can claim their vote by clicking `Claim` on the game server block on your Community website or using a [claim command in Discord](/dashboard/community/discord#slash-commands).
 
 :::tip
 You can also create a [Trigger task](/dashboard/automate_tasks/getting_started#trigger--event) that allows players to claim votes directly from in-game chat.

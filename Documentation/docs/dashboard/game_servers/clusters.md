@@ -44,7 +44,7 @@ Customize how messages appear in-game using the `Cluster chat format` field. You
 
 You can also send and receive in-game cluster chat messages via Discord. This lets you chat with players across servers and platforms.
 
-Learn more about [Discord + Cluster chat](/dashboard/discord-bot#discord--cluster-chat)
+Learn more about [Discord + Cluster chat](/dashboard/community/discord#discord--cluster-chat)
 
 ### In-game example
 

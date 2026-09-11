@@ -69,4 +69,4 @@ Scroll down to `Game server console`, type: `o.reload BetterChat` and make sure 
 
 Hit Enter, and you’re done!  
 Your messages should now appear in Discord if that integration has been set up.  
-If not, follow this guide to [set up Discord/Cluster chat](https://docs.gameserverapp.com/dashboard/discord-bot#discord--cluster-chat).
+If not, follow this guide to [set up Discord/Cluster chat](https://docs.gameserverapp.com/dashboard/community/discord#discord--cluster-chat).

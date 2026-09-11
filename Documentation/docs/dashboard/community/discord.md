@@ -1,5 +1,5 @@
 ---
-title: Discord bot
+title: Discord
 sidebar_position: 2
 ---
 
@@ -187,7 +187,7 @@ Display a real-time server status card that updates on events like restarts or u
 ![Discord bot - Game server status card](/img/dashboard/discord_bot/discord_game_server_status_card.jpg)
 
 :::tip Customize the text
-You can [customize the status card text](/dashboard/discord-bot#customize-status-card) on the settings page.
+You can [customize the status card text](/dashboard/community/discord#customize-status-card) on the settings page.
 :::
 
 Assign a channel for the **Game server status card** on the [Discord page](https://dash.gameserverapp.com/community/discord).
@@ -201,7 +201,7 @@ Track detailed server events such as startup, shutdown, or mod updates in Discor
 ![Discord bot - Game server status log](/img/dashboard/discord_bot/discord_game_server_status_log.jpg)
 
 :::tip Customize the text
-You can [customize the status log text](/dashboard/discord-bot#customize-status-log) on the settings page.
+You can [customize the status log text](/dashboard/community/discord#customize-status-log) on the settings page.
 :::
 
 Assign a channel for the **Game server status log** on the [Discord page](https://dash.gameserverapp.com/community/discord).
@@ -267,7 +267,7 @@ Add a dynamic card on the [Discord page](https://dash.gameserverapp.com/communit
 
 ![Discord bot - Add dynamic card 1](/img/dashboard/discord_bot/add_dynamic_card_1.jpg)
 
-Enter a title for the card, select what [kind of card type](/dashboard/discord-bot#card-types) you want to use, determine a [filter](/dashboard/discord-bot#filters), and select a channel. Click `Create` to add the card.
+Enter a title for the card, select what [kind of card type](/dashboard/community/discord#card-types) you want to use, determine a [filter](/dashboard/community/discord#filters), and select a channel. Click `Create` to add the card.
 
 ![Discord bot - Add dynamic card 2](/img/dashboard/discord_bot/add_dynamic_card_2.jpg)
 
@@ -346,13 +346,13 @@ You can customize the prefix used for two-way-chat. This prefix helps in-game pl
 ![Discord bot - Settings - Two-way-chat prefix](/img/dashboard/discord_bot/two-way-chat-prefix.jpg)
 
 ### Customize status log
-You can customize the [Discord status log](/dashboard/discord-bot#game-server-status-log) on the [Discord settings page](https://dash.gameserverapp.com/community/discord/settings). Empty fields will use the default text.
+You can customize the [Discord status log](/dashboard/community/discord#game-server-status-log) on the [Discord settings page](https://dash.gameserverapp.com/community/discord/settings). Empty fields will use the default text.
 
 
 ![Discord bot - Settings - Customize status log](/img/dashboard/discord_bot/discord_settings_customize_status_log.jpg)
 
 ### Customize status card
-You can customize the [Discord status card](/dashboard/discord-bot#game-server-status-card) on the [Discord settings page](https://dash.gameserverapp.com/community/discord/settings). Empty fields will use the default text.
+You can customize the [Discord status card](/dashboard/community/discord#game-server-status-card) on the [Discord settings page](https://dash.gameserverapp.com/community/discord/settings). Empty fields will use the default text.
 
 ![Discord bot - Settings - Customize status card](/img/dashboard/discord_bot/discord_settings_customize_status_card.jpg)
 
