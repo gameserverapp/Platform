@@ -25,6 +25,9 @@ The AI Chatbots can help you engage with your community and provide quick answer
 You can use multiple bots simultaneously.
 [Go to AI chatbot >](https://dash.gameserverapp.com/community/chatbot)
 
+:::info
+The chatbot only works with games that support chat logging. See [GSA features page](https://dash.gameserverapp.com/features-per-game) for supported games.
+:::
 
 ![AI tools - Chatbot - Overview](/img/dashboard/ai_tools/ai_tools-chatbot-overview.jpg)
 
