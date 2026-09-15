@@ -14,6 +14,8 @@ With slash commands you can execute actions on your dashboard without leaving Di
 
 If you used GSA's task / delivery system already, then Slash commands system will feel familiar.
 
+![Discord bot - Create slash command 4](/img/dashboard/discord_bot/discord_command_create_4.gif)
+
 ### Command types
 The examples below are just a few examples of what you can do with Slash commands. You can create your own commands and customize them to fit your needs.
 
@@ -114,6 +116,7 @@ Emoji reactions can be useful for quick actions like rewarding players. Each emo
 
 If you used GSA's task / delivery system already, then the emoji reactions system will feel familiar.
 
+![Discord bot - Create emoji reaction 4](/img/dashboard/discord_bot/create_reaction_4.gif)
 
 ### Create an emoji reaction
 
@@ -232,6 +235,9 @@ You can use [Cluster variables](/dashboard/delivery_builder/variables#online-pla
 
 ## Dynamic cards
 Dynamic cards are used to display server statistics in Discord. Each embed is automatically updated every 5 minutes.
+
+
+![Discord bot - Example dynamic cards](/img/dashboard/discord_bot/dynamic-cards.png)
 
 ### Card types
 There are various types of dynamic cards available. Some have different variations:
