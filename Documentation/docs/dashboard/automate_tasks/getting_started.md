@@ -118,17 +118,29 @@ Trigger / Events tasks can be run based on the following criteria:
 - Character
   - Character comes online
   - Character goes offline
+  - New character created
   - Character Wake up (ARK only)
+  - Character died
+  - Character killed other player
+  - ✨ Character name violation detected (AI powered)
 - Chat
   - Player chat contains [X] (one or multiple)
   - Player chat exactly matches [X] (one or multiple)
+  - ✨ Chat violations detected (AI powered)
+- Command 
+  - Player command contains [X] (one or multiple)
+  - Player command exactly matches [X] (one or multiple)
 - Vote / Review
+  - Player voted
   - Player voted [X] times [since]
-  - Report
+  - New review posted
+- Report
   - New report created (any or specific type)
   - Report closed (any or specific type)
 - Game server
   - Game server comes online
+- Other
+  - ✨ Community activity summary updated (AI powered)
 
 ### Webhook
 
