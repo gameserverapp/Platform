@@ -53,7 +53,9 @@ With `chattiness`, you can configure whether the bot should respond to every mes
 ##### Response timeout
 The `Response timeout` determines how long the pause should be between responses from the bot. For example: if you select `5 seconds`, the bot will wait 5 seconds after each message before responding again.
 
-A short `Response timeout` ensures that your bot responds more frequently. This generally consumes more credits.
+A short `Response timeout` results in the bot running, for example, every 5 seconds to read the chat and determine if it should respond. This generally consumes more credits.
+
+A longer `Response timeout` means the bot will read the chat less frequently. When you set it to 1 minute, for example, the bot will read the chat every 1 minute and determine if it should respond.
 
 #### Controls
 
@@ -258,6 +260,19 @@ You will receive an email when you run out of credits.
 You can view at any time how many AI requests you have sent per feature, and how many credits each request cost you.
 
 ![AI tools - AI Settings - Usage](/img/dashboard/ai_tools/ai_tools-ai_settings-usage.jpg)
+
+#### Understanding usage
+The usage overview shows you how many AI requests you have sent per feature, and how many credits each request cost you.
+
+##### Tokens in & Tokens out
+On the usage page you see `Tokens in` and `Tokens out`. The `Tokens in` is an indication of how many tokens were used for the input of each AI request. The `Tokens out` is an indication of how many tokens were used for the output of each AI request.
+
+The `Tokens in` number consists of (example): instructions, context, history, recent messages, etc.
+
+##### Chatbot usage
+The patterns of the chatbot usage may vary depending on the in-game activity, and your [chatbot chat settings](/dashboard/ai-tools#chat-settings).
+
+The bot may not respond to every message, depending on your settings, but this will still show up on the usage page. This is because the bot will need to read the chat to determine if it should respond.
 
 ### Turn AI OFF
 
