@@ -78,6 +78,16 @@ You can set the bot to only respond to messages from certain roles, or to ignore
 You have the option to activate a bot on specific servers, or to exclude specific servers for the bot. This is useful, for instance, if you want to test the bot on your test server.
 
 
+#### Discord
+
+![AI tools - Chatbot - Discord](/img/dashboard/ai_tools/ai_tools-chatbot-discord.jpg)
+
+By default are messages coming from game servers processed by the chatbot. Any chatbot replies are automatically sent to Discord. 
+
+You can also let the bot respond to messages from Discord. This works for Discord channels that are [configured as cluster chat channels](/dashboard/community/discord#discord--cluster-chat).
+
+After enabling channels, it may take a couple minutes before the bot starts responding to Discord messages.
+
 ### Context
 
 By giving the bot specific information about your community, or a specific task you want the bot to perform, you can make the bot much smarter and have more knowledge about your community.
