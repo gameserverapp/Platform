@@ -10,6 +10,26 @@ servers:
     url: 'https://api.gameserverapp.com'
     description: api.gameserverapp.com
 paths:
+  /system-api/v2/access-groups:
+    get:
+      tags:
+        - 'Access Group'
+      summary: 'All Access Groups'
+      description: 'Lists all Access Groups for the dashboard.'
+      operationId: AllAccessGroups
+      responses:
+        '200':
+          description: 'successful operation'
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/AccessGroup'
+      security:
+        -
+          systemapi-passport:
+            - access-group
   /system-api/v2/characters:
     get:
       tags:
@@ -2904,6 +2924,27 @@ paths:
             - task
 components:
   schemas:
+    AccessGroup:
+      title: 'Access Group'
+      description: 'An access group defined for a dashboard'
+      properties:
+        id:
+          description: 'Access Group ID'
+          type: integer
+          example: 1
+        name:
+          description: 'Access group name'
+          type: string
+          example: 'Whitelisted Players'
+        active:
+          description: 'Whether the access group is active'
+          type: boolean
+          example: true
+        is_default:
+          description: 'Whether this is the default access group'
+          type: boolean
+          example: false
+      type: object
     Achievement:
       title: Achievement
       description: 'Achievement resource representation'
