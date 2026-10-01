@@ -674,6 +674,26 @@ paths:
         -
           systemapi-passport:
             - config-template
+  /system-api/v2/custom-roles:
+    get:
+      tags:
+        - 'Custom Role'
+      summary: 'All Custom Roles'
+      description: 'Lists all Custom Roles.'
+      operationId: AllCustomRoles
+      responses:
+        '200':
+          description: 'successful operation'
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CustomRole'
+      security:
+        -
+          systemapi-passport:
+            - custom-role
   /system-api/v2/game/available:
     get:
       tags:
@@ -3184,6 +3204,27 @@ components:
           type: string
           format: date-time
           example: '2024-02-16T19:53:28.000000Z'
+      type: object
+    CustomRole:
+      title: 'Custom Role'
+      description: 'A custom role defined for a dashboard'
+      properties:
+        id:
+          description: 'Role ID'
+          type: integer
+          example: 1
+        name:
+          description: 'Role name'
+          type: string
+          example: VIP
+        supportertier_discount:
+          description: 'Discount for supporter tiers'
+          type: integer
+          example: 10
+        shoppack_discount:
+          description: 'Discount for shop packs'
+          type: integer
+          example: 5
       type: object
     PlayerLog:
       properties:
