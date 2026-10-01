@@ -224,8 +224,6 @@ If players can’t log in via Steam, Epic, etc., they can link their in-game acc
 - `ARK:SA` may not work if a Steam, Epic, or character name contains special (non-UTF8) characters like `éøö$`.
 - `ARK:SA` may break after changing your Steam username.
 - Reinstalling the mod on PC, Xbox, or PS can fix corrupted installs.
-
-Try [renaming the player](/dashboard/admin_tools/general#rename-player) to resolve issues.
 :::
 
 #### 1. Request connect code in-game

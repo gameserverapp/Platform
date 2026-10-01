@@ -79,8 +79,8 @@ paths:
     post:
       tags:
         - Character
-      summary: 'Find characters by game ID'
-      description: 'Find characters by their game ID or alternate game ID.'
+      summary: 'Find characters by game ID or name'
+      description: 'Find characters by their game ID, alternate game ID or name.'
       operationId: findCharactersByGameId
       parameters:
         -
@@ -116,6 +116,10 @@ paths:
                   description: 'Alternative game-specific identifier (e.g., EOS ID for ASA)'
                   type: string
                   example: EOS_12345678901234567890
+                name:
+                  description: 'Character name'
+                  type: string
+                  example: AnotherMax
               type: object
       responses:
         '200':
@@ -553,6 +557,34 @@ paths:
         -
           systemapi-passport:
             - config-template
+  '/system-api/v2/config-template/{configtemplate_id}/clone':
+    post:
+      tags:
+        - 'Config Template'
+      summary: 'Clone Config template'
+      description: 'Clone an existing Config template.'
+      operationId: cloneConfigTemplate
+      parameters:
+        -
+          name: configtemplate_id
+          in: path
+          required: true
+          schema:
+            type: integer
+          example: '39581'
+      responses:
+        '200':
+          description: 'successful operation'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConfigTemplate'
+        '404':
+          description: 'Config template not found'
+      security:
+        -
+          systemapi-passport:
+            - config-template
   /system-api/v2/config-template:
     post:
       tags:
@@ -671,6 +703,16 @@ paths:
       operationId: AllGameServers
       parameters:
         -
+          name: status
+          in: query
+          description: 'Filter by status (online or offline)'
+          required: false
+          schema:
+            type: string
+            enum:
+              - online
+              - offline
+        -
           name: page
           in: query
           description: 'Page number'
@@ -697,6 +739,76 @@ paths:
                 properties:
                   data: { type: array, items: { $ref: '#/components/schemas/GameServer' } }
                   meta: { properties: { current_page: { type: integer, example: 1 }, from: { type: integer, example: 1 }, last_page: { type: integer, example: 5 }, path: { type: string, example: 'https://api.gameserverapp.com/system-api/v2/gameservers' }, per_page: { type: integer, example: 20 }, to: { type: integer, example: 20 }, total: { type: integer, example: 100 } }, type: object }
+                type: object
+      security:
+        -
+          systemapi-passport:
+            - gameserver
+  /system-api/v2/gameservers/find:
+    get:
+      tags:
+        - 'Game Server'
+      summary: 'Find game servers'
+      description: 'Find game servers by ID or name.'
+      operationId: findGameServers
+      parameters:
+        -
+          name: id
+          in: query
+          description: 'Game server ID'
+          required: false
+          schema:
+            type: integer
+        -
+          name: name
+          in: query
+          description: 'Game server name (partial match on name, short_name or display_name)'
+          required: false
+          schema:
+            type: string
+        -
+          name: page
+          in: query
+          description: 'Page number'
+          required: false
+          schema:
+            type: integer
+            default: 1
+        -
+          name: per_page
+          in: query
+          description: 'Items per page'
+          required: false
+          schema:
+            type: integer
+            default: 20
+            maximum: 100
+            minimum: 1
+      responses:
+        '200':
+          description: 'successful operation'
+          content:
+            application/json:
+              schema:
+                properties:
+                  data: { type: array, items: { $ref: '#/components/schemas/GameServer' } }
+                  meta: { properties: { current_page: { type: integer, example: 1 }, from: { type: integer, example: 1 }, last_page: { type: integer, example: 5 }, path: { type: string, example: 'https://api.gameserverapp.com/system-api/v2/gameservers/find' }, per_page: { type: integer, example: 20 }, to: { type: integer, example: 20 }, total: { type: integer, example: 100 } }, type: object }
+                type: object
+        '404':
+          description: 'No game servers found'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'No game servers found matching the criteria' }
+                type: object
+        '400':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'At least one search parameter is required' }
                 type: object
       security:
         -
@@ -731,6 +843,65 @@ paths:
               schema:
                 properties:
                   error: { type: string, example: 'Game server not found' }
+                type: object
+      security:
+        -
+          systemapi-passport:
+            - gameserver
+  '/system-api/v2/gameserver/{gameserver_id}/activate-config-template':
+    post:
+      tags:
+        - 'Game Server'
+      summary: 'Activate Config template for game server'
+      description: 'Associate a configuration template with a game server and optionally change the blueprint.'
+      operationId: activateConfigTemplate
+      parameters:
+        -
+          name: gameserver_id
+          in: path
+          required: true
+          schema:
+            type: integer
+          example: '57294'
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              required:
+                - config_template_id
+              properties:
+                config_template_id:
+                  type: integer
+                  example: 39581
+                change_blueprint:
+                  type: boolean
+                  example: false
+                inherit_all:
+                  type: boolean
+                  example: false
+              type: object
+      responses:
+        '200':
+          description: 'successful operation'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GameServer'
+        '404':
+          description: 'Game server or config template not found'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'Game server not found' }
+                type: object
+        '400':
+          description: 'Invalid request or server inactive'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'The game server is not active.' }
                 type: object
       security:
         -
@@ -1282,8 +1453,8 @@ paths:
     post:
       tags:
         - Group
-      summary: 'Find groups by game ID'
-      description: 'Find groups by their game ID.'
+      summary: 'Find groups by game ID or name'
+      description: 'Find groups by their game ID or name.'
       operationId: findGroupsByGameId
       parameters:
         -
@@ -1315,6 +1486,10 @@ paths:
                   description: 'Game-specific identifier'
                   type: string
                   example: '12345'
+                name:
+                  description: 'Group name'
+                  type: string
+                  example: AnotherMax
               type: object
       responses:
         '200':
@@ -1500,9 +1675,9 @@ paths:
     post:
       tags:
         - Player
-      summary: 'Find players by service ID'
-      description: 'Find players by their service ID (e.g., Steam ID).'
-      operationId: findPlayersByServiceId
+      summary: 'Find players by service ID or name'
+      description: 'Find players by their service ID (e.g., Steam ID) or name.'
+      operationId: findPlayer
       parameters:
         -
           name: per_page
@@ -1533,6 +1708,10 @@ paths:
                   description: 'Service ID to search for'
                   type: string
                   example: '76561198023513722'
+                name:
+                  description: 'Player name'
+                  type: string
+                  example: AnotherMax
               type: object
       responses:
         '200':
