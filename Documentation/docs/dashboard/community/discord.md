@@ -44,6 +44,22 @@ For example, `/levelup`, `/setname` or `/exp`.
 These commands always require you to specify a character and can only be used by [Additional admins](/dashboard/admin_teams).
 :::
 
+#### Group
+Group commands target a specific group from your dashboard.\
+For example, `/renamegroup`, `/killgroup` or `/givegroup`.
+
+:::info
+These commands always require you to specify a group and can only be used by [Additional admins](/dashboard/admin_teams).
+:::
+
+#### Character and group
+Character and group commands target a specific character and group combinitation, from your dashboard.\
+For example, `/joingroup` or `/leavegroup`.
+
+:::info
+These commands always require you to specify a character __and__ group, and can only be used by [Additional admins](/dashboard/admin_teams).
+:::
+
 #### Game server
 Game server commands target a specific game server, a cluster, or all game servers.\
 For example, `/restart`, `/backup` or `/rcon`.
