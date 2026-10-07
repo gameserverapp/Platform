@@ -31,7 +31,7 @@ The default configs can been found under the arrow as shown in the picture and t
 
 ![Config template - default config](/img/dashboard/gameserver/config_template/config_template_default_configs.jpg)
 
-Some games have multiple examples. Click on any `Default config` to add it to your dashboard.
+Some games have multiple examples. Select a `Default config` to add it to your dashboard.
 
 ![Config template - default config](/img/dashboard/gameserver/config_template/select_default_config.jpg)
 
