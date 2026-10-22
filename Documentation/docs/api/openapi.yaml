@@ -2849,6 +2849,169 @@ paths:
         -
           systemapi-passport:
             - admin-tools
+  /system-api/v2/shop-packs:
+    get:
+      tags:
+        - Monetization
+      summary: 'List all Shop packs'
+      description: 'Retrieve a paginated list of all Shop packs in the domain with optional searching and label filtering.'
+      operationId: listShopPacks
+      parameters:
+        -
+          name: search
+          in: query
+          description: 'Search keyword matching title, description, or label'
+          required: false
+          schema:
+            type: string
+        -
+          name: label
+          in: query
+          description: 'Filter Shop packs by specific label'
+          required: false
+          schema:
+            type: string
+        -
+          name: per_page
+          in: query
+          description: 'Number of results per page'
+          required: false
+          schema:
+            type: integer
+            default: 20
+            maximum: 100
+            minimum: 1
+        -
+          name: page
+          in: query
+          description: 'Page number'
+          required: false
+          schema:
+            type: integer
+            default: 1
+            minimum: 1
+      responses:
+        '200':
+          description: 'successful operation'
+          content:
+            application/json:
+              schema:
+                properties:
+                  data: { type: array, items: { $ref: '#/components/schemas/ShopPack' } }
+                type: object
+      security:
+        -
+          systemapi-passport:
+            - shop-pack
+  '/system-api/v2/shop-pack/{uuid}':
+    get:
+      tags:
+        - Monetization
+      summary: 'Get Shop pack details'
+      description: 'Retrieve details for a specific Shop pack by UUID.'
+      operationId: getShopPack
+      parameters:
+        -
+          name: uuid
+          in: path
+          description: 'UUID of the Shop pack'
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: 'successful operation'
+          content:
+            application/json:
+              schema:
+                properties:
+                  data: { $ref: '#/components/schemas/ShopPack' }
+                type: object
+        '404':
+          description: 'Shop pack not found'
+      security:
+        -
+          systemapi-passport:
+            - shop-pack
+  /system-api/v2/supporter-tiers:
+    get:
+      tags:
+        - Monetization
+      summary: 'List all Supporter Tiers'
+      description: 'Retrieve a paginated list of all Supporter Tiers in the domain.'
+      operationId: listSupporterTiers
+      parameters:
+        -
+          name: search
+          in: query
+          description: 'Search keyword matching title or description'
+          required: false
+          schema:
+            type: string
+        -
+          name: per_page
+          in: query
+          description: 'Number of results per page'
+          required: false
+          schema:
+            type: integer
+            default: 20
+            maximum: 100
+            minimum: 1
+        -
+          name: page
+          in: query
+          description: 'Page number'
+          required: false
+          schema:
+            type: integer
+            default: 1
+            minimum: 1
+      responses:
+        '200':
+          description: 'successful operation'
+          content:
+            application/json:
+              schema:
+                properties:
+                  data: { type: array, items: { $ref: '#/components/schemas/SupporterTier' } }
+                type: object
+      security:
+        -
+          systemapi-passport:
+            - supporter-tier
+  '/system-api/v2/supporter-tier/{uuid}':
+    get:
+      tags:
+        - Monetization
+      summary: 'Get Supporter Tier details'
+      description: 'Retrieve details for a specific Supporter Tier by UUID.'
+      operationId: getSupporterTier
+      parameters:
+        -
+          name: uuid
+          in: path
+          description: 'UUID of the Supporter Tier'
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: 'successful operation'
+          content:
+            application/json:
+              schema:
+                properties:
+                  data: { $ref: '#/components/schemas/SupporterTier' }
+                type: object
+        '404':
+          description: 'Supporter tier not found'
+      security:
+        -
+          systemapi-passport:
+            - supporter-tier
   '/system-api/v2/task/{task_id}/execute':
     post:
       tags:
@@ -3787,6 +3950,154 @@ components:
             - microsoft
             - google
           example: steam
+      type: object
+    ShopPack:
+      title: 'Shop pack'
+      description: 'Shop pack resource representation (delivery_content excluded)'
+      properties:
+        uuid:
+          description: 'Unique identifier for the Shop pack'
+          type: string
+          format: uuid
+          example: 123e4567-e89b-12d3-a456-426614174000
+        name:
+          description: 'Name of the Shop pack'
+          type: string
+          example: 'Starter Kit'
+        description:
+          description: 'Description / content'
+          type: string
+          example: 'Get started with basic tools'
+          nullable: true
+        labels:
+          description: 'Labels associated with the Shop pack'
+          type: array
+          items:
+            type: string
+          example:
+            - VIP
+            - Featured
+        token_price:
+          description: 'Token price'
+          type: integer
+          example: 100
+        token_discount_price:
+          description: 'Discounted token price if applicable'
+          type: integer
+          example: 80
+          nullable: true
+        quantity:
+          description: 'Quantity per purchase'
+          type: integer
+          example: 1
+        published:
+          description: 'Whether the pack is published'
+          type: boolean
+          example: true
+        published_at:
+          description: 'Publication timestamp'
+          type: string
+          format: date-time
+          example: '2023-01-01T12:00:00.000000Z'
+          nullable: true
+        shop_pack_group_id:
+          description: 'Associated Shop pack group ID'
+          type: integer
+          example: 2
+          nullable: true
+        shop_pack_group_name:
+          description: 'Associated Shop pack group name'
+          type: string
+          example: Kits
+          nullable: true
+        app_id:
+          description: 'Associated game app ID'
+          type: integer
+          example: 1
+          nullable: true
+        order_id:
+          description: 'Display order sequence'
+          type: integer
+          example: 1
+          nullable: true
+        restrictions:
+          description: 'Delivery and purchase restriction settings'
+          type: object
+        created_at:
+          description: 'Creation timestamp'
+          type: string
+          format: date-time
+          example: '2023-01-01T12:00:00.000000Z'
+        updated_at:
+          description: 'Last update timestamp'
+          type: string
+          format: date-time
+          example: '2023-01-01T12:00:00.000000Z'
+      type: object
+    SupporterTier:
+      title: 'Supporter Tier'
+      description: 'Supporter Tier resource representation (delivery_content excluded)'
+      properties:
+        uuid:
+          description: 'Unique identifier for the Supporter Tier'
+          type: string
+          format: uuid
+          example: 123e4567-e89b-12d3-a456-426614174000
+        name:
+          description: 'Name of the Supporter Tier'
+          type: string
+          example: 'VIP Tier'
+        description:
+          description: Description
+          type: string
+          example: 'Supporter Tier perks'
+          nullable: true
+        price:
+          description: 'Price of the Supporter Tier'
+          type: number
+          format: float
+          example: 10
+        currency:
+          description: 'Currency code (e.g. EUR, USD)'
+          type: string
+          example: EUR
+        type:
+          description: 'Type of tier (subscription, one_time_payment, patreon)'
+          type: string
+          example: subscription
+        active:
+          description: 'Whether the Supporter Tier is active'
+          type: boolean
+          example: true
+        group:
+          description: 'Associated Supporter Tier group'
+          properties:
+            id:
+              description: 'Associated Supporter Tier group ID'
+              type: integer
+              example: 1
+              nullable: true
+            name:
+              description: 'Associated Supporter Tier group name'
+              type: string
+              example: 'VIP Tiers'
+              nullable: true
+          type: object
+        order_id:
+          description: 'Display order sequence'
+          type: integer
+          example: 1
+          nullable: true
+        created_at:
+          description: 'Creation timestamp'
+          type: string
+          format: date-time
+          example: '2023-01-01T12:00:00.000000Z'
+        updated_at:
+          description: 'Last update timestamp'
+          type: string
+          format: date-time
+          example: '2023-01-01T12:00:00.000000Z'
       type: object
     TokenTransaction:
       title: 'Token Transaction'
