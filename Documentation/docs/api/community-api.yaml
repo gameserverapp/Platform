@@ -1,7 +1,7 @@
 openapi: 3.0.0
 info:
   title: 'Community API'
-  description: "External sources can tap into the Community website API to retrieve data about online players and much more.\n\n:::warning WORK IN PROGRESS\nThis API is work in progress. Things may change.\n:::\nThe OAuth API automatically redirects users to authenticate with Steam. This lets GameServerApp verify in-game players on the website, enabling features like in-game purchases and direct messaging.\n\n## API key\nFind the OAuth API keys & redirect URL here: https://dash.gameserverapp.com/configure/api/community-api\n\n## Request headers\nAll requests require to have one the following HTTP headers, except for MOD api calls:\n\n```composer log\nX-AUTH-GSA-CLIENT-ID: {your Client ID}\nAuthorization: Bearer {refresh_token}\n```\n\n## Libraries\nYou can find the [Official PHP API wrapper on GitHub](https://github.com/GameserverApp/PHP-API-Wrapper)."
+  description: "External sources can tap into the Community website API to retrieve data about online players and much more.\n\nThe OAuth API automatically redirects users to authenticate with Steam. This lets GameServerApp verify in-game players on the website, enabling features like in-game purchases and direct messaging.\n\n## API key\nFind the OAuth API keys & redirect URL here: https://dash.gameserverapp.com/configure/api/community-api \\\n⚠️ OAuth API keys are sensitive information. Do not share them with anyone.\n\n## Request headers\nAll requests require to have one the following HTTP headers, except for MOD api calls:\n\n```composer log\nX-AUTH-GSA-CLIENT-ID: {your Client ID}\nAuthorization: Bearer {refresh_token}\n```\n\n## OpenAPI file for AI\nWhen using AI tools, use the [OpenAPI file](https://api.gameserverapp.com/.well-known/community-api.yaml) to make it understand the Community API.\n\n## Libraries\nYou can find the [Official PHP API wrapper on GitHub](https://github.com/GameserverApp/PHP-API-Wrapper)."
   contact:
     email: support@gameserverapp.com
   version: '1'
@@ -10,6 +10,1421 @@ servers:
     url: 'https://api.gameserverapp.com'
     description: api.gameserverapp.com
 paths:
+  /api/v1/calendar-feed:
+    get:
+      tags:
+        - Calendar
+      summary: 'Get calendar feed'
+      description: 'Retrieve calendar events within a specified date range for feed views'
+      operationId: getCalendarFeed
+      parameters:
+        -
+          name: start
+          in: query
+          description: 'Start date filter'
+          required: true
+          schema:
+            type: string
+            format: date
+          example: '2026-10-01'
+        -
+          name: end
+          in: query
+          description: 'End date filter'
+          required: true
+          schema:
+            type: string
+            format: date
+          example: '2026-10-31'
+      responses:
+        '200':
+          description: 'successful operation'
+  '/api/v1/calendar/{id}':
+    get:
+      tags:
+        - Calendar
+      summary: 'Get calendar event'
+      description: 'Retrieve details of a specific calendar event'
+      operationId: getCalendarEvent
+      parameters:
+        -
+          name: id
+          in: path
+          description: 'Calendar event ID'
+          required: true
+          schema:
+            type: integer
+          example: 1
+      responses:
+        '200':
+          description: 'successful operation'
+  '/api/v1/calendar/{id}/related':
+    get:
+      tags:
+        - Calendar
+      summary: 'Get related calendar events'
+      description: 'Retrieve upcoming related calendar events'
+      operationId: getRelatedCalendarEvents
+      parameters:
+        -
+          name: id
+          in: path
+          description: 'Calendar event ID to exclude'
+          required: true
+          schema:
+            type: integer
+          example: 1
+      responses:
+        '200':
+          description: 'successful operation'
+  '/api/v1/calendar/{id}/participate':
+    post:
+      tags:
+        - Calendar
+      summary: 'Toggle event participation'
+      description: 'Subscribe or unsubscribe the authenticated user to/from a calendar event'
+      operationId: participateInCalendarEvent
+      parameters:
+        -
+          name: id
+          in: path
+          description: 'Calendar event ID'
+          required: true
+          schema:
+            type: integer
+          example: 1
+      responses:
+        '200':
+          description: 'successful operation'
+      security:
+        -
+          community-passport: []
+  '/api/v1/character/{uuid}':
+    get:
+      tags:
+        - Character
+      summary: 'Get character'
+      description: 'Retrieve details for a specific character by UUID'
+      operationId: getCharacter
+      parameters:
+        -
+          name: uuid
+          in: path
+          description: 'Character UUID'
+          required: true
+          schema:
+            type: string
+          example: 083e2257-c7d6-444d-ac17-e5334ede9b27
+      responses:
+        '200':
+          description: 'successful operation'
+  /api/v1/characters/top:
+    get:
+      tags:
+        - Character
+      summary: 'Get top characters'
+      description: 'Retrieve top 5 characters across active game servers'
+      operationId: getTopCharacters
+      responses:
+        '200':
+          description: 'successful operation'
+  /api/v1/characters/fresh:
+    get:
+      tags:
+        - Character
+      summary: 'Get fresh characters'
+      description: 'Retrieve 5 recently created characters across active game servers'
+      operationId: getFreshCharacters
+      responses:
+        '200':
+          description: 'successful operation'
+  /api/v1/characters/online:
+    get:
+      tags:
+        - Character
+      summary: 'Get online characters'
+      description: 'Retrieve online characters and total online count across active game servers'
+      operationId: getOnlineCharacters
+      responses:
+        '200':
+          description: 'successful operation'
+  /api/v1/characters/spotlight:
+    get:
+      tags:
+        - Character
+      summary: 'Get spotlight characters'
+      description: 'Retrieve random spotlight characters across active game servers'
+      operationId: getSpotlightCharacters
+      responses:
+        '200':
+          description: 'successful operation'
+  '/api/v1/character/{uuid}/stats/{type}':
+    get:
+      tags:
+        - Character
+      summary: 'Get character statistics'
+      description: 'Retrieve statistical chart data for a specific character by type'
+      operationId: getCharacterStats
+      parameters:
+        -
+          name: uuid
+          in: path
+          description: 'Character UUID'
+          required: true
+          schema:
+            type: string
+          example: 083e2257-c7d6-444d-ac17-e5334ede9b27
+        -
+          name: type
+          in: path
+          description: 'Statistic type'
+          required: true
+          schema:
+            type: string
+            enum:
+              - hours-played
+              - levels-gained
+              - xp-gained
+          example: hours-played
+      responses:
+        '200':
+          description: 'successful operation'
+  '/api/v1/character/{uuid}/about':
+    post:
+      tags:
+        - Character
+      summary: 'Update character about information'
+      description: 'Update about text and optional image for a character belonging to the authenticated user'
+      operationId: updateCharacterAbout
+      parameters:
+        -
+          name: uuid
+          in: path
+          description: 'Character UUID'
+          required: true
+          schema:
+            type: string
+          example: 083e2257-c7d6-444d-ac17-e5334ede9b27
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              required:
+                - about
+              properties:
+                about:
+                  description: 'About text for the character'
+                  type: string
+                  maxLength: 1000
+                  example: 'Veteran survivor of the ARK.'
+                file:
+                  description: 'Optional image upload'
+                  type: string
+                  format: binary
+              type: object
+      responses:
+        '200':
+          description: 'successful operation'
+      security:
+        -
+          community-passport: []
+  '/api/v1/cluster/{id}/stats/{type}':
+    get:
+      tags:
+        - Cluster
+      summary: 'Get cluster statistics'
+      description: 'Retrieve statistics and metrics for a specific cluster by type'
+      operationId: getClusterStats
+      parameters:
+        -
+          name: id
+          in: path
+          description: 'Cluster ID'
+          required: true
+          schema:
+            type: integer
+          example: 1
+        -
+          name: type
+          in: path
+          description: 'Statistic type'
+          required: true
+          schema:
+            type: string
+            enum:
+              - active-tribes
+              - newbies
+              - top-players
+              - last-online
+              - online-count-last-7-days
+              - hours-played-last-7-days
+              - new-players-last-7-days
+          example: active-tribes
+      responses:
+        '200':
+          description: 'successful operation'
+  /api/v1/domain/settings:
+    get:
+      tags:
+        - Domain
+      summary: 'Get domain settings'
+      description: 'Retrieve public configuration, theme settings, features, routes, and custom menu for the current domain'
+      operationId: getDomainSettings
+      responses:
+        '200':
+          description: 'successful operation'
+        '404':
+          description: 'Domain not found'
+  '/api/v1/domain/stats/{type}':
+    get:
+      tags:
+        - Domain
+      summary: 'Get domain statistics'
+      description: 'Retrieve statistical data and charts for the domain by type'
+      operationId: getDomainStats
+      parameters:
+        -
+          name: type
+          in: path
+          description: 'Statistic type'
+          required: true
+          schema:
+            type: string
+            enum:
+              - hours-played
+              - online-players
+              - new-characters
+              - active-tribes
+              - newbies
+              - top-players
+              - last-online
+              - online-count-last-7-days
+              - hours-played-last-7-days
+              - new-players-last-7-days
+          example: online-players
+      responses:
+        '200':
+          description: 'successful operation'
+        '400':
+          description: 'Bad request'
+  '/api/v1/form/{form_id}':
+    post:
+      tags:
+        - Form
+      summary: 'Submit form or application'
+      description: 'Submit a custom form or application by form ID or form identifier'
+      operationId: submitForm
+      parameters:
+        -
+          name: form_id
+          in: path
+          description: 'Form ID (integer) or application form identifier (string)'
+          required: true
+          schema:
+            type: string
+          example: '1'
+      requestBody:
+        description: 'Form field key-value submission data'
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+              field_1: 'John Doe'
+              field_2: 'I would like to apply'
+      responses:
+        '200':
+          description: 'successful operation'
+        '400':
+          description: 'Bad request or validation error'
+      security:
+        -
+          community-passport: []
+  /api/v1/messages/inbox:
+    get:
+      tags:
+        - Message
+      summary: 'Get inbox messages'
+      description: 'Retrieve paginated inbox messages for the authenticated user'
+      operationId: getInboxMessages
+      responses:
+        '200':
+          description: 'successful operation'
+      security:
+        -
+          community-passport: []
+  /api/v1/messages/outbox:
+    get:
+      tags:
+        - Message
+      summary: 'Get outbox messages'
+      description: 'Retrieve paginated sent messages for the authenticated user'
+      operationId: getOutboxMessages
+      responses:
+        '200':
+          description: 'successful operation'
+      security:
+        -
+          community-passport: []
+  '/api/v1/message/{uuid}':
+    get:
+      tags:
+        - Message
+      summary: 'Get message details'
+      description: 'Retrieve a specific message by UUID and mark it as read if the recipient is viewing'
+      operationId: getMessage
+      parameters:
+        -
+          name: uuid
+          in: path
+          description: 'Message UUID'
+          required: true
+          schema:
+            type: string
+          example: 083e2257-c7d6-444d-ac17-e5334ede9b27
+      responses:
+        '200':
+          description: 'successful operation'
+        '404':
+          description: 'Message not found'
+      security:
+        -
+          community-passport: []
+  '/api/v1/message/send/{uuid}':
+    post:
+      tags:
+        - Message
+      summary: 'Send direct message'
+      description: 'Send a direct message to a user by receiver UUID'
+      operationId: sendMessage
+      parameters:
+        -
+          name: uuid
+          in: path
+          description: 'Receiver user UUID'
+          required: true
+          schema:
+            type: string
+          example: 083e2257-c7d6-444d-ac17-e5334ede9b27
+      requestBody:
+        description: 'Message subject and content'
+        required: true
+        content:
+          application/json:
+            schema:
+              required:
+                - subject
+                - content
+              properties:
+                subject:
+                  type: string
+                  maxLength: 255
+                  minLength: 8
+                  example: 'Tribe Recruitment Offer'
+                content:
+                  type: string
+                  minLength: 8
+                  example: 'Hello! We would like to invite you to join our tribe on the server.'
+              type: object
+      responses:
+        '200':
+          description: 'successful operation'
+        '400':
+          description: 'Bad request, validation error, or banned user'
+        '429':
+          description: 'Hourly message rate limit reached'
+      security:
+        -
+          community-passport: []
+  /api/v1/messages/contacts:
+    get:
+      tags:
+        - Message
+      summary: 'Get message contacts'
+      description: 'Retrieve recent contacts/conversation partners for the authenticated user'
+      operationId: getMessageContacts
+      responses:
+        '200':
+          description: 'successful operation'
+      security:
+        -
+          community-passport: []
+  /api/v1/news:
+    get:
+      tags:
+        - News
+      summary: 'Get published news articles'
+      description: 'Retrieve paginated list of published news articles for the current domain'
+      operationId: getNewsArticles
+      parameters:
+        -
+          name: page
+          in: query
+          description: 'Page number for pagination'
+          required: false
+          schema:
+            type: integer
+          example: 1
+        -
+          name: skip_latest
+          in: query
+          description: 'Flag to exclude the latest news articles from the results'
+          required: false
+          schema:
+            type: integer
+          example: 1
+      responses:
+        '200':
+          description: 'successful operation'
+  /api/v1/news/latest:
+    get:
+      tags:
+        - News
+      summary: 'Get latest news articles'
+      description: 'Retrieve latest published news articles for the current domain'
+      operationId: getLatestNewsArticles
+      responses:
+        '200':
+          description: 'successful operation'
+  '/api/v1/news/{id}/related':
+    get:
+      tags:
+        - News
+      summary: 'Get related news articles'
+      description: 'Retrieve related latest published news articles excluding the specified article ID'
+      operationId: getRelatedNewsArticles
+      parameters:
+        -
+          name: id
+          in: path
+          description: 'News article ID to exclude'
+          required: true
+          schema:
+            type: integer
+          example: 1
+      responses:
+        '200':
+          description: 'successful operation'
+  '/api/v1/news/{id}':
+    get:
+      tags:
+        - News
+      summary: 'Get news article'
+      description: 'Retrieve details of a published news article by ID for the current domain'
+      operationId: getNewsArticle
+      parameters:
+        -
+          name: id
+          in: path
+          description: 'News article ID'
+          required: true
+          schema:
+            type: integer
+          example: 1
+      responses:
+        '200':
+          description: 'successful operation'
+        '404':
+          description: 'Article not found'
+  '/api/v1/page/{id}':
+    get:
+      tags:
+        - Page
+      summary: 'Get published page'
+      description: 'Retrieve details and content of a published page by ID or slug for the current domain'
+      operationId: getPage
+      parameters:
+        -
+          name: id
+          in: path
+          description: 'Page ID or slug'
+          required: true
+          schema:
+            type: string
+          example: '1'
+      responses:
+        '200':
+          description: 'successful operation'
+        '404':
+          description: 'Page not found'
+  /api/v1/report:
+    post:
+      tags:
+        - Report
+      summary: 'Submit report'
+      description: 'Submit a player or general issue report to community administrators'
+      operationId: submitReport
+      requestBody:
+        description: 'Report details including type, comment, and optional reported character UUID'
+        required: true
+        content:
+          application/json:
+            schema:
+              required:
+                - type
+                - comment
+              properties:
+                type:
+                  description: 'Report category or issue type'
+                  type: string
+                  example: player_report
+                comment:
+                  description: 'Detailed description of the issue'
+                  type: string
+                  example: 'Player was using abusive language in chat'
+                reporting_char:
+                  description: 'UUID of the character being reported'
+                  type: string
+                  example: 083e2257-c7d6-444d-ac17-e5334ede9b27
+                  nullable: true
+              type: object
+      responses:
+        '200':
+          description: 'successful operation'
+        '400':
+          description: 'Bad request, validation error, or banned user'
+        '401':
+          description: Unauthenticated
+        '404':
+          description: 'Character not found'
+        '429':
+          description: 'Rate limit cooldown exceeded'
+      security:
+        -
+          community-passport: []
+  /api/v1/reviews/carousel:
+    get:
+      tags:
+        - Review
+      summary: 'Get reviews carousel'
+      description: 'Retrieve recent reviews for the domain carousel display'
+      operationId: getReviewsCarousel
+      responses:
+        '200':
+          description: 'successful operation'
+        '400':
+          description: 'Review data is disabled'
+  /api/v1/reviews/summary:
+    get:
+      tags:
+        - Review
+      summary: 'Get AI review summary'
+      description: 'Retrieve AI-generated summary of reviews for the current domain'
+      operationId: getReviewsAiSummary
+      responses:
+        '200':
+          description: 'successful operation'
+        '400':
+          description: 'Review data is disabled'
+  '/api/v1/sale/stats/{type}':
+    get:
+      tags:
+        - Sale
+      summary: 'Get sales statistics'
+      description: 'Retrieve sales statistics such as the last 5 donors or monthly target progress for the current domain'
+      operationId: getSaleStats
+      parameters:
+        -
+          name: type
+          in: path
+          description: 'Statistic type'
+          required: true
+          schema:
+            type: string
+            enum:
+              - last-5
+              - monthly-target
+          example: last-5
+      responses:
+        '200':
+          description: 'successful operation'
+        '400':
+          description: 'Bad request or sales data is disabled'
+  /api/v1/search:
+    get:
+      tags:
+        - Search
+      summary: 'Search characters or tribes'
+      description: 'Search for characters or tribes across gameservers for the current domain with optional filters'
+      operationId: search
+      parameters:
+        -
+          name: search_type
+          in: query
+          description: 'Type of entity to search: character or tribe'
+          required: false
+          schema:
+            type: string
+            default: character
+            enum:
+              - character
+              - tribe
+          example: character
+        -
+          name: search
+          in: query
+          description: 'Search term matching character or tribe name'
+          required: false
+          schema:
+            type: string
+          example: Survivor
+        -
+          name: gender-m
+          in: query
+          description: 'Filter for male characters (1 = true)'
+          required: false
+          schema:
+            type: integer
+            enum:
+              - 0
+              - 1
+          example: 1
+        -
+          name: gender-f
+          in: query
+          description: 'Filter for female characters (1 = true)'
+          required: false
+          schema:
+            type: integer
+            enum:
+              - 0
+              - 1
+          example: 1
+        -
+          name: has_tribe-y
+          in: query
+          description: 'Filter for characters associated with a tribe (1 = true)'
+          required: false
+          schema:
+            type: integer
+            enum:
+              - 0
+              - 1
+          example: 1
+        -
+          name: has_tribe-n
+          in: query
+          description: 'Filter for characters not associated with a tribe (1 = true)'
+          required: false
+          schema:
+            type: integer
+            enum:
+              - 0
+              - 1
+          example: 1
+        -
+          name: only_online
+          in: query
+          description: 'Filter for characters currently online (1 = true)'
+          required: false
+          schema:
+            type: integer
+            enum:
+              - 0
+              - 1
+          example: 1
+        -
+          name: only_donators
+          in: query
+          description: 'Filter for characters belonging to donating users (1 = true)'
+          required: false
+          schema:
+            type: integer
+            enum:
+              - 0
+              - 1
+          example: 1
+        -
+          name: order_by
+          in: query
+          description: 'Field to order results by'
+          required: false
+          schema:
+            type: string
+            default: name
+            enum:
+              - activity
+              - level
+              - created
+              - name
+          example: name
+        -
+          name: order
+          in: query
+          description: 'Sort direction (asc or desc)'
+          required: false
+          schema:
+            type: string
+            default: asc
+            enum:
+              - asc
+              - desc
+          example: asc
+        -
+          name: page
+          in: query
+          description: 'Page number for pagination'
+          required: false
+          schema:
+            type: integer
+          example: 1
+      responses:
+        '200':
+          description: 'successful operation'
+  /api/v1/servers:
+    get:
+      tags:
+        - Server
+      summary: 'Get all gameservers'
+      description: 'Retrieve all active frontend gameservers for the current domain'
+      operationId: getServers
+      parameters:
+        -
+          name: status
+          in: query
+          description: 'Include live server status info'
+          required: false
+          schema:
+            type: integer
+            enum:
+              - 0
+              - 1
+          example: 1
+      responses:
+        '200':
+          description: 'successful operation'
+  '/api/v1/server/{id}':
+    get:
+      tags:
+        - Server
+      summary: 'Get gameserver details'
+      description: 'Retrieve details for a specific gameserver by ID for the current domain'
+      operationId: getServer
+      parameters:
+        -
+          name: id
+          in: path
+          description: 'Gameserver ID'
+          required: true
+          schema:
+            type: integer
+          example: 1
+        -
+          name: mods
+          in: query
+          description: 'Include mod information'
+          required: false
+          schema:
+            type: integer
+            enum:
+              - 0
+              - 1
+          example: 1
+      responses:
+        '200':
+          description: 'successful operation'
+        '400':
+          description: 'Invalid server ID'
+  '/api/v1/server/{id}/claim-vote':
+    post:
+      tags:
+        - Server
+      summary: 'Claim vote reward'
+      description: 'Claim voting reward for the authenticated user on the specified gameserver'
+      operationId: claimServerVote
+      parameters:
+        -
+          name: id
+          in: path
+          description: 'Gameserver ID'
+          required: true
+          schema:
+            type: integer
+          example: 1
+      responses:
+        '200':
+          description: 'successful operation'
+        '400':
+          description: 'Invalid server ID or vote claim rate limit cooldown'
+        '401':
+          description: Unauthenticated
+      security:
+        -
+          community-passport: []
+  '/api/v1/server/{id}/stats/{type}':
+    get:
+      tags:
+        - Server
+      summary: 'Get gameserver statistics'
+      description: 'Retrieve statistics for a specific gameserver such as active tribes, top players, online count, or hours played'
+      operationId: getServerStats
+      parameters:
+        -
+          name: id
+          in: path
+          description: 'Gameserver ID'
+          required: true
+          schema:
+            type: integer
+          example: 1
+        -
+          name: type
+          in: path
+          description: 'Statistic type'
+          required: true
+          schema:
+            type: string
+            enum:
+              - active-tribes
+              - newbies
+              - top-players
+              - last-online
+              - online-count-last-7-days
+              - hours-played-last-7-days
+              - new-players-last-7-days
+          example: active-tribes
+      responses:
+        '200':
+          description: 'successful operation'
+        '400':
+          description: 'Invalid request'
+        '404':
+          description: 'Gameserver not found'
+  '/api/v1/servers/mod-list/{value}':
+    get:
+      tags:
+        - Server
+      summary: 'Get server mod list'
+      description: 'Retrieve installed plugins/mods for gameservers using an encrypted token'
+      operationId: getServerModList
+      parameters:
+        -
+          name: value
+          in: path
+          description: 'Encrypted token'
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: 'successful operation'
+        '400':
+          description: 'Invalid token, domain mismatch, invalid framework, or invalid game'
+  /api/v1/shop:
+    get:
+      tags:
+        - Shop
+      summary: 'Get shop packs'
+      description: 'Retrieve available shop packs for the current domain with optional search, cluster, gameserver, and category filters'
+      operationId: getShopPacks
+      parameters:
+        -
+          name: cluster
+          in: query
+          description: 'Filter shop packs by cluster UUID'
+          required: false
+          schema:
+            type: string
+            format: uuid
+          example: 123e4567-e89b-12d3-a456-426614174000
+        -
+          name: gameserver
+          in: query
+          description: 'Filter shop packs by gameserver ID'
+          required: false
+          schema:
+            type: integer
+          example: 1
+        -
+          name: filter
+          in: query
+          description: 'Filter shop packs by category label or tag'
+          required: false
+          schema:
+            type: string
+          example: weapons
+        -
+          name: search
+          in: query
+          description: 'Search shop packs by title or description'
+          required: false
+          schema:
+            type: string
+          example: 'starter pack'
+        -
+          name: page
+          in: query
+          description: 'Page number for pagination'
+          required: false
+          schema:
+            type: integer
+          example: 1
+      responses:
+        '200':
+          description: 'successful operation'
+  '/api/v1/shop/{id}':
+    get:
+      tags:
+        - Shop
+      summary: 'Get shop pack details'
+      description: 'Retrieve details for a specific shop pack by UUID for the current domain'
+      operationId: getShopPack
+      parameters:
+        -
+          name: id
+          in: path
+          description: 'Shop pack UUID'
+          required: true
+          schema:
+            type: string
+          example: 123e4567-e89b-12d3-a456-426614174000
+      responses:
+        '200':
+          description: 'successful operation'
+        '404':
+          description: 'Pack not found'
+  '/api/v1/shop/{id}/purchase':
+    post:
+      tags:
+        - Shop
+      summary: 'Purchase shop pack'
+      description: 'Purchase a shop pack for the authenticated user with optional character, gameserver, and quantity specifications'
+      operationId: purchaseShopPack
+      parameters:
+        -
+          name: id
+          in: path
+          description: 'Shop pack UUID'
+          required: true
+          schema:
+            type: string
+          example: 123e4567-e89b-12d3-a456-426614174000
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              properties:
+                character_id:
+                  description: 'Target character UUID (if pack requires character selection)'
+                  type: string
+                  example: 123e4567-e89b-12d3-a456-426614174000
+                gameserver_id:
+                  description: 'Target gameserver ID (if pack requires server selection)'
+                  type: integer
+                  example: 1
+                quantity:
+                  description: 'Quantity to purchase'
+                  type: integer
+                  minimum: 1
+                  example: 1
+              type: object
+      responses:
+        '200':
+          description: 'successful operation'
+        '400':
+          description: 'Purchase failed due to validation, insufficient tokens, rate limits, or order restrictions'
+        '401':
+          description: Unauthenticated
+        '429':
+          description: 'Shop feature disabled by domain admin'
+      security:
+        -
+          community-passport: []
+  /api/v1/user/me/sub_users/connect:
+    post:
+      tags:
+        - User
+      summary: 'Connect sub-account'
+      description: 'Connect a service sub-account to the authenticated user using a connect code'
+      operationId: connectSubUser
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              required:
+                - code
+              properties:
+                code:
+                  description: 'Connect code'
+                  type: string
+                  example: ABC123XYZ
+              type: object
+      responses:
+        '200':
+          description: 'successful operation'
+        '400':
+          description: 'Invalid or expired connect code or connection failure'
+        '401':
+          description: Unauthenticated
+      security:
+        -
+          community-passport: []
+  '/api/v1/user/me/sub_users/disconnect/{uuid}':
+    post:
+      tags:
+        - User
+      summary: 'Disconnect sub-account'
+      description: 'Disconnect a linked sub-account from the authenticated user by UUID'
+      operationId: disconnectSubUser
+      parameters:
+        -
+          name: uuid
+          in: path
+          description: 'Sub-account UUID'
+          required: true
+          schema:
+            type: string
+          example: 123e4567-e89b-12d3-a456-426614174000
+      responses:
+        '200':
+          description: 'successful operation'
+        '400':
+          description: 'Cannot disconnect primary account or disconnection failed'
+        '401':
+          description: Unauthenticated
+      security:
+        -
+          community-passport: []
+  /api/v1/user/me/sub_users/connect-reverse:
+    post:
+      tags:
+        - User
+      summary: 'Generate reverse connect code'
+      description: 'Generate a reverse connect code for in-game linking (!connectcode {code})'
+      operationId: generateReverseConnectCode
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              required:
+                - service_id
+              properties:
+                service_id:
+                  description: 'Service identifier'
+                  type: string
+                  maxLength: 200
+                  example: '76561198000000000'
+              type: object
+      responses:
+        '200':
+          description: 'successful operation'
+        '400':
+          description: 'Banned user, rate limit cooldown, or validation error'
+        '401':
+          description: Unauthenticated
+      security:
+        -
+          community-passport: []
+  /api/v1/supporter-tier:
+    get:
+      tags:
+        - SupporterTier
+      summary: 'Get Supporter Tiers'
+      description: 'Retrieve active Supporter Tiers for the current domain with pagination'
+      operationId: getSupporterTiers
+      parameters:
+        -
+          name: page
+          in: query
+          description: 'Page number for pagination'
+          required: false
+          schema:
+            type: integer
+          example: 1
+        -
+          name: coupon
+          in: query
+          description: 'Optional coupon code to apply'
+          required: false
+          schema:
+            type: string
+            maxLength: 32
+          example: DISCOUNT10
+      responses:
+        '200':
+          description: 'successful operation'
+  '/api/v1/supporter-tier/{id}':
+    get:
+      tags:
+        - SupporterTier
+      summary: 'Get Supporter Tier details'
+      description: 'Retrieve details for a specific Supporter Tier by UUID for the current domain'
+      operationId: getSupporterTier
+      parameters:
+        -
+          name: id
+          in: path
+          description: 'Supporter Tier UUID'
+          required: true
+          schema:
+            type: string
+          example: 123e4567-e89b-12d3-a456-426614174000
+      responses:
+        '200':
+          description: 'successful operation'
+        '404':
+          description: 'Tier not found'
+  '/api/v1/group/{uuid}':
+    get:
+      tags:
+        - Group
+      summary: 'Get group details'
+      description: 'Retrieve details of a specific tribe/group by UUID'
+      operationId: getGroup
+      parameters:
+        -
+          name: uuid
+          in: path
+          description: 'Group UUID'
+          required: true
+          schema:
+            type: string
+          example: 123e4567-e89b-12d3-a456-426614174000
+        -
+          name: settings
+          in: query
+          description: 'Include group settings in response'
+          required: false
+          schema:
+            type: integer
+          example: 1
+      responses:
+        '200':
+          description: 'successful operation'
+        '404':
+          description: 'Group not found'
+  '/api/v1/group/{uuid}/log':
+    get:
+      tags:
+        - Group
+      summary: 'Get group audit log'
+      description: 'Retrieve paginated activity logs for a group (member access required)'
+      operationId: getGroupLog
+      parameters:
+        -
+          name: uuid
+          in: path
+          description: 'Group UUID'
+          required: true
+          schema:
+            type: string
+          example: 123e4567-e89b-12d3-a456-426614174000
+        -
+          name: page
+          in: query
+          description: 'Page number for pagination'
+          required: false
+          schema:
+            type: integer
+          example: 1
+      responses:
+        '200':
+          description: 'successful operation'
+        '401':
+          description: 'Unauthorized or not a group member'
+        '404':
+          description: 'Group not found'
+      security:
+        -
+          community-passport: []
+  '/api/v1/group/{uuid}/stats/{type}':
+    get:
+      tags:
+        - Group
+      summary: 'Get group statistics'
+      description: 'Retrieve statistical chart data for a specific group by type'
+      operationId: getGroupStats
+      parameters:
+        -
+          name: uuid
+          in: path
+          description: 'Group UUID'
+          required: true
+          schema:
+            type: string
+          example: 123e4567-e89b-12d3-a456-426614174000
+        -
+          name: type
+          in: path
+          description: 'Statistic type'
+          required: true
+          schema:
+            type: string
+            enum:
+              - hours-played
+              - levels-gained
+              - xp-gained
+          example: hours-played
+      responses:
+        '200':
+          description: 'successful operation'
+        '400':
+          description: 'Invalid statistic type'
+        '404':
+          description: 'Group not found'
+  '/api/v1/group/{uuid}/settings':
+    post:
+      tags:
+        - Group
+      summary: 'Update group settings'
+      description: 'Update MOTD and about text for a group (admin or owner access required)'
+      operationId: updateGroupSettings
+      parameters:
+        -
+          name: uuid
+          in: path
+          description: 'Group UUID'
+          required: true
+          schema:
+            type: string
+          example: 123e4567-e89b-12d3-a456-426614174000
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              properties:
+                motd:
+                  description: 'Message of the day'
+                  type: string
+                  example: 'Welcome to our tribe!'
+                about:
+                  description: 'Group description'
+                  type: string
+                  example: 'Official PvE tribe on the Island.'
+              type: object
+      responses:
+        '200':
+          description: 'Settings changed'
+        '401':
+          description: 'Unauthorized or not a group admin/owner'
+        '404':
+          description: 'Group not found'
+      security:
+        -
+          community-passport: []
+  '/api/v1/group/{uuid}/upload/{type}':
+    post:
+      tags:
+        - Group
+      summary: 'Upload group media'
+      description: 'Upload logo or background image for a group (admin or owner access required)'
+      operationId: uploadGroupMedia
+      parameters:
+        -
+          name: uuid
+          in: path
+          description: 'Group UUID'
+          required: true
+          schema:
+            type: string
+          example: 123e4567-e89b-12d3-a456-426614174000
+        -
+          name: type
+          in: path
+          description: 'Upload media type'
+          required: true
+          schema:
+            type: string
+            enum:
+              - logo
+              - background
+          example: logo
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              required:
+                - file
+              properties:
+                file:
+                  description: 'Image file to upload'
+                  type: string
+                  format: binary
+              type: object
+      responses:
+        '200':
+          description: Uploaded
+        '400':
+          description: 'Invalid upload type, unsupported mime type, or file size exceeded'
+        '401':
+          description: 'Unauthorized or not a group admin/owner'
+        '404':
+          description: 'Group not found'
+      security:
+        -
+          community-passport: []
+  '/api/v1/group/{uuid}/discord':
+    post:
+      tags:
+        - Group
+      summary: 'Set group Discord channel'
+      description: 'Configure the notification Discord channel ID for the group (owner access required)'
+      operationId: setGroupDiscordChannel
+      parameters:
+        -
+          name: uuid
+          in: path
+          description: 'Group UUID'
+          required: true
+          schema:
+            type: string
+          example: 123e4567-e89b-12d3-a456-426614174000
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              required:
+                - channel_id
+              properties:
+                channel_id:
+                  description: 'Discord channel ID'
+                  type: string
+                  example: '123456789012345678'
+              type: object
+      responses:
+        '200':
+          description: 'Settings changed'
+        '401':
+          description: 'Unauthorized or not group owner'
+        '404':
+          description: 'Group not found'
+      security:
+        -
+          community-passport: []
+  '/api/v1/group/{uuid}/discord/disconnect':
+    post:
+      tags:
+        - Group
+      summary: 'Disconnect group Discord channel'
+      description: 'Disconnect and remove Discord integration for the group (owner access required)'
+      operationId: disconnectGroupDiscordChannel
+      parameters:
+        -
+          name: uuid
+          in: path
+          description: 'Group UUID'
+          required: true
+          schema:
+            type: string
+          example: 123e4567-e89b-12d3-a456-426614174000
+      responses:
+        '200':
+          description: 'Discord information removed'
+        '401':
+          description: 'Unauthorized or not group owner'
+        '404':
+          description: 'Group not found'
+      security:
+        -
+          community-passport: []
   '/api/v1/user/{user_id}':
     get:
       tags:
@@ -31,6 +1446,416 @@ paths:
       security:
         -
           community-passport: []
+  /api/v1/user/me/settings:
+    post:
+      tags:
+        - User
+      summary: 'Update user settings'
+      description: 'Update settings for the authenticated user'
+      operationId: updateUserSettings
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              properties:
+                email:
+                  description: 'User email address'
+                  type: string
+                  format: email
+                  example: user@example.com
+                  nullable: true
+                notify_message:
+                  description: 'Receive message notifications'
+                  type: boolean
+                  example: true
+                notify_webalert:
+                  description: 'Receive web alert notifications'
+                  type: boolean
+                  example: true
+              type: object
+      responses:
+        '200':
+          description: 'successful operation'
+      security:
+        -
+          community-passport: []
+  /api/v1/user/me/transactions:
+    get:
+      tags:
+        - User
+      summary: 'Get user transactions'
+      description: 'Retrieve paginated tokens transactions for the authenticated user'
+      operationId: getUserTokenTransactions
+      parameters:
+        -
+          name: page
+          in: query
+          description: 'Page number'
+          required: false
+          schema:
+            type: integer
+            default: 1
+            minimum: 1
+      responses:
+        '200':
+          description: 'successful operation'
+      security:
+        -
+          community-passport: []
+  '/api/v1/user/{uuid}/send_tokens':
+    post:
+      tags:
+        - User
+      summary: 'Send tokens to user'
+      description: 'Transfer tokens from authenticated user to another user'
+      operationId: sendTokensToUser
+      parameters:
+        -
+          name: uuid
+          in: path
+          description: 'Recipient user UUID'
+          required: true
+          schema:
+            type: string
+          example: 083e2257-c7d6-444d-ac17-e5334ede9b27
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              required:
+                - amount
+                - message
+              properties:
+                amount:
+                  description: 'Amount of tokens to send'
+                  type: integer
+                  minimum: 1
+                  example: 10
+                message:
+                  description: 'Transfer message'
+                  type: string
+                  maxLength: 120
+                  example: 'Thanks for the trade!'
+              type: object
+      responses:
+        '200':
+          description: 'successful operation'
+      security:
+        -
+          community-passport: []
+  /api/v1/user/me/subscriptions:
+    get:
+      tags:
+        - User
+      summary: 'Get user subscriptions'
+      description: 'Retrieve paginated subscriptions for the authenticated user'
+      operationId: getUserSubscriptions
+      parameters:
+        -
+          name: page
+          in: query
+          description: 'Page number'
+          required: false
+          schema:
+            type: integer
+            default: 1
+            minimum: 1
+      responses:
+        '200':
+          description: 'successful operation'
+      security:
+        -
+          community-passport: []
+  '/api/v1/user/me/subscriptions/{id}/change_character':
+    post:
+      tags:
+        - User
+      summary: 'Change subscription character'
+      description: 'Update the character assigned to a specific subscription'
+      operationId: changeSubscriptionCharacter
+      parameters:
+        -
+          name: id
+          in: path
+          description: 'Subscription UUID'
+          required: true
+          schema:
+            type: string
+          example: 083e2257-c7d6-444d-ac17-e5334ede9b27
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              required:
+                - character_id
+              properties:
+                character_id:
+                  description: 'Character UUID'
+                  type: string
+                  example: 083e2257-c7d6-444d-ac17-e5334ede9b27
+              type: object
+      responses:
+        '200':
+          description: 'successful operation'
+      security:
+        -
+          community-passport: []
+  '/api/v1/user/me/subscriptions/{id}/change_gameserver':
+    post:
+      tags:
+        - User
+      summary: 'Change subscription game server'
+      description: 'Update the game server assigned to a specific subscription'
+      operationId: changeSubscriptionGameserver
+      parameters:
+        -
+          name: id
+          in: path
+          description: 'Subscription UUID'
+          required: true
+          schema:
+            type: string
+          example: 083e2257-c7d6-444d-ac17-e5334ede9b27
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              required:
+                - gameserver_id
+              properties:
+                gameserver_id:
+                  description: 'Game Server ID'
+                  type: integer
+                  example: 1
+              type: object
+      responses:
+        '200':
+          description: 'successful operation'
+      security:
+        -
+          community-passport: []
+  '/api/v1/user/me/subscriptions/{id}/cancel':
+    post:
+      tags:
+        - User
+      summary: 'Cancel subscription'
+      description: 'Cancel an active subscription for the authenticated user'
+      operationId: cancelSubscription
+      parameters:
+        -
+          name: id
+          in: path
+          description: 'Subscription UUID'
+          required: true
+          schema:
+            type: string
+          example: 083e2257-c7d6-444d-ac17-e5334ede9b27
+      responses:
+        '200':
+          description: 'successful operation'
+      security:
+        -
+          community-passport: []
+  /api/v1/user/me/confirm_email:
+    post:
+      tags:
+        - User
+      summary: 'Confirm email'
+      description: 'Confirm email address using confirmation code'
+      operationId: confirmUserEmail
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              required:
+                - code
+              properties:
+                code:
+                  description: 'Email confirmation code'
+                  type: string
+                  maxLength: 50
+                  example: a1b2c3d4e5
+              type: object
+      responses:
+        '200':
+          description: 'successful operation'
+      security:
+        -
+          community-passport: []
+  /api/v1/user/me/confirm_email/resend:
+    post:
+      tags:
+        - User
+      summary: 'Resend confirmation email'
+      description: 'Resend email verification confirmation code to authenticated user'
+      operationId: resendUserConfirmEmail
+      responses:
+        '200':
+          description: 'successful operation'
+      security:
+        -
+          community-passport: []
+  /api/v1/user/me/deliveries:
+    get:
+      tags:
+        - User
+      summary: 'Get user deliveries'
+      description: 'Retrieve paginated shop deliveries for the authenticated user'
+      operationId: getUserDeliveries
+      parameters:
+        -
+          name: page
+          in: query
+          description: 'Page number'
+          required: false
+          schema:
+            type: integer
+            default: 1
+            minimum: 1
+      responses:
+        '200':
+          description: 'successful operation'
+      security:
+        -
+          community-passport: []
+  /api/v1/user/me/invoices:
+    get:
+      tags:
+        - User
+      summary: 'Get user invoices'
+      description: 'Retrieve paginated sales and invoices for the authenticated user'
+      operationId: getUserInvoices
+      parameters:
+        -
+          name: page
+          in: query
+          description: 'Page number'
+          required: false
+          schema:
+            type: integer
+            default: 1
+            minimum: 1
+      responses:
+        '200':
+          description: 'successful operation'
+      security:
+        -
+          community-passport: []
+  '/api/v1/user/me/invoices/{id}/download':
+    post:
+      tags:
+        - User
+      summary: 'Download invoice data'
+      description: 'Retrieve invoice details and seller/buyer info for downloading'
+      operationId: downloadUserInvoice
+      parameters:
+        -
+          name: id
+          in: path
+          description: 'Invoice / Sale UUID'
+          required: true
+          schema:
+            type: string
+          example: 083e2257-c7d6-444d-ac17-e5334ede9b27
+      responses:
+        '200':
+          description: 'successful operation'
+      security:
+        -
+          community-passport: []
+  /api/v1/user/me/kick:
+    post:
+      tags:
+        - User
+      summary: 'Kick character from server'
+      description: "Request kicking the authenticated user's online character from the game server"
+      operationId: kickUserCharacter
+      responses:
+        '200':
+          description: 'successful operation'
+      security:
+        -
+          community-passport: []
+  '/api/v1/user/me/accept_rules/{groupId}':
+    post:
+      tags:
+        - User
+      summary: 'Accept group rules'
+      description: 'Accept rules for an access group trial membership'
+      operationId: acceptGroupRules
+      parameters:
+        -
+          name: groupId
+          in: path
+          description: 'Access Group ID'
+          required: true
+          schema:
+            type: integer
+          example: 1
+      responses:
+        '200':
+          description: 'successful operation'
+      security:
+        -
+          community-passport: []
+  '/api/v1/user/{uuid}/stats/{type}':
+    get:
+      tags:
+        - User
+      summary: 'Get user stats'
+      description: 'Retrieve statistics for a user by stat type'
+      operationId: getUserStats
+      parameters:
+        -
+          name: uuid
+          in: path
+          description: 'User UUID'
+          required: true
+          schema:
+            type: string
+          example: 083e2257-c7d6-444d-ac17-e5334ede9b27
+        -
+          name: type
+          in: path
+          description: 'Stat type'
+          required: true
+          schema:
+            type: string
+            enum:
+              - hours-played
+              - levels-gained
+              - xp-gained
+          example: hours-played
+      responses:
+        '200':
+          description: 'successful operation'
+  '/api/v1/user/general-stats/{type}':
+    get:
+      tags:
+        - User
+      summary: 'Get general user stats'
+      description: 'Retrieve leaderboard rankings and general statistics for users'
+      operationId: getGeneralUserStats
+      parameters:
+        -
+          name: type
+          in: path
+          description: 'Stats type'
+          required: true
+          schema:
+            type: string
+            enum:
+              - top-voters
+              - top-donors
+          example: top-voters
+      responses:
+        '200':
+          description: 'successful operation'
 components:
   securitySchemes:
     community-passport:
