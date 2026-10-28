@@ -10,10 +10,15 @@ const config = {
     url: 'https://docs.gameserverapp.com',
     baseUrl: '/',
     onBrokenLinks: 'throw',
-    onBrokenMarkdownLinks: 'throw',
     favicon: '/img/logo.png',
     organizationName: 'GameServerApp',
     projectName: 'Platform',
+
+    markdown: {
+        hooks: {
+            onBrokenMarkdownLinks: 'throw',
+        }
+    },
 
     plugins: [
         'docusaurus-plugin-sass',
