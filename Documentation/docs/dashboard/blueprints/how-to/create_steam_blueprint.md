@@ -116,7 +116,7 @@ To enable features like uptime monitoring, RCON, and backups, visit the [bluepri
 
 ### Finding Executable Path
 
-To locate the executable path, [search SteamDB for dedicated server files](/dashboard/blueprints/how-to/create_steam_blueprint#search-steamdb), click on the dedicated server, and go to the `Configuration` page. Look for `Executable`.
+To locate the executable path, [search SteamDB for dedicated server files](/dashboard/blueprints/create_and_manage_blueprints#finding-steam-ids), click on the dedicated server, and go to the `Configuration` page. Look for `Executable`.
 
 :::caution
 Make sure the executable path matches the correct OS (Linux or Windows). Since this example uses Windows, there should only be one path.

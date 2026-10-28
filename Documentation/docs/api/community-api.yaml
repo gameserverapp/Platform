@@ -1094,7 +1094,7 @@ paths:
       tags:
         - User
       summary: 'Generate reverse connect code'
-      description: 'Generate a reverse connect code for in-game linking (!connectcode {code})'
+      description: 'Generate a reverse connect code for in-game linking (!connectcode CODE)'
       operationId: generateReverseConnectCode
       requestBody:
         required: true

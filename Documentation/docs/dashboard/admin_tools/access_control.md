@@ -277,7 +277,7 @@ You can also view who reviewed it and their decision/note.
 
 Access groups can be applied to specific game servers or clusters. These are called `Resources`.
 
-A server/cluster can be linked to multiple groups. The [group order](#sorting--priority) determines which one applies first.
+A server/cluster can be linked to multiple groups. The [group order](#group-matching-priority) determines which one applies first.
 
 Manage Resources in the `Settings` tab.
 
