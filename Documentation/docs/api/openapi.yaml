@@ -888,6 +888,166 @@ paths:
         -
           systemapi-passport:
             - gameserver
+  '/system-api/v2/gameserver/{gameserver_id}/activity':
+    get:
+      tags:
+        - 'Game Server'
+      summary: 'Get game server activity'
+      description: 'Retrieve activity logs for a specific game server.'
+      operationId: getGameServerActivity
+      parameters:
+        -
+          name: gameserver_id
+          in: path
+          required: true
+          schema:
+            type: integer
+          example: '57294'
+        -
+          name: page
+          in: query
+          description: 'Page number'
+          required: false
+          schema:
+            type: integer
+            default: 1
+        -
+          name: per_page
+          in: query
+          description: 'Items per page'
+          required: false
+          schema:
+            type: integer
+            default: 20
+            maximum: 100
+            minimum: 1
+      responses:
+        '200':
+          description: 'successful operation'
+          content:
+            application/json:
+              schema:
+                properties:
+                  data: { type: array, items: { $ref: '#/components/schemas/GameServerActivity' } }
+                  links: { properties: { first: { type: string, example: 'https://api.gameserverapp.com/system-api/v2/gameserver/57294/activity?page=1' }, last: { type: string, example: 'https://api.gameserverapp.com/system-api/v2/gameserver/57294/activity?page=5' }, prev: { type: string, example: null, nullable: true }, next: { type: string, example: 'https://api.gameserverapp.com/system-api/v2/gameserver/57294/activity?page=2' } }, type: object }
+                  meta: { properties: { current_page: { type: integer, example: 1 }, from: { type: integer, example: 1 }, last_page: { type: integer, example: 5 }, links: { type: array, items: { properties: { url: { type: string, example: 'https://api.gameserverapp.com/system-api/v2/gameserver/57294/activity?page=1', nullable: true }, label: { type: string, example: '1' }, active: { type: boolean, example: true } }, type: object } }, path: { type: string, example: 'https://api.gameserverapp.com/system-api/v2/gameserver/57294/activity' }, per_page: { type: integer, example: 20 }, to: { type: integer, example: 20 }, total: { type: integer, example: 100 } }, type: object }
+                type: object
+        '404':
+          description: 'Game server not found'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'Game server not found' }
+                type: object
+      security:
+        -
+          systemapi-passport:
+            - gameserver
+  '/system-api/v2/gameserver/{gameserver_id}/logs':
+    get:
+      tags:
+        - 'Game Server'
+      summary: 'Get game server logs'
+      description: 'Retrieve available log files for a specific game server.'
+      operationId: getGameServerLogs
+      parameters:
+        -
+          name: gameserver_id
+          in: path
+          required: true
+          schema:
+            type: integer
+          example: '57294'
+      responses:
+        '200':
+          description: 'successful operation'
+          content:
+            application/json:
+              schema:
+                properties:
+                  data: { type: object }
+                type: object
+        '404':
+          description: 'Game server not found'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'Game server not found' }
+                type: object
+        '400':
+          description: 'Invalid request or server not installed'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'Game server is not installed.' }
+                type: object
+      security:
+        -
+          systemapi-passport:
+            - gameserver
+  '/system-api/v2/gameserver/{gameserver_id}/log':
+    get:
+      tags:
+        - 'Game Server'
+      summary: 'Get game server log file content'
+      description: 'Retrieve content of a specific log file for a game server.'
+      operationId: getGameServerLogFile
+      parameters:
+        -
+          name: gameserver_id
+          in: path
+          required: true
+          schema:
+            type: integer
+          example: '57294'
+        -
+          name: filename
+          in: query
+          description: 'Filename of the log file'
+          required: true
+          schema:
+            type: string
+          example: ShooterGame.log
+        -
+          name: path
+          in: query
+          description: 'Path/directory of the log file'
+          required: false
+          schema:
+            type: string
+          example: ShooterGame/Saved/Logs
+      responses:
+        '200':
+          description: 'successful operation'
+          content:
+            application/json:
+              schema:
+                properties:
+                  data: { properties: { filename: { type: string, example: ShooterGame.log }, path: { type: string, example: ShooterGame/Saved/Logs }, content: { type: string, example: '[2026.10.30-12.00.00:000] Log file content...' } }, type: object }
+                type: object
+        '404':
+          description: 'Game server not found'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'Game server not found' }
+                type: object
+        '400':
+          description: 'Invalid request or server not installed'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'Game server is not installed.' }
+                type: object
+      security:
+        -
+          systemapi-passport:
+            - gameserver
   '/system-api/v2/gameserver/{gameserver_id}/activate-config-template':
     post:
       tags:
@@ -1434,6 +1594,109 @@ paths:
               schema:
                 properties:
                   error: { type: string, example: 'You have reached the manual backup limit. Please remove a manual backup first.' }
+                type: object
+        '429':
+          description: 'Rate limited'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'You cannot do this yet. Please wait 60 second(s) between calls for the same game server.' }
+                type: object
+      security:
+        -
+          systemapi-passport:
+            - gameserver
+  '/system-api/v2/gameserver/{gameserver_id}/backups':
+    get:
+      tags:
+        - 'Game Server'
+      summary: 'Get game server backups'
+      description: 'Retrieve available backups for a specific game server.'
+      operationId: getGameServerBackups
+      parameters:
+        -
+          name: gameserver_id
+          in: path
+          required: true
+          schema:
+            type: integer
+          example: '57294'
+      responses:
+        '200':
+          description: 'successful operation'
+          content:
+            application/json:
+              schema:
+                properties:
+                  data: { type: array, items: { properties: { uuid: { type: string, example: 4f068710-8647-11ef-9366-0242ac120002 }, name: { type: string, example: 'Manual backup 1' }, type: { type: string, example: automatic }, backup_size_kb: { type: integer, example: 1048576 }, created_at: { type: string, format: date-time, example: '2026-10-28T12:00:00Z' } }, type: object } }
+                type: object
+        '404':
+          description: 'Game server not found'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'Game server not found' }
+                type: object
+        '400':
+          description: 'Invalid request or server not installed'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'Game server is not installed.' }
+                type: object
+      security:
+        -
+          systemapi-passport:
+            - gameserver
+  '/system-api/v2/gameserver/{gameserver_id}/backup/{uuid}/rollback':
+    post:
+      tags:
+        - 'Game Server'
+      summary: 'Rollback game server backup'
+      description: 'Rollback game server to a specific backup UUID.'
+      operationId: rollbackGameServer
+      parameters:
+        -
+          name: gameserver_id
+          in: path
+          required: true
+          schema:
+            type: integer
+          example: '57294'
+        -
+          name: uuid
+          in: path
+          required: true
+          schema:
+            type: string
+          example: 4f068710-8647-11ef-9366-0242ac120002
+      responses:
+        '200':
+          description: 'successful operation'
+          content:
+            application/json:
+              schema:
+                properties:
+                  data: { type: string, example: 'Rollback request sent to game server' }
+                type: object
+        '404':
+          description: 'Game server not found'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'Game server not found' }
+                type: object
+        '400':
+          description: 'Invalid request or server inactive'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'The game server is not active.' }
                 type: object
         '429':
           description: 'Rate limited'
@@ -3511,6 +3774,28 @@ components:
                 type: string
                 example: partially
             type: object
+      type: object
+    GameServerActivity:
+      title: 'Game Server Activity'
+      description: 'Game server activity log entry resource representation'
+      properties:
+        created_at:
+          description: 'Date and time when the log entry was created'
+          type: string
+          format: date-time
+          example: '2026-10-29T10:00:00.000000Z'
+        message:
+          description: 'Log message content'
+          type: string
+          example: 'Game server started'
+        type:
+          description: 'Log entry type (info, warning, error, success)'
+          type: string
+          example: info
+        actor:
+          description: 'Actor who initiated or performed the action (System, Support, or user nickname)'
+          type: string
+          example: System
       type: object
     GameServer:
       properties:
