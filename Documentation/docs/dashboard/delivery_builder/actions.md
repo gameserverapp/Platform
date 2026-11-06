@@ -302,5 +302,6 @@ Control game server behavior with this action block. Includes options such as:
 - Generate random seed (letters and numbers)
 - Create backup (optional cleanup)
 - Wipe game server (full or partial)
+- Install / Remove plugins (works with all frameworks under `Mods / Plugins`)
 
 ![Automations / Tasks - Action - Game server actions](/img/dashboard/delivery_builder/actions/action_gameserver_actions.jpg)
