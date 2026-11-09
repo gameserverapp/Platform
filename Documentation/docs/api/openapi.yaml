@@ -638,6 +638,128 @@ paths:
         -
           systemapi-passport:
             - config-template
+  '/system-api/v2/config-template/{configtemplate_id}/settings':
+    put:
+      tags:
+        - 'Config Template'
+      summary: 'Update Config template settings'
+      description: 'Update settings for an existing Config template.'
+      operationId: updateConfigTemplateSettings
+      parameters:
+        -
+          name: configtemplate_id
+          in: path
+          required: true
+          schema:
+            type: integer
+          example: '39581'
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              properties:
+                admin_ids:
+                  description: 'Formatting is different per game, consult dashboard for format example.'
+                  type: string
+                  example: '76561198000000000,76561198000000001'
+                  nullable: true
+                auto_update_game:
+                  description: 'Auto-update game countdown in minutes: 0 (immediately), 5, 10, 15, 20, 25, 30, 35, 40, 45, 60, 75, or null/empty (disabled)'
+                  type: integer
+                  enum: [0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 60, 75]
+                  example: 60
+                auto_update_mod:
+                  description: 'Auto-update mod countdown in minutes: 0 (immediately), 5, 10, 15, 20, 25, 30, 35, 40, 45, 60, 75, or null/empty (disabled)'
+                  type: integer
+                  enum: [0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 60, 75]
+                  example: 60
+                auto_update_plugin:
+                  description: 'Auto-update plugin countdown in minutes: 0 (immediately), 5, 10, 15, 20, 25, 30, 35, 40, 45, 60, 75, or null/empty (disabled)'
+                  type: integer
+                  enum: [0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 60, 75]
+                  example: 60
+                auto_restart:
+                  description: 'Auto-restart countdown in minutes: 0 (as soon as possible), 5, 10, 15, 20, 30, 45, 60, 75'
+                  type: integer
+                  enum: [0, 5, 10, 15, 20, 30, 45, 60, 75]
+                  example: 0
+                auto_restart_timers_0:
+                  description: 'First daily restart time in UTC (format: HH:MM, e.g. 00:00) or null to disable'
+                  type: string
+                  example: '00:00'
+                  nullable: true
+                auto_restart_timers_1:
+                  description: 'Second daily restart time in UTC (format: HH:MM, e.g. 12:00) or null to disable'
+                  type: string
+                  example: '12:00'
+                  nullable: true
+              type: object
+          application/json:
+            schema:
+              properties:
+                admin_ids:
+                  description: 'Formatting is different per game, consult dashboard for format example.'
+                  type: string
+                  example: '76561198000000000,76561198000000001'
+                  nullable: true
+                auto_update_game:
+                  description: 'Auto-update game countdown in minutes: 0 (immediately), 5, 10, 15, 20, 25, 30, 35, 40, 45, 60, 75, or null/empty (disabled)'
+                  type: integer
+                  enum: [0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 60, 75]
+                  example: 60
+                auto_update_mod:
+                  description: 'Auto-update mod countdown in minutes: 0 (immediately), 5, 10, 15, 20, 25, 30, 35, 40, 45, 60, 75, or null/empty (disabled)'
+                  type: integer
+                  enum: [0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 60, 75]
+                  example: 60
+                auto_update_plugin:
+                  description: 'Auto-update plugin countdown in minutes: 0 (immediately), 5, 10, 15, 20, 25, 30, 35, 40, 45, 60, 75, or null/empty (disabled)'
+                  type: integer
+                  enum: [0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 60, 75]
+                  example: 60
+                auto_restart:
+                  description: 'Auto-restart countdown in minutes: 0 (as soon as possible), 5, 10, 15, 20, 30, 45, 60, 75'
+                  type: integer
+                  enum: [0, 5, 10, 15, 20, 30, 45, 60, 75]
+                  example: 0
+                auto_restart_timers_0:
+                  description: 'First daily restart time in UTC (format: HH:MM, e.g. 00:00) or null to disable'
+                  type: string
+                  example: '00:00'
+                  nullable: true
+                auto_restart_timers_1:
+                  description: 'Second daily restart time in UTC (format: HH:MM, e.g. 12:00) or null to disable'
+                  type: string
+                  example: '12:00'
+                  nullable: true
+              type: object
+      responses:
+        '200':
+          description: 'successful operation'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConfigTemplate'
+        '400':
+          description: 'This config template can not be changed.'
+          content:
+            application/json:
+              schema:
+                properties:
+                  message: { type: string, example: 'This config template can not be changed.' }
+                type: object
+        '404':
+          description: 'Config template not found'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'Config template not found' }
+                type: object
+      security:
+        -
+          systemapi-passport:
+            - config-template
   '/system-api/v2/config-template/{configtemplate_id}/restart-servers':
     post:
       tags:
@@ -3656,6 +3778,89 @@ components:
                   properties: { name: { type: string, example: 'SteamCMD branch' }, info: { type: string, example: 'Loads special steam branch...' }, settings: { type: boolean, example: 'true' }, type: { type: string, example: text } }
                   type: object
               type: object
+          type: object
+        settings:
+          properties:
+            admin_ids:
+              description: 'Formatting is different per game, consult dashboard for format example.'
+              type: string
+              example: '76561198000000000,76561198000000001'
+              nullable: true
+            auto_update_game:
+              description: 'Auto-update game countdown in minutes: 0 (immediately), 5, 10, 15, 20, 25, 30, 35, 40, 45, 60, 75'
+              type: integer
+              enum:
+                - 0
+                - 5
+                - 10
+                - 15
+                - 20
+                - 25
+                - 30
+                - 35
+                - 40
+                - 45
+                - 60
+                - 75
+              example: 60
+            auto_update_mod:
+              description: 'Auto-update mod countdown in minutes: 0 (immediately), 5, 10, 15, 20, 25, 30, 35, 40, 45, 60, 75'
+              type: integer
+              enum:
+                - 0
+                - 5
+                - 10
+                - 15
+                - 20
+                - 25
+                - 30
+                - 35
+                - 40
+                - 45
+                - 60
+                - 75
+              example: 60
+            auto_update_plugin:
+              description: 'Auto-update plugin countdown in minutes: 0 (immediately), 5, 10, 15, 20, 25, 30, 35, 40, 45, 60, 75'
+              type: integer
+              enum:
+                - 0
+                - 5
+                - 10
+                - 15
+                - 20
+                - 25
+                - 30
+                - 35
+                - 40
+                - 45
+                - 60
+                - 75
+              example: 60
+            auto_restart:
+              description: 'Auto-restart countdown in minutes: 0 (as soon as possible), 5, 10, 15, 20, 30, 45, 60, 75'
+              type: integer
+              enum:
+                - 0
+                - 5
+                - 10
+                - 15
+                - 20
+                - 30
+                - 45
+                - 60
+                - 75
+              example: 0
+            auto_restart_timers_0:
+              description: 'First daily restart time in UTC (format: HH:MM, e.g. 00:00) or null when not configured'
+              type: string
+              example: '00:00'
+              nullable: true
+            auto_restart_timers_1:
+              description: 'Second daily restart time in UTC (format: HH:MM, e.g. 12:00) or null when not configured'
+              type: string
+              example: '12:00'
+              nullable: true
           type: object
         configs:
           type: array
