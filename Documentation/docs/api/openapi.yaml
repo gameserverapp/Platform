@@ -1832,6 +1832,550 @@ paths:
         -
           systemapi-passport:
             - gameserver
+  '/system-api/v2/gameserver/{gameserver_id}/frameworks':
+    get:
+      tags:
+        - 'Game Server'
+      summary: 'List game server frameworks'
+      description: 'Retrieve available and installed plugin/mod frameworks for a specific game server.'
+      operationId: getGameServerFrameworks
+      parameters:
+        -
+          name: gameserver_id
+          in: path
+          required: true
+          schema:
+            type: integer
+          example: '57294'
+      responses:
+        '200':
+          description: 'successful operation'
+          content:
+            application/json:
+              schema:
+                properties:
+                  data: { type: array, items: { $ref: '#/components/schemas/GameServerFramework' } }
+                type: object
+        '404':
+          description: 'Game server not found'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'Game server not found' }
+                type: object
+        '400':
+          description: 'Invalid request or server does not support frameworks'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'This game does not support plugins.' }
+                type: object
+      security:
+        -
+          systemapi-passport:
+            - gameserver
+  '/system-api/v2/gameserver/{gameserver_id}/framework/{framework_id}/install':
+    post:
+      tags:
+        - 'Game Server'
+      summary: 'Install framework for game server'
+      description: 'Install or update a plugin/mod framework on a specific game server.'
+      operationId: installGameServerFramework
+      parameters:
+        -
+          name: gameserver_id
+          in: path
+          required: true
+          schema:
+            type: integer
+          example: '57294'
+        -
+          name: framework_id
+          in: path
+          required: true
+          schema:
+            type: string
+          example: MinecraftPaperFramework
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              properties:
+                version:
+                  description: 'Framework version to install. Required when the framework has multiple versions; defaults to latest_version otherwise.'
+                  type: string
+                  example: 5.4.22
+              type: object
+      responses:
+        '200':
+          description: 'successful operation'
+          content:
+            application/json:
+              schema:
+                properties:
+                  data: { type: string, example: 'Framework installation requested' }
+                type: object
+        '404':
+          description: 'Game server or framework not found'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'Game server not found' }
+                type: object
+        '400':
+          description: 'Invalid request or server state'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'Game server must be offline to manage frameworks.' }
+                type: object
+        '429':
+          description: 'Rate limited'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'You cannot do this yet. Please wait 20 second(s) between calls for the same game server.' }
+                type: object
+      security:
+        -
+          systemapi-passport:
+            - gameserver
+  '/system-api/v2/gameserver/{gameserver_id}/framework/{framework_id}/uninstall':
+    post:
+      tags:
+        - 'Game Server'
+      summary: 'Uninstall framework from game server'
+      description: 'Uninstall a plugin/mod framework from a specific game server.'
+      operationId: uninstallGameServerFramework
+      parameters:
+        -
+          name: gameserver_id
+          in: path
+          required: true
+          schema:
+            type: integer
+          example: '57294'
+        -
+          name: framework_id
+          in: path
+          required: true
+          schema:
+            type: string
+          example: MinecraftPaperFramework
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              properties:
+                confirm_reinstall:
+                  description: 'Required (true) when the framework does not support direct uninstall and uninstalling it will automatically re-install the game server.'
+                  type: boolean
+                  example: false
+              type: object
+      responses:
+        '200':
+          description: 'successful operation'
+          content:
+            application/json:
+              schema:
+                properties:
+                  data: { type: string, example: 'Framework removal requested' }
+                type: object
+        '404':
+          description: 'Game server or framework not found'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'Game server not found' }
+                type: object
+        '400':
+          description: 'Invalid request, framework not installed, or reinstall confirmation required'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'Uninstalling this framework requires re-installing the game server. Pass confirm_reinstall=true to confirm.' }
+                type: object
+        '429':
+          description: 'Rate limited'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'You cannot do this yet. Please wait 20 second(s) between calls for the same game server.' }
+                type: object
+      security:
+        -
+          systemapi-passport:
+            - gameserver
+  '/system-api/v2/gameserver/{gameserver_id}/framework/{framework_id}/plugins':
+    get:
+      tags:
+        - 'Game Server'
+      summary: 'Search available plugins for framework'
+      description: 'Search available plugins/mods that can be installed for a specific framework on a game server.'
+      operationId: getGameServerFrameworkPlugins
+      parameters:
+        -
+          name: gameserver_id
+          in: path
+          required: true
+          schema:
+            type: integer
+          example: '57294'
+        -
+          name: framework_id
+          in: path
+          required: true
+          schema:
+            type: string
+          example: MinecraftPaperFramework
+        -
+          name: search
+          in: query
+          description: 'Optional search query to filter available plugins.'
+          required: false
+          schema:
+            type: string
+          example: Essentials
+        -
+          name: page
+          in: query
+          description: 'Page number for pagination (starts at 1).'
+          required: false
+          schema:
+            type: integer
+          example: '1'
+      responses:
+        '200':
+          description: 'successful operation'
+          content:
+            application/json:
+              schema:
+                properties:
+                  data: { type: array, items: { $ref: '#/components/schemas/GameServerFrameworkPlugin' } }
+                type: object
+        '404':
+          description: 'Game server or framework not found'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'Game server not found' }
+                type: object
+        '400':
+          description: 'Invalid request or framework is not installed'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'Framework is not installed.' }
+                type: object
+      security:
+        -
+          systemapi-passport:
+            - gameserver
+  '/system-api/v2/gameserver/{gameserver_id}/framework/{framework_id}/plugin/{plugin_id}/install':
+    post:
+      tags:
+        - 'Game Server'
+      summary: 'Install specific plugin version for framework on game server'
+      description: 'Install a specific version of a single plugin/mod for a framework on a game server.'
+      operationId: installGameServerFrameworkPluginVersion
+      parameters:
+        -
+          name: gameserver_id
+          in: path
+          required: true
+          schema:
+            type: integer
+          example: '57294'
+        -
+          name: framework_id
+          in: path
+          required: true
+          schema:
+            type: string
+          example: MinecraftPaperFramework
+        -
+          name: plugin_id
+          in: path
+          required: true
+          schema:
+            type: integer
+          example: '12345'
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              required:
+                - version
+              properties:
+                version:
+                  description: 'Plugin version to install.'
+                  type: string
+                  example: 2.20.1
+              type: object
+      responses:
+        '200':
+          description: 'successful operation'
+          content:
+            application/json:
+              schema:
+                properties:
+                  data: { type: string, example: 'Plugin installation requested' }
+                type: object
+        '404':
+          description: 'Game server or framework not found'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'Game server not found' }
+                type: object
+        '400':
+          description: 'Invalid request or server state'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'Game server must be offline to manage plugins.' }
+                type: object
+        '429':
+          description: 'Rate limited'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'You cannot do this yet. Please wait 20 second(s) between calls for the same game server.' }
+                type: object
+      security:
+        -
+          systemapi-passport:
+            - gameserver
+  '/system-api/v2/gameserver/{gameserver_id}/framework/{framework_id}/plugins/install':
+    post:
+      tags:
+        - 'Game Server'
+      summary: 'Install plugin(s) for framework on game server'
+      description: 'Install one or more plugins/mods by internal IDs for a specific framework on a game server.'
+      operationId: installGameServerFrameworkPlugins
+      parameters:
+        -
+          name: gameserver_id
+          in: path
+          required: true
+          schema:
+            type: integer
+          example: '57294'
+        -
+          name: framework_id
+          in: path
+          required: true
+          schema:
+            type: string
+          example: MinecraftPaperFramework
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              required:
+                - plugin_ids
+              properties:
+                plugin_ids:
+                  description: 'Array of internal plugin IDs to install.'
+                  type: array
+                  items: { type: integer, example: 123456 }
+              type: object
+      responses:
+        '200':
+          description: 'successful operation'
+          content:
+            application/json:
+              schema:
+                properties:
+                  data: { type: string, example: 'Plugin installation requested' }
+                type: object
+        '404':
+          description: 'Game server or framework not found'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'Game server not found' }
+                type: object
+        '400':
+          description: 'Invalid request or server state'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'Game server must be offline to manage plugins.' }
+                type: object
+        '429':
+          description: 'Rate limited'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'You cannot do this yet. Please wait 20 second(s) between calls for the same game server.' }
+                type: object
+      security:
+        -
+          systemapi-passport:
+            - gameserver
+  '/system-api/v2/gameserver/{gameserver_id}/framework/{framework_id}/plugins/uninstall':
+    post:
+      tags:
+        - 'Game Server'
+      summary: 'Uninstall plugin(s) from framework on game server'
+      description: 'Uninstall one or more plugins/mods by internal IDs from a specific framework on a game server.'
+      operationId: uninstallGameServerFrameworkPlugins
+      parameters:
+        -
+          name: gameserver_id
+          in: path
+          required: true
+          schema:
+            type: integer
+          example: '57294'
+        -
+          name: framework_id
+          in: path
+          required: true
+          schema:
+            type: string
+          example: MinecraftPaperFramework
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              required:
+                - plugin_ids
+              properties:
+                plugin_ids:
+                  description: 'Array of internal plugin IDs to uninstall.'
+                  type: array
+                  items: { type: integer, example: 123456 }
+              type: object
+      responses:
+        '200':
+          description: 'successful operation'
+          content:
+            application/json:
+              schema:
+                properties:
+                  data: { type: string, example: 'Plugin removal requested' }
+                type: object
+        '404':
+          description: 'Game server or framework not found'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'Game server not found' }
+                type: object
+        '400':
+          description: 'Invalid request or server state'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'Game server must be offline to manage plugins.' }
+                type: object
+        '429':
+          description: 'Rate limited'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'You cannot do this yet. Please wait 20 second(s) between calls for the same game server.' }
+                type: object
+      security:
+        -
+          systemapi-passport:
+            - gameserver
+  '/system-api/v2/gameserver/{gameserver_id}/framework/{framework_id}/plugins/update-order':
+    post:
+      tags:
+        - 'Game Server'
+      summary: 'Update plugin load order for framework on game server'
+      description: 'Update the load order of installed plugins/mods for a specific framework on a game server.'
+      operationId: updateGameServerFrameworkPluginOrder
+      parameters:
+        -
+          name: gameserver_id
+          in: path
+          required: true
+          schema:
+            type: integer
+          example: '57294'
+        -
+          name: framework_id
+          in: path
+          required: true
+          schema:
+            type: string
+          example: MinecraftPaperFramework
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              required:
+                - plugin_ids
+              properties:
+                plugin_ids:
+                  description: 'Ordered array of internal plugin IDs.'
+                  type: array
+                  items: { type: integer, example: 123456 }
+              type: object
+      responses:
+        '200':
+          description: 'successful operation'
+          content:
+            application/json:
+              schema:
+                properties:
+                  data: { type: string, example: 'Updated mod / plugin order.' }
+                type: object
+        '404':
+          description: 'Game server or framework not found'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'Game server not found' }
+                type: object
+        '400':
+          description: 'Invalid request or server state'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'Framework is not installed.' }
+                type: object
+        '429':
+          description: 'Rate limited'
+          content:
+            application/json:
+              schema:
+                properties:
+                  error: { type: string, example: 'You cannot do this yet. Please wait 20 second(s) between calls for the same game server.' }
+                type: object
+      security:
+        -
+          systemapi-passport:
+            - gameserver
   /system-api/v2/groups:
     get:
       tags:
@@ -4001,6 +4545,72 @@ components:
           description: 'Actor who initiated or performed the action (System, Support, or user nickname)'
           type: string
           example: System
+      type: object
+    GameServerFrameworkPlugin:
+      title: 'Game Server Framework Plugin'
+      description: 'Game server framework plugin/mod resource representation'
+      properties:
+        id:
+          type: integer
+          example: 12345
+        name:
+          type: string
+          example: EssentialsX
+        latest_version:
+          type: string
+          example: 2.20.1
+          nullable: true
+        external_id:
+          type: string
+          example: '9089'
+          nullable: true
+      type: object
+    GameServerFramework:
+      title: 'Game Server Framework'
+      description: 'Game server plugin/mod framework resource representation'
+      properties:
+        id:
+          type: string
+          example: MinecraftPaperFramework
+        name:
+          type: string
+          example: PaperMC
+        installed:
+          type: boolean
+          example: true
+        installed_version:
+          type: string
+          example: 5.4.22
+          nullable: true
+        update_available:
+          type: boolean
+          example: false
+        installed_plugins:
+          type: array
+          items:
+            properties:
+              id:
+                type: integer
+                example: 12345
+              name:
+                type: string
+                example: 'Awesome plugin'
+              installed_version:
+                type: string
+                example: '2.8'
+              update_available:
+                type: boolean
+                example: false
+              external_id:
+                type: string
+                example: '59384958'
+                nullable: true
+            type: object
+        available_versions:
+          type: array
+          items:
+            type: string
+            example: 5.4.22
       type: object
     GameServer:
       properties:
