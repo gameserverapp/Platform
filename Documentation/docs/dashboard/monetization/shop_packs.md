@@ -136,7 +136,7 @@ Options include:
 - Disable after one purchase (for all players)
 
 :::info Single Purchase
-Use `Disable package when bought by someone (single purchase limit)` to make the pack unavailable to everyone after it's bought.
+Use `Disable for everyone after purchase (global single purchase limit)` to make the pack unavailable to everyone after it's bought.
 :::
 
 [How to reset purchase limits >](/dashboard/monetization/deliveries#reset-purchase-limits)

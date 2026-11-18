@@ -28,7 +28,8 @@ Enter a name for the new tier in the popup window, then click `Create`.
 
 ### 2. Configure Settings
 
-Add a clear description explaining what this Supporter Tier includes. This will be visible on the Community website.  
+Add a clear description explaining what this Supporter Tier includes. This will be visible on the Community website. [Learn more about specific restrictions >](/dashboard/monetization/supporter_tiers#restrictions--limits)
+
 Set the currency, price, and whether it's a one-time or recurring payment. Click `Save settings` once everything is set.
 
 ![Monetization - Create Supporter Tier 3](/img/dashboard/monetization/supporter_tiers/create_tier_3.jpg)
@@ -53,6 +54,52 @@ When a recurring subscription ends, the actions in the `Expired actions` tab are
 These actions also function like Task actions. [Learn more about available actions >](/dashboard/delivery_builder/actions)
 
 ![Monetization - Create Supporter Tier 5](/img/dashboard/monetization/supporter_tiers/create_tier_5.jpg)
+
+## Restrictions & Limits
+
+### Purchase Limits
+
+Control how often a Supporter Tier can be purchased.
+
+Options include:
+- Unlimited purchases
+- Once per year
+- Once every [X] days
+- \[X\] purchases every [Y] days
+- Disable after one purchase (for all players)
+
+:::info Single Purchase
+Use `Disable for everyone after purchase (global single purchase limit)` to make the tier unavailable to everyone after it's bought.
+:::
+
+Limits are determined by Sales and Subscriptions. In order to reset the limits, you can delete a sale. It's best to only delete sales when there is a problem.
+
+#### Subscription Limits
+
+For recurring Supporter Tiers, you can limit active subscriptions per player:
+
+- `Limit to 1 active subscription of this tier per player`: Players can only have 1 active subscription with this tier.
+- `Limit to 1 active subscription across all tiers per player`: Players can only buy this tier if they don't have any active subscriptions.
+
+Subscriptions must be expired before players can purchase a new one. If there are issues, you can `terminate` a subscription to make it expire immediately and allow the player to buy a new subscription when subscription limits apply.
+
+![Monetization - Settings - Purchase limits](/img/dashboard/monetization/supporter_tiers/tier_purchase_limits.jpg)
+
+### Custom Role
+
+Require players to have a specific [Custom role](/dashboard/admin_tools/custom_roles) to view and purchase the Supporter Tier. Players without the required role cannot see the package.
+
+### Character Level (Min/Max)
+
+Limit who can buy the Supporter Tier based on the player's character level (above or below a specific level). Ideal for beginner or high-level reward tiers.
+
+![Monetization - Settings - Character Level](/img/dashboard/monetization/shop_packs/settings_char_level.jpg)
+
+### Delivery Restrictions
+
+Target specific clusters or game servers, or exclude some, based on where the Supporter Tier should or should not be delivered.
+
+![Monetization - Settings - Delivery Restrictions](/img/dashboard/monetization/shop_packs/settings_delivery_restrictions.jpg)
 
 ## Manage Tiers
 
